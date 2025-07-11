@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Закрыть" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="54"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="ДокументВладелец" id="71">
+			<DataPath>ДокументВладелец</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные входящего документа</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДокументВладелецКонтекстноеМеню" id="72"/>
+			<ExtendedTooltip name="ДокументВладелецРасширеннаяПодсказка" id="73"/>
+		</LabelField>
+		<Table name="ДеревоМаркированнойПродукции" id="1">
+			<Representation>Tree</Representation>
+			<ReadOnly>true</ReadOnly>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ДеревоМаркированнойПродукции</DataPath>
+			<RowPictureDataPath>ДеревоМаркированнойПродукции.ИндексКартинкиТипУпаковки</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.МаркируемаяПродукцияИконкиИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</RowsPicture>
+			<ContextMenu name="ДеревоМаркированнойПродукцииКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДеревоМаркированнойПродукцииКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Popup name="ДеревоМаркированнойПродукцииРаботаСФайлами" id="55">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Экспорт</v8:content>
+							</v8:item>
+						</Title>
+						<HorizontalStretch>false</HorizontalStretch>
+						<ExtendedTooltip name="ДеревоМаркированнойПродукцииРаботаСФайламиРасширеннаяПодсказка" id="56"/>
+						<ChildItems>
+							<ButtonGroup name="КомандыВыгрузкиТЧ" id="65">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Команды выгрузки ТЧ</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомандыВыгрузкиТЧРасширеннаяПодсказка" id="66"/>
+								<ChildItems>
+									<Button name="ДеревоМаркированнойПродукцииВыгрузитьКодыМаркировкиВФайл" id="67">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыгрузитьКодыМаркировкиВФайл</CommandName>
+										<ExtendedTooltip name="ДеревоМаркированнойПродукцииВыгрузитьКодыМаркировкиВФайлРасширеннаяПодсказка" id="68"/>
+									</Button>
+									<Button name="ДеревоМаркированнойПродукцииВыгрузитьДанныеВExcel" id="69">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыгрузитьДанныеВExcel</CommandName>
+										<ExtendedTooltip name="ДеревоМаркированнойПродукцииВыгрузитьДанныеВExcelРасширеннаяПодсказка" id="70"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоМаркированнойПродукцииРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ДеревоМаркированнойПродукцииСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ДеревоМаркированнойПродукции</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоМаркированнойПродукцииСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ДеревоМаркированнойПродукцииСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоМаркированнойПродукцииСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ДеревоМаркированнойПродукции</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоМаркированнойПродукцииСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ДеревоМаркированнойПродукцииСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоМаркированнойПродукцииУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ДеревоМаркированнойПродукции</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоМаркированнойПродукцииУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ДеревоМаркированнойПродукцииУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ДеревоМаркированнойПродукцииНоменклатура" id="23">
+					<DataPath>ДеревоМаркированнойПродукции.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииНоменклатураКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииНоменклатураРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииGTINВерхнегоУровня" id="44">
+					<DataPath>ДеревоМаркированнойПродукции.GTINВерхнегоУровня</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииGTINВерхнегоУровняКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииGTINВерхнегоУровняРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииGTIN" id="26">
+					<DataPath>ДеревоМаркированнойПродукции.GTIN</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииGTINКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииGTINРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииСрокГодности" id="47">
+					<DataPath>ДеревоМаркированнойПродукции.СрокГодности</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииСрокГодностиКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииСрокГодностиРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииНомерПартии" id="50">
+					<DataPath>ДеревоМаркированнойПродукции.НомерПартии</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииНомерПартииКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииНомерПартииРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииКодИдентификации" id="17">
+					<DataPath>ДеревоМаркированнойПродукции.КодИдентификации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииКодИдентификацииКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииКодИдентификацииРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииКоличествоПодобранно" id="29">
+					<DataPath>ДеревоМаркированнойПродукции.КоличествоПодобранно</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииКоличествоПодобранноКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииКоличествоПодобранноРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ДеревоМаркированнойПродукцииЕдиницаИзмерения" id="41">
+					<DataPath>ДеревоМаркированнойПродукции.ЕдиницаИзмерения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоМаркированнойПродукцииЕдиницаИзмеренияКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ДеревоМаркированнойПродукцииЕдиницаИзмеренияРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДеревоМаркированнойПродукции" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево маркированной продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КодМаркировки" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодИдентификации" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код идентификации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.НоменклатураИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="GTIN" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>GTIN, вложенный</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>14</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПодобранно" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество кодов (потребительских)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидУпаковки" id="7">
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыУпаковокИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинкиТипУпаковки" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки Штрихкод</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидПродукции" id="9">
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыПродукцииИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единица измерения (базовая)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЕдиницаИзмеренияИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="GTINВерхнегоУровня" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>GTIN кода</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>14</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СрокГодности" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок годности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерПартии" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер партии</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Марки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Марки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КодМаркировки" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодИдентификации" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидУпаковки" id="3">
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыУпаковокИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="4">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СрокГодности" id="5">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерПартии" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="GTINВерхнегоУровня" id="7">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>14</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="GTIN" id="8">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>14</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="EAN" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>256</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="10">
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.НоменклатураИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="11">
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЕдиницаИзмеренияИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ВидПродукции" id="12">
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыПродукцииИСМПТК</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДокументВладелец" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ владелец</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.АктВнутреннегоПеремещенияИСЦЭДМ</v8:Type>
+				<v8:Type>cfg:DocumentRef.УведомлениеОВвозеИзЕАЭСИСЦЭДМ</v8:Type>
+				<v8:Type>cfg:DocumentRef.АктПриемаПередачиИСЦЭДМ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТокенАвторизации" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="5">
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторДокумента" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИИНБИНСклад" id="7">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>22</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыгрузитьКодыМаркировкиВФайл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить в CSV</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить коды маркировки в файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Previous</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыгрузитьКодыМаркировкиВФайл</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыгрузитьДанныеВExcel" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить в Excel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить данные в ТСД</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ФорматExcelИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыгрузитьДанныеВExcel</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

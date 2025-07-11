@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНаименованиеКод" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНаименованиеКодРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ВидРезерва" id="7">
+			<DataPath>Объект.ВидРезерва</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВидРезерваКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВидРезерваРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ВидРезерваПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаОтражениеВНалоговомУчете" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отражение в налоговом учете</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаОтражениеВНалоговомУчетеРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<InputField name="СтатьяЗатрат" id="10">
+					<DataPath>Объект.СтатьяЗатрат</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="СтатьяЗатратКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="СтатьяЗатратРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<UsualGroup name="ГруппаПринятиеКВычетуПоНалоговомуУчету" id="72">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принятие к вычету по налоговому учету</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПринятиеКВычетуПоНалоговомуУчетуРасширеннаяПодсказка" id="73"/>
+					<ChildItems>
+						<LabelDecoration name="ПринятиеКВычетуПоНалоговомуУчету" id="69">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Принятие к вычету по налоговому учету</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПринятиеКВычетуПоНалоговомуУчетуКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="ПринятиеКВычетуПоНалоговомуУчетуРасширеннаяПодсказка" id="71"/>
+						</LabelDecoration>
+						<RadioButtonField name="ПереключательПринятиеКВычету" id="38">
+							<DataPath>ПереключательПринятиеКВычету</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Принятие к вычету по налоговому учету (значения)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>в момент создания резерва</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>в момент погашения резерва</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПереключательПринятиеКВычетуКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ПереключательПринятиеКВычетуРасширеннаяПодсказка" id="40"/>
+							<Events>
+								<Event name="OnChange">ПереключательПринятиеКВычетуПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<Page name="ГруппаБазовыеРасчеты" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Базовые расчеты</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>Объект.БазовыеВидыРасчета.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаБазовыеРасчетыРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<Table name="БазовыеВидыРасчета" id="16">
+							<Representation>List</Representation>
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.БазовыеВидыРасчета</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="БазовыеВидыРасчетаКонтекстноеМеню" id="17"/>
+							<AutoCommandBar name="БазовыеВидыРасчетаКоманднаяПанель" id="18">
+								<ChildItems>
+									<Button name="БазовыеВидыРасчетаПодборВидРасчета" id="26">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПодборВидРасчета</CommandName>
+										<ExtendedTooltip name="БазовыеВидыРасчетаПодборВидРасчетаРасширеннаяПодсказка" id="27"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="БазовыеВидыРасчетаРасширеннаяПодсказка" id="19"/>
+							<SearchStringAddition name="БазовыеВидыРасчетаСтрокаПоиска" id="74">
+								<AdditionSource>
+									<Item>БазовыеВидыРасчета</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="БазовыеВидыРасчетаСтрокаПоискаКонтекстноеМеню" id="75"/>
+								<ExtendedTooltip name="БазовыеВидыРасчетаСтрокаПоискаРасширеннаяПодсказка" id="76"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="БазовыеВидыРасчетаСостояниеПросмотра" id="77">
+								<AdditionSource>
+									<Item>БазовыеВидыРасчета</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="БазовыеВидыРасчетаСостояниеПросмотраКонтекстноеМеню" id="78"/>
+								<ExtendedTooltip name="БазовыеВидыРасчетаСостояниеПросмотраРасширеннаяПодсказка" id="79"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="БазовыеВидыРасчетаУправлениеПоиском" id="80">
+								<AdditionSource>
+									<Item>БазовыеВидыРасчета</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="БазовыеВидыРасчетаУправлениеПоискомКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="БазовыеВидыРасчетаУправлениеПоискомРасширеннаяПодсказка" id="82"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="БазовыеВидыРасчетаНомерСтроки" id="20">
+									<DataPath>Объект.БазовыеВидыРасчета.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="БазовыеВидыРасчетаНомерСтрокиКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="БазовыеВидыРасчетаНомерСтрокиРасширеннаяПодсказка" id="22"/>
+								</LabelField>
+								<InputField name="БазовыеВидыРасчетаВидРасчета" id="23">
+									<DataPath>Объект.БазовыеВидыРасчета.ВидРасчета</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="БазовыеВидыРасчетаВидРасчетаКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="БазовыеВидыРасчетаВидРасчетаРасширеннаяПодсказка" id="25"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаРазмерыОтчислений" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размеры отчислений</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаРазмерыОтчисленийРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<Table name="РазмерыОтчислений" id="41">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>РазмерыОтчислений</DataPath>
+							<RowPictureDataPath>РазмерыОтчислений.DefaultPicture</RowPictureDataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размеры отчислений</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="РазмерыОтчисленийКонтекстноеМеню" id="42"/>
+							<AutoCommandBar name="РазмерыОтчисленийКоманднаяПанель" id="43"/>
+							<ExtendedTooltip name="РазмерыОтчисленийРасширеннаяПодсказка" id="44"/>
+							<SearchStringAddition name="РазмерыОтчисленийСтрокаПоиска" id="83">
+								<AdditionSource>
+									<Item>РазмерыОтчислений</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РазмерыОтчисленийСтрокаПоискаКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="РазмерыОтчисленийСтрокаПоискаРасширеннаяПодсказка" id="85"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РазмерыОтчисленийСостояниеПросмотра" id="86">
+								<AdditionSource>
+									<Item>РазмерыОтчислений</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РазмерыОтчисленийСостояниеПросмотраКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="РазмерыОтчисленийСостояниеПросмотраРасширеннаяПодсказка" id="88"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РазмерыОтчисленийУправлениеПоиском" id="89">
+								<AdditionSource>
+									<Item>РазмерыОтчислений</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РазмерыОтчисленийУправлениеПоискомКонтекстноеМеню" id="90"/>
+								<ExtendedTooltip name="РазмерыОтчисленийУправлениеПоискомРасширеннаяПодсказка" id="91"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">РазмерыОтчисленийПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="РазмерыОтчисленийПериод" id="45">
+									<DataPath>РазмерыОтчислений.Period</DataPath>
+									<ContextMenu name="РазмерыОтчисленийПериодКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="РазмерыОтчисленийПериодРасширеннаяПодсказка" id="47"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийОрганизация" id="48">
+									<DataPath>РазмерыОтчислений.Организация</DataPath>
+									<ContextMenu name="РазмерыОтчисленийОрганизацияКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="РазмерыОтчисленийОрганизацияРасширеннаяПодсказка" id="50"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийРазмер" id="54">
+									<DataPath>РазмерыОтчислений.Размер</DataPath>
+									<ContextMenu name="РазмерыОтчисленийРазмерКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="РазмерыОтчисленийРазмерРасширеннаяПодсказка" id="56"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийРазмерСоциальногоНалога" id="57">
+									<DataPath>РазмерыОтчислений.РазмерСоциальногоНалога</DataPath>
+									<Width>8</Width>
+									<ContextMenu name="РазмерыОтчисленийРазмерСоциальногоНалогаКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="РазмерыОтчисленийРазмерСоциальногоНалогаРасширеннаяПодсказка" id="59"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийРазмерСоциальныхОтчислений" id="60">
+									<DataPath>РазмерыОтчислений.РазмерСоциальныхОтчислений</DataPath>
+									<Width>8</Width>
+									<ContextMenu name="РазмерыОтчисленийРазмерСоциальныхОтчисленийКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="РазмерыОтчисленийРазмерСоциальныхОтчисленийРасширеннаяПодсказка" id="62"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийРазмерПенсионныхВзносовРаботодателя" id="95">
+									<DataPath>РазмерыОтчислений.РазмерПенсионныхВзносовРаботодателя</DataPath>
+									<ContextMenu name="РазмерыОтчисленийРазмерПенсионныхВзносовРаботодателяКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="РазмерыОтчисленийРазмерПенсионныхВзносовРаботодателяРасширеннаяПодсказка" id="97"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийРазмерПрофессиональныхПенсионныхВзносов" id="66">
+									<DataPath>РазмерыОтчислений.РазмерПрофессиональныхПенсионныхВзносов</DataPath>
+									<Width>8</Width>
+									<ContextMenu name="РазмерыОтчисленийРазмерПрофессиональныхПенсионныхВзносовКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="РазмерыОтчисленийРазмерПрофессиональныхПенсионныхВзносовРасширеннаяПодсказка" id="68"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийРазмерОтчисленийОСМС" id="92">
+									<DataPath>РазмерыОтчислений.РазмерОтчисленийОСМС</DataPath>
+									<ContextMenu name="РазмерыОтчисленийРазмерОтчисленийОСМСКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="РазмерыОтчисленийРазмерОтчисленийОСМСРасширеннаяПодсказка" id="94"/>
+								</LabelField>
+								<LabelField name="РазмерыОтчисленийСчетУчета" id="63">
+									<DataPath>РазмерыОтчислений.СчетУчета</DataPath>
+									<Width>13</Width>
+									<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+									<ContextMenu name="РазмерыОтчисленийСчетУчетаКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="РазмерыОтчисленийСчетУчетаРасширеннаяПодсказка" id="65"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Резервы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="РазмерыОтчислений" id="2">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.РазмерыОтчисленийВРезервы</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПереключательПринятиеКВычету" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключатель принятие к вычету</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПодборВидРасчета" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПодборВидРасчета</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:5da1a58f-4d46-4586-9f71-63a8a18dbbf5</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:cacebd45-e45a-4309-8c22-8179d3d3c89d</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:c4cdf1e0-3ba4-44ed-a69b-e548eedca4dd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:58c9e918-9e14-4dbf-825e-bd811a766b89</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:e3c0ddad-cab7-4082-8723-0e9ab0623268</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:20d655a7-788c-48bc-83ae-25003106bedb</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

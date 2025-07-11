@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Плановые начисления и удержания</v8:content>
+		</v8:item>
+	</Title>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="32">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="33"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНачисления" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые начисления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа начисления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаНачисленияРасширеннаяПодсказка" id="35"/>
+			<ChildItems>
+				<Table name="Начисления" id="97">
+					<CommandBarLocation>None</CommandBarLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<DataPath>Начисления</DataPath>
+					<RowPictureDataPath>Начисления.DefaultPicture</RowPictureDataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начисления</v8:content>
+						</v8:item>
+					</Title>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="НачисленияКонтекстноеМеню" id="98"/>
+					<AutoCommandBar name="НачисленияКоманднаяПанель" id="99"/>
+					<ExtendedTooltip name="НачисленияРасширеннаяПодсказка" id="100"/>
+					<SearchStringAddition name="НачисленияСтрокаПоиска" id="101">
+						<AdditionSource>
+							<Item>Начисления</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НачисленияСтрокаПоискаКонтекстноеМеню" id="102"/>
+						<ExtendedTooltip name="НачисленияСтрокаПоискаРасширеннаяПодсказка" id="103"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НачисленияСостояниеПросмотра" id="104">
+						<AdditionSource>
+							<Item>Начисления</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НачисленияСостояниеПросмотраКонтекстноеМеню" id="105"/>
+						<ExtendedTooltip name="НачисленияСостояниеПросмотраРасширеннаяПодсказка" id="106"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НачисленияУправлениеПоиском" id="107">
+						<AdditionSource>
+							<Item>Начисления</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НачисленияУправлениеПоискомКонтекстноеМеню" id="108"/>
+						<ExtendedTooltip name="НачисленияУправлениеПоискомРасширеннаяПодсказка" id="109"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="НачисленияПериод" id="116">
+							<DataPath>Начисления.Период</DataPath>
+							<ContextMenu name="НачисленияПериодКонтекстноеМеню" id="117"/>
+							<ExtendedTooltip name="НачисленияПериодРасширеннаяПодсказка" id="118"/>
+						</LabelField>
+						<LabelField name="НачисленияВидРасчета" id="122">
+							<DataPath>Начисления.ВидРасчета</DataPath>
+							<ContextMenu name="НачисленияВидРасчетаКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="НачисленияВидРасчетаРасширеннаяПодсказка" id="124"/>
+						</LabelField>
+						<LabelField name="НачисленияРазмер" id="134">
+							<DataPath>Начисления.Размер</DataPath>
+							<ContextMenu name="НачисленияРазмерКонтекстноеМеню" id="135"/>
+							<ExtendedTooltip name="НачисленияРазмерРасширеннаяПодсказка" id="136"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаУдержания" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые удержания</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа удержания</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаУдержанияРасширеннаяПодсказка" id="37"/>
+			<ChildItems>
+				<Table name="Удержания" id="137">
+					<CommandBarLocation>None</CommandBarLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<DataPath>Удержания</DataPath>
+					<RowPictureDataPath>Удержания.DefaultPicture</RowPictureDataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Удержания</v8:content>
+						</v8:item>
+					</Title>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="УдержанияКонтекстноеМеню" id="138"/>
+					<AutoCommandBar name="УдержанияКоманднаяПанель" id="139"/>
+					<ExtendedTooltip name="УдержанияРасширеннаяПодсказка" id="140"/>
+					<SearchStringAddition name="УдержанияСтрокаПоиска" id="141">
+						<AdditionSource>
+							<Item>Удержания</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УдержанияСтрокаПоискаКонтекстноеМеню" id="142"/>
+						<ExtendedTooltip name="УдержанияСтрокаПоискаРасширеннаяПодсказка" id="143"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="УдержанияСостояниеПросмотра" id="144">
+						<AdditionSource>
+							<Item>Удержания</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УдержанияСостояниеПросмотраКонтекстноеМеню" id="145"/>
+						<ExtendedTooltip name="УдержанияСостояниеПросмотраРасширеннаяПодсказка" id="146"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="УдержанияУправлениеПоиском" id="147">
+						<AdditionSource>
+							<Item>Удержания</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="УдержанияУправлениеПоискомКонтекстноеМеню" id="148"/>
+						<ExtendedTooltip name="УдержанияУправлениеПоискомРасширеннаяПодсказка" id="149"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="УдержанияДействие" id="165">
+							<DataPath>Удержания.Действие</DataPath>
+							<ContextMenu name="УдержанияДействиеКонтекстноеМеню" id="166"/>
+							<ExtendedTooltip name="УдержанияДействиеРасширеннаяПодсказка" id="167"/>
+						</LabelField>
+						<LabelField name="УдержанияПериод" id="156">
+							<DataPath>Удержания.Период</DataPath>
+							<ContextMenu name="УдержанияПериодКонтекстноеМеню" id="157"/>
+							<ExtendedTooltip name="УдержанияПериодРасширеннаяПодсказка" id="158"/>
+						</LabelField>
+						<LabelField name="УдержанияВидРасчета" id="162">
+							<DataPath>Удержания.ВидРасчета</DataPath>
+							<ContextMenu name="УдержанияВидРасчетаКонтекстноеМеню" id="163"/>
+							<ExtendedTooltip name="УдержанияВидРасчетаРасширеннаяПодсказка" id="164"/>
+						</LabelField>
+						<LabelField name="УдержанияРазмер" id="183">
+							<DataPath>Удержания.Размер</DataPath>
+							<ContextMenu name="УдержанияРазмерКонтекстноеМеню" id="184"/>
+							<ExtendedTooltip name="УдержанияРазмерРасширеннаяПодсказка" id="185"/>
+						</LabelField>
+						<LabelField name="УдержанияДействиеЗавершения" id="168">
+							<DataPath>Удержания.ДействиеЗавершения</DataPath>
+							<ContextMenu name="УдержанияДействиеЗавершенияКонтекстноеМеню" id="169"/>
+							<ExtendedTooltip name="УдержанияДействиеЗавершенияРасширеннаяПодсказка" id="170"/>
+						</LabelField>
+						<LabelField name="УдержанияПериодЗавершения" id="180">
+							<DataPath>Удержания.ПериодЗавершения</DataPath>
+							<ContextMenu name="УдержанияПериодЗавершенияКонтекстноеМеню" id="181"/>
+							<ExtendedTooltip name="УдержанияПериодЗавершенияРасширеннаяПодсказка" id="182"/>
+						</LabelField>
+						<LabelField name="УдержанияРазмерЗавершения" id="186">
+							<DataPath>Удержания.РазмерЗавершения</DataPath>
+							<ContextMenu name="УдержанияРазмерЗавершенияКонтекстноеМеню" id="187"/>
+							<ExtendedTooltip name="УдержанияРазмерЗавершенияРасширеннаяПодсказка" id="188"/>
+						</LabelField>
+						<LabelField name="УдержанияРегистратор" id="159">
+							<DataPath>Удержания.Регистратор</DataPath>
+							<ContextMenu name="УдержанияРегистраторКонтекстноеМеню" id="160"/>
+							<ExtendedTooltip name="УдержанияРегистраторРасширеннаяПодсказка" id="161"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СсылкаНаСотрудника" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка на сотрудника</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СотрудникиОрганизаций</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизическоеЛицоСсылка" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физическое лицо ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОрганизацияСсылка" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Начисления" id="6">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ПлановыеНачисленияРаботниковОрганизаций.Период,
+	ПлановыеНачисленияРаботниковОрганизаций.Регистратор,
+	ПлановыеНачисленияРаботниковОрганизаций.НомерСтроки,
+	ПлановыеНачисленияРаботниковОрганизаций.Активность,
+	ПлановыеНачисленияРаботниковОрганизаций.Сотрудник,
+	ПлановыеНачисленияРаботниковОрганизаций.Организация,
+	ПлановыеНачисленияРаботниковОрганизаций.ВидРасчетаИзмерение,
+	ПлановыеНачисленияРаботниковОрганизаций.ВидРасчета,
+	ПлановыеНачисленияРаботниковОрганизаций.Размер,
+	ПлановыеНачисленияРаботниковОрганизаций.ОбособленноеПодразделение
+ИЗ
+	РегистрСведений.ПлановыеНачисленияРаботниковОрганизаций КАК ПлановыеНачисленияРаботниковОрганизаций
+ГДЕ
+	ПлановыеНачисленияРаботниковОрганизаций.Размер &lt;&gt; 0
+	И ПлановыеНачисленияРаботниковОрганизаций.Сотрудник = &amp;Сотрудник</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Сотрудник</dcssch:dataPath>
+					<dcssch:field>Сотрудник</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Период</dcssch:dataPath>
+					<dcssch:field>Период</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Регистратор</dcssch:dataPath>
+					<dcssch:field>Регистратор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерСтроки</dcssch:dataPath>
+					<dcssch:field>НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидРасчета</dcssch:dataPath>
+					<dcssch:field>ВидРасчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размер</dcssch:dataPath>
+					<dcssch:field>Размер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидРасчетаИзмерение</dcssch:dataPath>
+					<dcssch:field>ВидРасчетаИзмерение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Активность</dcssch:dataPath>
+					<dcssch:field>Активность</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОбособленноеПодразделение</dcssch:dataPath>
+					<dcssch:field>ОбособленноеПодразделение</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>Сотрудник</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудник</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.СотрудникиОрганизаций</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<MainTable>InformationRegister.ПлановыеНачисленияРаботниковОрганизаций</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Удержания" id="7">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ПлановыеУдержанияРаботниковОрганизаций.Период,
+	ПлановыеУдержанияРаботниковОрганизаций.Регистратор,
+	ПлановыеУдержанияРаботниковОрганизаций.НомерСтроки,
+	ПлановыеУдержанияРаботниковОрганизаций.Активность,
+	ПлановыеУдержанияРаботниковОрганизаций.Организация,
+	ПлановыеУдержанияРаботниковОрганизаций.ФизЛицо,
+	ПлановыеУдержанияРаботниковОрганизаций.ВидРасчета,
+	ПлановыеУдержанияРаботниковОрганизаций.ДокументОснование,
+	ПлановыеУдержанияРаботниковОрганизаций.Размер,
+	ПлановыеУдержанияРаботниковОрганизаций.СпособОтраженияВБухучете,
+	ПлановыеУдержанияРаботниковОрганизаций.Действие,
+	ПлановыеУдержанияРаботниковОрганизаций.ПериодЗавершения,
+	ПлановыеУдержанияРаботниковОрганизаций.РазмерЗавершения,
+	ПлановыеУдержанияРаботниковОрганизаций.СпособОтраженияВБухучетеЗавершения,
+	ПлановыеУдержанияРаботниковОрганизаций.ДействиеЗавершения,
+	ПлановыеУдержанияРаботниковОрганизаций.ОбособленноеПодразделение
+ИЗ
+	РегистрСведений.ПлановыеУдержанияРаботниковОрганизаций КАК ПлановыеУдержанияРаботниковОрганизаций
+ГДЕ
+	ПлановыеУдержанияРаботниковОрганизаций.Размер &lt;&gt; 0
+	И ПлановыеУдержанияРаботниковОрганизаций.ФизЛицо = &amp;ФизЛицо
+	И ПлановыеУдержанияРаботниковОрганизаций.Организация = &amp;Организация</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Период</dcssch:dataPath>
+					<dcssch:field>Период</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ФизЛицо</dcssch:dataPath>
+					<dcssch:field>ФизЛицо</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Регистратор</dcssch:dataPath>
+					<dcssch:field>Регистратор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДокументОснование</dcssch:dataPath>
+					<dcssch:field>ДокументОснование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерСтроки</dcssch:dataPath>
+					<dcssch:field>НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидРасчета</dcssch:dataPath>
+					<dcssch:field>ВидРасчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размер</dcssch:dataPath>
+					<dcssch:field>Размер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Активность</dcssch:dataPath>
+					<dcssch:field>Активность</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СпособОтраженияВБухучете</dcssch:dataPath>
+					<dcssch:field>СпособОтраженияВБухучете</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Действие</dcssch:dataPath>
+					<dcssch:field>Действие</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОбособленноеПодразделение</dcssch:dataPath>
+					<dcssch:field>ОбособленноеПодразделение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПериодЗавершения</dcssch:dataPath>
+					<dcssch:field>ПериодЗавершения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РазмерЗавершения</dcssch:dataPath>
+					<dcssch:field>РазмерЗавершения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СпособОтраженияВБухучетеЗавершения</dcssch:dataPath>
+					<dcssch:field>СпособОтраженияВБухучетеЗавершения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДействиеЗавершения</dcssch:dataPath>
+					<dcssch:field>ДействиеЗавершения</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>Организация</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ФизЛицо</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Физ лицо</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<MainTable>InformationRegister.ПлановыеУдержанияРаботниковОрганизаций</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНаименованиеКод" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование и код</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНаименованиеКодРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
+						<InputField name="Наименование" id="4">
+							<DataPath>Объект.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<InputField name="Код" id="1">
+							<DataPath>Объект.Code</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Эквайрер" id="7">
+					<DataPath>Объект.Эквайрер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЭквайрерКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ЭквайрерРасширеннаяПодсказка" id="9"/>
+					<Events>
+						<Event name="OnChange">ЭквайрерПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДоговорВзаиморасчетов" id="10">
+					<DataPath>Объект.ДоговорВзаиморасчетов</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДоговорВзаиморасчетовКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДоговорВзаиморасчетовРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<UsualGroup name="ГруппаОрганизация" id="49">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОрганизацияРасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<LabelField name="ДоговорВзаиморасчетовОрганизация" id="55">
+							<DataPath>Объект.ДоговорВзаиморасчетов.Организация</DataPath>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ДоговорВзаиморасчетовОрганизацияКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="ДоговорВзаиморасчетовОрганизацияРасширеннаяПодсказка" id="57"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<CheckBoxField name="ИспользоватьБезПодключенияОборудования" id="60">
+					<DataPath>Объект.ИспользоватьБезПодключенияОборудования</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать ЭТ без подключения к системе</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьБезПодключенияОборудованияКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="ИспользоватьБезПодключенияОборудованияРасширеннаяПодсказка" id="62"/>
+					<Events>
+						<Event name="OnChange">ИспользоватьБезПодключенияОборудованияПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ПодключаемоеОборудование" id="63">
+					<DataPath>Объект.ПодключаемоеОборудование</DataPath>
+					<ContextMenu name="ПодключаемоеОборудованиеКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ПодключаемоеОборудованиеРасширеннаяПодсказка" id="65"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаТарифыЗаРасчетноеОбслуживание" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тарифы за расчетное обслуживание</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаТарифыЗаРасчетноеОбслуживаниеРасширеннаяПодсказка" id="54"/>
+			<ChildItems>
+				<Table name="ТарифыЗаРасчетноеОбслуживание" id="13">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.ТарифыЗаРасчетноеОбслуживание</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеКонтекстноеМеню" id="14"/>
+					<AutoCommandBar name="ТарифыЗаРасчетноеОбслуживаниеКоманднаяПанель" id="15"/>
+					<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеРасширеннаяПодсказка" id="16"/>
+					<SearchStringAddition name="ТарифыЗаРасчетноеОбслуживаниеСтрокаПоиска" id="17">
+						<AdditionSource>
+							<Item>ТарифыЗаРасчетноеОбслуживание</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеСтрокаПоискаКонтекстноеМеню" id="20"/>
+						<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеСтрокаПоискаРасширеннаяПодсказка" id="21"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТарифыЗаРасчетноеОбслуживаниеСостояниеПросмотра" id="22">
+						<AdditionSource>
+							<Item>ТарифыЗаРасчетноеОбслуживание</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеСостояниеПросмотраКонтекстноеМеню" id="25"/>
+						<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТарифыЗаРасчетноеОбслуживаниеУправлениеПоиском" id="27">
+						<AdditionSource>
+							<Item>ТарифыЗаРасчетноеОбслуживание</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеУправлениеПоискомКонтекстноеМеню" id="30"/>
+						<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ТарифыЗаРасчетноеОбслуживаниеНомерСтроки" id="32">
+							<DataPath>Объект.ТарифыЗаРасчетноеОбслуживание.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеНомерСтрокиКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеНомерСтрокиРасширеннаяПодсказка" id="34"/>
+						</LabelField>
+						<InputField name="ТарифыЗаРасчетноеОбслуживаниеВидОплаты" id="35">
+							<DataPath>Объект.ТарифыЗаРасчетноеОбслуживание.ВидОплаты</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеВидОплатыКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеВидОплатыРасширеннаяПодсказка" id="37"/>
+						</InputField>
+						<InputField name="ТарифыЗаРасчетноеОбслуживаниеПроцентТорговойУступки" id="38">
+							<DataPath>Объект.ТарифыЗаРасчетноеОбслуживание.ПроцентТорговойУступки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТарифыЗаРасчетноеОбслуживаниеПроцентТорговойУступкиКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ТарифыЗаРасчетноеОбслуживаниеПроцентТорговойУступкиРасширеннаяПодсказка" id="40"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ДоговорыЭквайринга</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:5da1a58f-4d46-4586-9f71-63a8a18dbbf5</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:cacebd45-e45a-4309-8c22-8179d3d3c89d</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:c4cdf1e0-3ba4-44ed-a69b-e548eedca4dd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:58c9e918-9e14-4dbf-825e-bd811a766b89</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:e3c0ddad-cab7-4082-8723-0e9ab0623268</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ИсторияИзменений</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

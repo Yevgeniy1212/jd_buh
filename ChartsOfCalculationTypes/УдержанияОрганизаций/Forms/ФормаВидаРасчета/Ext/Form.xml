@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНаименованиеКод" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНаименованиеКодРасширеннаяПодсказка" id="43"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СпособРасчета" id="7">
+			<DataPath>Объект.СпособРасчета</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СпособРасчетаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СпособРасчетаРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">СпособРасчетаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Pages name="Страницы" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<Page name="ГруппаРасчеты" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчеты</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаРасчетыРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройкиРасчета" id="46">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки расчета</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаНастройкиРасчетаРасширеннаяПодсказка" id="47"/>
+							<ChildItems>
+								<CheckBoxField name="ВычитатьИзБазыИПН" id="13">
+									<DataPath>Объект.ВычитатьИзБазыИПН</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВычитатьИзБазыИПНКонтекстноеМеню" id="14"/>
+									<ExtendedTooltip name="ВычитатьИзБазыИПНРасширеннаяПодсказка" id="15"/>
+								</CheckBoxField>
+								<LabelDecoration name="ДекорацияИПН" id="48">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Если флажок установлен, то при расчете базовая сумма начислений, с которой производится удержание, будет уменьшена на величину индивидуального подоходного налога за расчетный месяц.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияИПНКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ДекорацияИПНРасширеннаяПодсказка" id="50"/>
+								</LabelDecoration>
+								<CheckBoxField name="ВычитатьИзБазыОПВ" id="16">
+									<DataPath>Объект.ВычитатьИзБазыОПВ</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВычитатьИзБазыОПВКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ВычитатьИзБазыОПВРасширеннаяПодсказка" id="18"/>
+								</CheckBoxField>
+								<LabelDecoration name="ДекорацияОПВ" id="51">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Если флажок установлен, то при расчете базовая сумма начислений, с которой производится удержание, будет уменьшена на величину обязательных пенсионных взносов за расчетный месяц.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОПВКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ДекорацияОПВРасширеннаяПодсказка" id="53"/>
+								</LabelDecoration>
+								<CheckBoxField name="ВычитатьИзБазыВОСМС" id="116">
+									<DataPath>Объект.ВычитатьИзБазыВОСМС</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВычитатьИзБазыВОСМСКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="ВычитатьИзБазыВОСМСРасширеннаяПодсказка" id="118"/>
+								</CheckBoxField>
+								<LabelDecoration name="ДекорацияВОСМС" id="119">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Если флажок установлен, то при расчете базовая сумма начислений, с которой производится удержание, будет уменьшена на величину взносов ОСМС за расчетный месяц.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияВОСМСКонтекстноеМеню" id="120"/>
+									<ExtendedTooltip name="ДекорацияВОСМСРасширеннаяПодсказка" id="121"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаУчет" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаУчетРасширеннаяПодсказка" id="55"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаРегламентированныйУчет" id="56">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Регламентированный учет</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаРегламентированныйУчетРасширеннаяПодсказка" id="57"/>
+							<ChildItems>
+								<InputField name="СпособОтраженияВБухучете" id="10">
+									<DataPath>Объект.СпособОтраженияВБухучете</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="СпособОтраженияВБухучетеКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="СпособОтраженияВБухучетеРасширеннаяПодсказка" id="12"/>
+									<Events>
+										<Event name="OnChange">СпособОтраженияВБухучетеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelField name="РасшифровкаОтражениеВБухучете" id="58">
+									<DataPath>РасшифровкаОтражениеВБухучете</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<VerticalAlign>Top</VerticalAlign>
+									<VerticalStretch>true</VerticalStretch>
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<ContextMenu name="РасшифровкаОтражениеВБухучетеКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="РасшифровкаОтражениеВБухучетеРасширеннаяПодсказка" id="60"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтображениеВОтчетах" id="61">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отображение в отчетах</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаОтображениеВОтчетахРасширеннаяПодсказка" id="62"/>
+							<ChildItems>
+								<CheckBoxField name="ОбъединятьВРасчетномЛистке" id="19">
+									<DataPath>Объект.ОбъединятьВРасчетномЛистке</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОбъединятьВРасчетномЛисткеКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ОбъединятьВРасчетномЛисткеРасширеннаяПодсказка" id="21"/>
+								</CheckBoxField>
+								<LabelDecoration name="ДекорацияОбъединятьВРасчетномЛистке" id="63">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>true</VerticalStretch>
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Если флажок установлен, то в расчетном листке вид удержания будет показан всегда одной общей суммой, даже если в течение месяца с одного и того же работника его удерживали несколько раз.</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Top</VerticalAlign>
+									<ContextMenu name="ДекорацияОбъединятьВРасчетномЛисткеКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="ДекорацияОбъединятьВРасчетномЛисткеРасширеннаяПодсказка" id="65"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаШкалаСтавок" id="66">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шкала ставок</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаШкалаСтавокРасширеннаяПодсказка" id="67"/>
+					<ChildItems>
+						<Table name="ШкалаСтавок" id="68">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ШкалаСтавок</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ШкалаСтавокКонтекстноеМеню" id="69"/>
+							<AutoCommandBar name="ШкалаСтавокКоманднаяПанель" id="70"/>
+							<ExtendedTooltip name="ШкалаСтавокРасширеннаяПодсказка" id="71"/>
+							<SearchStringAddition name="ШкалаСтавокСтрокаПоиска" id="98">
+								<AdditionSource>
+									<Item>ШкалаСтавок</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ШкалаСтавокСтрокаПоискаКонтекстноеМеню" id="99"/>
+								<ExtendedTooltip name="ШкалаСтавокСтрокаПоискаРасширеннаяПодсказка" id="100"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ШкалаСтавокСостояниеПросмотра" id="101">
+								<AdditionSource>
+									<Item>ШкалаСтавок</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ШкалаСтавокСостояниеПросмотраКонтекстноеМеню" id="102"/>
+								<ExtendedTooltip name="ШкалаСтавокСостояниеПросмотраРасширеннаяПодсказка" id="103"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ШкалаСтавокУправлениеПоиском" id="104">
+								<AdditionSource>
+									<Item>ШкалаСтавок</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ШкалаСтавокУправлениеПоискомКонтекстноеМеню" id="105"/>
+								<ExtendedTooltip name="ШкалаСтавокУправлениеПоискомРасширеннаяПодсказка" id="106"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">ШкалаСтавокПриОкончанииРедактирования</Event>
+								<Event name="BeforeEditEnd">ШкалаСтавокПередОкончаниемРедактирования</Event>
+								<Event name="OnStartEdit">ШкалаСтавокПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ШкалаСтавокПериод" id="72">
+									<DataPath>ШкалаСтавок.Period</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокПериодКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ШкалаСтавокПериодРасширеннаяПодсказка" id="74"/>
+								</InputField>
+								<InputField name="ШкалаСтавокНомерСтрокиШкалы" id="78">
+									<DataPath>ШкалаСтавок.НомерСтрокиШкалы</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокНомерСтрокиШкалыКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="ШкалаСтавокНомерСтрокиШкалыРасширеннаяПодсказка" id="80"/>
+								</InputField>
+								<InputField name="ШкалаСтавокНижнийПредел" id="81">
+									<DataPath>ШкалаСтавок.НижнийПредел</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокНижнийПределКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ШкалаСтавокНижнийПределРасширеннаяПодсказка" id="83"/>
+								</InputField>
+								<InputField name="ШкалаСтавокВерхнийПредел" id="84">
+									<DataPath>ШкалаСтавок.ВерхнийПредел</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокВерхнийПределКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ШкалаСтавокВерхнийПределРасширеннаяПодсказка" id="86"/>
+								</InputField>
+								<InputField name="ШкалаСтавокВеличина" id="87">
+									<DataPath>ШкалаСтавок.Величина</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокВеличинаКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="ШкалаСтавокВеличинаРасширеннаяПодсказка" id="89"/>
+								</InputField>
+								<InputField name="ШкалаСтавокМинСумма" id="90">
+									<DataPath>ШкалаСтавок.МинСумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокМинСуммаКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="ШкалаСтавокМинСуммаРасширеннаяПодсказка" id="92"/>
+								</InputField>
+								<InputField name="ШкалаСтавокВидРасчета" id="95">
+									<DataPath>ШкалаСтавок.ВидРасчета</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ШкалаСтавокВидРасчетаКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="ШкалаСтавокВидРасчетаРасширеннаяПодсказка" id="97"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаПрочее" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прочее</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<Table name="БазовыеВидыРасчета" id="26">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.BaseCalculationTypes</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="БазовыеВидыРасчетаКонтекстноеМеню" id="27"/>
+							<AutoCommandBar name="БазовыеВидыРасчетаКоманднаяПанель" id="28">
+								<ChildItems>
+									<Button name="БазовыеВидыРасчетаПодбор" id="93">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Подбор</CommandName>
+										<ExtendedTooltip name="БазовыеВидыРасчетаПодборРасширеннаяПодсказка" id="94"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="БазовыеВидыРасчетаРасширеннаяПодсказка" id="29"/>
+							<SearchStringAddition name="БазовыеВидыРасчетаСтрокаПоиска" id="107">
+								<AdditionSource>
+									<Item>БазовыеВидыРасчета</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="БазовыеВидыРасчетаСтрокаПоискаКонтекстноеМеню" id="108"/>
+								<ExtendedTooltip name="БазовыеВидыРасчетаСтрокаПоискаРасширеннаяПодсказка" id="109"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="БазовыеВидыРасчетаСостояниеПросмотра" id="110">
+								<AdditionSource>
+									<Item>БазовыеВидыРасчета</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="БазовыеВидыРасчетаСостояниеПросмотраКонтекстноеМеню" id="111"/>
+								<ExtendedTooltip name="БазовыеВидыРасчетаСостояниеПросмотраРасширеннаяПодсказка" id="112"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="БазовыеВидыРасчетаУправлениеПоиском" id="113">
+								<AdditionSource>
+									<Item>БазовыеВидыРасчета</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="БазовыеВидыРасчетаУправлениеПоискомКонтекстноеМеню" id="114"/>
+								<ExtendedTooltip name="БазовыеВидыРасчетаУправлениеПоискомРасширеннаяПодсказка" id="115"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="БазовыеВидыРасчетаВидРасчета" id="30">
+									<DataPath>Объект.BaseCalculationTypes.CalculationType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="БазовыеВидыРасчетаВидРасчетаКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="БазовыеВидыРасчетаВидРасчетаРасширеннаяПодсказка" id="32"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ChartOfCalculationTypesObject.УдержанияОрганизаций</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="РасшифровкаОтражениеВБухучете" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка отражение в бухучете</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ШкалаСтавок" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шкала ставок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordSet.ШкалаСтавокУдержаний</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Подбор</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:c4cdf1e0-3ba4-44ed-a69b-e548eedca4dd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:58c9e918-9e14-4dbf-825e-bd811a766b89</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:e3c0ddad-cab7-4082-8723-0e9ab0623268</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:20d655a7-788c-48bc-83ae-25003106bedb</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

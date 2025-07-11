@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНаименованиеКод" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНаименованиеКодРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="НазначениеСвойства" id="10">
+			<DataPath>Объект.НазначениеСвойства</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НазначениеСвойстваКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="НазначениеСвойстваРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">НазначениеСвойстваПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТипЗначения" id="7">
+			<DataPath>Объект.ValueType</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТипЗначенияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТипЗначенияРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ТипЗначенияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Pages name="ГруппаТаблицы" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаТаблицыРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Page name="СтраницаНазначенияСвойств" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назначения свойств</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНазначенияСвойствРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<Table name="НазначенияСвойств" id="74">
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>НазначенияСвойств</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НазначенияСвойствКонтекстноеМеню" id="75"/>
+							<AutoCommandBar name="НазначенияСвойствКоманднаяПанель" id="76"/>
+							<ExtendedTooltip name="НазначенияСвойствРасширеннаяПодсказка" id="77"/>
+							<SearchStringAddition name="НазначенияСвойствСтрокаПоиска" id="78">
+								<AdditionSource>
+									<Item>НазначенияСвойств</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НазначенияСвойствСтрокаПоискаКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="НазначенияСвойствСтрокаПоискаРасширеннаяПодсказка" id="82"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НазначенияСвойствСостояниеПросмотра" id="83">
+								<AdditionSource>
+									<Item>НазначенияСвойств</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НазначенияСвойствСостояниеПросмотраКонтекстноеМеню" id="86"/>
+								<ExtendedTooltip name="НазначенияСвойствСостояниеПросмотраРасширеннаяПодсказка" id="87"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НазначенияСвойствУправлениеПоиском" id="88">
+								<AdditionSource>
+									<Item>НазначенияСвойств</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НазначенияСвойствУправлениеПоискомКонтекстноеМеню" id="91"/>
+								<ExtendedTooltip name="НазначенияСвойствУправлениеПоискомРасширеннаяПодсказка" id="92"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">НазначенияСвойствПриНачалеРедактирования</Event>
+								<Event name="OnChange">НазначенияСвойствПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="НазначенияСвойствОбъект" id="93">
+									<DataPath>НазначенияСвойств.Объект</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НазначенияСвойствОбъектКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="НазначенияСвойствОбъектРасширеннаяПодсказка" id="95"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<LabelField name="ТекстНазначениеСвойства" id="71">
+							<DataPath>ТекстНазначениеСвойства</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+							<ContextMenu name="ТекстНазначениеСвойстваКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ТекстНазначениеСвойстваРасширеннаяПодсказка" id="73"/>
+						</LabelField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЗначенияСвойств" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значения свойств</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЗначенияСвойствРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<Table name="ЗначенияСвойств" id="46">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЗначенияСвойств</DataPath>
+							<RowPictureDataPath>ЗначенияСвойств.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ЗначенияСвойствКонтекстноеМеню" id="47"/>
+							<AutoCommandBar name="ЗначенияСвойствКоманднаяПанель" id="48"/>
+							<ExtendedTooltip name="ЗначенияСвойствРасширеннаяПодсказка" id="49"/>
+							<SearchStringAddition name="ЗначенияСвойствСтрокаПоиска" id="50">
+								<AdditionSource>
+									<Item>ЗначенияСвойств</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗначенияСвойствСтрокаПоискаКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="ЗначенияСвойствСтрокаПоискаРасширеннаяПодсказка" id="54"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗначенияСвойствСостояниеПросмотра" id="55">
+								<AdditionSource>
+									<Item>ЗначенияСвойств</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗначенияСвойствСостояниеПросмотраКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="ЗначенияСвойствСостояниеПросмотраРасширеннаяПодсказка" id="59"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗначенияСвойствУправлениеПоиском" id="60">
+								<AdditionSource>
+									<Item>ЗначенияСвойств</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗначенияСвойствУправлениеПоискомКонтекстноеМеню" id="63"/>
+								<ExtendedTooltip name="ЗначенияСвойствУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">ЗначенияСвойствПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ЗначенияСвойствКод" id="68">
+									<DataPath>ЗначенияСвойств.Code</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ContextMenu name="ЗначенияСвойствКодКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ЗначенияСвойствКодРасширеннаяПодсказка" id="70"/>
+								</LabelField>
+								<LabelField name="ЗначенияСвойствНаименование" id="65">
+									<DataPath>ЗначенияСвойств.Description</DataPath>
+									<ContextMenu name="ЗначенияСвойствНаименованиеКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="ЗначенияСвойствНаименованиеРасширеннаяПодсказка" id="67"/>
+								</LabelField>
+								<LabelField name="ЗначенияСвойствСсылка" id="96">
+									<DataPath>ЗначенияСвойств.Ref</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ContextMenu name="ЗначенияСвойствСсылкаКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="ЗначенияСвойствСсылкаРасширеннаяПодсказка" id="98"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ChartOfCharacteristicTypesObject.УдалитьСвойстваОбъектов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ЗначенияСвойств" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значения свойств</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ЗначенияСвойств.Owner</Field>
+				<Field>ЗначенияСвойств.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.УдалитьЗначенияСвойствОбъектов</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТекстНазначениеСвойства" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначение свойства</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НазначенияСвойств" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначения свойств</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordSet.УдалитьНазначенияСвойствОбъектов</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:c4cdf1e0-3ba4-44ed-a69b-e548eedca4dd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:58c9e918-9e14-4dbf-825e-bd811a766b89</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:e3c0ddad-cab7-4082-8723-0e9ab0623268</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>
