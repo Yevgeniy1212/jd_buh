@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Width>90</Width>
+	<Height>25</Height>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПечать" id="37">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Печать</CommandName>
+				<ExtendedTooltip name="ФормаПечатьРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ОССгенерироватьШтрихкода" id="51">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.СформироватьШтрихкода</CommandName>
+				<ExtendedTooltip name="ОССгенерироватьШтрихкодаРасширеннаяПодсказка" id="52"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="54"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДатаСведенийОрганизация" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата сведений и организация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата сведений организация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДатаСведенийОрганизацияРасширеннаяПодсказка" id="46"/>
+			<ChildItems>
+				<InputField name="Организация" id="32">
+					<DataPath>Объект.Организация</DataPath>
+					<WarningOnEdit>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Табличная часть будет очищена</v8:content>
+						</v8:item>
+					</WarningOnEdit>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>28</MaxWidth>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаСведений" id="42">
+					<DataPath>Объект.ДатаСведений</DataPath>
+					<Width>10</Width>
+					<ContextMenu name="ДатаСведенийКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="ДатаСведенийРасширеннаяПодсказка" id="44"/>
+					<Events>
+						<Event name="OnChange">ДатаСведенийПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаШаблонУсловиеФормирования" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон и условие формирования</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШаблонУсловиеФормированияРасширеннаяПодсказка" id="59"/>
+			<ChildItems>
+				<InputField name="Шаблон" id="1">
+					<DataPath>Объект.Шаблон</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шаблон штрихкода</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>28</MaxWidth>
+					<ChoiceParameters>
+						<app:item name="Отбор.ТипШаблона">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ТипыШаблоновШтрихкодов.EnumValue.ОсновныеСредства</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="ШаблонКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ШаблонРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<CheckBoxField name="ФормироватьШрихкодТолькоДляОССПустымШтрихкодом" id="55">
+					<DataPath>ФормироватьШрихкодТолькоДляОССПустымШтрихкодом</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФормироватьШрихкодТолькоДляОССПустымШтрихкодомКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ФормироватьШрихкодТолькоДляОССПустымШтрихкодомРасширеннаяПодсказка" id="57"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ОС" id="4">
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ОС</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ОСКонтекстноеМеню" id="5"/>
+			<AutoCommandBar name="ОСКоманднаяПанель" id="6">
+				<ChildItems>
+					<Button name="ОСУстановитьФлажки" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.УстановитьФлажки</CommandName>
+						<ExtendedTooltip name="ОСУстановитьФлажкиРасширеннаяПодсказка" id="48"/>
+					</Button>
+					<Button name="ОССнятьФлажки" id="49">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СнятьФлажки</CommandName>
+						<ExtendedTooltip name="ОССнятьФлажкиРасширеннаяПодсказка" id="50"/>
+					</Button>
+					<Button name="ПодборОС" id="35">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПодборОС</CommandName>
+						<ExtendedTooltip name="ПодборОСРасширеннаяПодсказка" id="36"/>
+					</Button>
+					<Popup name="ОСГруппаЗаполнить" id="60">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ОСГруппа заполнить</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ОСГруппаЗаполнитьРасширеннаяПодсказка" id="61"/>
+						<ChildItems>
+							<Button name="ОСЗаполнитьОсновнымиСредствамиБезШтрихкода" id="62">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ЗаполнитьОсновнымиСредствамиБезШтрихкода</CommandName>
+								<ExtendedTooltip name="ОСЗаполнитьОсновнымиСредствамиБезШтрихкодаРасширеннаяПодсказка" id="63"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ОСРасширеннаяПодсказка" id="7"/>
+			<SearchStringAddition name="ОССтрокаПоиска" id="8">
+				<AdditionSource>
+					<Item>ОС</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОССтрокаПоискаКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ОССтрокаПоискаРасширеннаяПодсказка" id="10"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ОССостояниеПросмотра" id="11">
+				<AdditionSource>
+					<Item>ОС</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ОССостояниеПросмотраКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ОССостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ОСУправлениеПоиском" id="14">
+				<AdditionSource>
+					<Item>ОС</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ОСУправлениеПоискомКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ОСУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ОСВыбран" id="39">
+					<DataPath>Объект.ОС.Выбран</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОСВыбранКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ОСВыбранРасширеннаяПодсказка" id="41"/>
+				</CheckBoxField>
+				<LabelField name="ОсновныеСредстваНомерСтроки" id="17">
+					<DataPath>Объект.ОС.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОсновныеСредстваНомерСтрокиКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ОсновныеСредстваНомерСтрокиРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<InputField name="ОсновныеСредстваИнвентарныйНомер" id="20">
+					<DataPath>Объект.ОС.ИнвентарныйНомер</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>15</Width>
+					<ContextMenu name="ОсновныеСредстваИнвентарныйНомерКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ОсновныеСредстваИнвентарныйНомерРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ОсновныеСредстваОсновноеСредство" id="23">
+					<DataPath>Объект.ОС.ОсновноеСредство</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>16</MaxWidth>
+					<ContextMenu name="ОсновныеСредстваОсновноеСредствоКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ОсновныеСредстваОсновноеСредствоРасширеннаяПодсказка" id="25"/>
+					<Events>
+						<Event name="OnChange">ОсновныеСредстваОсновноеСредствоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОсновныеСредстваШтрихкод" id="26">
+					<DataPath>Объект.ОС.Штрихкод</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОсновныеСредстваШтрихкодКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ОсновныеСредстваШтрихкодРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ОсновныеСредстваШаблон" id="29">
+					<DataPath>Объект.ОС.Шаблон</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>16</MaxWidth>
+					<ContextMenu name="ОсновныеСредстваШаблонКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ОсновныеСредстваШаблонРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПечатьШтрихкодов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.ОС">
+					<Column name="Выбран" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбран</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПоддерживаемыеТипыПодключаемогоОборудования" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поддерживаемые типы подключаемого обрудования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьПодключаемоеОборудование" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать подключаемое оборудование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормироватьШрихкодТолькоДляОССПустымШтрихкодом" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формировать штрихкод только для ОС с пустым штрихкодом</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПодборОС" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПодборОС</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Печать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Печать</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлажки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьФлажки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлажки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СформироватьШтрихкода" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать штрихкоды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать штрихкоды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Штрихкод</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СформироватьШтрихкода</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьОсновнымиСредствамиБезШтрихкода" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основными средствами с пустым штрихкодом</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить основными средствами которым не назначен штрихкод</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьОсновнымиСредствамиБезШтрихкода</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

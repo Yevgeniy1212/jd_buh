@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="Действия" id="60">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Действия</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ДействияРасширеннаяПодсказка" id="61"/>
+				<ChildItems>
+					<Button name="ДействияОбновить" id="62">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Обновить</CommandName>
+						<ExtendedTooltip name="ДействияОбновитьРасширеннаяПодсказка" id="63"/>
+					</Button>
+					<Button name="ДействияСоздать" id="66">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Создать</CommandName>
+						<ExtendedTooltip name="ДействияСоздатьРасширеннаяПодсказка" id="67"/>
+					</Button>
+					<Popup name="ДействиеПроведение" id="64">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Проведение</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ДействиеПроведениеРасширеннаяПодсказка" id="65"/>
+						<ChildItems>
+							<Button name="ДействияПровести" id="70">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Провести</CommandName>
+								<ExtendedTooltip name="ДействияПровестиРасширеннаяПодсказка" id="71"/>
+							</Button>
+							<Button name="ДействияОтменаПроведения" id="72">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОтменаПроведения</CommandName>
+								<ExtendedTooltip name="ДействияОтменаПроведенияРасширеннаяПодсказка" id="73"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="ДействияЗакрыть" id="68">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Close</CommandName>
+						<ExtendedTooltip name="ДействияЗакрытьРасширеннаяПодсказка" id="69"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Button name="ФормаСоздать" id="41">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Создать</CommandName>
+				<ExtendedTooltip name="ФормаСоздатьРасширеннаяПодсказка" id="42"/>
+			</Button>
+			<Popup name="Проведение" id="43">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проведение</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПроведениеРасширеннаяПодсказка" id="44"/>
+				<ChildItems>
+					<Button name="ФормаПровести" id="45">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Провести</CommandName>
+						<ExtendedTooltip name="ФормаПровестиРасширеннаяПодсказка" id="46"/>
+					</Button>
+					<Button name="ФормаОтменаПроведения" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтменаПроведения</CommandName>
+						<ExtendedTooltip name="ФормаОтменаПроведенияРасширеннаяПодсказка" id="48"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛевая" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (левая)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛеваяРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="СтруктурноеПодразделениеОрганизация" id="10">
+							<DataPath>СтруктурноеПодразделениеОрганизация</DataPath>
+							<ContextMenu name="СтруктурноеПодразделениеОрганизацияКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="СтруктурноеПодразделениеОрганизацияРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="OnChange">СтруктурноеПодразделениеОрганизацияПриИзменении</Event>
+								<Event name="StartChoice">СтруктурноеПодразделениеОрганизацияНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПравая" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (правая)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПраваяРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<InputField name="ДатаФормирования" id="7">
+							<DataPath>Объект.ДатаФормирования</DataPath>
+							<ContextMenu name="ДатаФормированияКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ДатаФормированияРасширеннаяПодсказка" id="9"/>
+							<Events>
+								<Event name="OnChange">ДатаФормированияПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ОтчетПроизводстваЗаСмену" id="13">
+			<DataPath>Объект.ОтчетПроизводстваЗаСмену</DataPath>
+			<ContextMenu name="ОтчетПроизводстваЗаСменуКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ОтчетПроизводстваЗаСменуРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="OnChange">ОтчетПроизводстваЗаСменуПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="ТребованияНакладные" id="16">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ТребованияНакладные</DataPath>
+			<RowPictureDataPath>Объект.ТребованияНакладные.ИндексКартинки</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТребованияНакладныеКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="ТребованияНакладныеКоманднаяПанель" id="18">
+				<ChildItems>
+					<Button name="ТребованияНакладныеУстановитьФлаги" id="49">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.УстановитьФлаги</CommandName>
+						<ExtendedTooltip name="ТребованияНакладныеУстановитьФлагиРасширеннаяПодсказка" id="50"/>
+					</Button>
+					<Button name="ТребованияНакладныеСнятьФлаги" id="51">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СнятьФлаги</CommandName>
+						<ExtendedTooltip name="ТребованияНакладныеСнятьФлагиРасширеннаяПодсказка" id="52"/>
+					</Button>
+					<Button name="ТребованияНакладныеИнвертировать" id="53">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Инвертировать</CommandName>
+						<ExtendedTooltip name="ТребованияНакладныеИнвертироватьРасширеннаяПодсказка" id="54"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТребованияНакладныеРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="ТребованияНакладныеСтрокаПоиска" id="74">
+				<AdditionSource>
+					<Item>ТребованияНакладные</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТребованияНакладныеСтрокаПоискаКонтекстноеМеню" id="75"/>
+				<ExtendedTooltip name="ТребованияНакладныеСтрокаПоискаРасширеннаяПодсказка" id="76"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТребованияНакладныеСостояниеПросмотра" id="77">
+				<AdditionSource>
+					<Item>ТребованияНакладные</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТребованияНакладныеСостояниеПросмотраКонтекстноеМеню" id="78"/>
+				<ExtendedTooltip name="ТребованияНакладныеСостояниеПросмотраРасширеннаяПодсказка" id="79"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТребованияНакладныеУправлениеПоиском" id="80">
+				<AdditionSource>
+					<Item>ТребованияНакладные</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТребованияНакладныеУправлениеПоискомКонтекстноеМеню" id="81"/>
+				<ExtendedTooltip name="ТребованияНакладныеУправлениеПоискомРасширеннаяПодсказка" id="82"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnStartEdit">ТребованияНакладныеПриНачалеРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="ТребованияНакладныеОтметка" id="23">
+					<DataPath>Объект.ТребованияНакладные.Отметка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТребованияНакладныеОтметкаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТребованияНакладныеОтметкаРасширеннаяПодсказка" id="25"/>
+				</CheckBoxField>
+				<InputField name="ТребованияНакладныеПродукция" id="26">
+					<DataPath>Объект.ТребованияНакладные.Продукция</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТребованияНакладныеПродукцияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТребованияНакладныеПродукцияРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ТребованияНакладныеКоличество" id="29">
+					<DataPath>Объект.ТребованияНакладные.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТребованияНакладныеКоличествоКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТребованияНакладныеКоличествоРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<ColumnGroup name="ГруппаТребованиеНакладная" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требование-накладная</v8:content>
+						</v8:item>
+					</Title>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ГруппаТребованиеНакладнаяРасширеннаяПодсказка" id="56"/>
+					<ChildItems>
+						<PictureField name="ТребованияНакладныеКартинка" id="57">
+							<DataPath>Объект.ТребованияНакладные.ИндексКартинки</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.СостояниеДокумента</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ТребованияНакладныеКартинкаКонтекстноеМеню" id="58"/>
+							<ExtendedTooltip name="ТребованияНакладныеКартинкаРасширеннаяПодсказка" id="59"/>
+						</PictureField>
+						<InputField name="ТребованияНакладныеТребованиеНакладная" id="35">
+							<DataPath>Объект.ТребованияНакладные.ТребованиеНакладная</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТребованияНакладныеТребованиеНакладнаяКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ТребованияНакладныеТребованиеНакладнаяРасширеннаяПодсказка" id="37"/>
+							<Events>
+								<Event name="OnChange">ТребованияНакладныеТребованиеНакладнаяПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="ТребованияНакладныеСпецификация" id="32">
+					<DataPath>Объект.ТребованияНакладные.Спецификация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТребованияНакладныеСпецификацияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТребованияНакладныеСпецификацияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ТребованияНакладныеСтатьяЗатрат" id="38">
+					<DataPath>Объект.ТребованияНакладные.СтатьяЗатрат</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТребованияНакладныеСтатьяЗатратКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТребованияНакладныеСтатьяЗатратРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ФормированиеТребованийНакладных</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.ТребованияНакладные">
+					<Column name="ИндексКартинки" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Индекс картинки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>2</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтруктурноеПодразделениеОрганизация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяОрганизация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяДатаФормирования" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая дата формирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееСтруктурноеПодразделение" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее структурное подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоддержкаРаботыСоСтруктурнымиПодразделениями" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поддержка работы со структурными подразделениями</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Создать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Создать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Провести" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Провести</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтменаПроведения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена проведения</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтменаПроведения</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьФлаги" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флаги</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлаги</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьФлаги" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флаги</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлаги</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Инвертировать" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвертировать</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ИнвертироватьФлажки</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Инвертировать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Обновить" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ОтчетПроизводстваЗаСмену">
+			<Type>
+				<v8:Type>cfg:DocumentRef.ОтчетПроизводстваЗаСмену</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="СтруктурноеПодразделение">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ЗаполнятьПриОткрытии">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

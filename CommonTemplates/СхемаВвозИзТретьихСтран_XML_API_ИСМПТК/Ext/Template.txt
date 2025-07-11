@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by MESMERiZE (MSM) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Home (Home) -->
+<!-- «В XSD-схеме версии 02 обеспечено согласно Приказу  ФНС РФ от 24.03.2016 № ММВ -7-15/155@  использование сокращенного наименования "СвЮЛНеУч" элемента "Сведения об иностранном лице, не состоящем на учете в налоговых органах"  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="https://stage.ismet.kz/" xmlns:tns="https://stage.ismet.kz/">
+	<xs:element name="file">
+		<xs:annotation>
+			<xs:documentation>Файл обмена</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="document">
+					<xs:annotation>
+						<xs:documentation>Уведомление о ввозе товаров, не яляющихся участниками ЕАЭС</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="mainInfo">
+								<xs:annotation>
+									<xs:documentation>Общая информация об Уведомлении</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="importerInfo">
+											<xs:annotation>
+												<xs:documentation>Сведения о покупателе (импортере) </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:extension base="УчастникТип">
+														<xs:attribute name="importerName" use="required">
+															<xs:annotation>
+																<xs:documentation>Наименование получателя (импортера)</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:minLength value="1"/>
+																	<xs:maxLength value="1000"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="importerCode" use="required">
+															<xs:annotation>
+																<xs:documentation>ИИН/БИН получателя (импортера)</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:length value="12"/>
+																	<xs:pattern value="[0-9]{12}"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="exportCountry">
+											<xs:annotation>
+												<xs:documentation>Страна экспорта</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="PR"/>
+													<xs:enumeration value="PS"/>
+													<xs:enumeration value="PT"/>
+													<xs:enumeration value="PW"/>
+													<xs:enumeration value="PY"/>
+													<xs:enumeration value="QA"/>
+													<xs:enumeration value="AD"/>
+													<xs:enumeration value="AE"/>
+													<xs:enumeration value="AF"/>
+													<xs:enumeration value="AG"/>
+													<xs:enumeration value="AI"/>
+													<xs:enumeration value="AL"/>
+													<xs:enumeration value="AM"/>
+													<xs:enumeration value="AN"/>
+													<xs:enumeration value="AO"/>
+													<xs:enumeration value="AQ"/>
+													<xs:enumeration value="AR"/>
+													<xs:enumeration value="AS"/>
+													<xs:enumeration value="AT"/>
+													<xs:enumeration value="RE"/>
+													<xs:enumeration value="AU"/>
+													<xs:enumeration value="AW"/>
+													<xs:enumeration value="AX"/>
+													<xs:enumeration value="AZ"/>
+													<xs:enumeration value="RO"/>
+													<xs:enumeration value="BA"/>
+													<xs:enumeration value="BB"/>
+													<xs:enumeration value="RS"/>
+													<xs:enumeration value="BD"/>
+													<xs:enumeration value="BE"/>
+													<xs:enumeration value="RU"/>
+													<xs:enumeration value="BF"/>
+													<xs:enumeration value="BG"/>
+													<xs:enumeration value="RW"/>
+													<xs:enumeration value="BH"/>
+													<xs:enumeration value="BI"/>
+													<xs:enumeration value="BJ"/>
+													<xs:enumeration value="BL"/>
+													<xs:enumeration value="BM"/>
+													<xs:enumeration value="BN"/>
+													<xs:enumeration value="BO"/>
+													<xs:enumeration value="SA"/>
+													<xs:enumeration value="BQ"/>
+													<xs:enumeration value="SB"/>
+													<xs:enumeration value="BR"/>
+													<xs:enumeration value="SC"/>
+													<xs:enumeration value="BS"/>
+													<xs:enumeration value="SD"/>
+													<xs:enumeration value="BT"/>
+													<xs:enumeration value="SE"/>
+													<xs:enumeration value="BV"/>
+													<xs:enumeration value="SG"/>
+													<xs:enumeration value="BW"/>
+													<xs:enumeration value="SH"/>
+													<xs:enumeration value="SI"/>
+													<xs:enumeration value="BY"/>
+													<xs:enumeration value="SJ"/>
+													<xs:enumeration value="BZ"/>
+													<xs:enumeration value="SK"/>
+													<xs:enumeration value="SL"/>
+													<xs:enumeration value="SM"/>
+													<xs:enumeration value="SN"/>
+													<xs:enumeration value="SO"/>
+													<xs:enumeration value="CA"/>
+													<xs:enumeration value="SR"/>
+													<xs:enumeration value="CC"/>
+													<xs:enumeration value="SS"/>
+													<xs:enumeration value="CD"/>
+													<xs:enumeration value="ST"/>
+													<xs:enumeration value="CF"/>
+													<xs:enumeration value="SV"/>
+													<xs:enumeration value="CG"/>
+													<xs:enumeration value="CH"/>
+													<xs:enumeration value="SX"/>
+													<xs:enumeration value="CI"/>
+													<xs:enumeration value="SY"/>
+													<xs:enumeration value="SZ"/>
+													<xs:enumeration value="CK"/>
+													<xs:enumeration value="CL"/>
+													<xs:enumeration value="CM"/>
+													<xs:enumeration value="CN"/>
+													<xs:enumeration value="CO"/>
+													<xs:enumeration value="CR"/>
+													<xs:enumeration value="TC"/>
+													<xs:enumeration value="TD"/>
+													<xs:enumeration value="CU"/>
+													<xs:enumeration value="TF"/>
+													<xs:enumeration value="CV"/>
+													<xs:enumeration value="TG"/>
+													<xs:enumeration value="CW"/>
+													<xs:enumeration value="TH"/>
+													<xs:enumeration value="CX"/>
+													<xs:enumeration value="CY"/>
+													<xs:enumeration value="TJ"/>
+													<xs:enumeration value="CZ"/>
+													<xs:enumeration value="TK"/>
+													<xs:enumeration value="TL"/>
+													<xs:enumeration value="TM"/>
+													<xs:enumeration value="TN"/>
+													<xs:enumeration value="TO"/>
+													<xs:enumeration value="TR"/>
+													<xs:enumeration value="TT"/>
+													<xs:enumeration value="DE"/>
+													<xs:enumeration value="TV"/>
+													<xs:enumeration value="TW"/>
+													<xs:enumeration value="DJ"/>
+													<xs:enumeration value="TZ"/>
+													<xs:enumeration value="DK"/>
+													<xs:enumeration value="DM"/>
+													<xs:enumeration value="DO"/>
+													<xs:enumeration value="UA"/>
+													<xs:enumeration value="UG"/>
+													<xs:enumeration value="DZ"/>
+													<xs:enumeration value="UM"/>
+													<xs:enumeration value="EC"/>
+													<xs:enumeration value="US"/>
+													<xs:enumeration value="EE"/>
+													<xs:enumeration value="EG"/>
+													<xs:enumeration value="EH"/>
+													<xs:enumeration value="UY"/>
+													<xs:enumeration value="UZ"/>
+													<xs:enumeration value="VA"/>
+													<xs:enumeration value="ER"/>
+													<xs:enumeration value="VC"/>
+													<xs:enumeration value="ES"/>
+													<xs:enumeration value="ET"/>
+													<xs:enumeration value="VE"/>
+													<xs:enumeration value="VG"/>
+													<xs:enumeration value="VI"/>
+													<xs:enumeration value="VN"/>
+													<xs:enumeration value="VU"/>
+													<xs:enumeration value="FI"/>
+													<xs:enumeration value="FJ"/>
+													<xs:enumeration value="FK"/>
+													<xs:enumeration value="FM"/>
+													<xs:enumeration value="FO"/>
+													<xs:enumeration value="FR"/>
+													<xs:enumeration value="WF"/>
+													<xs:enumeration value="GA"/>
+													<xs:enumeration value="GB"/>
+													<xs:enumeration value="WS"/>
+													<xs:enumeration value="GD"/>
+													<xs:enumeration value="GE"/>
+													<xs:enumeration value="GF"/>
+													<xs:enumeration value="GG"/>
+													<xs:enumeration value="GH"/>
+													<xs:enumeration value="GI"/>
+													<xs:enumeration value="GL"/>
+													<xs:enumeration value="GM"/>
+													<xs:enumeration value="GN"/>
+													<xs:enumeration value="GP"/>
+													<xs:enumeration value="GQ"/>
+													<xs:enumeration value="GR"/>
+													<xs:enumeration value="GS"/>
+													<xs:enumeration value="GT"/>
+													<xs:enumeration value="GU"/>
+													<xs:enumeration value="GW"/>
+													<xs:enumeration value="GY"/>
+													<xs:enumeration value="HK"/>
+													<xs:enumeration value="HM"/>
+													<xs:enumeration value="HN"/>
+													<xs:enumeration value="HR"/>
+													<xs:enumeration value="HT"/>
+													<xs:enumeration value="YE"/>
+													<xs:enumeration value="HU"/>
+													<xs:enumeration value="ID"/>
+													<xs:enumeration value="YT"/>
+													<xs:enumeration value="IE"/>
+													<xs:enumeration value="IL"/>
+													<xs:enumeration value="IM"/>
+													<xs:enumeration value="IN"/>
+													<xs:enumeration value="IO"/>
+													<xs:enumeration value="ZA"/>
+													<xs:enumeration value="IQ"/>
+													<xs:enumeration value="IR"/>
+													<xs:enumeration value="IS"/>
+													<xs:enumeration value="IT"/>
+													<xs:enumeration value="ZM"/>
+													<xs:enumeration value="JE"/>
+													<xs:enumeration value="ZW"/>
+													<xs:enumeration value="JM"/>
+													<xs:enumeration value="JO"/>
+													<xs:enumeration value="JP"/>
+													<xs:enumeration value="KE"/>
+													<xs:enumeration value="KG"/>
+													<xs:enumeration value="KH"/>
+													<xs:enumeration value="KI"/>
+													<xs:enumeration value="KM"/>
+													<xs:enumeration value="KN"/>
+													<xs:enumeration value="KP"/>
+													<xs:enumeration value="KR"/>
+													<xs:enumeration value="KW"/>
+													<xs:enumeration value="KY"/>
+													<xs:enumeration value="KZ"/>
+													<xs:enumeration value="LA"/>
+													<xs:enumeration value="LB"/>
+													<xs:enumeration value="LC"/>
+													<xs:enumeration value="LI"/>
+													<xs:enumeration value="LK"/>
+													<xs:enumeration value="LR"/>
+													<xs:enumeration value="LS"/>
+													<xs:enumeration value="LT"/>
+													<xs:enumeration value="LU"/>
+													<xs:enumeration value="LV"/>
+													<xs:enumeration value="LY"/>
+													<xs:enumeration value="MA"/>
+													<xs:enumeration value="MC"/>
+													<xs:enumeration value="MD"/>
+													<xs:enumeration value="ME"/>
+													<xs:enumeration value="MF"/>
+													<xs:enumeration value="MG"/>
+													<xs:enumeration value="MH"/>
+													<xs:enumeration value="MK"/>
+													<xs:enumeration value="ML"/>
+													<xs:enumeration value="MM"/>
+													<xs:enumeration value="MN"/>
+													<xs:enumeration value="MO"/>
+													<xs:enumeration value="MP"/>
+													<xs:enumeration value="MQ"/>
+													<xs:enumeration value="MR"/>
+													<xs:enumeration value="MS"/>
+													<xs:enumeration value="MT"/>
+													<xs:enumeration value="MU"/>
+													<xs:enumeration value="MV"/>
+													<xs:enumeration value="MW"/>
+													<xs:enumeration value="MX"/>
+													<xs:enumeration value="MY"/>
+													<xs:enumeration value="MZ"/>
+													<xs:enumeration value="NA"/>
+													<xs:enumeration value="NC"/>
+													<xs:enumeration value="NE"/>
+													<xs:enumeration value="NF"/>
+													<xs:enumeration value="NG"/>
+													<xs:enumeration value="NI"/>
+													<xs:enumeration value="NL"/>
+													<xs:enumeration value="NO"/>
+													<xs:enumeration value="NP"/>
+													<xs:enumeration value="NR"/>
+													<xs:enumeration value="NU"/>
+													<xs:enumeration value="NZ"/>
+													<xs:enumeration value="OM"/>
+													<xs:enumeration value="PA"/>
+													<xs:enumeration value="PE"/>
+													<xs:enumeration value="PF"/>
+													<xs:enumeration value="PG"/>
+													<xs:enumeration value="PH"/>
+													<xs:enumeration value="PK"/>
+													<xs:enumeration value="PL"/>
+													<xs:enumeration value="PM"/>
+													<xs:enumeration value="PN"/>
+													<xs:enumeration value="Евросоюз"/>
+													<xs:enumeration value="Разные"/>
+													<xs:enumeration value="Неизвестна"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="customDocument">
+											<xs:annotation>
+												<xs:documentation>Сведения о документе таможенного оформления</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="docType" use="required">
+													<xs:annotation>
+														<xs:documentation>Тип документа:
+DECLARATION -  Декларация на товары;
+STATEMENT- Заявление о выпуске товаров до подачи декларации на товары
+   </xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="DECLARATION"/>
+															<xs:enumeration value="STATEMENT"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="regNumber" type="xs:string" use="required"/>
+												<xs:attribute name="regDate" type="xs:date" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="customDecisionInfo">
+											<xs:annotation>
+												<xs:documentation>Сведения о решении таможенного органа</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="decisionCode" use="required">
+													<xs:annotation>
+														<xs:documentation>Код решения</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="10"/>
+															<xs:enumeration value="11"/>
+															<xs:enumeration value="12"/>
+															<xs:enumeration value="13"/>
+															<xs:enumeration value="14"/>
+															<xs:enumeration value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="decisionDateTime" type="xs:dateTime" use="required">
+													<xs:annotation>
+														<xs:documentation>Дата и время решения</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="customCode" use="required">
+													<xs:annotation>
+														<xs:documentation>Код таможенного органа</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="\d{5}"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="certificationInfo">
+											<xs:annotation>
+												<xs:documentation>Сведения о документе, подтверждающем соответствие товаров</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="docType" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>Тип документа, подтверждающего соответствие товара</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="docNumber" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>Номер документа, подтверждающего соответствие товара</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="docDate" type="xs:date" use="required">
+													<xs:annotation>
+														<xs:documentation>Дата документа, подтверждающего соответствие товара</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="originalDocInfo" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Бумажный первичный документ Уведомления</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="docNumber" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>Номер бумажного документа Уведомления</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="docDate" type="xs:date" use="required">
+													<xs:annotation>
+														<xs:documentation>Дата бумажного документа Уведомления</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="productItems">
+								<xs:annotation>
+									<xs:documentation>Сведения о кодах идентификации из декларации, и сведения о товарах, связанными с этии кодами </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="item" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Информация по каждому загружаемоу коду идентификации</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="product" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Списки товаров, определяемых по КИ, которые  были заявлены в таможенной декларации (iCodeFromDeclaration), и определяемых по КИГУ/КИТУ (т.е. по содержимому этих агрегатв указанных в том же поле iCodeFromDeclaration, если это значение Агрегат), также завленных в таможенной декларации.
+
+(будет выведен в разделе "Товары" Уведомления)</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="iCode" minOccurs="0" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>Код идентификации потребительских упаковок (level 0), связанных с текущем GTIN продукта, определенные ранее по содержимому агрегатов и потребительских КИ, завленных в таможенной Декларации</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string"/>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="tnved" use="required">
+																<xs:annotation>
+																	<xs:documentation>ТН ВЭД</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:pattern value="\d{10}"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="gtin" use="required">
+																<xs:annotation>
+																	<xs:documentation>Код товара (GTIN)</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:minLength value="8"/>
+																		<xs:maxLength value="14"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="originCountry" use="required">
+																<xs:annotation>
+																	<xs:documentation>Страна производства товара</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="PR"/>
+																		<xs:enumeration value="PS"/>
+																		<xs:enumeration value="PT"/>
+																		<xs:enumeration value="PW"/>
+																		<xs:enumeration value="PY"/>
+																		<xs:enumeration value="QA"/>
+																		<xs:enumeration value="AD"/>
+																		<xs:enumeration value="AE"/>
+																		<xs:enumeration value="AF"/>
+																		<xs:enumeration value="AG"/>
+																		<xs:enumeration value="AI"/>
+																		<xs:enumeration value="AL"/>
+																		<xs:enumeration value="AM"/>
+																		<xs:enumeration value="AN"/>
+																		<xs:enumeration value="AO"/>
+																		<xs:enumeration value="AQ"/>
+																		<xs:enumeration value="AR"/>
+																		<xs:enumeration value="AS"/>
+																		<xs:enumeration value="AT"/>
+																		<xs:enumeration value="RE"/>
+																		<xs:enumeration value="AU"/>
+																		<xs:enumeration value="AW"/>
+																		<xs:enumeration value="AX"/>
+																		<xs:enumeration value="AZ"/>
+																		<xs:enumeration value="RO"/>
+																		<xs:enumeration value="BA"/>
+																		<xs:enumeration value="BB"/>
+																		<xs:enumeration value="RS"/>
+																		<xs:enumeration value="BD"/>
+																		<xs:enumeration value="BE"/>
+																		<xs:enumeration value="RU"/>
+																		<xs:enumeration value="BF"/>
+																		<xs:enumeration value="BG"/>
+																		<xs:enumeration value="RW"/>
+																		<xs:enumeration value="BH"/>
+																		<xs:enumeration value="BI"/>
+																		<xs:enumeration value="BJ"/>
+																		<xs:enumeration value="BL"/>
+																		<xs:enumeration value="BM"/>
+																		<xs:enumeration value="BN"/>
+																		<xs:enumeration value="BO"/>
+																		<xs:enumeration value="SA"/>
+																		<xs:enumeration value="BQ"/>
+																		<xs:enumeration value="SB"/>
+																		<xs:enumeration value="BR"/>
+																		<xs:enumeration value="SC"/>
+																		<xs:enumeration value="BS"/>
+																		<xs:enumeration value="SD"/>
+																		<xs:enumeration value="BT"/>
+																		<xs:enumeration value="SE"/>
+																		<xs:enumeration value="BV"/>
+																		<xs:enumeration value="SG"/>
+																		<xs:enumeration value="BW"/>
+																		<xs:enumeration value="SH"/>
+																		<xs:enumeration value="SI"/>
+																		<xs:enumeration value="BY"/>
+																		<xs:enumeration value="SJ"/>
+																		<xs:enumeration value="BZ"/>
+																		<xs:enumeration value="SK"/>
+																		<xs:enumeration value="SL"/>
+																		<xs:enumeration value="SM"/>
+																		<xs:enumeration value="SN"/>
+																		<xs:enumeration value="SO"/>
+																		<xs:enumeration value="CA"/>
+																		<xs:enumeration value="SR"/>
+																		<xs:enumeration value="CC"/>
+																		<xs:enumeration value="SS"/>
+																		<xs:enumeration value="CD"/>
+																		<xs:enumeration value="ST"/>
+																		<xs:enumeration value="CF"/>
+																		<xs:enumeration value="SV"/>
+																		<xs:enumeration value="CG"/>
+																		<xs:enumeration value="CH"/>
+																		<xs:enumeration value="SX"/>
+																		<xs:enumeration value="CI"/>
+																		<xs:enumeration value="SY"/>
+																		<xs:enumeration value="SZ"/>
+																		<xs:enumeration value="CK"/>
+																		<xs:enumeration value="CL"/>
+																		<xs:enumeration value="CM"/>
+																		<xs:enumeration value="CN"/>
+																		<xs:enumeration value="CO"/>
+																		<xs:enumeration value="CR"/>
+																		<xs:enumeration value="TC"/>
+																		<xs:enumeration value="TD"/>
+																		<xs:enumeration value="CU"/>
+																		<xs:enumeration value="TF"/>
+																		<xs:enumeration value="CV"/>
+																		<xs:enumeration value="TG"/>
+																		<xs:enumeration value="CW"/>
+																		<xs:enumeration value="TH"/>
+																		<xs:enumeration value="CX"/>
+																		<xs:enumeration value="CY"/>
+																		<xs:enumeration value="TJ"/>
+																		<xs:enumeration value="CZ"/>
+																		<xs:enumeration value="TK"/>
+																		<xs:enumeration value="TL"/>
+																		<xs:enumeration value="TM"/>
+																		<xs:enumeration value="TN"/>
+																		<xs:enumeration value="TO"/>
+																		<xs:enumeration value="TR"/>
+																		<xs:enumeration value="TT"/>
+																		<xs:enumeration value="DE"/>
+																		<xs:enumeration value="TV"/>
+																		<xs:enumeration value="TW"/>
+																		<xs:enumeration value="DJ"/>
+																		<xs:enumeration value="TZ"/>
+																		<xs:enumeration value="DK"/>
+																		<xs:enumeration value="DM"/>
+																		<xs:enumeration value="DO"/>
+																		<xs:enumeration value="UA"/>
+																		<xs:enumeration value="UG"/>
+																		<xs:enumeration value="DZ"/>
+																		<xs:enumeration value="UM"/>
+																		<xs:enumeration value="EC"/>
+																		<xs:enumeration value="US"/>
+																		<xs:enumeration value="EE"/>
+																		<xs:enumeration value="EG"/>
+																		<xs:enumeration value="EH"/>
+																		<xs:enumeration value="UY"/>
+																		<xs:enumeration value="UZ"/>
+																		<xs:enumeration value="VA"/>
+																		<xs:enumeration value="ER"/>
+																		<xs:enumeration value="VC"/>
+																		<xs:enumeration value="ES"/>
+																		<xs:enumeration value="ET"/>
+																		<xs:enumeration value="VE"/>
+																		<xs:enumeration value="VG"/>
+																		<xs:enumeration value="VI"/>
+																		<xs:enumeration value="VN"/>
+																		<xs:enumeration value="VU"/>
+																		<xs:enumeration value="FI"/>
+																		<xs:enumeration value="FJ"/>
+																		<xs:enumeration value="FK"/>
+																		<xs:enumeration value="FM"/>
+																		<xs:enumeration value="FO"/>
+																		<xs:enumeration value="FR"/>
+																		<xs:enumeration value="WF"/>
+																		<xs:enumeration value="GA"/>
+																		<xs:enumeration value="GB"/>
+																		<xs:enumeration value="WS"/>
+																		<xs:enumeration value="GD"/>
+																		<xs:enumeration value="GE"/>
+																		<xs:enumeration value="GF"/>
+																		<xs:enumeration value="GG"/>
+																		<xs:enumeration value="GH"/>
+																		<xs:enumeration value="GI"/>
+																		<xs:enumeration value="GL"/>
+																		<xs:enumeration value="GM"/>
+																		<xs:enumeration value="GN"/>
+																		<xs:enumeration value="GP"/>
+																		<xs:enumeration value="GQ"/>
+																		<xs:enumeration value="GR"/>
+																		<xs:enumeration value="GS"/>
+																		<xs:enumeration value="GT"/>
+																		<xs:enumeration value="GU"/>
+																		<xs:enumeration value="GW"/>
+																		<xs:enumeration value="GY"/>
+																		<xs:enumeration value="HK"/>
+																		<xs:enumeration value="HM"/>
+																		<xs:enumeration value="HN"/>
+																		<xs:enumeration value="HR"/>
+																		<xs:enumeration value="HT"/>
+																		<xs:enumeration value="YE"/>
+																		<xs:enumeration value="HU"/>
+																		<xs:enumeration value="ID"/>
+																		<xs:enumeration value="YT"/>
+																		<xs:enumeration value="IE"/>
+																		<xs:enumeration value="IL"/>
+																		<xs:enumeration value="IM"/>
+																		<xs:enumeration value="IN"/>
+																		<xs:enumeration value="IO"/>
+																		<xs:enumeration value="ZA"/>
+																		<xs:enumeration value="IQ"/>
+																		<xs:enumeration value="IR"/>
+																		<xs:enumeration value="IS"/>
+																		<xs:enumeration value="IT"/>
+																		<xs:enumeration value="ZM"/>
+																		<xs:enumeration value="JE"/>
+																		<xs:enumeration value="ZW"/>
+																		<xs:enumeration value="JM"/>
+																		<xs:enumeration value="JO"/>
+																		<xs:enumeration value="JP"/>
+																		<xs:enumeration value="KE"/>
+																		<xs:enumeration value="KG"/>
+																		<xs:enumeration value="KH"/>
+																		<xs:enumeration value="KI"/>
+																		<xs:enumeration value="KM"/>
+																		<xs:enumeration value="KN"/>
+																		<xs:enumeration value="KP"/>
+																		<xs:enumeration value="KR"/>
+																		<xs:enumeration value="KW"/>
+																		<xs:enumeration value="KY"/>
+																		<xs:enumeration value="KZ"/>
+																		<xs:enumeration value="LA"/>
+																		<xs:enumeration value="LB"/>
+																		<xs:enumeration value="LC"/>
+																		<xs:enumeration value="LI"/>
+																		<xs:enumeration value="LK"/>
+																		<xs:enumeration value="LR"/>
+																		<xs:enumeration value="LS"/>
+																		<xs:enumeration value="LT"/>
+																		<xs:enumeration value="LU"/>
+																		<xs:enumeration value="LV"/>
+																		<xs:enumeration value="LY"/>
+																		<xs:enumeration value="MA"/>
+																		<xs:enumeration value="MC"/>
+																		<xs:enumeration value="MD"/>
+																		<xs:enumeration value="ME"/>
+																		<xs:enumeration value="MF"/>
+																		<xs:enumeration value="MG"/>
+																		<xs:enumeration value="MH"/>
+																		<xs:enumeration value="MK"/>
+																		<xs:enumeration value="ML"/>
+																		<xs:enumeration value="MM"/>
+																		<xs:enumeration value="MN"/>
+																		<xs:enumeration value="MO"/>
+																		<xs:enumeration value="MP"/>
+																		<xs:enumeration value="MQ"/>
+																		<xs:enumeration value="MR"/>
+																		<xs:enumeration value="MS"/>
+																		<xs:enumeration value="MT"/>
+																		<xs:enumeration value="MU"/>
+																		<xs:enumeration value="MV"/>
+																		<xs:enumeration value="MW"/>
+																		<xs:enumeration value="MX"/>
+																		<xs:enumeration value="MY"/>
+																		<xs:enumeration value="MZ"/>
+																		<xs:enumeration value="NA"/>
+																		<xs:enumeration value="NC"/>
+																		<xs:enumeration value="NE"/>
+																		<xs:enumeration value="NF"/>
+																		<xs:enumeration value="NG"/>
+																		<xs:enumeration value="NI"/>
+																		<xs:enumeration value="NL"/>
+																		<xs:enumeration value="NO"/>
+																		<xs:enumeration value="NP"/>
+																		<xs:enumeration value="NR"/>
+																		<xs:enumeration value="NU"/>
+																		<xs:enumeration value="NZ"/>
+																		<xs:enumeration value="OM"/>
+																		<xs:enumeration value="PA"/>
+																		<xs:enumeration value="PE"/>
+																		<xs:enumeration value="PF"/>
+																		<xs:enumeration value="PG"/>
+																		<xs:enumeration value="PH"/>
+																		<xs:enumeration value="PK"/>
+																		<xs:enumeration value="PL"/>
+																		<xs:enumeration value="PM"/>
+																		<xs:enumeration value="PN"/>
+																		<xs:enumeration value="Евросоюз"/>
+																		<xs:enumeration value="Разные"/>
+																		<xs:enumeration value="Неизвестна"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="itemNumber" use="required">
+																<xs:annotation>
+																	<xs:documentation>Номер товара в декларации на товары</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:integer">
+																		<xs:minInclusive value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="iCodeFromDeclaration" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>КИ/КИГУ/КИТУ, заявленные в таможенной декларации
+
+(будет выведен в разделе "Коды" Уведомления)</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="fileId" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор файла</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="43"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="version" use="required">
+				<xs:annotation>
+					<xs:documentation>Версия формата</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="5"/>
+						<xs:enumeration value="1.0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="sendingDateTime" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата и время отправки сообщения в ИС МПТ в UTC</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="УчастникТип">
+		<xs:annotation>
+			<xs:documentation>Сведения об участнике факта хозяйственной жизни</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:simpleType name="ДатаТип">
+		<xs:annotation>
+			<xs:documentation>Дата в формате ДД.ММ.ГГГГ (01.01.1900 - 31.12.2099)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

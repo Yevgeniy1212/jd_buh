@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Объединение данных файлов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="71">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="72"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСоздание" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные для объединения</v8:content>
+						</v8:item>
+					</Title>
+					<Width>70</Width>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаСозданиеРасширеннаяПодсказка" id="32"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="110">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа1</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="111"/>
+							<ChildItems>
+								<UsualGroup name="Группа3" id="114">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа3</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="115"/>
+									<ChildItems>
+										<InputField name="ПутьКФайлуЗагрузки" id="40">
+											<DataPath>ПутьКФайлуЗагрузки</DataPath>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="ПутьКФайлуЗагрузкиКонтекстноеМеню" id="41"/>
+											<ExtendedTooltip name="ПутьКФайлуЗагрузкиРасширеннаяПодсказка" id="42">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;fontsize 10&gt;&lt;b&gt;Важно!&lt;/&gt;&lt;/&gt; Необходимо выбирать файлы одного формата (CSV только с разделителями/только без разделителей)</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="StartChoice">ПутьКФайлуЗагрузкиНачалоВыбора</Event>
+												<Event name="Clearing">ПутьКФайлуЗагрузкиОчистка</Event>
+											</Events>
+										</InputField>
+										<UsualGroup name="ГруппаПодробностиОФайлах" id="73">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Показать подробности</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Behavior>Collapsible</Behavior>
+											<Collapsed>true</Collapsed>
+											<Representation>None</Representation>
+											<ShowLeftMargin>false</ShowLeftMargin>
+											<ExtendedTooltip name="ГруппаПодробностиОФайлахРасширеннаяПодсказка" id="74"/>
+											<ChildItems>
+												<Table name="СписокФайлов" id="75">
+													<Representation>List</Representation>
+													<ChangeRowSet>false</ChangeRowSet>
+													<ChangeRowOrder>false</ChangeRowOrder>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>40</MaxWidth>
+													<AutoMaxHeight>false</AutoMaxHeight>
+													<HeightInTableRows>3</HeightInTableRows>
+													<Header>false</Header>
+													<AutoInsertNewRow>true</AutoInsertNewRow>
+													<EnableStartDrag>true</EnableStartDrag>
+													<EnableDrag>true</EnableDrag>
+													<FileDragMode>AsFile</FileDragMode>
+													<DataPath>СписокФайлов</DataPath>
+													<CommandSet>
+														<ExcludedCommand>Add</ExcludedCommand>
+														<ExcludedCommand>Change</ExcludedCommand>
+														<ExcludedCommand>Copy</ExcludedCommand>
+														<ExcludedCommand>Delete</ExcludedCommand>
+														<ExcludedCommand>EndEdit</ExcludedCommand>
+														<ExcludedCommand>MoveDown</ExcludedCommand>
+														<ExcludedCommand>MoveUp</ExcludedCommand>
+														<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+														<ExcludedCommand>SortListAsc</ExcludedCommand>
+														<ExcludedCommand>SortListDesc</ExcludedCommand>
+													</CommandSet>
+													<RowFilter xsi:nil="true"/>
+													<ContextMenu name="СписокФайловКонтекстноеМеню" id="76"/>
+													<AutoCommandBar name="СписокФайловКоманднаяПанель" id="77">
+														<Autofill>false</Autofill>
+													</AutoCommandBar>
+													<ExtendedTooltip name="СписокФайловРасширеннаяПодсказка" id="78"/>
+													<SearchStringAddition name="СписокФайловСтрокаПоиска" id="79">
+														<AdditionSource>
+															<Item>СписокФайлов</Item>
+															<Type>SearchStringRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="СписокФайловСтрокаПоискаКонтекстноеМеню" id="80"/>
+														<ExtendedTooltip name="СписокФайловСтрокаПоискаРасширеннаяПодсказка" id="81"/>
+													</SearchStringAddition>
+													<ViewStatusAddition name="СписокФайловСостояниеПросмотра" id="82">
+														<AdditionSource>
+															<Item>СписокФайлов</Item>
+															<Type>ViewStatusRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="СписокФайловСостояниеПросмотраКонтекстноеМеню" id="83"/>
+														<ExtendedTooltip name="СписокФайловСостояниеПросмотраРасширеннаяПодсказка" id="84"/>
+													</ViewStatusAddition>
+													<SearchControlAddition name="СписокФайловУправлениеПоиском" id="85">
+														<AdditionSource>
+															<Item>СписокФайлов</Item>
+															<Type>SearchControl</Type>
+														</AdditionSource>
+														<ContextMenu name="СписокФайловУправлениеПоискомКонтекстноеМеню" id="86"/>
+														<ExtendedTooltip name="СписокФайловУправлениеПоискомРасширеннаяПодсказка" id="87"/>
+													</SearchControlAddition>
+													<ChildItems>
+														<InputField name="СписокФайловФайл" id="88">
+															<DataPath>СписокФайлов.Файл</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<HorizontalStretch>false</HorizontalStretch>
+															<ContextMenu name="СписокФайловФайлКонтекстноеМеню" id="89"/>
+															<ExtendedTooltip name="СписокФайловФайлРасширеннаяПодсказка" id="90"/>
+														</InputField>
+													</ChildItems>
+												</Table>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКоманды" id="123">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Команды</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="124"/>
+											<ChildItems>
+												<Button name="ПрочитатьФайлы" id="116">
+													<Type>UsualButton</Type>
+													<CommandName>Form.Command.ПрочитатьФайлы</CommandName>
+													<BackColor>style:ВыборСтандартногоПериодаФонКнопкиИСМПТК</BackColor>
+													<ExtendedTooltip name="ПрочитатьФайлыРасширеннаяПодсказка" id="117"/>
+												</Button>
+												<Button name="ОчиститьДанные" id="121">
+													<Type>UsualButton</Type>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<CommandName>Form.Command.ОчиститьДанные</CommandName>
+													<ExtendedTooltip name="ОчиститьДанныеРасширеннаяПодсказка" id="122"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа2" id="112">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа2</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="113"/>
+									<ChildItems>
+										<CheckBoxField name="ФайлыСРазделителями" id="37">
+											<DataPath>ФайлыСРазделителями</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ФайлыСРазделителямиКонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="ФайлыСРазделителямиРасширеннаяПодсказка" id="39">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Признак необходимо устанавливать, если загружаемые файлы содержат структуру упаковок (т.е. имеют разделители)</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="OnChange">ФайлыСРазделителямиПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<UsualGroup name="ГруппаРазделитель" id="94">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Разделитель</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаРазделительРасширеннаяПодсказка" id="95">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Внимание! Выбор в качестве разделителя знака ";" недопустим при загрузке файлов, в которых код агрегата представлен в виде группового DataMatrix кода.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+											<ChildItems>
+												<LabelDecoration name="ВидРазделителя" id="96">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вид разделителя:</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ВидРазделителяКонтекстноеМеню" id="97"/>
+													<ExtendedTooltip name="ВидРазделителяРасширеннаяПодсказка" id="98"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаВидыРазделителя" id="99">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Виды разделителя</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаВидыРазделителяРасширеннаяПодсказка" id="100"/>
+													<ChildItems>
+														<CheckBoxField name="РазделительЗапятая" id="101">
+															<DataPath>РазделительЗапятая</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="РазделительЗапятаяКонтекстноеМеню" id="102"/>
+															<ExtendedTooltip name="РазделительЗапятаяРасширеннаяПодсказка" id="103"/>
+															<Events>
+																<Event name="OnChange">РазделительЗапятаяПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<CheckBoxField name="РазделительТочкаСЗапятой" id="104">
+															<DataPath>РазделительТочкаСЗапятой</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="РазделительТочкаСЗапятойКонтекстноеМеню" id="105"/>
+															<ExtendedTooltip name="РазделительТочкаСЗапятойРасширеннаяПодсказка" id="106"/>
+															<Events>
+																<Event name="OnChange">РазделительТочкаСЗапятойПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<CheckBoxField name="РазделительТабуляция" id="107">
+															<DataPath>РазделительТабуляция</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="РазделительТабуляцияКонтекстноеМеню" id="108"/>
+															<ExtendedTooltip name="РазделительТабуляцияРасширеннаяПодсказка" id="109"/>
+															<Events>
+																<Event name="OnChange">РазделительТабуляцияПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Декорация1" id="118">
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="119"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="120"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаРезультат" id="69">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Width>30</Width>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="70"/>
+			<ChildItems>
+				<Button name="Объединить" id="67">
+					<Type>UsualButton</Type>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.Объединить</CommandName>
+					<BackColor>style:ВыборСтандартногоПериодаФонКнопкиИСМПТК</BackColor>
+					<ExtendedTooltip name="ОбъединитьРасширеннаяПодсказка" id="68"/>
+				</Button>
+				<LabelDecoration name="ДекорацияПредупреждениеТаблицаИзменилась" id="64">
+					<TextColor>#FF0000</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПредупреждениеТаблицаИзмениласьКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="ДекорацияПредупреждениеТаблицаИзмениласьРасширеннаяПодсказка" id="66"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДанные" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаДанныеРасширеннаяПодсказка" id="63"/>
+			<ChildItems>
+				<Table name="ДанныеФайлов" id="43">
+					<Representation>List</Representation>
+					<HeightInTableRows>10</HeightInTableRows>
+					<Footer>true</Footer>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ДанныеФайлов</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ДанныеФайловКонтекстноеМеню" id="44"/>
+					<AutoCommandBar name="ДанныеФайловКоманднаяПанель" id="45">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ДанныеФайловРасширеннаяПодсказка" id="46"/>
+					<SearchStringAddition name="ДанныеФайловСтрокаПоиска" id="47">
+						<AdditionSource>
+							<Item>ДанныеФайлов</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДанныеФайловСтрокаПоискаКонтекстноеМеню" id="48"/>
+						<ExtendedTooltip name="ДанныеФайловСтрокаПоискаРасширеннаяПодсказка" id="49"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ДанныеФайловСостояниеПросмотра" id="50">
+						<AdditionSource>
+							<Item>ДанныеФайлов</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДанныеФайловСостояниеПросмотраКонтекстноеМеню" id="51"/>
+						<ExtendedTooltip name="ДанныеФайловСостояниеПросмотраРасширеннаяПодсказка" id="52"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ДанныеФайловУправлениеПоиском" id="53">
+						<AdditionSource>
+							<Item>ДанныеФайлов</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ДанныеФайловУправлениеПоискомКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="ДанныеФайловУправлениеПоискомРасширеннаяПодсказка" id="55"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeAddRow">ДанныеФайловПередНачаломДобавления</Event>
+						<Event name="AfterDeleteRow">ДанныеФайловПослеУдаления</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ДанныеФайловКодАгрегата" id="56">
+							<DataPath>ДанныеФайлов.КодАгрегата</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДанныеФайловКодАгрегатаКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="ДанныеФайловКодАгрегатаРасширеннаяПодсказка" id="58"/>
+						</InputField>
+						<InputField name="ДанныеФайловВложенныйКИ" id="91">
+							<DataPath>ДанныеФайлов.ВложенныйКИ</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>ОбщееКоличество</FooterDataPath>
+							<ContextMenu name="ДанныеФайловВложенныйКИКонтекстноеМеню" id="92"/>
+							<ExtendedTooltip name="ДанныеФайловВложенныйКИРасширеннаяПодсказка" id="93"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ПутьКФайлуЗагрузки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФайлыСРазделителями" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлы содержат разделитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеИзмененыПользователем" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеФайлов" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КодАгрегата" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код агрегата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВложенныйКод" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код маркировки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВложенныйКИ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код идентификации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СписокФайлов" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Файл" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОбщееКоличество" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общее количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделительЗапятая" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>,</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделительТабуляция" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Tab</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделительТочкаСЗапятой" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>;</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Объединить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объединить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Объединить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПрочитатьФайлы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать файлы</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПрочитатьФайлы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьДанные" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОчиститьДанные</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

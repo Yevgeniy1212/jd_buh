@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Электронные сопроводительные накладные на товары (выданные)</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandSet>
+		<ExcludedCommand>Create</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОповещенияИСЭСФ" id="139">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оповещения ИСЭСФ</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОповещенияИСЭСФРасширеннаяПодсказка" id="140"/>
+			<ChildItems>
+				<Button name="ОткрытьОповещенияЭСФ" id="141">
+					<Type>Hyperlink</Type>
+					<Representation>PictureAndText</Representation>
+					<CommandName>Form.Command.ОткрытьОповещенияИСЭСФ</CommandName>
+					<TextColor>#1955AE</TextColor>
+					<Picture>
+						<xr:Ref>CommonPicture.ОповещениеИСЭСФ</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещения ИС ЭСФ</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОткрытьОповещенияЭСФРасширеннаяПодсказка" id="142"/>
+				</Button>
+				<Button name="ОбновитьОповещенияИСЭСФ" id="143">
+					<Type>Hyperlink</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.ОбновитьОповещенияИСЭСФ</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.Refresh</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="ОбновитьОповещенияИСЭСФРасширеннаяПодсказка" id="144"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСостояниеИТС" id="132">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние ИТС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние ИТС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСостояниеИТСРасширеннаяПодсказка" id="133"/>
+			<ChildItems>
+				<Button name="КнопкаОбновитьИнформацию" id="134">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<CommandName>Form.Command.ОбновитьИнформациюИТС</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.Refresh</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="КнопкаОбновитьИнформациюРасширеннаяПодсказка" id="135"/>
+				</Button>
+				<LabelDecoration name="ОписаниеСостоянияПодписки" id="136">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание состояния подписки ИТС для прямого обмена</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОписаниеСостоянияПодпискиКонтекстноеМеню" id="137"/>
+					<ExtendedTooltip name="ОписаниеСостоянияПодпискиРасширеннаяПодсказка" id="138"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКомментарийМестоУстановкиБиблиотекиНаСервере" id="151">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий место установки библиотеки на сервере</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#FBD4D4</BackColor>
+			<ExtendedTooltip name="ГруппаКомментарийМестоУстановкиБиблиотекиНаСервереРасширеннаяПодсказка" id="152"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияМестоУстановкиБиблиотекиНаСервере" id="153">
+					<Width>2</Width>
+					<Height>1</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Декорация место установки библиотеки на сервере</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.ПредупреждениеИСЭСФ</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияМестоУстановкиБиблиотекиНаСервереКонтекстноеМеню" id="154"/>
+					<ExtendedTooltip name="ДекорацияМестоУстановкиБиблиотекиНаСервереРасширеннаяПодсказка" id="155"/>
+				</PictureDecoration>
+				<LabelDecoration name="КомментарийМестоУстановкиБиблиотекиНаСервере" id="156">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<ContextMenu name="КомментарийМестоУстановкиБиблиотекиНаСервереКонтекстноеМеню" id="157"/>
+					<ExtendedTooltip name="КомментарийМестоУстановкиБиблиотекиНаСервереРасширеннаяПодсказка" id="158"/>
+					<Events>
+						<Event name="URLProcessing">КомментарийМестоУстановкиБиблиотекиНаСервереОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаБыстрыеОтборы" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Быстрые отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Быстрые отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаБыстрыеОтборыРасширеннаяПодсказка" id="38"/>
+			<ChildItems>
+				<InputField name="Организация" id="39">
+					<DataPath>Организация</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>27</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="41"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Контрагент" id="42">
+					<DataPath>Контрагент</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>27</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="44"/>
+					<Events>
+						<Event name="OnChange">КонтрагентПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Состояние" id="45">
+					<DataPath>Состояние</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>27</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="СостояниеКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="47"/>
+					<Events>
+						<Event name="OnChange">СостояниеПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользовательские настройки</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="48">
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="49"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="50">
+				<ChildItems>
+					<Button name="СписокДокументСНТПодтвердить" id="125">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.Подтвердить</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТПодтвердитьРасширеннаяПодсказка" id="126"/>
+					</Button>
+					<Button name="СписокДокументСНТОтозвать" id="102">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.Отозвать</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТОтозватьРасширеннаяПодсказка" id="103"/>
+					</Button>
+					<Button name="СписокДокументСНТСоздатьПервичныйДокумент" id="118">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.СоздатьПервичныйДокумент</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТСоздатьПервичныйДокументРасширеннаяПодсказка" id="119"/>
+					</Button>
+					<Button name="СписокДокументСНТВыгрузить" id="104">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.Выгрузить</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТВыгрузитьРасширеннаяПодсказка" id="105"/>
+					</Button>
+					<Button name="СписокЗагрузитьИзXML" id="130">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Document.СНТ.Command.Импортировать</CommandName>
+						<ExtendedTooltip name="СписокЗагрузитьИзXMLРасширеннаяПодсказка" id="131"/>
+					</Button>
+					<Button name="СписокДокументСНТОбновить" id="106">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.Обновить</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТОбновитьРасширеннаяПодсказка" id="107"/>
+					</Button>
+					<Button name="СписокДокументСНТОтправить" id="108">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.Отправить</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТОтправитьРасширеннаяПодсказка" id="109"/>
+					</Button>
+					<Button name="ФормаДокументСНТПолучитьИдентификаторыТоваров" id="35">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.ПолучитьИдентификаторыТоваров</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаДокументСНТПолучитьИдентификаторыТоваровРасширеннаяПодсказка" id="36"/>
+					</Button>
+					<Button name="СписокДокументСНТПроверить" id="110">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.Проверить</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТПроверитьРасширеннаяПодсказка" id="111"/>
+					</Button>
+					<Button name="СписокДокументСНТПерезаполнитьПоПервичномуДокументу" id="123">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.СНТ.Command.ПерезаполнитьПоПервичномуДокументу</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокДокументСНТПерезаполнитьПоПервичномуДокументуРасширеннаяПодсказка" id="124"/>
+					</Button>
+					<Popup name="СписокГруппаЭСФиСФ" id="114">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЭСФ и СФ</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="СписокГруппаЭСФиСФРасширеннаяПодсказка" id="115"/>
+						<ChildItems>
+							<Button name="СписокОбработкаОбменСНТСоздатьЭСФИСФ" id="112">
+								<Type>CommandBarButton</Type>
+								<CommandName>Document.СНТ.Command.СоздатьЭСФИСФ</CommandName>
+								<DataPath>Items.Список.CurrentData.Ref</DataPath>
+								<ExtendedTooltip name="СписокОбработкаОбменСНТСоздатьЭСФИСФРасширеннаяПодсказка" id="113"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="СписокИзменитьФорму" id="116">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<ExtendedTooltip name="СписокИзменитьФормуРасширеннаяПодсказка" id="117"/>
+					</Button>
+					<Button name="СписокОбщаяКомандаСвязанныеДокументы" id="149">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.СвязанныеДокументы</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокОбщаяКомандаСвязанныеДокументыРасширеннаяПодсказка" id="150"/>
+					</Button>
+					<Button name="СписокОбщаяКомандаПоказатьДвиженияДокумента" id="147">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.ПоказатьДвиженияДокумента</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="СписокОбщаяКомандаПоказатьДвиженияДокументаРасширеннаяПодсказка" id="148"/>
+					</Button>
+					<Button name="СписокДанныеАктивностиТикетов" id="145">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДанныеАктивностиТикетов</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="СписокДанныеАктивностиТикетовРасширеннаяПодсказка" id="146"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="51"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="52">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="53"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="54"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="55">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="56"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="57"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="58">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="59"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="60"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СписокДата" id="61">
+					<DataPath>Список.Date</DataPath>
+					<ContextMenu name="СписокДатаКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="СписокДатаРасширеннаяПодсказка" id="63"/>
+				</LabelField>
+				<LabelField name="СписокНомер" id="64">
+					<DataPath>Список.Number</DataPath>
+					<ContextMenu name="СписокНомерКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="СписокНомерРасширеннаяПодсказка" id="66"/>
+				</LabelField>
+				<LabelField name="НомерСНТ" id="127">
+					<DataPath>Список.НомерСНТ</DataPath>
+					<ContextMenu name="НомерСНТКонтекстноеМеню" id="128"/>
+					<ExtendedTooltip name="НомерСНТРасширеннаяПодсказка" id="129"/>
+				</LabelField>
+				<LabelField name="СписокСостояние" id="67">
+					<DataPath>Список.Состояние</DataPath>
+					<ContextMenu name="СписокСостояниеКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="СписокСостояниеРасширеннаяПодсказка" id="69"/>
+				</LabelField>
+				<LabelField name="СписокДатаОтгрузкиТовара" id="76">
+					<DataPath>Список.ДатаОтгрузкиТовара</DataPath>
+					<ContextMenu name="СписокДатаОтгрузкиТовараКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="СписокДатаОтгрузкиТовараРасширеннаяПодсказка" id="78"/>
+				</LabelField>
+				<LabelField name="СписокТипСНТ" id="82">
+					<DataPath>Список.ТипСНТ</DataPath>
+					<ContextMenu name="СписокТипСНТКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="СписокТипСНТРасширеннаяПодсказка" id="84"/>
+				</LabelField>
+				<InputField name="СписокВидОперации" id="120">
+					<DataPath>Список.ВидОперации</DataPath>
+					<ContextMenu name="СписокВидОперацииКонтекстноеМеню" id="121"/>
+					<ExtendedTooltip name="СписокВидОперацииРасширеннаяПодсказка" id="122"/>
+				</InputField>
+				<LabelField name="СписокКонтрагент" id="70">
+					<DataPath>Список.Контрагент</DataPath>
+					<ContextMenu name="СписокКонтрагентКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="СписокКонтрагентРасширеннаяПодсказка" id="72"/>
+				</LabelField>
+				<LabelField name="СписокСуммаДокумента" id="73">
+					<DataPath>Список.СуммаДокумента</DataPath>
+					<ContextMenu name="СписокСуммаДокументаКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="СписокСуммаДокументаРасширеннаяПодсказка" id="75"/>
+				</LabelField>
+				<LabelField name="СписокОрганизация" id="79">
+					<DataPath>Список.Организация</DataPath>
+					<ContextMenu name="СписокОрганизацияКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="СписокОрганизацияРасширеннаяПодсказка" id="81"/>
+				</LabelField>
+				<LabelField name="СписокРегистрационныйНомерИСЭСФ" id="88">
+					<DataPath>Список.РегистрационныйНомерИСЭСФ</DataPath>
+					<ContextMenu name="СписокРегистрационныйНомерИСЭСФКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="СписокРегистрационныйНомерИСЭСФРасширеннаяПодсказка" id="90"/>
+				</LabelField>
+				<LabelField name="СписокРегистрационныйНомерИСМПТ" id="85">
+					<DataPath>Список.РегистрационныйНомерИСМПТ</DataPath>
+					<ContextMenu name="СписокРегистрационныйНомерИСМПТКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="СписокРегистрационныйНомерИСМПТРасширеннаяПодсказка" id="87"/>
+				</LabelField>
+				<LabelField name="СписокСсылка" id="91">
+					<DataPath>Список.Ref</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СписокСсылкаКонтекстноеМеню" id="92"/>
+					<ExtendedTooltip name="СписокСсылкаРасширеннаяПодсказка" id="93"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.СНТ</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Направление</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.НаправленияСНТ.Исходящий</dcsset:right>
+							<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияЭСФ</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="Контрагент" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.КонтрагентЭСФ</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="Состояние" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СостоянияСНТ</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокСостояние</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ОтклоненСервером</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.Аннулирован</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ОтклоненПолучателем</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.Отозван</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ОтклоненОГД</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:FireBrick</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокСостояние</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ПринятСервером</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ПринятОтПоставщика</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ДоставленПолучателю</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ПодтвержденПолучателем</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ПодтвержденОГД</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ЗаблокированИСЭСФ</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DarkGreen</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокСостояние</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.Сформирован</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ОжидаетИдентификацииТоваровНаВС</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияСНТ.ОбрабатываетсяСервером</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:MediumBlue</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьИнформациюИТС" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить информацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить информацию по состоянию подписки ИТС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьИнформациюИТС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьОповещенияИСЭСФ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список оповещений ИС ЭСФ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список оповещений ИС ЭСФ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьОповещенияИСЭСФ</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьОповещенияИСЭСФ</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьОповещенияИСЭСФ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оповещения ИС ЭСФ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть оповещения ИСЭСФ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьОповещенияИСЭСФ</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьОповещенияИСЭСФ</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДанныеАктивностиТикетов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные активности тикетов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные активности тикетов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДанныеАктивностиТикетов</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>Document.СНТ.Command.Подтвердить</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.СоздатьПервичныйДокумент</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.Отклонить</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.Отозвать</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.Отправить</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.Проверить</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.Выгрузить</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Document.СНТ.Command.Обновить</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

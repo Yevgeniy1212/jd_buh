@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Генератор SSCC</v8:content>
+		</v8:item>
+	</Title>
+	<Width>57</Width>
+	<Height>20</Height>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаГотово" id="103">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Готово</CommandName>
+				<ExtendedTooltip name="ФормаГотовоРасширеннаяПодсказка" id="104"/>
+			</Button>
+			<Button name="ФормаОтмена" id="105">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="106"/>
+			</Button>
+			<Button name="ФормаПечатьЭтикетокШтрихкода" id="118">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПечатьЭтикетокШтрихкода</CommandName>
+				<ExtendedTooltip name="ФормаПечатьЭтикетокШтрихкодаРасширеннаяПодсказка" id="119"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ТипУпаковки" id="4">
+			<DataPath>ТипУпаковки</DataPath>
+			<DropListButton>false</DropListButton>
+			<ContextMenu name="ТипУпаковкиКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ТипУпаковкиРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ТипШтрихкода" id="7">
+			<DataPath>ТипШтрихкода</DataPath>
+			<DropListButton>false</DropListButton>
+			<ContextMenu name="ТипШтрихкодаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТипШтрихкодаРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<UsualGroup name="ГруппаРеквизитыSSCC" id="91">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты SSCC</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитыSSCCРасширеннаяПодсказка" id="92"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОрганизация" id="110">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОрганизацияРасширеннаяПодсказка" id="111"/>
+					<ChildItems>
+						<InputField name="ПрефиксКомпанииGS1" id="83">
+							<DataPath>ПрефиксКомпанииGS1</DataPath>
+							<Width>10</Width>
+							<ContextMenu name="ПрефиксКомпанииGS1КонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="ПрефиксКомпанииGS1РасширеннаяПодсказка" id="85"/>
+							<Events>
+								<Event name="OnChange">ПрефиксКомпанииGS1ПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Организация" id="107">
+							<DataPath>Организация</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>19</MaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="108"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="109"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа1" id="123">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа1</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="124"/>
+					<ChildItems>
+						<InputField name="ЦифраРасширения" id="28">
+							<DataPath>ЦифраРасширения</DataPath>
+							<Width>10</Width>
+							<ContextMenu name="ЦифраРасширенияКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ЦифраРасширенияРасширеннаяПодсказка" id="30"/>
+							<Events>
+								<Event name="OnChange">ЦифраРасширенияПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="СерийныйНомерSSCC" id="31">
+							<DataPath>СерийныйНомерSSCC</DataPath>
+							<Width>10</Width>
+							<ContextMenu name="СерийныйНомерSSCCКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="СерийныйНомерSSCCРасширеннаяПодсказка" id="33"/>
+							<Events>
+								<Event name="OnChange">СерийныйНомерSSCCПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ДатаГенерации" id="120">
+					<DataPath>ДатаГенерации</DataPath>
+					<ContextMenu name="ДатаГенерацииКонтекстноеМеню" id="121"/>
+					<ExtendedTooltip name="ДатаГенерацииРасширеннаяПодсказка" id="122"/>
+				</InputField>
+				<CheckBoxField name="ДобавлятьAID" id="127">
+					<DataPath>ДобавлятьAID</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавлять в начале кода прикладной идентификатор</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прикладной идентификатор (application identifier или AID). В SSCC-кодах он имеет вид (00)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДобавлятьAIDКонтекстноеМеню" id="128"/>
+					<ExtendedTooltip name="ДобавлятьAIDРасширеннаяПодсказка" id="129"/>
+					<Events>
+						<Event name="OnChange">ДобавлятьAIDПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ДобавлятьСкобочкиДляAID" id="130">
+					<DataPath>ДобавлятьСкобочкиДляAID</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Указывать прикладной идентификатор в скобочках</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДобавлятьСкобочкиДляAIDКонтекстноеМеню" id="131"/>
+					<ExtendedTooltip name="ДобавлятьСкобочкиДляAIDРасширеннаяПодсказка" id="132"/>
+					<Events>
+						<Event name="OnChange">ДобавлятьСкобочкиДляAIDПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<LabelDecoration name="Декорация1" id="115">
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="116"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="117"/>
+				</LabelDecoration>
+				<InputField name="Штрихкод" id="86">
+					<DataPath>Штрихкод</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="ШтрихкодКонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="ШтрихкодРасширеннаяПодсказка" id="88"/>
+				</InputField>
+				<LabelField name="Информация" id="112">
+					<DataPath>Информация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>56</Width>
+					<Height>3</Height>
+					<ContextMenu name="ИнформацияКонтекстноеМеню" id="113"/>
+					<ExtendedTooltip name="ИнформацияРасширеннаяПодсказка" id="114"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ГенерацияШтрихкодовИСМПТК</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТипУпаковки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип упаковки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыУпаковокИСМПТК</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипШтрихкода" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип штрихкода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыШтрихкодовИСМПТК</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦифраРасширения" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цифра расширения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СерийныйНомерSSCC" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Серийный номер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>7</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрефиксКомпанииGS1" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Префикс компании GS1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>9</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Штрихкод" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат генерации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресПредыдущихШтрихкодов" id="19">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВозвращатьАдресВременногоХранилища" id="21">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КэшКлючТекущегоНумератораШтрихкода" id="23">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Информация" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="МожноСгенерироватьНовыйШтрихкод" id="27">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаГенерации" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата генерации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДобавлятьAID" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавлять AID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ПоддержкаДвойногоФорматаТранспортныхКодовИСМПТК</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ДобавлятьСкобочкиДляAID" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавлять скобочки для AID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ПоддержкаДвойногоФорматаТранспортныхКодовИСМПТК</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИдентификаторыПримененияДополнительныйПараметрЗначение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ИдентификаторыПрименения.ДополнительныйПараметрИмя</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИдентификаторыПримененияДополнительныйПараметрПредставление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ИдентификаторыПримененияДополнительныйПараметрЗначение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ИдентификаторыПрименения.ДополнительныйПараметрИмя</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Готово" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Готово</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПечатьЭтикетокШтрихкода" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать этикеток штрихкода</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПечатьЭтикетокШтрихкода</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="АдресПредыдущихШтрихкодов">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ТипУпаковки">
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыУпаковокИСМПТК</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="НеВозвращатьАдресВременногоХранилища">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТипШтрихкода">
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыШтрихкодовИСМПТК</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Штрихкод">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="Организация">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>

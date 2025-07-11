@@ -1,0 +1,1505 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Маркировка и прослеживаемость лекарственной продукции (ИС ЦЭДМ)</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Панель" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Filters</v8:content>
+				</v8:item>
+			</Title>
+			<Width>80</Width>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПанельРасширеннаяПодсказка" id="24"/>
+			<ChildItems>
+				<Pages name="СтраницыОтборОрганизация" id="25">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы отбора по организации</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Pages filter by companies</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>None</PagesRepresentation>
+					<ExtendedTooltip name="СтраницыОтборОрганизацияРасширеннаяПодсказка" id="26"/>
+					<ChildItems>
+						<Page name="СтраницаОтборОрганизации" id="27">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница организации</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Company page</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаОтборОрганизацииРасширеннаяПодсказка" id="28"/>
+							<ChildItems>
+								<InputField name="ОтборОрганизации" id="29">
+									<DataPath>ОрганизацииПредставление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Организации</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Companies</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>28</MaxWidth>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<QuickChoice>false</QuickChoice>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<ChoiceParameters>
+										<app:item name="Отбор.СоответствуетОрганизации">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;по всем организациям&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;by all companies&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ОтборОрганизацииКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ОтборОрганизацииРасширеннаяПодсказка" id="31"/>
+									<Events>
+										<Event name="OnChange">ОтборОрганизацииПриИзменении</Event>
+										<Event name="StartChoice">ОтборОрганизацииНачалоВыбора</Event>
+										<Event name="Clearing">ОтборОрганизацииОчистка</Event>
+										<Event name="ChoiceProcessing">ОтборОрганизацииОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаОтборОрганизация" id="32">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница организация</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Company page</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаОтборОрганизацияРасширеннаяПодсказка" id="33"/>
+							<ChildItems>
+								<InputField name="ОтборОрганизация" id="34">
+									<DataPath>Организация</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Организация</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Company</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>28</MaxWidth>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<QuickChoice>false</QuickChoice>
+									<ChooseType>false</ChooseType>
+									<ChoiceParameters>
+										<app:item name="Отбор.СоответствуетОрганизации">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;по всем организациям&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;by all companies&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ОтборОрганизацияКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="ОтборОрганизацияРасширеннаяПодсказка" id="36"/>
+									<Events>
+										<Event name="OnChange">ОтборОрганизацияПриИзменении</Event>
+										<Event name="StartChoice">ОтборОрганизацияНачалоВыбора</Event>
+										<Event name="Clearing">ОтборОрганизацияОчистка</Event>
+										<Event name="ChoiceProcessing">ОтборОрганизацияОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+				<InputField name="Ответственный" id="37">
+					<DataPath>Ответственный</DataPath>
+					<Visible>false</Visible>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>25</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;по всем ответственным&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;by all responsible persons&gt;</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="39"/>
+					<Events>
+						<Event name="OnChange">ОтветственныйПриИзменении</Event>
+					</Events>
+				</InputField>
+				<PictureDecoration name="Декорация3" id="1187">
+					<Visible>false</Visible>
+					<Height>3</Height>
+					<Picture>
+						<xr:Ref>CommonPicture.ЛоготипСервисаМаркировкиМиниЦветнойИСМПТК</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="Декорация3КонтекстноеМеню" id="1188"/>
+					<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="1189"/>
+				</PictureDecoration>
+				<Button name="Справка" id="21">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Representation>Picture</Representation>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="22"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="1033">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<Width>80</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="1034"/>
+			<ChildItems>
+				<Page name="ДокументыИСЭДО" id="1035">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прослеживаемость товаров</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="ДокументыИСЭДОРасширеннаяПодсказка" id="1036"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаДвиженияКодов" id="95">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Товародвижение</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Warehouse</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаДвиженияКодовРасширеннаяПодсказка" id="96"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаАктВнутреннегоПеремещенияИСЭДО" id="1204">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Акт внутреннего перемещения ИСЭДО</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаАктВнутреннегоПеремещенияИСЭДОРасширеннаяПодсказка" id="1205"/>
+									<ChildItems>
+										<Button name="ОткрытьАктыВнутреннегоПеремещенияИсходящие" id="1216">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ОткрытьАктыВнутреннегоПеремещенияИсходящие</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Акты внутреннего перемещения</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОткрытьАктыВнутреннегоПеремещенияИсходящиеРасширеннаяПодсказка" id="1217"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаАктПриемаПередачиМаркировкиИСЭДО" id="813">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Акт приема передачи маркировки ИСЭДО</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаАктПриемаПередачиМаркировкиИСЭДОРасширеннаяПодсказка" id="814"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияАПП" id="907">
+											<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Акты приема/передачи</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияАППКонтекстноеМеню" id="908"/>
+											<ExtendedTooltip name="ДекорацияАППРасширеннаяПодсказка" id="909"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаСлужебная3" id="1120">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа служебная3</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСлужебная3РасширеннаяПодсказка" id="1121"/>
+											<ChildItems>
+												<LabelDecoration name="Декорация5" id="1122">
+													<Width>2</Width>
+													<ContextMenu name="Декорация5КонтекстноеМеню" id="1123"/>
+													<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="1124"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаСлужебная2" id="1118">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа служебная2</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаСлужебная2РасширеннаяПодсказка" id="1119"/>
+													<ChildItems>
+														<Button name="ОткрытьАктПриемаПередачиКодовМаркировкиИСЭДОИсходящие" id="881">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОткрытьАктПриемаПередачиКодовМаркировкиИСМПИсходящие</CommandName>
+															<ExtendedTooltip name="ОткрытьАктПриемаПередачиКодовМаркировкиИСЭДОИсходящиеРасширеннаяПодсказка" id="882"/>
+														</Button>
+														<Button name="ОткрытьАктПриемаПередачиКодовМаркировкиИСЭДОВходящие" id="905">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОткрытьАктПриемаПередачиКодовМаркировкиИСМПВходящие</CommandName>
+															<ExtendedTooltip name="ОткрытьАктПриемаПередачиКодовМаркировкиИСЭДОВходящиеРасширеннаяПодсказка" id="906"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаИмпортЭкспорт" id="1221">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ввоз товаров</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Warehouse</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаИмпортЭкспортРасширеннаяПодсказка" id="1222"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаВвозТоваровЕАЭС" id="1245">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ввоз товаров ЕАЭС</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаВвозТоваровЕАЭСРасширеннаяПодсказка" id="1246"/>
+									<ChildItems>
+										<Button name="ОткрытьВвозИзЕАЭС" id="1251">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ОткрытьВвозИзЕАЭС</CommandName>
+											<ExtendedTooltip name="ОткрытьВвозИзЕАЭСРасширеннаяПодсказка" id="1252"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаВвозТоваровИмпорт" id="1247">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ввоз товаров импорт</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаВвозТоваровИмпортРасширеннаяПодсказка" id="1248"/>
+									<ChildItems>
+										<Button name="ОткрытьВвозИзТретьихСтран" id="1249">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ОткрытьВвозИзТретьихСтран</CommandName>
+											<ExtendedTooltip name="ОткрытьВвозИзТретьихСтранРасширеннаяПодсказка" id="1250"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаОтчетыОПередачеКИИмпортеру" id="1223">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отчеты о передаче к импортеру</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОтчетыОПередачеКИИмпортеруРасширеннаяПодсказка" id="1224"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияОтчет" id="1225">
+											<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отчеты о передаче КИ импортеру</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияОтчетКонтекстноеМеню" id="1226"/>
+											<ExtendedTooltip name="ДекорацияОтчетРасширеннаяПодсказка" id="1227"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаСлужебная4" id="1228">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ГруппаСлужебная4</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСлужебная4РасширеннаяПодсказка" id="1229"/>
+											<ChildItems>
+												<LabelDecoration name="Декорация7" id="1230">
+													<Width>2</Width>
+													<ContextMenu name="Декорация7КонтекстноеМеню" id="1231"/>
+													<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="1232"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаСлужебная6" id="1233">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ГруппаСлужебная6</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаСлужебная6РасширеннаяПодсказка" id="1234"/>
+													<ChildItems>
+														<Button name="ОткрытьОтчетыОПередачеКИИсходящие" id="1241">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОткрытьОтчетыОПередачеКИИсходящие</CommandName>
+															<ExtendedTooltip name="ОткрытьОтчетыОПередачеКИИсходящиеРасширеннаяПодсказка" id="1242"/>
+														</Button>
+														<Button name="ОткрытьОтчетыОПередачеКИВходящие" id="1243">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОткрытьОтчетыОПередачеКИВходящие</CommandName>
+															<ExtendedTooltip name="ОткрытьОтчетыОПередачеКИВходящиеРасширеннаяПодсказка" id="1244"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаИнвентаризация" id="953">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Инвентаризация</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Warehouse</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаИнвентаризацияРасширеннаяПодсказка" id="954"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаВозвратВОборотКодовМаркировкиИСЭДО" id="792">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Возврат в оборот кодов маркировки ИСЭДО</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаВозвратВОборотКодовМаркировкиИСЭДОРасширеннаяПодсказка" id="793"/>
+									<ChildItems>
+										<Button name="ОткрытьВозвратВОборотКодовМаркировкиИСЭДО" id="796">
+											<Type>Hyperlink</Type>
+											<Width>40</Width>
+											<CommandName>Form.Command.ОткрытьВозвратВОборотКодовМаркировкиИСМП</CommandName>
+											<ExtendedTooltip name="ОткрытьВозвратВОборотКодовМаркировкиИСЭДОРасширеннаяПодсказка" id="797"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаСписаниеКодовМаркировкиИСЭДО" id="683">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Списание кодов маркировки ИСЭДО</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСписаниеКодовМаркировкиИСЭДОРасширеннаяПодсказка" id="684"/>
+									<ChildItems>
+										<Button name="ОткрытьСписаниеКодовМаркировкиИСЭДО" id="703">
+											<Type>Hyperlink</Type>
+											<Width>40</Width>
+											<CommandName>Form.Command.ОткрытьСписаниеКодовМаркировкиИСМП</CommandName>
+											<ExtendedTooltip name="ОткрытьСписаниеКодовМаркировкиИСЭДОРасширеннаяПодсказка" id="704"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПрочее" id="1253">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прочее</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Warehouse</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="1254"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаУведомленияОРасхождениях" id="1255">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Уведомления о расхождениях</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаУведомленияОРасхожденияхРасширеннаяПодсказка" id="1256"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияРасхождения" id="1268">
+											<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Уведомления о расхождениях</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияРасхожденияКонтекстноеМеню" id="1269"/>
+											<ExtendedTooltip name="ДекорацияРасхожденияРасширеннаяПодсказка" id="1270"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаСлужебная5" id="1257">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ГруппаСлужебная5</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСлужебная5РасширеннаяПодсказка" id="1258"/>
+											<ChildItems>
+												<LabelDecoration name="Декорация6" id="1259">
+													<Width>2</Width>
+													<ContextMenu name="Декорация6КонтекстноеМеню" id="1260"/>
+													<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="1261"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаСлужебная7" id="1262">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ГруппаСлужебная7</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаСлужебная7РасширеннаяПодсказка" id="1263"/>
+													<ChildItems>
+														<Button name="ОткрытьУведомленияоРасхожденияхИсходящие" id="1264">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОткрытьУведомленияоРасхожденияхИсходящие</CommandName>
+															<ExtendedTooltip name="ОткрытьУведомленияоРасхожденияхИсходящиеРасширеннаяПодсказка" id="1265"/>
+														</Button>
+														<Button name="ОткрытьУведомленияоРасхожденияхВходящие" id="1266">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОткрытьУведомленияоРасхожденияхВходящие</CommandName>
+															<ExtendedTooltip name="ОткрытьУведомленияоРасхожденияхВходящиеРасширеннаяПодсказка" id="1267"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаСУЗ" id="1037">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Производство СУЗ</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="ГруппаСУЗРасширеннаяПодсказка" id="1038"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПроизводство" id="577">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Production</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Производство</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаПроизводствоРасширеннаяПодсказка" id="578"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЗаказНаЭмиссиюКодовМаркировкиСУЗ" id="597">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заказ на эмиссию</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Order for issuance group</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>Use</ThroughAlign>
+									<ExtendedTooltip name="ГруппаЗаказНаЭмиссиюКодовМаркировкиСУЗРасширеннаяПодсказка" id="598"/>
+									<ChildItems>
+										<Button name="ОткрытьЗаказНаЭмиссиюКодовМаркировкиСУЗ" id="601">
+											<Type>Hyperlink</Type>
+											<Width>40</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<CommandName>Form.Command.ОткрытьЗаказНаЭмиссиюКодовМаркировкиСУЗ</CommandName>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="ОткрытьЗаказНаЭмиссиюКодовМаркировкиСУЗРасширеннаяПодсказка" id="602"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаНанесениеКодовМаркировкиСУЗ" id="1025">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Нанесение КМ</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Order for issuance group</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>Use</ThroughAlign>
+									<ExtendedTooltip name="ГруппаНанесениеКодовМаркировкиСУЗРасширеннаяПодсказка" id="1026"/>
+									<ChildItems>
+										<Button name="ОткрытьНанесениеКодовМаркировкиСУЗ" id="1029">
+											<Type>Hyperlink</Type>
+											<Width>40</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<CommandName>Form.Command.ОткрытьНанесениеКодовМаркировкиСУЗ</CommandName>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<ExtendedTooltip name="ОткрытьНанесениеКодовМаркировкиСУЗРасширеннаяПодсказка" id="1030"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<LabelDecoration name="Декорация2" id="1218">
+									<ContextMenu name="Декорация2КонтекстноеМеню" id="1219"/>
+									<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="1220"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаАгрегацияКодовМаркировкиСУЗ" id="1190">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Агрегация КМ</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Order for issuance group</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>Use</ThroughAlign>
+									<ExtendedTooltip name="ГруппаАгрегацияКодовМаркировкиСУЗРасширеннаяПодсказка" id="1191"/>
+									<ChildItems>
+										<Button name="ОткрытьАгрегацияКодовМаркировкиСУЗ" id="1194">
+											<Type>Hyperlink</Type>
+											<Width>40</Width>
+											<CommandName>Form.Command.ОткрытьАгрегацияКодовМаркировкиСУЗ</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Агрегации кодов маркировки</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОткрытьАгрегацияКодовМаркировкиСУЗРасширеннаяПодсказка" id="1195"/>
+										</Button>
+										<Button name="ОткрытьАгрегацияВнеПроизводстваЦЭДМ" id="1202">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ОткрытьАгрегацияВнеПроизводстваЦЭДМ</CommandName>
+											<ExtendedTooltip name="ОткрытьАгрегацияВнеПроизводстваЦЭДМРасширеннаяПодсказка" id="1203"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Декорация1" id="980">
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="981"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="982"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаСервис" id="1058">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Production</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сервис</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Collapsible</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаСервисРасширеннаяПодсказка" id="1059"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаСервисЛево" id="1085">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сервис лево</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСервисЛевоРасширеннаяПодсказка" id="1086"/>
+									<ChildItems>
+										<Button name="ОткрытьПулКодовМаркировкиСУЗ" id="291">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ПулКодовМаркировкиСУЗ</CommandName>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ExtendedTooltip name="ОткрытьПулКодовМаркировкиСУЗРасширеннаяПодсказка" id="292">
+												<Height>2</Height>
+											</ExtendedTooltip>
+										</Button>
+										<Button name="ГрупповоеСозданиеАгрегаций" id="1196">
+											<Type>Hyperlink</Type>
+											<CommandName>DataProcessor.РабочиеМестаИСМПТК.Command.ОткрытьРМСозданиеГруппыАгрегаций</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Создание группы отчетов об Агрегации (ИС МПТ)</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ExtendedTooltip name="ГрупповоеСозданиеАгрегацийРасширеннаяПодсказка" id="1197">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Позволяет создать группу отчетов об Агрегации кодов маркировки, использовав для их заполнения общий файл CSV с кодами агрегированных товаров.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаСервисПраво" id="1087">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сервис право</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСервисПравоРасширеннаяПодсказка" id="1088"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСмТакже" id="273">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>См. также</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>See also</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаСмТакжеРасширеннаяПодсказка" id="274"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСервис" id="1089">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сервисные возможности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы ИСМПТ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<VerticalStretch>true</VerticalStretch>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="СтраницаСервисРасширеннаяПодсказка" id="1090"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСервисныеВозможности" id="1159">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сервисные возможности</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСервисныеВозможностиРасширеннаяПодсказка" id="1160"/>
+							<ChildItems>
+								<UsualGroup name="СервисЛево" id="1139">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сервис лево</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="СервисЛевоРасширеннаяПодсказка" id="1140"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНастройки" id="40">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настройки и справочники</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Settings and catalogs</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="41"/>
+											<ChildItems>
+												<Button name="НастройкаИСЭДО" id="1171">
+													<Type>Hyperlink</Type>
+													<CommandName>DataProcessor.ПанельАдминистрированияИСМПТК.Command.ПанельАдминистрированияИСМП</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="НастройкаИСЭДОРасширеннаяПодсказка" id="1172">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Настройка подключения к серверам ИС МПТ и ИС ЦЭДМ, регламентных заданий и др.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+												<Button name="СтанцииУправленияЗаказами" id="52">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОткрытьСтанцииУправленияЗаказами</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="СтанцииУправленияЗаказамиРасширеннаяПодсказка" id="53"/>
+												</Button>
+												<Button name="ОткрытьНоменклатуру" id="617">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОткрытьНоменклатуру</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОткрытьНоменклатуруРасширеннаяПодсказка" id="618"/>
+												</Button>
+												<Button name="ОткрытьВидыНоменклатуры" id="615">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОткрытьВидыНоменклатуры</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОткрытьВидыНоменклатурыРасширеннаяПодсказка" id="616"/>
+												</Button>
+												<Button name="ОткрытьШаблоныЭтикеток" id="759">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОткрытьШаблоныЭтикеток</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОткрытьШаблоныЭтикетокРасширеннаяПодсказка" id="760"/>
+												</Button>
+												<Button name="ОткрытьСкладыЦЭДМ" id="1200">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОткрытьСкладыЦЭДМ</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОткрытьСкладыЦЭДМРасширеннаяПодсказка" id="1201"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаРаботаСФайлами" id="1141">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Работа с файлами</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>NormalSeparation</Representation>
+											<ExtendedTooltip name="ГруппаРаботаСФайламиРасширеннаяПодсказка" id="1142"/>
+											<ChildItems>
+												<Button name="ПечатьКМИзЗагруженногоФайла" id="1173">
+													<Type>Hyperlink</Type>
+													<CommandName>DataProcessor.РабочиеМестаИСМПТК.Command.ОткрытьРМПечатьКМИзФайла</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ПечатьКМИзЗагруженногоФайлаРасширеннаяПодсказка" id="1174">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Печать кодов маркировки, отсутствующих в Пуле кодов, путем загрузки файла (или нескольких файлов) CSV.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+												<Button name="ОбъединениеФайлов" id="1175">
+													<Type>Hyperlink</Type>
+													<CommandName>DataProcessor.РабочиеМестаИСМПТК.Command.ОткрытьРМОбъединениеФайлов</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОбъединениеФайловРасширеннаяПодсказка" id="1176">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Обработка, позволяющая объединить данные нескольких файлов CSV в один.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="СервисПраво" id="1163">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сервис право</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="СервисПравоРасширеннаяПодсказка" id="1164"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаПроизводствоСервис" id="1161">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Производство</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>NormalSeparation</Representation>
+											<ExtendedTooltip name="ГруппаПроизводствоСервисРасширеннаяПодсказка" id="1162"/>
+											<ChildItems>
+												<Button name="ЗависшиеЗаказыКМ" id="957">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ЗависшиеЗаказыКМ</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ЗависшиеЗаказыКМРасширеннаяПодсказка" id="958">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Просмотр списка Заказов на эмиссию кодов маркировки, в которых не завершился процесс получения марок или возникли ошибки при закрытии заказа.
+Для возобновления операций требуется роль Администрирование (ИС ЭДО). </v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+												<Button name="КодыГрупповыхУпаковокSSCC" id="1198">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.КодыГрупповыхУпаковокSSCC</CommandName>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="КодыГрупповыхУпаковокSSCCРасширеннаяПодсказка" id="1199">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Перейти к списку сгенерированных кодов SSCC, использующихся при формировании транспортных упаковок в Агрегации кодов маркировки.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="Прочее" id="271">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервис</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Other</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ПрочееРасширеннаяПодсказка" id="272"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПанельОбменИСМПТК</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Организации" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Companies</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияИСМПТК</v8:TypeSet>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОрганизацииПредставление" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Companies</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Company</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="Ответственный" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Responsible person</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ПользователиИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресРезультатаОбменаВоВременномХранилище" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Address of exchange result in temporary storage</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПерейтиВЛичныйКабинетИСЭДО" id="8">
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьСтанцииУправленияЗаказами" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Станции управления заказами</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Order management stations</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список станций управления заказами (СУЗ) и их идентификаторов.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Keeping order management stations and ID list (omsId).</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьСтанцииУправленияЗаказами</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПулКодовМаркировкиСУЗ" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пул кодов маркировки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OMS marking codes pool</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр пула эмитированных кодов маркировки и печать этикеток.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>View issued marking codes pool, print labels and aggregation operations</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПулКодовМаркировкиСУЗ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьЗаказНаЭмиссиюКодовМаркировкиСУЗ" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы на эмиссию кодов маркировки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OMS marking code issuance orders (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьЗаказНаЭмиссиюКодовМаркировкиСУЗ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьВидыНоменклатуры" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды номенклатуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Product kinds</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка видов номенклатуры для обеспечения ведения учета марок по различным товарным группам.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьВидыНоменклатуры</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьНоменклатуру" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Products and services</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьНоменклатуру</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьСписаниеКодовМаркировкиИСМП" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомления о выводе из оборота</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>LTIS marking codes write-off (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьУведомлениеОВыводеИзОборотаИСМПТ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьШаблоныЭтикеток" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблоны этикеток</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создание и изменение шаблонов печати кодов маркировки.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьШаблоныЭтикеток</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьВозвратВОборотКодовМаркировкиИСМП" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомления о повторном вводе в оборот</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>LTIS marking codes write-off (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьУведомлениеОВводеВОборотИСМПТ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьАктПриемаПередачиКодовМаркировкиИСМПВходящие" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>входящие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьАктПриемаПередачиКодовМаркировкиИСМПВходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьАктПриемаПередачиКодовМаркировкиИСМПИсходящие" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>исходящие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьАктПриемаПередачиКодовМаркировкиИСМПИсходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗависшиеЗаказыКМ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановление зависших операций в Заказах</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗависшиеЗаказыКМ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьНанесениеКодовМаркировкиСУЗ" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нанесения кодов маркировки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OMS marking code issuance orders (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьНанесениеКодовМаркировкиСУЗ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьАгрегацияКодовМаркировкиСУЗ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Агрегация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OMS marking code issuance orders (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьАгрегацияКодовМаркировкиСУЗ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КодыГрупповыхУпаковокSSCC" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коды транспортных упаковок (SSCC)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КодыГрупповыхУпаковокSSCC</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьСкладыЦЭДМ" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склады (ЦЭДМ)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создание и изменение списка виртуальных складов системы ЦЭДМ.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьСкладыИСЦЭДМ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьАгрегацияВнеПроизводстваЦЭДМ" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Агрегации кодов маркировки (вне производства)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OMS marking code issuance orders (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьАгрегацияВнеПроизводстваЦЭДМ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьАктыВнутреннегоПеремещенияИсходящие" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>исходящие</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть Акты внутреннего перемещения (исходящие)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьАктВнутреннегоПеремещенияИсходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьОтчетыОПередачеКИВходящие" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>входящие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьОтчетыОПередачеКИИмпортеруВходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьОтчетыОПередачеКИИсходящие" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>исходящие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьОтчетыОПередачеКИИмпортеруИсходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьВвозИзЕАЭС" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомления о ввозе маркируемой продукции (ЕАЭС)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>LTIS marking codes write-off (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьУведомлениеОВвозеЕАЭС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьВвозИзТретьихСтран" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомления о ввозе маркируемой продукции (импорт)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>LTIS marking codes write-off (3)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьУведомлениеОВвозеИмпорт</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьУведомленияоРасхожденияхИсходящие" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>исходящие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьУведомлениеОРасхожденияхИСЦЭДМИсходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьУведомленияоРасхожденияхВходящие" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>входящие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьУведомлениеОРасхожденияхИСЦЭДМВходящие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

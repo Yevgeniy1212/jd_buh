@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Начальная настройка базы</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<HorizontalAlign>Left</HorizontalAlign>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ЗакрытьФорму" id="96">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Продолжить без сохранения</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗакрытьФормуРасширеннаяПодсказка" id="97"/>
+			</Button>
+			<Button name="СохранитьИЗакрыть" id="94">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СохранитьНастройкиИЗакрыть</CommandName>
+				<ExtendedTooltip name="СохранитьИЗакрытьРасширеннаяПодсказка" id="95"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаЗаголовок" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗаголовокРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияИнформация" id="67">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Декорация информация</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Информация32</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияИнформацияКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="ДекорацияИнформацияРасширеннаяПодсказка" id="69"/>
+				</PictureDecoration>
+				<LabelDecoration name="НадписьПроверка" id="64">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начальные настройки добавлены в информационную базу. 
+Рекомендуем проверить, что вся информация указана верно. При необходимости данные можно скорректировать и дополнить, пройдя по ссылкам ниже.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НадписьПроверкаКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="НадписьПроверкаРасширеннаяПодсказка" id="66"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПроверка" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПроверкаРасширеннаяПодсказка" id="38"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛевая" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа левая</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛеваяРасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<LabelDecoration name="ОткрытьОрганизация" id="44">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьОрганизацияКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ОткрытьОрганизацияРасширеннаяПодсказка" id="46">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сведения об организации</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьОрганизацияНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ОткрытьУчетнаяПолитикаБУ" id="47">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учетная политика (бухгалтерский учет)</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьУчетнаяПолитикаБУКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ОткрытьУчетнаяПолитикаБУРасширеннаяПодсказка" id="49">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сведения об учетной политике организации</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьУчетнаяПолитикаБУНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ОткрытьУчетнаяПолитикаНУ" id="50">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учетная политика (налоговый учет)</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьУчетнаяПолитикаНУКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ОткрытьУчетнаяПолитикаНУРасширеннаяПодсказка" id="52">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сведения об учетной политике организации для целей налогообложения</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьУчетнаяПолитикаНУНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ОткрытьФункциональностьПрограммы" id="101">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Функциональность</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьФункциональностьПрограммыКонтекстноеМеню" id="102"/>
+							<ExtendedTooltip name="ОткрытьФункциональностьПрограммыРасширеннаяПодсказка" id="103">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Настройки функциональности программы</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьФункциональностьПрограммыНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПравая" id="42">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПраваяРасширеннаяПодсказка" id="43"/>
+					<ChildItems>
+						<LabelDecoration name="ОткрытьУчетнаяПолитика" id="53">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учетная политика по персоналу организации</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьУчетнаяПолитикаКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ОткрытьУчетнаяПолитикаРасширеннаяПодсказка" id="55">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сведения об особенностях учетной политики по персоналу</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьУчетнаяПолитикаНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ОткрытьОценкаЗапасов" id="56">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способы оценки запасов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьОценкаЗапасовКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="ОткрытьОценкаЗапасовРасширеннаяПодсказка" id="58">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Установка способа оценки запасов (ФИФО или по средней)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьОценкаЗапасовНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ОткрытьПараметрыУчета" id="61">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка параметров учета</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОткрытьПараметрыУчетаКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="ОткрытьПараметрыУчетаРасширеннаяПодсказка" id="63">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Основные параметры учета информационной базы</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="Click">ОткрытьПараметрыУчетаНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияОтступСнизу" id="98">
+			<ContextMenu name="ДекорацияОтступСнизуКонтекстноеМеню" id="99"/>
+			<ExtendedTooltip name="ДекорацияОтступСнизуРасширеннаяПодсказка" id="100"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаЗаголовокГруппы" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственные лица организации</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаЗаголовокГруппыРасширеннаяПодсказка" id="79"/>
+			<ChildItems>
+				<LabelDecoration name="НадписьПроверка1" id="83">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Также рекомендуем добавить сведения об ответственных работниках предприятия.</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введенные данные сохраняются в регистре сведений "Ответственные лица организации".
+
+Информация о физических лицах сохраняется в справочнике "Физические лица". 
+
+Информация о должностях сохраняется в справочнике "Должности".</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="НадписьПроверка1КонтекстноеМеню" id="84"/>
+					<ExtendedTooltip name="НадписьПроверка1РасширеннаяПодсказка" id="85"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтветственныеЛица" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственные лица организации</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтветственныеЛицаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаВертикальная1" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа вертикальная1</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВертикальная1РасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаФИО" id="3">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Физическое лицо (ФИО)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаФИОРасширеннаяПодсказка" id="4"/>
+							<ChildItems>
+								<InputField name="ФизЛицоРуководитель" id="13">
+									<DataPath>ФизЛицоРуководитель</DataPath>
+									<ContextMenu name="ФизЛицоРуководительКонтекстноеМеню" id="14"/>
+									<ExtendedTooltip name="ФизЛицоРуководительРасширеннаяПодсказка" id="15"/>
+								</InputField>
+								<InputField name="ФизЛицоГлБухгалтер" id="7">
+									<DataPath>ФизЛицоГлБухгалтер</DataPath>
+									<ContextMenu name="ФизЛицоГлБухгалтерКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="ФизЛицоГлБухгалтерРасширеннаяПодсказка" id="9"/>
+								</InputField>
+								<InputField name="ФизЛицоКассир" id="10">
+									<DataPath>ФизЛицоКассир</DataPath>
+									<ContextMenu name="ФизЛицоКассирКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ФизЛицоКассирРасширеннаяПодсказка" id="12"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДолжности" id="5">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должность</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаДолжностиРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<InputField name="ДолжностьРуководитель" id="16">
+									<DataPath>ДолжностьРуководитель</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ДолжностьРуководительКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ДолжностьРуководительРасширеннаяПодсказка" id="18"/>
+								</InputField>
+								<InputField name="ДолжностьГлБухгалтер" id="22">
+									<DataPath>ДолжностьГлБухгалтер</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ДолжностьГлБухгалтерКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="ДолжностьГлБухгалтерРасширеннаяПодсказка" id="24"/>
+								</InputField>
+								<InputField name="ДолжностьКассир" id="19">
+									<DataPath>ДолжностьКассир</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ДолжностьКассирКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ДолжностьКассирРасширеннаяПодсказка" id="21"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодвалГруппы" id="86">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалГруппыРасширеннаяПодсказка" id="87"/>
+			<ChildItems>
+				<LabelDecoration name="НадписьПроверка2" id="91">
+					<Visible>false</Visible>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введенные данные сохраняются в регистре сведений "Ответственные лица организации".
+
+Информация о физических лицах сохраняется в справочнике "Физические лица". 
+
+Информация о должностях сохраняется в справочнике "Должности".</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НадписьПроверка2КонтекстноеМеню" id="92"/>
+					<ExtendedTooltip name="НадписьПроверка2РасширеннаяПодсказка" id="93"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.НачалоРаботы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизЛицоГлБухгалтер" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Главный бухгалтер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизЛицоКассир" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кассир</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизЛицоРуководитель" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Руководитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДолжностьРуководитель" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность руководителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДолжностиОрганизаций</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДолжностьГлБухгалтер" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность гл. бухгалтера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДолжностиОрганизаций</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДолжностьКассир" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность кассира</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДолжностиОрганизаций</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УчетнаяПолитикаБух" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетная политика бух</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.УчетнаяПолитикаБухгалтерскийУчет</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УчетнаяПолитикаНал" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетная политика нал</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.УчетнаяПолитикаНалоговыйУчет</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УчетнаяПолитикаПерсонал" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетная политика персонал</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.УчетнаяПолитикаПоПерсоналуОрганизаций</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СохранитьНастройкиИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройкиИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,650 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:queryUFormXsdResponse xmlns:ns2="namespace.vstore">
+         <xsdList>
+            <xsd><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="namespace.v1" xmlns:tns="namespace.v1" xmlns:v1="namespace.v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="namespace.abstractUForm">
+
+  <xs:import/>
+
+  <xs:import namespace="namespace.abstractUForm"/>
+
+  <xs:element name="uForm" type="tns:UFormV1"/>
+
+  <xs:complexType name="UFormV1">
+    <xs:annotation>
+      <xs:documentation>Универсальная Форма</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns1:AbstractUForm">
+        <xs:sequence>
+          <xs:element name="comment" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Коментарий</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="detailingType" type="euFormDetailingType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Вид детализации</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isTransformation" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Флаг трансформации ювелирного лома</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="orderNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер приказа МЮ РК о реорганизации НП</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="products" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:UFormProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Товар Универсальной Формы</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="reorganizationType" type="euFormReorganizationType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Тип реорганизации</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="sourceProducts" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="sourceProduct" type="tns:UFormProduct" minOccurs="0" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Исходный товар Универсальной Формы</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="sourceTotalSum" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Общая сумма исходных товаров</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="2"/>
+                <xs:totalDigits value="17"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="writeOffReason" type="uFormWriteOffType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Причина списания</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="UFormProduct">
+    <xs:annotation>
+      <xs:documentation>Товары Универсальной Формы</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns1:AbstractUFormProduct">
+        <xs:sequence>
+          <xs:element name="canExport" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Возможен экспорт</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="dutyTypeCode" type="eCustomsDutyType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Тип пошлины</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="manufactureOrImportCountry" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Страна импорта/производства</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="manufactureOrImportDocNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер документа производства или импорта (№ ДТ, ФНО 328.00, CT-KZ, CT-1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="markingCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код маркировки (GTIN)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9]{8,14}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование товаров, работ, услуг</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="originCertificateDate" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Дата сертификата происхождения</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+         <xs:element name="originCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Признак происхождения товаров, работ, услуг</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[1-5]"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="physicalLabel" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Физическая метка</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z_0-9\-]*"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="pinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Пин-код</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productId" type="xs:long" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Идентификатор товара</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productNameInImportDoc" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Наименование товаров в соответствии с документом импорта (ДТ или ФНО 328.00)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productNumberInImportDoc" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер товарной позиции из документа импорта (ДТ или ФНО 328.00)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="spiritPercent" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Крепость (% содержания спирта)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:maxInclusive value="100"/>
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="tnvedCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ТН ВЭД ЕАЭС</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="euFormDetailingType">
+    <xs:annotation>
+      <xs:documentation>Типы детализации для Формы Детализации</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONVERSION">
+        <xs:annotation>
+          <xs:documentation>Конвертация между разными единицами измерения</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PACKING">
+        <xs:annotation>
+          <xs:documentation>Комплектация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNPACKING">
+        <xs:annotation>
+          <xs:documentation>Разукомплектация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RE_SORTING">
+        <xs:annotation>
+          <xs:documentation>Пересортица</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EDITING">
+        <xs:annotation>
+          <xs:documentation>Редактирование данных</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eCustomsDutyType">
+    <xs:annotation>
+      <xs:documentation>Тип Таможенной пошлины</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CCT">
+        <xs:annotation>
+          <xs:documentation>ЕТТ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WTO">
+        <xs:annotation>
+          <xs:documentation>ВТО</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EAEU">
+        <xs:annotation>
+          <xs:documentation>ЕАЭС</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT_INSTALLED">
+        <xs:annotation>
+          <xs:documentation>Не установлен</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="euFormReorganizationType">
+    <xs:annotation>
+      <xs:documentation>Виды реорганизации для Формы Реорганизации</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MERGER">
+        <xs:annotation>
+          <xs:documentation>Слияние</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DIVISION">
+        <xs:annotation>
+          <xs:documentation>Разделение</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPIN_OFF">
+        <xs:annotation>
+          <xs:documentation>Выделение</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAKEOVER">
+        <xs:annotation>
+          <xs:documentation>Присоединение</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="uFormWriteOffType">
+    <xs:annotation>
+      <xs:documentation>Тип для поля Причина списания формы "Списание"</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANUFACTURE">
+        <xs:annotation>
+          <xs:documentation>Производство</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOLD_IN_RETAIL_OR_COUPONS">
+        <xs:annotation>
+          <xs:documentation>Реализовано в розничной торговле по чекам ККМ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAMAGE">
+        <xs:annotation>
+          <xs:documentation>Порча/утрата</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RECYCLING">
+        <xs:annotation>
+          <xs:documentation>Утилизация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RECLAMATION">
+        <xs:annotation>
+          <xs:documentation>Рекламация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOSS">
+        <xs:annotation>
+          <xs:documentation>Утеря</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IS_NOT_VSTORE">
+        <xs:annotation>
+          <xs:documentation>Товар с данным кодом ТНВЭД не подлежит ведению в модуле "Виртуальный склад"</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MEDICAL_NEEDS">
+        <xs:annotation>
+          <xs:documentation>На медицинские нужды</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TECHNICAL_NEEDS">
+        <xs:annotation>
+          <xs:documentation>На технические нужды</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NATURAL_DECREASE_IN_NORM">
+        <xs:annotation>
+          <xs:documentation>Естественная убыль в пределах норм</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NATURAL_DECREASE_OVER_NORM">
+        <xs:annotation>
+          <xs:documentation>Естественная убыль сверх норм</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THEFT">
+        <xs:annotation>
+          <xs:documentation>Хищение</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WRITE_OFF_BY_GUILTY">
+        <xs:annotation>
+          <xs:documentation>Списание за счёт виновного лица</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOCIAL_PACKAGE">
+        <xs:annotation>
+          <xs:documentation>Списание на гарантированный социальный пакет</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NO_REQUIREMENTS_FOR_SNT">
+        <xs:annotation>
+          <xs:documentation>Отсутствует требование по оформлению следующего СНТ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONVERSION">
+        <xs:annotation>
+          <xs:documentation>Переработка давальческого сырья</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SERVICE">
+        <xs:annotation>
+          <xs:documentation>Услуга, работа</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISTAKE">
+        <xs:annotation>
+          <xs:documentation>Товар введен ошибочно</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACCOUNTING_FIXED_ASSETS">
+        <xs:annotation>
+          <xs:documentation>Учет ОС/ФА</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>Прочее</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COUPONS_OR_CARDS_PAYMENTS">
+        <xs:annotation>
+          <xs:documentation>Реализовано по талонам или картам по всем видам оплат</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="euFormType">
+    <xs:annotation>
+      <xs:documentation>Тип Универсальной Формы</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ESF">
+        <xs:annotation>
+          <xs:documentation>ЭСФ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KKM">
+        <xs:annotation>
+          <xs:documentation>Чек ККМ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DT">
+        <xs:annotation>
+          <xs:documentation>ДТ - Декларация на товары</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FNO">
+        <xs:annotation>
+          <xs:documentation>ФНО 328.00 - Форма налоговой отчетности</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MANUFACTURE">
+        <xs:annotation>
+          <xs:documentation>Форма Производства</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BALANCE">
+        <xs:annotation>
+          <xs:documentation>Форма ввода Остатков</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOVEMENT">
+        <xs:annotation>
+          <xs:documentation>Форма Внутреннего перемещения</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WRITE_OFF">
+        <xs:annotation>
+          <xs:documentation>Форма Списания</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BALANCE_CORRECTION">
+        <xs:annotation>
+          <xs:documentation>Форма Корректировки остатков</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DETAILING">
+        <xs:annotation>
+          <xs:documentation>Форма Детализации (различаются 4 вида)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHYSICAL_LABEL">
+        <xs:annotation>
+          <xs:documentation>Форма Ввода физических меток</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REORGANIZATION">
+        <xs:annotation>
+          <xs:documentation>Форма Реорганизации</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMPORT_DETAILING">
+        <xs:annotation>
+          <xs:documentation>Форма Детализации Импорта</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></xsd>
+ <xsd><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="namespace.abstractUForm" xmlns:a="namespace.abstractUForm" xmlns:tns="namespace.abstractUForm" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import/>
+
+  <xs:element name="uForm" type="tns:AbstractUForm"/>
+
+  <xs:element name="uform_participant" type="tns:AbstractUFormParticipant"/>
+
+  <xs:complexType name="AbstractUForm" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Базовая информация об Универсальной Форме для всех версий в системе ВС</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="date" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Дата выписки Универсальной Формы</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Исходящий номер Универсальной Формы в бухгалтерии отправителя</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recipient" type="tns:UFormRecipient" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Получатель</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sender" type="tns:UFormSender" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Отправитель/Производитель</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalSum" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Общая сумма</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:totalDigits value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="type" type="euFormType">
+        <xs:annotation>
+          <xs:documentation>Код типа Универсальной Формы</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AbstractUFormProduct" abstract="true">
+    <xs:sequence>
+      <xs:element name="gsvsCode">
+        <xs:annotation>
+          <xs:documentation>Составной код ГС ВС</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{2}\.){3}([0-9]{2}){1}((-[0-9]{10})|(-[0-9]{10}/([0-9]{8}|[0-9]{11,14})))?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="measureUnitCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Единица измерения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="price" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Цена</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:totalDigits value="14"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="quantity">
+        <xs:annotation>
+          <xs:documentation>Количество</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="6"/>
+            <xs:totalDigits value="18"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="sum" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Сумма</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:totalDigits value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UFormRecipient">
+    <xs:annotation>
+      <xs:documentation>Получатель Универсальной Формы</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:AbstractUFormParticipant">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="AbstractUFormParticipant">
+    <xs:annotation>
+      <xs:documentation>Базовая информация об участнике Универсальной Формы для всех версий в системе ВС</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Адрес НП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="agentDocDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дата контракта оператора</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="agentDocNum" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер контракта оператора</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Наименование НП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="projectCode" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Код проекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="storeId" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Идентификатор Склада</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="storeName" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Наименование Склада</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tin" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ИИН/БИН НП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UFormSender">
+    <xs:annotation>
+      <xs:documentation>Отправитель Универсальной Формы</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:AbstractUFormParticipant">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>]]></xsd>
+         </xsdList>
+      </ns2:queryUFormXsdResponse>
+   </soap:Body>
+</soap:Envelope>

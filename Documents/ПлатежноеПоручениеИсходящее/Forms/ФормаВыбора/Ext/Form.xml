@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChoiceMode>true</ChoiceMode>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="10"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="12">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="РучнаяКорректировка" id="28">
+					<DataPath>Список.РучнаяКорректировка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="РучнаяКорректировкаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="РучнаяКорректировкаРасширеннаяПодсказка" id="30"/>
+				</PictureField>
+				<PictureField name="ПринятиеКУчетуНУ" id="31">
+					<DataPath>Список.ПринятиеКУчетуНУ</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СостояниеПринятиеКУчетуНУВДокументах</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ПринятиеКУчетуНУКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ПринятиеКУчетуНУРасширеннаяПодсказка" id="33"/>
+				</PictureField>
+				<CheckBoxField name="УчитыватьКПН" id="34">
+					<DataPath>Список.УчитыватьКПН</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КПН</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьКПНКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="УчитыватьКПНРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
+				<LabelField name="ВидУчетаНУ" id="37">
+					<DataPath>Список.ВидУчетаНУ</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ВидУчетаНУКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ВидУчетаНУРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="Дата" id="22">
+					<DataPath>Список.Дата</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Width>13</Width>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Номер" id="25">
+					<DataPath>Список.Номер</DataPath>
+					<Width>16</Width>
+					<ContextMenu name="НомерКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="ВидОперации" id="49">
+					<DataPath>Список.ВидОперации</DataPath>
+					<ContextMenu name="ВидОперацииКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ВидОперацииРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<LabelField name="Организация" id="40">
+					<DataPath>Список.Организация</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="СтруктурноеПодразделениеОтправитель" id="43">
+					<DataPath>Список.СтруктурноеПодразделениеОтправитель</DataPath>
+					<Width>28</Width>
+					<ContextMenu name="СтруктурноеПодразделениеОтправительКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="СтруктурноеПодразделениеОтправительРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="СтруктурноеПодразделениеПолучатель" id="46">
+					<DataPath>Список.СтруктурноеПодразделениеПолучатель</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Width>30</Width>
+					<ContextMenu name="СтруктурноеПодразделениеПолучательКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СтруктурноеПодразделениеПолучательРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="СчетОрганизации" id="64">
+					<DataPath>Список.СчетОрганизации</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет организации</v8:content>
+						</v8:item>
+					</Title>
+					<Width>18</Width>
+					<ContextMenu name="СчетОрганизацииКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="СчетОрганизацииРасширеннаяПодсказка" id="66"/>
+				</LabelField>
+				<LabelField name="СуммаДокумента" id="52">
+					<DataPath>Список.СуммаДокумента</DataPath>
+					<Width>10</Width>
+					<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<LabelField name="СуммаКомиссии" id="55">
+					<DataPath>Список.СуммаКомиссии</DataPath>
+					<ContextMenu name="СуммаКомиссииКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="СуммаКомиссииРасширеннаяПодсказка" id="57"/>
+				</LabelField>
+				<LabelField name="Всего" id="61">
+					<DataPath>Список.Всего</DataPath>
+					<Width>10</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ВсегоКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ВсегоРасширеннаяПодсказка" id="63"/>
+				</LabelField>
+				<LabelField name="ВалютаДокумента" id="58">
+					<DataPath>Список.ВалютаДокумента</DataPath>
+					<ContextMenu name="ВалютаДокументаКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ВалютаДокументаРасширеннаяПодсказка" id="60"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="67">
+					<DataPath>Список.Контрагент</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="69"/>
+				</LabelField>
+				<LabelField name="Автор" id="70">
+					<DataPath>Список.Автор</DataPath>
+					<ContextMenu name="АвторКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="72"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="73">
+					<DataPath>Список.Ответственный</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Width>16</Width>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="75"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="76">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="78"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="79">
+					<DataPath>Список.Ссылка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="81"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.ВидОперацииПВ</Field>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументПлатежноеПоручениеИсходящее.Ссылка,
+	ДокументПлатежноеПоручениеИсходящее.ПометкаУдаления,
+	ДокументПлатежноеПоручениеИсходящее.Номер,
+	ДокументПлатежноеПоручениеИсходящее.Дата,
+	ДокументПлатежноеПоручениеИсходящее.Проведен,
+	ДокументПлатежноеПоручениеИсходящее.Автор,
+	ДокументПлатежноеПоручениеИсходящее.БанкПосредник,
+	ДокументПлатежноеПоручениеИсходящее.ВалютаДокумента,
+	ДокументПлатежноеПоручениеИсходящее.ВидНалога,
+	ДокументПлатежноеПоручениеИсходящее.ВидОперации,
+	ДокументПлатежноеПоручениеИсходящее.ВидПлатежа,
+	ДокументПлатежноеПоручениеИсходящее.ВидУчетаНУ,
+	ДокументПлатежноеПоручениеИсходящее.ВключатьКомиссиюБанка,
+	ДокументПлатежноеПоручениеИсходящее.ДатаВалютирования,
+	ДокументПлатежноеПоручениеИсходящее.ДатаВыписки,
+	ДокументПлатежноеПоручениеИсходящее.ДатаПолученияТовара,
+	ДокументПлатежноеПоручениеИсходящее.ДокументОснование,
+	ДокументПлатежноеПоручениеИсходящее.КодБК,
+	ДокументПлатежноеПоручениеИсходящее.КодНазначенияПлатежа,
+	ДокументПлатежноеПоручениеИсходящее.Комментарий,
+	ДокументПлатежноеПоручениеИсходящее.Контрагент,
+	ДокументПлатежноеПоручениеИсходящее.НазначениеПлатежа,
+	ДокументПлатежноеПоручениеИсходящее.Оплачено,
+	ДокументПлатежноеПоручениеИсходящее.Организация,
+	ДокументПлатежноеПоручениеИсходящее.Ответственный,
+	ДокументПлатежноеПоручениеИсходящее.РННПлательщика,
+	ДокументПлатежноеПоручениеИсходящее.РННПолучателя,
+	ДокументПлатежноеПоручениеИсходящее.РучнаяКорректировка,
+	ДокументПлатежноеПоручениеИсходящее.СтатьяДвиженияДенежныхСредств,
+	ДокументПлатежноеПоручениеИсходящее.СубконтоДтБУ1,
+	ДокументПлатежноеПоручениеИсходящее.СубконтоДтБУ2,
+	ДокументПлатежноеПоручениеИсходящее.СубконтоДтБУ3,
+	ДокументПлатежноеПоручениеИсходящее.СубконтоДтНУ1,
+	ДокументПлатежноеПоручениеИсходящее.СубконтоДтНУ2,
+	ДокументПлатежноеПоручениеИсходящее.СубконтоДтНУ3,
+	ДокументПлатежноеПоручениеИсходящее.СуммаДокумента,
+	ДокументПлатежноеПоручениеИсходящее.СчетБанк,
+	ДокументПлатежноеПоручениеИсходящее.СчетБанкаПосредника,
+	ДокументПлатежноеПоручениеИсходящее.СчетКонтрагента,
+	ДокументПлатежноеПоручениеИсходящее.СчетОрганизации,
+	ДокументПлатежноеПоручениеИсходящее.СчетУчетаРасчетовСКонтрагентомБУ,
+	ДокументПлатежноеПоручениеИсходящее.СчетУчетаРасчетовСКонтрагентомНУ,
+	ДокументПлатежноеПоручениеИсходящее.ТекстПлательщика,
+	ДокументПлатежноеПоручениеИсходящее.ТекстПолучателя,
+	ДокументПлатежноеПоручениеИсходящее.ПроцентКомиссии,
+	ДокументПлатежноеПоручениеИсходящее.СуммаКомиссии,
+	(ДокументПлатежноеПоручениеИсходящее.СуммаДокумента + ДокументПлатежноеПоручениеИсходящее.СуммаКомиссии) КАК Всего,
+	ДокументПлатежноеПоручениеИсходящее.УчитыватьКПН,
+	ДокументПлатежноеПоручениеИсходящее.СтруктурноеПодразделениеОтправитель,
+	ДокументПлатежноеПоручениеИсходящее.СтруктурноеПодразделениеПолучатель,
+	ДокументПлатежноеПоручениеИсходящее.ПеречислениеЗаработнойПлаты,
+	ДокументПлатежноеПоручениеИсходящее.РасшифровкаПлатежа,
+	ДокументПлатежноеПоручениеИсходящее.ПеречислениеПенсионныхВзносов,
+	ДокументПлатежноеПоручениеИсходящее.ПеречислениеСоциальныхОтчислений,
+	ДокументПлатежноеПоручениеИсходящее.ПеречислениеПоИсполнительнымЛистам,
+	ДокументПлатежноеПоручениеИсходящее.ПеречислениеНДССИзмененнымСрокомУплаты,
+	ДокументПлатежноеПоручениеИсходящее.ПеречислениеВПодотчет,
+	ДокументПлатежноеПоручениеИсходящее.МоментВремени,
+	ВЫБОР
+		КОГДА ДокументПлатежноеПоручениеИсходящее.УчитыватьКПН
+			ТОГДА ВЫБОР
+					КОГДА ДокументПлатежноеПоручениеИсходящее.ВидУчетаНУ = ЗНАЧЕНИЕ(Справочник.ВидыУчетаНУ.НУ)
+						ТОГДА 0
+					ИНАЧЕ 1
+				КОНЕЦ
+		ИНАЧЕ 2
+	КОНЕЦ КАК ПринятиеКУчетуНУ,
+	ЕСТЬNULL(ОПВПеречислениеВФонды.ВидОперации, ЗНАЧЕНИЕ(Перечисление.ВидыОперацийОПВПеречислениеВФонды.ПустаяСсылка)) КАК ВидОперацииПВ
+	
+ИЗ
+	Документ.ПлатежноеПоручениеИсходящее КАК ДокументПлатежноеПоручениеИсходящее
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПлатежноеПоручениеИсходящее.ПеречислениеПенсионныхВзносов КАК ПлатежноеПоручениеИсходящееПеречислениеПенсионныхВзносов
+			ПО ПлатежноеПоручениеИсходящееПеречислениеПенсионныхВзносов.НомерСтроки = 1
+				И ПлатежноеПоручениеИсходящееПеречислениеПенсионныхВзносов.Ссылка = ДокументПлатежноеПоручениеИсходящее.Ссылка 
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ОПВПеречислениеВФонды КАК ОПВПеречислениеВФонды
+			ПО ПлатежноеПоручениеИсходящееПеречислениеПенсионныхВзносов.Документ = ОПВПеречислениеВФонды.Ссылка
+</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаВходящегоДокумента</dcssch:dataPath>
+					<dcssch:field>ДатаВходящегоДокумента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтатьяДвиженияДенежныхСредств</dcssch:dataPath>
+					<dcssch:field>СтатьяДвиженияДенежныхСредств</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерВходящегоДокумента</dcssch:dataPath>
+					<dcssch:field>НомерВходящегоДокумента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ФактическийПлательщик</dcssch:dataPath>
+					<dcssch:field>ФактическийПлательщик</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СуммаКомиссии</dcssch:dataPath>
+					<dcssch:field>СуммаКомиссии</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеЕдиныхПлатежей</dcssch:dataPath>
+					<dcssch:field>ПеречислениеЕдиныхПлатежей</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеЗаработнойПлаты.Ссылка</dcssch:dataPath>
+					<dcssch:field>ПеречислениеЗаработнойПлаты.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПрочихВыплат</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПрочихВыплат</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьКПН</dcssch:dataPath>
+					<dcssch:field>УчитыватьКПН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеОтправитель</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеОтправитель</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекстПолучателя</dcssch:dataPath>
+					<dcssch:field>ТекстПолучателя</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчетаНУ</dcssch:dataPath>
+					<dcssch:field>ВидУчетаНУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НазначениеПлатежа</dcssch:dataPath>
+					<dcssch:field>НазначениеПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Контрагент</dcssch:dataPath>
+					<dcssch:field>Контрагент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ПеречислениеЗаработнойПлаты</dcssch:dataPath>
+					<dcssch:field>ПеречислениеЗаработнойПлаты</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>БанкПосредник</dcssch:dataPath>
+					<dcssch:field>БанкПосредник</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетОрганизации</dcssch:dataPath>
+					<dcssch:field>СчетОрганизации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютаДокумента</dcssch:dataPath>
+					<dcssch:field>ВалютаДокумента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.Сделка</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.Сделка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидНалога</dcssch:dataPath>
+					<dcssch:field>ВидНалога</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеЗаработнойПлаты.Ведомость</dcssch:dataPath>
+					<dcssch:field>ПеречислениеЗаработнойПлаты.Ведомость</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидОперации</dcssch:dataPath>
+					<dcssch:field>ВидОперации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Всего</dcssch:dataPath>
+					<dcssch:field>Всего</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всего</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаВыписки</dcssch:dataPath>
+					<dcssch:field>ДатаВыписки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидПлатежа</dcssch:dataPath>
+					<dcssch:field>ВидПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтБУ2</dcssch:dataPath>
+					<dcssch:field>СубконтоДтБУ2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВключатьКомиссиюБанка</dcssch:dataPath>
+					<dcssch:field>ВключатьКомиссиюБанка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаВалютирования</dcssch:dataPath>
+					<dcssch:field>ДатаВалютирования</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекстПлательщика</dcssch:dataPath>
+					<dcssch:field>ТекстПлательщика</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтБУ3</dcssch:dataPath>
+					<dcssch:field>СубконтоДтБУ3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Оплачено</dcssch:dataPath>
+					<dcssch:field>Оплачено</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаПолученияТовара</dcssch:dataPath>
+					<dcssch:field>ДатаПолученияТовара</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетБанкаПосредника</dcssch:dataPath>
+					<dcssch:field>СчетБанкаПосредника</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДокументОснование</dcssch:dataPath>
+					<dcssch:field>ДокументОснование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КодБК</dcssch:dataPath>
+					<dcssch:field>КодБК</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КодНазначенияПлатежа</dcssch:dataPath>
+					<dcssch:field>КодНазначенияПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтБУ1</dcssch:dataPath>
+					<dcssch:field>СубконтоДтБУ1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ответственный</dcssch:dataPath>
+					<dcssch:field>Ответственный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РННПлательщика</dcssch:dataPath>
+					<dcssch:field>РННПлательщика</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РННПолучателя</dcssch:dataPath>
+					<dcssch:field>РННПолучателя</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РучнаяКорректировка</dcssch:dataPath>
+					<dcssch:field>РучнаяКорректировка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеЗаработнойПлаты.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ПеречислениеЗаработнойПлаты.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.ДоговорКонтрагента</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.ДоговорКонтрагента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетКонтрагента</dcssch:dataPath>
+					<dcssch:field>СчетКонтрагента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтНУ1</dcssch:dataPath>
+					<dcssch:field>СубконтоДтНУ1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтНУ2</dcssch:dataPath>
+					<dcssch:field>СубконтоДтНУ2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.СуммаПлатежа</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.СуммаПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтНУ3</dcssch:dataPath>
+					<dcssch:field>СубконтоДтНУ3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетБанк</dcssch:dataPath>
+					<dcssch:field>СчетБанк</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СуммаДокумента</dcssch:dataPath>
+					<dcssch:field>СуммаДокумента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетУчетаРасчетовСКонтрагентомБУ</dcssch:dataPath>
+					<dcssch:field>СчетУчетаРасчетовСКонтрагентомБУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.КурсВзаиморасчетов</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.КурсВзаиморасчетов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.СчетУчетаРасчетовСКонтрагентом</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.СчетУчетаРасчетовСКонтрагентом</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетУчетаРасчетовСКонтрагентомНУ</dcssch:dataPath>
+					<dcssch:field>СчетУчетаРасчетовСКонтрагентомНУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПроцентКомиссии</dcssch:dataPath>
+					<dcssch:field>ПроцентКомиссии</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеПолучатель</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеПолучатель</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеЗаработнойПлаты.СуммаКВыплате</dcssch:dataPath>
+					<dcssch:field>ПеречислениеЗаработнойПлаты.СуммаКВыплате</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СчетНаОплату</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СчетНаОплату</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.Ссылка</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СуммаПлатежа</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СуммаПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.КратностьВзаиморасчетов</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.КратностьВзаиморасчетов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СуммаВзаиморасчетов</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СуммаВзаиморасчетов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СтавкаНДС</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СтавкаНДС</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.Контрагент</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.Контрагент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СуммаНДС</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СуммаНДС</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СтатьяДвиженияДенежныхСредств</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СтатьяДвиженияДенежныхСредств</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СчетУчетаРасчетовСКонтрагентомБУ</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СчетУчетаРасчетовСКонтрагентомБУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СчетУчетаРасчетовПоАвансам</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СчетУчетаРасчетовПоАвансам</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.СрокПлатежа</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.СрокПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РасшифровкаПлатежа.СчетУчетаРасчетовСКонтрагентомНУ</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа.СчетУчетаРасчетовСКонтрагентомНУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>РасшифровкаПлатежа</dcssch:dataPath>
+					<dcssch:field>РасшифровкаПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПенсионныхВзносов.Ссылка</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПенсионныхВзносов.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПенсионныхВзносов.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПенсионныхВзносов.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПенсионныхВзносов.Документ</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПенсионныхВзносов.Документ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПенсионныхВзносов.СуммаКПеречислению</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПенсионныхВзносов.СуммаКПеречислению</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ПеречислениеПенсионныхВзносов</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПенсионныхВзносов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеСоциальныхОтчислений.Ссылка</dcssch:dataPath>
+					<dcssch:field>ПеречислениеСоциальныхОтчислений.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеСоциальныхОтчислений.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ПеречислениеСоциальныхОтчислений.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеСоциальныхОтчислений.Документ</dcssch:dataPath>
+					<dcssch:field>ПеречислениеСоциальныхОтчислений.Документ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеСоциальныхОтчислений.СуммаКПеречислению</dcssch:dataPath>
+					<dcssch:field>ПеречислениеСоциальныхОтчислений.СуммаКПеречислению</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ПеречислениеСоциальныхОтчислений</dcssch:dataPath>
+					<dcssch:field>ПеречислениеСоциальныхОтчислений</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам.Ссылка</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам.Документ</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам.Документ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам.СуммаКПеречислению</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам.СуммаКПеречислению</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам.СуммаСборов</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам.СуммаСборов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам.СуммаПлатежа</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам.СуммаПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ПеречислениеПоИсполнительнымЛистам</dcssch:dataPath>
+					<dcssch:field>ПеречислениеПоИсполнительнымЛистам</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.Ссылка</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.Договор</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.Договор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.ВидЗадолженностиПодотчетногоЛица</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.ВидЗадолженностиПодотчетногоЛица</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.НДСВидПоступления</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.НДСВидПоступления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.НДСВидОборота</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.НДСВидОборота</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.СтавкаНДС</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.СтавкаНДС</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.СчетУчетаНДС</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.СчетУчетаНДС</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты.ГТД</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты.ГТД</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ПеречислениеНДССИзмененнымСрокомУплаты</dcssch:dataPath>
+					<dcssch:field>ПеречислениеНДССИзмененнымСрокомУплаты</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.Ссылка</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидОперацииПВ</dcssch:dataPath>
+					<dcssch:field>ВидОперацииПВ</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид операции ПВ</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.ФизЛицо</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.ФизЛицо</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.СтатьяДвиженияДенежныхСредств</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.СтатьяДвиженияДенежныхСредств</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.СуммаПлатежа</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.СуммаПлатежа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.СчетУчета</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.СчетУчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПеречислениеВПодотчет.НомерКартСчета</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет.НомерКартСчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ПеречислениеВПодотчет</dcssch:dataPath>
+					<dcssch:field>ПеречислениеВПодотчет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПринятиеКУчетуНУ</dcssch:dataPath>
+					<dcssch:field>ПринятиеКУчетуНУ</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принятие к учету НУ</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<MainTable>Document.ПлатежноеПоручениеИсходящее</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ВидОперации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.ВидОперации</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийППИсходящее.ПеречислениеПенсионныхВзносов</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.ВидОперацииПВ</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийОПВПеречислениеВФонды.ПеречислениеОбязательныхПрофессиональныхПенсионныхВзносов</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Перечисление пенсионных взносов (ОППВ)</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ВидОперации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.ВидОперации</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийППИсходящее.ПеречислениеПенсионныхВзносов</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.ВидОперацииПВ</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийОПВПеречислениеВФонды.ПеречислениеОбязательныхПенсионныхВзносов</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Перечисление пенсионных взносов (ОПВ)</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ВидОперации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.ВидОперации</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийППИсходящее.ПеречислениеПенсионныхВзносов</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Список.ВидОперацииПВ</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийОПВПеречислениеВФонды.ПеречислениеОбязательныхПенсионныхВзносовРаботодателя</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Перечисление пенсионных взносов (ОПВР)</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>0:2baf6d7a-12ed-4f22-ad96-92bb31b747ff</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.Печать</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ЗаполнениеОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ОтчетыОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

@@ -1,0 +1,97 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:queryfnoMatchingXsdResponse xmlns:ns2="fnoMatching">
+		<xsdList>
+
+         <xsd><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<xs:schema xmlns:tns="v1.fnoMatching" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="v1.fnoMatching" attributeFormDefault="unqualified" elementFormDefault="unqualified">
+	<xs:element name="fnoMatching" type="tns:fnoMatchingV1" form="qualified"/>
+	<xs:complexType name="FnoCompact">
+		<xs:choice>
+			<xs:element name="customerTin" type="xs:string" minOccurs="0"/>
+			<xs:element name="date" type="xs:string" minOccurs="0"/>
+			<xs:element name="productList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="product" type="tns:FnoProductCompact" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="registrationNumber" minOccurs="0"/>
+			<xs:element name="totalSum" type="xs:decimal" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:simpleType name="FnoMatchingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SNT_FNO"/>
+			<xs:enumeration value="FORM_PACKING_FNO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FnoProductCompact">
+		<xs:choice>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="tnvedCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="measureUnitCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="quantity" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="price" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="fnoNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="productNumber" type="xs:string" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="SourceDocument">
+		<xs:choice>
+			<xs:element name="customerTin" type="xs:string" minOccurs="0"/>
+			<xs:element name="date" type="xs:string" minOccurs="0"/>
+			<xs:element name="products">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="product" type="tns:SourceProduct" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="registrationNumber" minOccurs="0"/>
+			<xs:element name="totalSum" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="documentVersion" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="SourceProduct">
+		<xs:choice>
+			<xs:element name="idx" type="xs:string" minOccurs="0"/>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="tnvedCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="measureUnitCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="quantity" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="price" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="fnoNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="fnoProductNumber" type="xs:string" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="fnoMatchingV1">
+		<xs:choice>
+			<xs:element name="fnoList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="fno" type="tns:FnoCompact" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="creatorTin" type="xs:string" minOccurs="0"/>
+			<xs:element name="number" type="xs:string" minOccurs="0"/>
+			<xs:element name="sourceDocumentList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="sourceDocument" type="tns:SourceDocument" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="type" type="tns:FnoMatchingType" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>
+]]></xsd>
+		</xsdList>
+
+      </ns2:queryfnoMatchingXsdResponse>
+   </soap:Body>
+</soap:Envelope>

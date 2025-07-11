@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Групповое создание отчетов об Агрегации кодов маркировки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщиеДанные" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие данные документов</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОбщиеДанныеРасширеннаяПодсказка" id="27">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Данные,</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛевоОбщее" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Лево общее</v8:content>
+						</v8:item>
+					</Title>
+					<Width>35</Width>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛевоОбщееРасширеннаяПодсказка" id="23"/>
+					<ChildItems>
+						<InputField name="ВидПродукции" id="10">
+							<DataPath>ВидПродукции</DataPath>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ВидПродукцииКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ВидПродукцииРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="OnChange">ВидПродукцииПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ВидУпаковки" id="13">
+							<DataPath>ВидУпаковки</DataPath>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыУпаковокИСМПТК.EnumValue.Логистическая</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыУпаковокИСМПТК.EnumValue.Групповая</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ВидУпаковкиКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ВидУпаковкиРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="Организация" id="1">
+							<DataPath>Организация</DataPath>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+								<Event name="Clearing">ОрганизацияОчистка</Event>
+							</Events>
+						</InputField>
+						<InputField name="ОрганизацияИдентификационныйНомер" id="4">
+							<DataPath>ОрганизацияИдентификационныйНомер</DataPath>
+							<ContextMenu name="ОрганизацияИдентификационныйНомерКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ОрганизацияИдентификационныйНомерРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<InputField name="Ответственный" id="7">
+							<DataPath>Ответственный</DataPath>
+							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="9"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПравоОбщее" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Право общее</v8:content>
+						</v8:item>
+					</Title>
+					<Width>35</Width>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПравоОбщееРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПравоТабак" id="42">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Право табак</v8:content>
+								</v8:item>
+							</Title>
+							<Width>35</Width>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПравоТабакРасширеннаяПодсказка" id="43"/>
+							<ChildItems>
+								<InputField name="ИдентификаторПроизводственногоЗаказа" id="16">
+									<DataPath>ИдентификаторПроизводственногоЗаказа</DataPath>
+									<ContextMenu name="ИдентификаторПроизводственногоЗаказаКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ИдентификаторПроизводственногоЗаказаРасширеннаяПодсказка" id="18"/>
+								</InputField>
+								<InputField name="ИдентификаторПроизводственнойЛинии" id="19">
+									<DataPath>ИдентификаторПроизводственнойЛинии</DataPath>
+									<ContextMenu name="ИдентификаторПроизводственнойЛинииКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ИдентификаторПроизводственнойЛинииРасширеннаяПодсказка" id="21"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ЕмкостьУпаковок" id="44">
+							<DataPath>ЕмкостьУпаковок</DataPath>
+							<TitleHeight>2</TitleHeight>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="ЕмкостьУпаковокКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ЕмкостьУпаковокРасширеннаяПодсказка" id="46">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Если не указать значение, в созданных документах ёмкость упаковок будет равна фактически упакованному количеству. В свою очередь, количество по факту будет заполняться по количеству кодов маркировки, вложенных в один код агрегата.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКолонки" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колонки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКолонкиРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаГоризонтальная" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Горизонтальная</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаГоризонтальнаяРасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаФорматЗагрузки" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки разбора строки</v8:content>
+								</v8:item>
+							</Title>
+							<Width>35</Width>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаФорматЗагрузкиРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<CheckBoxField name="СпособРазбораСтроки" id="51">
+									<DataPath>СпособРазбораСтроки</DataPath>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Tumbler</CheckBoxType>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>БЛ='По длине кода'; БИ='По разделителю строки'</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="СпособРазбораСтрокиКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="СпособРазбораСтрокиРасширеннаяПодсказка" id="53"/>
+									<Events>
+										<Event name="OnChange">СпособРазбораСтрокиПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<UsualGroup name="ГруппаЛевоФормат" id="49">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Лево формат</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЛевоФорматРасширеннаяПодсказка" id="50"/>
+									<ChildItems>
+										<InputField name="ДлинаКодаАгрегата" id="39">
+											<DataPath>ДлинаКодаАгрегата</DataPath>
+											<TitleHeight>2</TitleHeight>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество символов в коде агрегата</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ContextMenu name="ДлинаКодаАгрегатаКонтекстноеМеню" id="40"/>
+											<ExtendedTooltip name="ДлинаКодаАгрегатаРасширеннаяПодсказка" id="41">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Количество символов до разделителя в одной строке файла.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<UsualGroup name="ГруппаРазделитель" id="75">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Разделитель</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>None</ToolTipRepresentation>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаРазделительРасширеннаяПодсказка" id="76"/>
+											<ChildItems>
+												<LabelDecoration name="ВидРазделителя" id="77">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вид разделителя:</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ВидРазделителяКонтекстноеМеню" id="78"/>
+													<ExtendedTooltip name="ВидРазделителяРасширеннаяПодсказка" id="79"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаВидыРазделителя" id="64">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Виды разделителя</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаВидыРазделителяРасширеннаяПодсказка" id="65"/>
+													<ChildItems>
+														<RadioButtonField name="РежимРазделителя" id="88">
+															<DataPath>РежимРазделителя</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<RadioButtonType>Auto</RadioButtonType>
+															<ColumnsCount>1</ColumnsCount>
+															<ChoiceList>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>,</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">1</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>;</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">2</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Tab</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">3</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Пользовательское значение</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">4</Value>
+																	</xr:Value>
+																</xr:Item>
+															</ChoiceList>
+															<ContextMenu name="РежимРазделителяКонтекстноеМеню" id="89"/>
+															<ExtendedTooltip name="РежимРазделителяРасширеннаяПодсказка" id="90"/>
+															<Events>
+																<Event name="OnChange">РежимРазделителяПриИзменении</Event>
+															</Events>
+														</RadioButtonField>
+														<InputField name="ПользовательскийРазделитель" id="91">
+															<DataPath>ПользовательскийРазделитель</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>10</MaxWidth>
+															<ClearButton>true</ClearButton>
+															<ContextMenu name="ПользовательскийРазделительКонтекстноеМеню" id="92"/>
+															<ExtendedTooltip name="ПользовательскийРазделительРасширеннаяПодсказка" id="93"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаПредупреждения" id="100">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Предупреждения</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаПредупрежденияРасширеннаяПодсказка" id="101"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияПользовательскийРазделитель" id="97">
+													<TextColor>#807A59</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При разборе файла в каждой строке будет выполняться поиск значения, указанного в поле пользовательского разделителя. Все, что найдено в строке до этого значения, будет считаться кодом агрегата. Все, что после - вложенной позицией.
+Допустимые значения: буквы латинского алфавита, символы, цифры.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияПользовательскийРазделительКонтекстноеМеню" id="98"/>
+													<ExtendedTooltip name="ДекорацияПользовательскийРазделительРасширеннаяПодсказка" id="99"/>
+												</LabelDecoration>
+												<LabelDecoration name="ДекорацияРазделитель" id="94">
+													<TextColor>#807A59</TextColor>
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;Внимание!&lt;/&gt; Если коды агрегата в файле представлены групповыми DataMatrix кодами, рекомендуется использовать режим разбора По длине кода, т.к. DataMatrix может содержать знак ";", что приведет к ошибке.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="95"/>
+													<ExtendedTooltip name="ДекорацияРазделительРасширеннаяПодсказка" id="96"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаДополнительныеНастройки" id="102">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дополнительные настройки</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<ExtendedTooltip name="ГруппаДополнительныеНастройкиРасширеннаяПодсказка" id="103"/>
+									<ChildItems>
+										<CheckBoxField name="УдалятьAID" id="85">
+											<DataPath>УдалятьAID</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УдалятьAIDКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="УдалятьAIDРасширеннаяПодсказка" id="87">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Преобразовывать групповые коды в формате SSCC к 18 символам, удаляя прикладной идентификатор (application identifier или AID), находящийся в начале кода. В SSCC-кодах он имеет вид (00).</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСоздание" id="31">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные файла</v8:content>
+								</v8:item>
+							</Title>
+							<Width>35</Width>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаСозданиеРасширеннаяПодсказка" id="32"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЛевоСоздание" id="35">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Лево создание</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЛевоСозданиеРасширеннаяПодсказка" id="36"/>
+									<ChildItems>
+										<InputField name="ПутьКФайлуЗагрузки" id="28">
+											<DataPath>ПутьКФайлуЗагрузки</DataPath>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="ПутьКФайлуЗагрузкиКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="ПутьКФайлуЗагрузкиРасширеннаяПодсказка" id="30">
+												<Width>30</Width>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Файл в формате CSV, содержащий данные об агрегационных кодах SSCC и список вложенных в них кодов маркировки.
+</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="StartChoice">ПутьКФайлуЗагрузкиНачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="Декорация" id="82">
+					<ContextMenu name="ДекорацияКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="ДекорацияРасширеннаяПодсказка" id="84"/>
+				</LabelDecoration>
+				<Button name="СоздатьГруппуДокументов" id="33">
+					<Type>UsualButton</Type>
+					<Width>25</Width>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.СоздатьГруппуДокументов</CommandName>
+					<BackColor>style:ВыборСтандартногоПериодаФонКнопкиИСМПТК</BackColor>
+					<ExtendedTooltip name="СоздатьГруппуДокументовРасширеннаяПодсказка" id="34"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Организация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ОрганизацияИдентификационныйНомер" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИИН/БИН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторПроизводственнойЛинии" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор производственной линии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>512</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторПроизводственногоЗаказа" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор производственного заказа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>512</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Ответственный" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ПользователиИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидПродукции" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыПродукцииИСМПТК</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидУпаковки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид упаковки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыУпаковокИСМПТК</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьКФайлуЗагрузки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружаемый файл</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлинаКодаАгрегата" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длина кода агрегата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕмкостьУпаковок" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ёмкость упаковок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СпособРазбораСтроки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ разбора строки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделительДляПоиска" id="16">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="УдалятьAID" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нормализовать SSCC коды</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ПоддержкаДвойногоФорматаТранспортныхКодовИСМПТК</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="РежимРазделителя" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид разделителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПользовательскийРазделитель" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользовательский разделитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьГруппуДокументов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать группу агрегаций</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьГруппуДокументов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

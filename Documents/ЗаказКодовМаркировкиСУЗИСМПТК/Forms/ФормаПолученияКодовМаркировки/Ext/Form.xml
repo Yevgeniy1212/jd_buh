@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ПолучениеКодовМаркировки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коды маркировки по заказу</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ПолучениеКодовМаркировкиРасширеннаяПодсказка" id="7"/>
+			<ChildItems>
+				<InputField name="КоличествоКодовКПолучению" id="1">
+					<DataPath>РазмерБлокаКодов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получить порциями по</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="КоличествоКодовКПолучениюКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КоличествоКодовКПолучениюРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">КоличествоКодовКПолучениюПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelDecoration name="ОписаниеКодов" id="8">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>кодов маркировки</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОписаниеКодовКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ОписаниеКодовРасширеннаяПодсказка" id="10"/>
+				</LabelDecoration>
+				<Button name="ПолучитьКодыМаркировки" id="4">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПолучитьКодыМаркировки</CommandName>
+					<ExtendedTooltip name="ПолучитьКодыМаркировкиРасширеннаяПодсказка" id="5"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="ОтображатьДанныеПоНоменклатуре" id="42">
+			<DataPath>ОтображатьДанныеПоНоменклатуре</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтображатьДанныеПоНоменклатуреКонтекстноеМеню" id="43"/>
+			<ExtendedTooltip name="ОтображатьДанныеПоНоменклатуреРасширеннаяПодсказка" id="44"/>
+			<Events>
+				<Event name="OnChange">ОтображатьДанныеПоНоменклатуреПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<Table name="ТаблицаКодовЗаказа" id="11">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаКодовЗаказа</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаКодовЗаказаКонтекстноеМеню" id="12"/>
+			<AutoCommandBar name="ТаблицаКодовЗаказаКоманднаяПанель" id="13">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ТаблицаКодовЗаказаВыбратьВсе" id="48">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВыбратьВсе</CommandName>
+						<ExtendedTooltip name="ТаблицаКодовЗаказаВыбратьВсеРасширеннаяПодсказка" id="49"/>
+					</Button>
+					<Button name="ТаблицаКодовЗаказаСнятьВыбор" id="50">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СнятьВыбор</CommandName>
+						<ExtendedTooltip name="ТаблицаКодовЗаказаСнятьВыборРасширеннаяПодсказка" id="51"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаКодовЗаказаРасширеннаяПодсказка" id="14"/>
+			<SearchStringAddition name="ТаблицаКодовЗаказаСтрокаПоиска" id="15">
+				<AdditionSource>
+					<Item>ТаблицаКодовЗаказа</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКодовЗаказаСтрокаПоискаКонтекстноеМеню" id="16"/>
+				<ExtendedTooltip name="ТаблицаКодовЗаказаСтрокаПоискаРасширеннаяПодсказка" id="17"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаКодовЗаказаСостояниеПросмотра" id="18">
+				<AdditionSource>
+					<Item>ТаблицаКодовЗаказа</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКодовЗаказаСостояниеПросмотраКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ТаблицаКодовЗаказаСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаКодовЗаказаУправлениеПоиском" id="21">
+				<AdditionSource>
+					<Item>ТаблицаКодовЗаказа</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКодовЗаказаУправлениеПоискомКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ТаблицаКодовЗаказаУправлениеПоискомРасширеннаяПодсказка" id="23"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">ТаблицаКодовЗаказаПередНачаломДобавления</Event>
+				<Event name="BeforeDeleteRow">ТаблицаКодовЗаказаПередУдалением</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="ТаблицаКодовЗаказаВыбран" id="45">
+					<DataPath>ТаблицаКодовЗаказа.Выбран</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТаблицаКодовЗаказаВыбранКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаВыбранРасширеннаяПодсказка" id="47"/>
+				</CheckBoxField>
+				<InputField name="ТаблицаКодовЗаказаНоменклатура" id="27">
+					<DataPath>ТаблицаКодовЗаказа.Номенклатура</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаКодовЗаказаНоменклатураКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаНоменклатураРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<InputField name="ТаблицаКодовЗаказаХарактеристика" id="39">
+					<DataPath>ТаблицаКодовЗаказа.Характеристика</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаКодовЗаказаХарактеристикаКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаХарактеристикаРасширеннаяПодсказка" id="41"/>
+				</InputField>
+				<InputField name="ТаблицаКодовЗаказаGTIN" id="24">
+					<DataPath>ТаблицаКодовЗаказа.GTIN</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ТаблицаКодовЗаказаGTINКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаGTINРасширеннаяПодсказка" id="26"/>
+				</InputField>
+				<InputField name="ТаблицаКодовЗаказаКоличествоВЗаказе" id="30">
+					<DataPath>ТаблицаКодовЗаказа.КоличествоВЗаказе</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество по Заказу</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ТаблицаКодовЗаказаКоличествоВЗаказеКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаКоличествоВЗаказеРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<InputField name="ТаблицаКодовЗаказаКоличествоПолучено" id="33">
+					<DataPath>ТаблицаКодовЗаказа.КоличествоПолучено</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ранее получено</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ТаблицаКодовЗаказаКоличествоПолученоКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаКоличествоПолученоРасширеннаяПодсказка" id="35"/>
+				</InputField>
+				<InputField name="ТаблицаКодовЗаказаКоличествоДоступно" id="36">
+					<DataPath>ТаблицаКодовЗаказа.КоличествоДоступно</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступно</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ТаблицаКодовЗаказаКоличествоДоступноКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ТаблицаКодовЗаказаКоличествоДоступноРасширеннаяПодсказка" id="38"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="РазмерБлокаКодов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размер блока кодов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаказКодовМаркировки" id="2">
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказКодовМаркировкиСУЗИСМПТК</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаКодовЗаказа" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица кодов заказа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="GTIN" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>GTIN</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.НоменклатураИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="КоличествоВЗаказе" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество в заказе</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПолучено" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество получено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоДоступно" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество доступно</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Характеристика" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ХарактеристикаНоменклатурыИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Выбран" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбран</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОтображатьДанныеПоНоменклатуре" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать данные номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтображатьДанныеПоНоменклатуре</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПолучитьКодыМаркировки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьФормуИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПолучитьКодыМаркировки</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыбратьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьВыбор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять выбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять выбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьВыбор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

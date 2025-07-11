@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChoiceMode>true</ChoiceMode>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="10"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="12">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="РучнаяКорректировка" id="28">
+					<DataPath>Список.РучнаяКорректировка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="РучнаяКорректировкаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="РучнаяКорректировкаРасширеннаяПодсказка" id="30"/>
+				</PictureField>
+				<PictureField name="ПринятиеКУчетуНУ" id="31">
+					<DataPath>Список.ПринятиеКУчетуНУ</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СостояниеПринятиеКУчетуНУВДокументах</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ПринятиеКУчетуНУКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ПринятиеКУчетуНУРасширеннаяПодсказка" id="33"/>
+				</PictureField>
+				<CheckBoxField name="УчитыватьИПН" id="37">
+					<DataPath>Список.УчитыватьИПН</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИПН</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьИПНКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="УчитыватьИПНРасширеннаяПодсказка" id="39"/>
+				</CheckBoxField>
+				<CheckBoxField name="УчитыватьВОСМС" id="70">
+					<DataPath>Список.УчитыватьВОСМС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ВОСМС</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьВОСМСКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="УчитыватьВОСМСРасширеннаяПодсказка" id="72"/>
+				</CheckBoxField>
+				<CheckBoxField name="УчитыватьСН" id="40">
+					<DataPath>Список.УчитыватьСН</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СН</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьСНКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="УчитыватьСНРасширеннаяПодсказка" id="42"/>
+				</CheckBoxField>
+				<CheckBoxField name="УчитыватьКПН" id="34">
+					<DataPath>Список.УчитыватьКПН</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КПН</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьКПНКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="УчитыватьКПНРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
+				<CheckBoxField name="УчитыватьСО" id="73">
+					<DataPath>Список.УчитыватьСО</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СО</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьСОКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="УчитыватьСОРасширеннаяПодсказка" id="75"/>
+				</CheckBoxField>
+				<LabelField name="ВидУчетаНУ" id="43">
+					<DataPath>Список.ВидУчетаНУ</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ВидУчетаНУКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ВидУчетаНУРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="Дата" id="22">
+					<DataPath>Список.Дата</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Width>13</Width>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Номер" id="25">
+					<DataPath>Список.Номер</DataPath>
+					<Width>16</Width>
+					<ContextMenu name="НомерКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="Организация" id="46">
+					<DataPath>Список.Организация</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="СтруктурноеПодразделение" id="49">
+					<DataPath>Список.СтруктурноеПодразделение</DataPath>
+					<Width>26</Width>
+					<ContextMenu name="СтруктурноеПодразделениеКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="СтруктурноеПодразделениеРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<LabelField name="ПериодРегистрации" id="52">
+					<DataPath>Список.ПериодРегистрации</DataPath>
+					<Width>14</Width>
+					<ContextMenu name="ПериодРегистрацииКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ПериодРегистрацииРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="55">
+					<DataPath>Список.Контрагент</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="57"/>
+				</LabelField>
+				<LabelField name="Автор" id="58">
+					<DataPath>Список.Автор</DataPath>
+					<ContextMenu name="АвторКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="60"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="61">
+					<DataPath>Список.Ответственный</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Width>16</Width>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="63"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="64">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="66"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="67">
+					<DataPath>Список.Ссылка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="69"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Ссылка,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ПометкаУдаления,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Номер,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Дата,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Проведен,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Автор,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ВидРасчета,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ДоговорКонтрагента,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ДокументОснование,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Комментарий,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Контрагент,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Организация,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Ответственный,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ПериодРегистрации,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ВидУчетаНУ,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.РучнаяКорректировка,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.Сделка,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СубконтоДт1,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СубконтоДт2,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СубконтоДт3,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СубконтоДтНУ1,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СубконтоДтНУ2,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СубконтоДтНУ3,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СуммаДокумента,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СчетЗатрат,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СчетЗатратНУ,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СчетУчетаРасчетовПоАвансам,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СчетУчетаРасчетовСКонтрагентом,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.УчитыватьИПН,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.УчитыватьСН,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.УчитыватьКПН,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.УчитыватьСО,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.СтруктурноеПодразделение,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ПодразделениеОрганизации,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ИсчисленныйИПН.(
+		Ссылка,
+		НомерСтроки,
+		ФизЛицо,
+		Налог,
+		ПримененныйВычет,
+		ПримененнаяЛьгота,
+		РазрешенныйВычет,
+		МесяцНалоговогоПериода,
+		ОблагаемаяБаза
+	),
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ИсчисленныйСН.(
+		Ссылка,
+		НомерСтроки,
+		ФизЛицо,
+		Налог,
+		МесяцНалоговогоПериода,
+		ОблагаемаяБаза
+	),
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.МоментВремени,
+	ВЫБОР
+		КОГДА ДокументРасчетНалоговПриПоступленииАктивовУслуг.УчитыватьКПН
+			ТОГДА ВЫБОР
+					КОГДА ДокументРасчетНалоговПриПоступленииАктивовУслуг.ВидУчетаНУ = ЗНАЧЕНИЕ(Справочник.ВидыУчетаНУ.НУ)
+						ТОГДА 0
+					ИНАЧЕ 1
+				КОНЕЦ
+		ИНАЧЕ 2
+	КОНЕЦ КАК ПринятиеКУчетуНУ,
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.ИсчисленныеВОСМС.(
+		Ссылка,
+		НомерСтроки,
+		ФизЛицо,
+		Взнос,
+		МесяцНалоговогоПериода,
+		ОблагаемаяБаза
+	),
+	ДокументРасчетНалоговПриПоступленииАктивовУслуг.УчитыватьВОСМС
+ИЗ
+	Документ.РасчетНалоговПриПоступленииАктивовУслуг КАК ДокументРасчетНалоговПриПоступленииАктивовУслуг</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.МесяцНалоговогоПериода</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.МесяцНалоговогоПериода</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Контрагент</dcssch:dataPath>
+					<dcssch:field>Контрагент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.Налог</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.Налог</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.Ссылка</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВычетыИПН</dcssch:dataPath>
+					<dcssch:field>ВычетыИПН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьОПВ</dcssch:dataPath>
+					<dcssch:field>УчитыватьОПВ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПодразделениеОрганизации</dcssch:dataPath>
+					<dcssch:field>ПодразделениеОрганизации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйОПВ</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйОПВ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеВОСМС.ФизЛицо</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС.ФизЛицо</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьКПН</dcssch:dataPath>
+					<dcssch:field>УчитыватьКПН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчетаНУ</dcssch:dataPath>
+					<dcssch:field>ВидУчетаНУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПериодРегистрации</dcssch:dataPath>
+					<dcssch:field>ПериодРегистрации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидРасчета</dcssch:dataPath>
+					<dcssch:field>ВидРасчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДоговорКонтрагента</dcssch:dataPath>
+					<dcssch:field>ДоговорКонтрагента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДокументОснование</dcssch:dataPath>
+					<dcssch:field>ДокументОснование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ответственный</dcssch:dataPath>
+					<dcssch:field>Ответственный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РучнаяКорректировка</dcssch:dataPath>
+					<dcssch:field>РучнаяКорректировка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.ФизЛицо</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.ФизЛицо</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Сделка</dcssch:dataPath>
+					<dcssch:field>Сделка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт1</dcssch:dataPath>
+					<dcssch:field>СубконтоДт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетЗатратНУ</dcssch:dataPath>
+					<dcssch:field>СчетЗатратНУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт2</dcssch:dataPath>
+					<dcssch:field>СубконтоДт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.РазрешенныйВычет</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.РазрешенныйВычет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт3</dcssch:dataPath>
+					<dcssch:field>СубконтоДт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьСН</dcssch:dataPath>
+					<dcssch:field>УчитыватьСН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтНУ1</dcssch:dataPath>
+					<dcssch:field>СубконтоДтНУ1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтНУ2</dcssch:dataPath>
+					<dcssch:field>СубконтоДтНУ2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДтНУ3</dcssch:dataPath>
+					<dcssch:field>СубконтоДтНУ3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СуммаДокумента</dcssch:dataPath>
+					<dcssch:field>СуммаДокумента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетЗатрат</dcssch:dataPath>
+					<dcssch:field>СчетЗатрат</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетУчетаРасчетовПоАвансам</dcssch:dataPath>
+					<dcssch:field>СчетУчетаРасчетовПоАвансам</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйСН.Ссылка</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетУчетаРасчетовСКонтрагентом</dcssch:dataPath>
+					<dcssch:field>СчетУчетаРасчетовСКонтрагентом</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьИПН</dcssch:dataPath>
+					<dcssch:field>УчитыватьИПН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделение</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.ПримененныйВычет</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.ПримененныйВычет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.ОблагаемаяБаза</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.ОблагаемаяБаза</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйИПН.ПримененнаяЛьгота</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН.ПримененнаяЛьгота</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ИсчисленныйИПН</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйИПН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйСН.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйСН.ФизЛицо</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН.ФизЛицо</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйСН.Налог</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН.Налог</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеВОСМС.ОблагаемаяБаза</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС.ОблагаемаяБаза</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйСН.МесяцНалоговогоПериода</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН.МесяцНалоговогоПериода</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныйСН.ОблагаемаяБаза</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН.ОблагаемаяБаза</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ИсчисленныйСН</dcssch:dataPath>
+					<dcssch:field>ИсчисленныйСН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПринятиеКУчетуНУ</dcssch:dataPath>
+					<dcssch:field>ПринятиеКУчетуНУ</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принятие к учету НУ</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеВОСМС.Ссылка</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС.Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеВОСМС.НомерСтроки</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС.НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеВОСМС.Взнос</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС.Взнос</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеВОСМС.МесяцНалоговогоПериода</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС.МесяцНалоговогоПериода</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьВОСМС</dcssch:dataPath>
+					<dcssch:field>УчитыватьВОСМС</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldNestedDataSet">
+					<dcssch:dataPath>ИсчисленныеВОСМС</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеВОСМС</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьСО</dcssch:dataPath>
+					<dcssch:field>УчитыватьСО</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсчисленныеСО</dcssch:dataPath>
+					<dcssch:field>ИсчисленныеСО</dcssch:field>
+				</Field>
+				<MainTable>Document.РасчетНалоговПриПоступленииАктивовУслуг</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>0:2baf6d7a-12ed-4f22-ad96-92bb31b747ff</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.Печать</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ЗаполнениеОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ОтчетыОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

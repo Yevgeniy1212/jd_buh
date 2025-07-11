@@ -1,0 +1,2449 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:querySntV1XsdResponse xmlns:ns2="snt">
+         <xsdList>
+            <xsd><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="v1.snt" xmlns:tns="v1.snt" xmlns:v1="v1.snt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="abstractSnt.snt">
+
+  <xs:import namespace="abstractSnt.snt"/>
+
+  <xs:element name="snt" type="tns:SntV1"/>
+
+  <xs:complexType name="SntV1">
+    <xs:annotation>
+      <xs:documentation>СНТ</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns1:AbstractSnt"> 
+        <xs:sequence>
+          <xs:element name="alcoholSet" type="tns:SntAlcoholSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по алкогольной продукции (G2 - 5)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="biofuelSet" type="tns:SntBiofuelSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по биотопливу (G7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="carCargoInfo" type="tns:SntCarCargoInfo" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные о грузе, перевозимом на автомобильном транспорте (K)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="carCargoInfoV1_2" type="tns:SntCarCargoInfoV1_2" minOccurs="0">
+			<xs:annotation>
+			<xs:documentation>Данные о грузе, перевозимом на автомобильном транспорте (K)</xs:documentation>
+			</xs:annotation>
+		  </xs:element>
+          <xs:element name="consignee" type="tns:SntConsignee" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Грузополучатель (D)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="consignor" type="tns:SntConsignor" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Грузоотправитель (D)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="contract" type="tns:SntContract" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Договор (контракт) на поставку товара (F)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="currencyCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код валюты (50)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="currencyRate" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Курс валюты (51)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="customer" type="tns:SntCustomer">
+            <xs:annotation>
+              <xs:documentation>Реквизиты получателя (C)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="datePaper" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Дата оформления СНТ на бумажном носителе (A 2.1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="digitalMarkingNotificationDate" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Дата Акта/Уведомления по цифровой маркировке (A 4.2.1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="digitalMarkingNotificationNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Регистрационный номер Акта/Уведомления по цифровой маркировке (A 4.2)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="directoryInfo" type="tns:SntDirectoryInfo" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Справочные сведения (O)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="exportControlProductSet" type="tns:SntExportControlProductSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по товарам, подлежащим экспортному контролю (двойного назначения , военного назначения) (G10)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="fillingOfAircraft" type="tns:SntFillingOfAircraft" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Заправка воздушного судна (E1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="mptId" type="xs:long" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Идентификатор МПТ</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="oilSet" type="tns:SntOilSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по отдельным видам нефтепродуктов (G6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="otherProductWithDigitalMarkSet" type="tns:SntOtherProductWithDigitalMarkSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по товарам, подлежащим маркировке средствами идентификации(цифровая маркировка) (G9)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productSet" type="tns:SntProductSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по товарам (G1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="reasonPaper" type="tns:SntPaperReasonType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Причина выписки на бумажном носителе (A 2.1.1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="releaseGoodsInfo" type="tns:SntReleaseGoodsInfo" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Сведения по отпуску товара (L)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="seller" type="tns:SntSeller">
+            <xs:annotation>
+              <xs:documentation>Реквизиты поставщика (B)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="sharingParticipantContract" type="tns:SntSharingParticipantContract" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Договор (контракт) в рамках УСД/СРП (F1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="shippingInfo" type="tns:SntShippingInfo" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Сведения по перевозке (E)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="sntExport" type="tns:SntExport" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Вывоз товаров с территории РК (A 8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="sntImport" type="tns:SntImport" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Ввоз товаров на территорию РК (A 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tobaccoSet" type="tns:SntTobaccoSet" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Данные по табачной продукции (исключая цифровую маркировку) (G8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="transferType" type="tns:SntTransferType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Перемещение товара (A 9)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntAlcoholSet">
+    <xs:annotation>
+      <xs:documentation>Данные по алкогольной продукции (G2-5)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="alcoholBeerProductSet" type="tns:SntAlcoholBeerProductSet" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Пиво и пивные напитки (G4)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="alcoholExceptBeerProductSet" type="tns:SntAlcoholExceptBeerProductSet" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Алкогольная продукция (кроме пива и пивного напитка) (G5)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="customerLicenseAddress" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Адрес получателя по лицензии (56)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="customerLicenseNumber" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер лицензии получателя (55)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6,450}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ethanolProductSet" type="tns:SntEthanolProductSet" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Этиловый спирт (G2)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sellerLicenseAddress" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Адрес поставщика по лицензии (54)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sellerLicenseNumber" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер лицензии поставщика (53)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6,450}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="wineMaterialProductSet" type="tns:SntWineMaterialProductSet" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Виноматериал (G3)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntAlcoholBeerProductSet">
+    <xs:annotation>
+      <xs:documentation>Пиво и пивные напитки (G4)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="operationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код операции (60)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="5|6|7|8|9|10|11|15|48|49"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntAlcoholBeerProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Пиво и пивные напитки (G4)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntBaseProductSetV1" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="ns1:SntAbstractProductSet">
+        <xs:sequence>
+          <xs:element name="totalExciseAmount" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Всего: Сумма акциза (52.2, 58.2, 59.2, 61.2, 63.2, 68.2, 73.2, 77.2, 78.2, 79.2)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="totalNdsAmount" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Всего: Сумма НДС (52.3, 58.3, 59.3, 61.3, 63.3, 68.3, 73.3, 77.3, 78.3, 79.3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="totalPriceWithTax" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Всего: (52.4, 58.4, 59.4, 61.4, 63.4, 68.4, 73.4, 77.4, 78.4, 79.4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="totalPriceWithoutTax" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Всего: Стоимость реализуемого (отгружаемого) товара без косвенных налогов (52.1, 58.1, 59.1, 61.1, 63.1, 68.1, 73.1, 77.1, 78.1, 79.1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntAlcoholBeerProduct">
+    <xs:annotation>
+      <xs:documentation>Пиво и пивные напитки (G4)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="containerCapacity" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Емкость тары (в литрах) (G4 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="containerCount" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (бутылок, банок, кег, упаковок, литров)  (G4 8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="containerCountInPack" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Количество  (бутылок, банок) в упаковке (G4 9)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="gtinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN) (G4 20)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="measureUnitCode">
+            <xs:annotation>
+              <xs:documentation>Единица измерения (G4 6)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="778|868|881|991|112"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за единицу товара (G4 11)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование пива и пивных напитков (G4 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Вид продукта (G4 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantityInLiters" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (в литрах) (G4 10)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntBaseProductV1" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="ns1:SntAbstractProduct">
+        <xs:sequence>
+          <xs:element name="additionalInfo" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Дополнительная информация (G1 17, G2 17, G3 17, G4 21, G5 19, G6 17, G7 16, G8 20, G9 16, G10 19)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="declarationNumberForSnt" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>№ заявления о выпуске товаров до подачи декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-1 или СТ-KZ, первичной СНТ (G1 14, G2 14, G3 14, G4 18, G5 16, G6 15, G7 14, G8 17, G9 14, G10 17)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="exciseAmount" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Сумма акциза (G1 9, G2 9, G3 9, G4 13, G5 12, G6 10, G7 9, G8 12, G9 9, G10 12)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="exciseRate" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Ставка акциза (G1 9/1, G2 9/2, G3 9/1, G4 13/1, G5 12/2, G6 10/1, G7 9/1, G8 12/1, G9 9/1, G10 12/1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ndsAmount" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Сумма НДС (G1 11, G2 11, G3 11, G4 15, G5 14, G6 12, G7 11, G8 14, G9 11, G10 14)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ndsRate" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Ставка НДС (G1 10, G2 10, G3 10, G4 14, G5 13, G6 11, G7 10, G8 13, G9 10, G10 13)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                <xs:maxInclusive value="100"/>
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="netWeight" type="xs:decimal" minOccurs="0">
+			<xs:annotation>
+			<xs:documentation>Вес нетто (G1 6/1 G2 6/1 G3 6/1 G4 9/1 G5 9/1 G6 7/1 G7 6/1 G8 9/1 G9 6/1 G10 9/1)</xs:documentation>
+			</xs:annotation>
+		  </xs:element>
+          <xs:element name="priceWithTax" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Общая стоимость  товара с косвенными налогами (G1 12, G2 12, G3 12, G4 16, G5 15, G6 13, G7 12, G8 15, G9 12, G10 15)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="priceWithoutTax" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Стоимость товара без косвенных налогов (G1 8, G2 8, G3 8, G4 12, G5 11, G6 9, G7 8, G8 11, G9 8, G10 11)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productId" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Идентификатор товара в ИС ЭСФ  (G1 13, G2 13, G3 13, G4 17, G5 15, G6 14, G7 13, G8 16, G9 13, G10 16)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productNumber">
+            <xs:annotation>
+              <xs:documentation>Номер товарной позиции в СНТ (G1 1, G2 1, G3 1, G4 1, G5 1, G6 1, G7 1, G8 1, G9 1, G10 1)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[1-9][0-9]{0,2}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="productNumberInDeclaration" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер товарной позиции из заявления о выпуске товаров до подачи декларации на товары , о ввозе товаров и уплате косвенных налогов или Декларации на товары, первичной СНТ (G1 15, G2 15, G3 15, G4 19, G5 17, G6 16, G7 15, G8 18, G9 15, G10 18)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tnvedCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код товара (ТН ВЭД ЕАЭС) (G1 4, G2 5, G3 5, G4 5, G5 5, G6 5, G7 4, G8 5, G9 5, G10 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="truOriginCode">
+            <xs:annotation>
+              <xs:documentation>Признак происхождения товара (G1 2, G2 2, G3 2, G4 2, G5 2, G6 2, G7 2, G8 2, G9 2, G10 2)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[1-5]"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntAlcoholExceptBeerProductSet">
+    <xs:annotation>
+      <xs:documentation>Алкогольная продукция (кроме пива и пивного напитка) (G5)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="operationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код операции (G5 62)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="5|6|7|8|9|10|11|15|48"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntAlcoholExceptBeerProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Алкогольная продукция (кроме пива и пивного напитка) (G5)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntAlcoholExceptBeerProduct">
+    <xs:annotation>
+      <xs:documentation>Алкогольная продукция (кроме пива и пивного напитка) (G5)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="containerCapacity" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Емкость тары (в литрах) (G5 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="containerCount" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (бутылок, банок) (G5 8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="gtinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN) (G5 18)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>ПИН-код (G5 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за единицу товара (G5 10)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование товара (G5 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productionType" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Вид продукции (G5 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantityInLiters" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Количество (в литрах) (G5 9)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="spiritPercent">
+            <xs:annotation>
+              <xs:documentation>Крепость (% содержания спирта) (G5 13/1)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:maxInclusive value="100"/>
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntEthanolProductSet">
+    <xs:annotation>
+      <xs:documentation>Данные по этиловому спирту (G2)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="operationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код операции (G2 57)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="1|2|3|15"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntEthanolProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Этиловый спирт (G2)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntEthanolProduct">
+    <xs:annotation>
+      <xs:documentation>Этиловый спирт (G2)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="gtinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN) (G2 16)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>ПИН-код (G2 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за литр (G2 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Вид, наименование этилового спирта (G2 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantityInLiters" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (в литрах) (G2 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="spiritPercent">
+            <xs:annotation>
+              <xs:documentation>Крепость (% содержания спирта) (G2 9/1)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:maxInclusive value="100"/>
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntWineMaterialProductSet">
+    <xs:annotation>
+      <xs:documentation>Данные по виноматериалу (G3)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntWineMaterialProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Виноматериал (G3)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntWineMaterialProduct">
+    <xs:annotation>
+      <xs:documentation>Виноматериал (G3)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="gtinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN) (G3 16)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>ПИН-код (G3 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за литр (G3 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Вид, наименование виноматериала (G3 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantityInLiters" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (в литрах) (G3 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntBiofuelSet">
+    <xs:annotation>
+      <xs:documentation>Данные по биотопливу (G7)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="kogdOfRecipient" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ОГД адреса доставки/поставки (G7 72)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="kogdOfSender" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ОГД адреса отправки/отгрузки (G7 71)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="operationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код операции (G7 69)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="30|31|34|37"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="productSellerType" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Тип поставщика (G7 70)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntBiofuelProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Данные по биотопливу (G7)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntBiofuelProduct">
+    <xs:annotation>
+      <xs:documentation>Данные по биотопливу (G7)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="measureUnitCode">
+            <xs:annotation>
+              <xs:documentation>Единица измерения товара (Тонна, Литр) (G7 5)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="168|112"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена товара за тонну (G7 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование биотоплива (G7 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество товара в  тоннах, (в литрах для розницы) (G7 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntCarCargoInfo">
+    <xs:annotation>
+      <xs:documentation>Данные о грузе, перевозимом на автомобильном транспорте (K)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cargoInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cargoInfo" type="tns:SntCargoInfo" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Сведение о грузе (K 1)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="driverFIO" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Ф.И.О. водителя</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="driverTin" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>ИИН водителя</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="loadingUnloadingInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="loadingUnloadingInfo" type="tns:SntLoadingUnloadingInfo" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Погрузочно-разгрузочные операции (K 2)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="otherInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="otherInfo" type="tns:SntOtherInfo" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Прочие сведения (заполняется перевозчиком) (K 3)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="stampPrintNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер оттиска пломбы</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="taxInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="taxInfo" type="tns:SntTaxInfo" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Таксировка (K 4)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntCargoInfo">
+    <xs:annotation>
+      <xs:documentation>Сведение о грузе (K1)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cargoClass" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Класс груза (K1 8)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cargoCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Код груза (K1 7)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="code" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номенклатурный номер (код) (K1 2)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documents" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>С грузом следуют документы (K1 3)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="grossWeight" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Масса брутто (т.) (K1 9)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="netWeight" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Масса нетто (т.) (K1 10)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>№ п/п (K1 1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="packagingType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Вид упаковки (K1 4)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="seatsNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Количество мест (K1 5)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="weightDeterminationType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Способ опредления массы (K1 6)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntLoadingUnloadingInfo">
+    <xs:annotation>
+      <xs:documentation>Погрузочно-разгрузочные операции (K2)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arrivalDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Время, часы, минуты: Прибытия (K2 15)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="departureDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Время, часы, минуты: Убытия (K2 16)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="downtime" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дополнительные операции: Простоя (K2 17)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="downtimeDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дополнительные операции: время мин. (K2 18)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="executor" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Исполнитель (перевозчик, отправитель, получатель) (K2 12)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="loadingType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Способ: ручной, наливной, механический, грузоподъемная емкость ковша (K2 13)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="loadingTypeCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Способ: КОД (K2 14)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дополнительные операции: Hаименование, количество (K2 19)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operation" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Операция (K2 11)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="responsiblePersonSignature" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Подпись ответственного лица (K2 20)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="transportServices" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Транспортные услуги (K2 21)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntOtherInfo">
+    <xs:annotation>
+      <xs:documentation>Прочие сведения (заполняется перевозчиком) (K 3)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="driverCoefficient" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Поправочный коэффициент (расценка водителя)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="expeditionCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Код экспедиции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="firstGroupTransportationDistance" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Расстояние перевозок по группам дорог (І гр.) (км.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fromClient" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>За транспортные услуги с клиента</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="inCityTransportationDistance" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Расстояние перевозок по группам дорог (в гор.) (км.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="mainCoefficient" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Поправ. коэфф. (основной тариф)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>№ п/п</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="penalty" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Штраф</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="secondGroupTransportationDistance" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Расстояние перевозок по группам дорог (ІІ гр.) (км.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="setActMarks" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Отметки о составленных актах</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="thirdGroupTransportationDistance" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Расстояние перевозок по группам дорог (ІІІ гр.) (км.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="toDriver" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>За транспортные услуги водителю</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalTransportationDistance" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Расстояние перевозок по группам дорог (всего) (км.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntTaxInfo">
+    <xs:annotation>
+      <xs:documentation>Таксировка (K4)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="costCalculation" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Расчет стоимости (K4 2)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="discountForDowntime" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Скидка за сокращение простоя (K4 11)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="forSpecialTransport" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>За специальный транспорт (K4 5)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="forTonns" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>За тонны (K4 3)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="forTransportServices" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>За транспортные услуги (K4 6)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="loading" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Cверх-нормативный простой: Погружено (K4 8)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="loadingUnloadingWork" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Погружено разреженно рабочими (тонн) (K4 7)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="otherSurcharge" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Прочие доплаты (K4 10)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tax" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Таксировка (K4 13)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="total" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Всего (K4 12)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="underload" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Недогруз автомобиля и прицепа (K4 4)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unloading" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Cверх-нормативный простой: Разгружено (K4 9)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="SntCarCargoInfoV1_2">
+<xs:annotation>
+<xs:documentation>Данные о грузе, перевозимом на автомобильном транспорте (K)</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="sntCarCargoInfoItems" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="sntCarCargoInfoItem" type="tns:SntCarCargoInfoItemV1_2" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Данные о грузе, перевозимом на автомобильном транспорте</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SntCarCargoInfoItemV1_2">
+<xs:annotation>
+<xs:documentation>Данные о грузе, перевозимом на автомобильном транспорте (K)</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="arrivalTime" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Время прибытия автотранспортного средства (K16)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="cargoClass" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Наименование (вид) и класс опасности груза (K13)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="cargoDimensions" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Масса (тонна), ширина (метр), высота (метр) и длина (метр) загруженного груза (K12)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="cargoName" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Наименование (вид) груза (адрес, места погрузки) (K11)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="cmrDate" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Дата оформления товарно-транспортной накладной, CMR (K10)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="cmrNumber" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Номер товарно-транспортной накладной, CMR (K9)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="departurePoint" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Место (адрес) и время выезда из начального пункта автотранспортного средства (K8)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="departureTime" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Время убытия автотранспортного средства (K17)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="domesticPermit" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Номер отечественного разрешения/номер иностранного разрешения (K15)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="driverMedCheck" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Медицинское освидетельствование водителя (водителей) (K7)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="driverName" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Фамилия, имя, отчество (при его наличии) водителя (водителей) (K4)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="endTripTime" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Время и дата приезда в конечный пункт автотранспортного средства, завершение действия путевого листа (K18)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="permitNumber" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Номер и вид разрешительного документа, срок выдачи и срок окончания при перевозке опасного груза, неделимых грузов или жидких грузов (K14)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="route" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Маршрут движения автотранспортного средства, с указанием начальных, промежуточных и конечных пунктов (K6)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="tripDate" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Дата оформления путевого листа (K3)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="tripNumber" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Номер путевого листа (K2)</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="vehicleSpecs" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Техническая характеристика автотранспортного средства: допустимая максимальная масса (тонна), ширина (метр), высота (метр) и длина (метр) (K5)</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+  <xs:complexType name="SntConsignee">
+    <xs:annotation>
+      <xs:documentation>Грузополучатель (D)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="additionalInfo" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дополнительные сведения (D1 b)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="countryCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Код страны доставки (D 36)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование грузополучателя (D 35)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nonResident" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Нерезидент (D 34.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tin" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>ИИН/БИН (D 34)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntConsignor">
+    <xs:annotation>
+      <xs:documentation>Грузоотправитель (D)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="additionalInfo" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дополнительные сведения (D1 a)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="countryCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Код страны отправки (D 33)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование грузоотправителя (D 32)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nonResident" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Нерезидент (D 31.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tin" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>ИИН/БИН (D 31)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntContract">
+    <xs:annotation>
+      <xs:documentation>Договор (контракт) на поставку товара (F)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="accountNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Учетный номер</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="date" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дата (F 44.2)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="deliveryCondition" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Условия поставки (ИНКОТЕРМС) (F 45.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isContract" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Договор (контракт) или приложение к договору  (F 44.a, F 44.b)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер (F 44.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="termOfContractPayment" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Условия оплаты по договору (F 45)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntCustomer">
+    <xs:annotation>
+      <xs:documentation>Реквизиты получателя (C)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns1:SntAbstractParticipant">
+        <xs:sequence>
+          <xs:element name="actualAddress" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Фактический адрес доставки/поставки (C 29)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="countryCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код страны доставки/поставки (C 28)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="nonResident" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Нерезидент (C 22.1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="registerCountryCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код страны регистрации получателя (C 27)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="reorganizedTin" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>БИН реорганизованного лица (C 25)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="statuses" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="status" type="tns:SntCustomerType" minOccurs="0" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Категория получателя (C 26)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="storeId" type="xs:long" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Идентификатор склада доставки/поставки (C 30)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntDirectoryInfo">
+    <xs:annotation>
+      <xs:documentation>Справочные сведения (O)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="customerKogd" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Код ОГД по месту нахождения (жительства) получателя (O 92)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sellerKogd" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Код ОГД по месту нахождения (жительства) поставщика/отправителя (O 91)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntExportControlProductSet">
+    <xs:annotation>
+      <xs:documentation>Данные по товарам, подлежащим экспортному контролю (двойного назначения , военного назначения) (G10)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="permitDocuments" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="permitDocument" type="ns1:SntAttachedFile" minOccurs="0" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Прикрепленные разрешительные документы</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntExportControlProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Данные по товарам, подлежащим экспортному контролю (двойного назначения , военного назначения) (G10)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntExportControlProduct">
+    <xs:annotation>
+      <xs:documentation>Данные по товарам, подлежащим экспортному контролю (двойного назначения , военного назначения) (G10)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="measureUnitCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Единица измерения (G10 8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="permissiveDocumentExpireDate" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер Лицензия/Разрешение: Дата окончания (G10 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="permissiveDocumentIssueDate" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер Лицензия/Разрешение: Дата выдачи (G10 5)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="permissiveDocumentNumber" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Номер Лицензия/Разрешение документа (G10 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за единицу товара (G10 10)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование товара (G10 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (объем) (G10 9)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntFillingOfAircraft">
+    <xs:annotation>
+      <xs:documentation>Заправка воздушного судна (E1)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="aircraftRegistrationNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер борта (E1 41)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="aircraftType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Тип воздушного судна (E1 40)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="flightNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер рейса (E1 42)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="warrantNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер расходного ордера или требование на заправку воздушного борта (E1 43)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntOilSet">
+    <xs:annotation>
+      <xs:documentation>Данные по нефтепродуктам (G6)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="kogdOfRecipient" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ОГД адреса доставки/поставки (G6 67)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="kogdOfSender" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ОГД адреса отправки/отгрузки (G6 66)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="operationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код операции (G6 64)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="19|20|21|22|25|26|28|29"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="productSellerType" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Тип поставщика (G6 65)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntOilProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Данные по нефтепродуктам (G6)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntOilProduct">
+    <xs:annotation>
+      <xs:documentation>Данные по нефтепродуктам (G6)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="measureUnitCode">
+            <xs:annotation>
+              <xs:documentation>Единица измерения товара (Тонна, Литр) (G6 6)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="168|112"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="pinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>ПИН-код (G6 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена товара за тонну (G6 8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Вид, марка нефтепродукта (G6 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество товара в  тоннах, (в литрах для розницы) (G6 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntOtherProductWithDigitalMarkSet">
+    <xs:annotation>
+      <xs:documentation>Данные по товарам, подлежащим маркировке средствами идентификации(цифровая маркировка) (G9)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntOtherProductWithDigitalMark" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Данные по товарам, подлежащим маркировке средствами идентификации(цифровая маркировка) (G9)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntOtherProductWithDigitalMark">
+    <xs:annotation>
+      <xs:documentation>Данные по товарам, подлежащим маркировке средствами идентификации(цифровая маркировка) (G9)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="gtinCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN) (G 9 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="packageQuantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество потребительских упаковок(в штуках) (G9 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за единицу товара (G9 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование товара (G9 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntProductSet">
+    <xs:annotation>
+      <xs:documentation>Данные по товарам (G1)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Данные по товарам (G1)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntProduct">
+    <xs:annotation>
+      <xs:documentation>Данные по товарам (G1)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="gtinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN-код маркировки) (G1 16)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="measureUnitCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Единица измерения (G1 5)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за единицу товара (G1 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование товара (G1 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (объем) (G1 6)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntReleaseGoodsInfo">
+    <xs:annotation>
+      <xs:documentation>Сведения по отпуску товара (L)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="powerOfAttorneyDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дата доверенности, по которой осуществляется отпуск товара (83.3)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="powerOfAttorneyNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер доверенности, по которой осуществляется отпуск товара (83.2)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntSeller">
+    <xs:annotation>
+      <xs:documentation>Реквизиты поставщика (B)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns1:SntAbstractParticipant">
+        <xs:sequence>
+          <xs:element name="actualAddress" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Фактический адрес отправки/отгрузки (B 20)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="countryCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код страны отправки/отгрузки (B 19)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="nonResident" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Нерезидент (B 13.1)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="registerCountryCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Код страны регистрации поставщика (B 18)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="reorganizedTin" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>БИН реорганизованного лица (B 16)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="statuses" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="status" type="tns:SntSellerType" minOccurs="0" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Категория поставщика (B 17)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="storeId" type="xs:long" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Идентификатор склада отправки/отгрузки (B 21)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntSharingParticipantContract">
+    <xs:annotation>
+      <xs:documentation>Договор (контракт) в рамках УСД/СРП (F1)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="customerDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Получатель: Дата (F1 49)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="customerNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Получатель: Номер (F1 48)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sellerDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Поставщик: Дата (F1 47)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sellerNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Поставщик: Номер (F1 46)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntShippingInfo">
+    <xs:annotation>
+      <xs:documentation>Сведения по перевозке (E)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="boardNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер борта (39.1 с1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="carStateNumber" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Гос. номер АТС (39.1 а1.1)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[а-яА-Яa-zA-Z0-9Ëё]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="carriageNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер вагона (39.1 b1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Наименование перевозчика (E 37)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nonResident" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Нерезидент (E 37.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="shipNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Номер судна (39.1 d1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tin" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>ИИН/БИН (E 38)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trailerStateNumber" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Гос. номер прицепа (39.1 а2.1)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[а-яА-Яa-zA-Z0-9Ëё]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="transportTypes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="transportType" type="tns:SntTransporterTransportType" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Вид транспорта (E 39.1)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntExport">
+    <xs:annotation>
+      <xs:documentation>Вывоз товаров с территории РК (A 8)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="exportType" type="tns:SntExportType">
+        <xs:annotation>
+          <xs:documentation>Вывоз товаров с территории РК (A 8)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sezCode" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Экспорт: Код (идентификатор) территории СЭЗ (A 8.5.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntImport">
+    <xs:annotation>
+      <xs:documentation>Ввоз товаров на территорию РК (A 7)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="importType" type="tns:SntImportType">
+        <xs:annotation>
+          <xs:documentation>Ввоз товаров на территорию РК (A 7)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sezCode" type="xs:long" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Импорт: Код (идентификатор) территории СЭЗ (A 7.5.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntTobaccoSet">
+    <xs:annotation>
+      <xs:documentation>Данные по табачной продукции (исключая цифровую маркировку) (G8)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductSetV1">
+        <xs:sequence>
+          <xs:element name="kogdOfRecipient" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ОГД адреса доставки/поставки (G8 76)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="kogdOfSender" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код ОГД адреса отправки/отгрузки (G8 75)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="operationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код операции (G8 74)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="38|39|40|41|42|43|44"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="product" type="tns:SntTobaccoProduct" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation>Данные по табачной продукции (исключая цифровую маркировку) (G8)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SntTobaccoProduct">
+    <xs:annotation>
+      <xs:documentation>Данные по табачной продукции (исключая цифровую маркировку) (G8)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:SntBaseProductV1">
+        <xs:sequence>
+          <xs:element name="gtinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Код товара (GTIN) (G8 19)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="measureUnitCode">
+            <xs:annotation>
+              <xs:documentation>Единица измерения (короба, блоки, пачки, штуки, килограммы, миллилитры, капсулы, картриджи) (G8 6)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="8751|992|5111|796|166|111|944|945"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="numberOfPacks" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (коробов, блоков, пачек, штук, килограмм, миллилитров, капсул, картриджей) (G8 8)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pinCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>ПИН-код (G8 3)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="price" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Цена за единицу товара (G8 10)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование табачной продукции (G8 4)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Количество (в штуках, килограммах, миллилитрах) (G8 9)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantityInPack" type="xs:decimal" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Количество табачного изделия в коробе, блоке, пачке (G8 7)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="SntCustomerType">
+    <xs:annotation>
+      <xs:documentation>Категория получателя (C 26)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LAWYER">
+        <xs:annotation>
+          <xs:documentation>Адвокат</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOTARY">
+        <xs:annotation>
+          <xs:documentation>Нотариус</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MEDIATOR">
+        <xs:annotation>
+          <xs:documentation>Медиатор</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BAILIFF">
+        <xs:annotation>
+          <xs:documentation>Частный судебный исполнитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INDIVIDUAL">
+        <xs:annotation>
+          <xs:documentation>Физическое лицо</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RETAIL">
+        <xs:annotation>
+          <xs:documentation>Розничная реализация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RETAILER">
+        <xs:annotation>
+          <xs:documentation>Розничный реализатор</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHARMACEUTIC_PRODUCER">
+        <xs:annotation>
+          <xs:documentation>Фармацевтический производитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LESSEE">
+        <xs:annotation>
+          <xs:documentation>Лизингополучатель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LESSOR">
+        <xs:annotation>
+          <xs:documentation>Лизингодатель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRINCIPAL">
+        <xs:annotation>
+          <xs:documentation>Доверитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMMITTENT">
+        <xs:annotation>
+          <xs:documentation>Комитент</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BROKER">
+        <xs:annotation>
+          <xs:documentation>Комиссионер</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHARING_AGREEMENT_PARTICIPANT">
+        <xs:annotation>
+          <xs:documentation>Участник СРП или сделки, заключенной в рамках СРП</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JOINT_ACTIVITY_PARTICIPANT">
+        <xs:annotation>
+          <xs:documentation>Участник договора совместной деятельности</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SMALL_RETAIL_OUTLET">
+        <xs:annotation>
+          <xs:documentation>Малая торговая точка</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAWNEE_CUSTODIAN">
+        <xs:annotation>
+          <xs:documentation>Залогодержатель/хранитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SntPaperReasonType">
+    <xs:annotation>
+      <xs:documentation>Причина выписки на бумажном носителе (2.1)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DOWN_TIME">
+        <xs:annotation>
+          <xs:documentation>Простой системы или плановые работы</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNLAWFUL_REMOVAL_REGISTRATION">
+        <xs:annotation>
+          <xs:documentation>Блокировка уполномоченным органом</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISSING_REQUIREMENT">
+        <xs:annotation>
+          <xs:documentation>Отсутствовало требование по выписке</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SntSellerType">
+    <xs:annotation>
+      <xs:documentation>Категория поставщика (B 17)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LAWYER">
+        <xs:annotation>
+          <xs:documentation>Адвокат</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOTARY">
+        <xs:annotation>
+          <xs:documentation>Нотариус</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MEDIATOR">
+        <xs:annotation>
+          <xs:documentation>Медиатор</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BAILIFF">
+        <xs:annotation>
+          <xs:documentation>Частный судебный исполнитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INDIVIDUAL">
+        <xs:annotation>
+          <xs:documentation>Физическое лицо</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RETAIL">
+        <xs:annotation>
+          <xs:documentation>Розничная реализация</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RETAILER">
+        <xs:annotation>
+          <xs:documentation>Розничный реализатор</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHARMACEUTIC_PRODUCER">
+        <xs:annotation>
+          <xs:documentation>Фармацевтический производитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LESSEE">
+        <xs:annotation>
+          <xs:documentation>Лизингополучатель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LESSOR">
+        <xs:annotation>
+          <xs:documentation>Лизингодатель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRINCIPAL">
+        <xs:annotation>
+          <xs:documentation>Доверитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMMITTENT">
+        <xs:annotation>
+          <xs:documentation>Комитент</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BROKER">
+        <xs:annotation>
+          <xs:documentation>Комиссионер</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHARING_AGREEMENT_PARTICIPANT">
+        <xs:annotation>
+          <xs:documentation>Участник СРП или сделки, заключенной в рамках СРП</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JOINT_ACTIVITY_PARTICIPANT">
+        <xs:annotation>
+          <xs:documentation>Участник договора совместной деятельности</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SMALL_RETAIL_OUTLET">
+        <xs:annotation>
+          <xs:documentation>Малая торговая точка</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAWNEE_CUSTODIAN">
+        <xs:annotation>
+          <xs:documentation>Залогодержатель/хранитель</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SntTransporterTransportType">
+    <xs:annotation>
+      <xs:documentation>Вид транспорта (E 39.1)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AUTOMOBILE">
+        <xs:annotation>
+          <xs:documentation>Автомобильный (а)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RAILWAY">
+        <xs:annotation>
+          <xs:documentation>Железнодорожный (b)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AIR">
+        <xs:annotation>
+          <xs:documentation>Воздушный (c)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MARINE">
+        <xs:annotation>
+          <xs:documentation>Морской или внутренний водный (d)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PIPELINE">
+        <xs:annotation>
+          <xs:documentation>Трубопровод (e)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MULTIMODAL">
+        <xs:annotation>
+          <xs:documentation>Мультимодальный (f)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>Прочие (g)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SntExportType">
+    <xs:annotation>
+      <xs:documentation>Вывоз товаров с территории РК (A 8)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EXPORT">
+        <xs:annotation>
+          <xs:documentation>Вывоз товаров с территории РК (Экспорт) (A 8.1)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPORT_FOR_PROCESSING">
+        <xs:annotation>
+          <xs:documentation>Вывоз на переработку (A 8.2)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEMPORARY_EXPORT">
+        <xs:annotation>
+          <xs:documentation>Временный вывоз (A 8.3)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPORT_OF_TEMPORARY_IMPORTED_PRODUCT">
+        <xs:annotation>
+          <xs:documentation>Вывоз временно ввезенного товара (A 8.4)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPORT_FROM_SEZ">
+        <xs:annotation>
+          <xs:documentation>Вывоз товаров с территории СЭЗ (A 8.5)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AIRCRAFT_REFUELING">
+        <xs:annotation>
+          <xs:documentation>Заправка воздушного судна (A 8.6)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SntImportType">
+    <xs:annotation>
+      <xs:documentation>Ввоз товаров на территорию РК (A 7)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IMPORT">
+        <xs:annotation>
+          <xs:documentation>Ввоз товаров на территорию РК (Импорт) (A 7.1)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMPORT_FOR_PROCESSING">
+        <xs:annotation>
+          <xs:documentation>Ввоз на переработку (A 7.2)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEMPORARY_IMPORT">
+        <xs:annotation>
+          <xs:documentation>Временный ввоз (A 7.3)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMPORT_OF_TEMPORARY_EXPORTED_PRODUCT">
+        <xs:annotation>
+          <xs:documentation>Ввоз временно вывезенного товара (A 7.4)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMPORT_IN_SEZ">
+        <xs:annotation>
+          <xs:documentation>Ввоз товаров на территорию СЭЗ (A 7.5)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SntTransferType">
+    <xs:annotation>
+      <xs:documentation>Перемещение товара (A 9)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ONE_PERSON_IN_KZ">
+        <xs:annotation>
+          <xs:documentation>В пределах одного лица на территории РК (A 9.1)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONE_PERSON_IN_EAEU">
+        <xs:annotation>
+          <xs:documentation>В пределах одного лица в рамках ЕАЭС (A 9.2)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>Иное перемещение (A 9.3)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></xsd>
+            <xsd><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="abstractSnt.snt" xmlns:asnt="abstractSnt.snt" xmlns:tns="abstractSnt.snt" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="snt" type="tns:AbstractSnt"/>
+
+  <xs:complexType name="AbstractSnt" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Базовая информация об СНТ для всех версий СНТ в системе</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="date" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Дата оформления СНТ (A 2)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер СНТ учетной системы (A 1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="relatedRegistrationNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер (исправляемой, на возврат) СНТ в ИС ЭСФ (A 5.1, A 6.1)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="shippingDate" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Дата отгрузки товара (A 3)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sntType" type="tns:SntType">
+        <xs:annotation>
+          <xs:documentation>Тип СНТ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntAbstractProductSet" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="SntAbstractProduct" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="SntAbstractParticipant" abstract="true">
+    <xs:sequence>
+      <xs:element name="branchTin" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>БИН структурного подразделения поставщика/получателя (B 15, C 24)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование поставщика/получателя (B 14, C 23)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tin" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>ИИН/БИН поставщика/получателя (B 13, C 22)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SntAttachedFile">
+    <xs:annotation>
+      <xs:documentation>Вложенный файл</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data" type="xs:base64Binary"/>
+      <xs:element name="filename" type="xs:string"/>
+      <xs:element name="id" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="SntType">
+    <xs:annotation>
+      <xs:documentation>Тип СНТ</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PRIMARY_SNT">
+        <xs:annotation>
+          <xs:documentation>Первичная</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RETURNED_SNT">
+        <xs:annotation>
+          <xs:documentation>На возврат товаров</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIXED_SNT">
+        <xs:annotation>
+          <xs:documentation>Исправленная (аннулированная, отклоненная)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></xsd>
+         </xsdList>
+      </ns2:querySntV1XsdResponse>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,1397 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Проверка наличия кодов маркировки по составу агрегаций</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="ExternalEvent">ВнешнееСобытие</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбщаяИнформация" id="95">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Collapsible</Behavior>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОбщаяИнформацияРасширеннаяПодсказка" id="96"/>
+			<ChildItems>
+				<UsualGroup name="НастройкиЛево" id="108">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки лево</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="НастройкиЛевоРасширеннаяПодсказка" id="109"/>
+					<ChildItems>
+						<InputField name="Организация" id="97">
+							<DataPath>Организация</DataPath>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="98"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="99"/>
+						</InputField>
+						<CheckBoxField name="НеУстанавливатьОтборПоСтроке" id="103">
+							<DataPath>НеУстанавливатьОтборПоСтроке</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НеУстанавливатьОтборПоСтрокеКонтекстноеМеню" id="104"/>
+							<ExtendedTooltip name="НеУстанавливатьОтборПоСтрокеРасширеннаяПодсказка" id="105">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Включение опции позволяет одновременно отобразить в таблице "Вложенные коды" состав всех указанных агрегатов.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">НеУстанавливатьОтборПоСтрокеПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="НастройкиПраво" id="110">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки право</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChildrenAlign>ItemsRightTitlesRight</ChildrenAlign>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="НастройкиПравоРасширеннаяПодсказка" id="111"/>
+					<ChildItems>
+						<Button name="ОчисткаФормы" id="106">
+							<Type>UsualButton</Type>
+							<Representation>PictureAndText</Representation>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.ОчисткаФормы</CommandName>
+							<ExtendedTooltip name="ОчисткаФормыРасширеннаяПодсказка" id="107"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаТаблицы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаТаблицыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ТабличныеЧасти" id="148">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Табличные части</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ТабличныеЧастиРасширеннаяПодсказка" id="149"/>
+					<ChildItems>
+						<UsualGroup name="ТаблицыЛево" id="3">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Коды агрегата</v8:content>
+								</v8:item>
+							</Title>
+							<Width>40</Width>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ТаблицыЛевоРасширеннаяПодсказка" id="4"/>
+							<ChildItems>
+								<Table name="ТаблицаКодовАгрегата" id="7">
+									<Representation>List</Representation>
+									<TitleLocation>Auto</TitleLocation>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<SelectionMode>SingleRow</SelectionMode>
+									<RowSelectionMode>Row</RowSelectionMode>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>ТаблицаКодовАгрегата</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТаблицаКодовАгрегатаКонтекстноеМеню" id="8"/>
+									<AutoCommandBar name="ТаблицаКодовАгрегатаКоманднаяПанель" id="9">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ПоискПоШтрихкодуВыполнитьАгрегаты" id="112">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПоискПоШтрихкодуВыполнитьАгрегаты</CommandName>
+												<ExtendedTooltip name="ПоискПоШтрихкодуВыполнитьАгрегатыРасширеннаяПодсказка" id="113"/>
+											</Button>
+											<Button name="ТаблицаКодовАгрегатаОбновитьСтатусыАгрегаты" id="161">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОбновитьСтатусыАгрегаты</CommandName>
+												<ExtendedTooltip name="ТаблицаКодовАгрегатаОбновитьСтатусыАгрегатыРасширеннаяПодсказка" id="162"/>
+											</Button>
+											<Popup name="КомандыЗагрузкиТЧАгрегаты" id="163">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Импорт</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="КомандыЗагрузкиТЧАгрегатыРасширеннаяПодсказка" id="164"/>
+												<ChildItems>
+													<Button name="КодыАгрегатаЗагрузитьИзФайла" id="165">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Command.КодыАгрегатаЗагрузитьИзФайла</CommandName>
+														<ExtendedTooltip name="КодыАгрегатаЗагрузитьИзФайлаРасширеннаяПодсказка" id="166"/>
+													</Button>
+													<Button name="КодыАгрегатаЗагрузитьДанныеИзТСД" id="167">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.КодыАгрегатаЗагрузитьИзТСД</CommandName>
+														<ExtendedTooltip name="КодыАгрегатаЗагрузитьДанныеИзТСДРасширеннаяПодсказка" id="168"/>
+													</Button>
+													<Button name="КодыАгрегатаЗагрузитьИзПриложения" id="169">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Command.КодыАгрегатаЗагрузитьИзПриложения</CommandName>
+														<BackColor>#CCFFCC</BackColor>
+														<ExtendedTooltip name="КодыАгрегатаЗагрузитьИзПриложенияРасширеннаяПодсказка" id="170"/>
+													</Button>
+												</ChildItems>
+											</Popup>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ТаблицаКодовАгрегатаРасширеннаяПодсказка" id="10"/>
+									<SearchStringAddition name="ТаблицаКодовАгрегатаСтрокаПоиска" id="11">
+										<AdditionSource>
+											<Item>ТаблицаКодовАгрегата</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаКодовАгрегатаСтрокаПоискаКонтекстноеМеню" id="12"/>
+										<ExtendedTooltip name="ТаблицаКодовАгрегатаСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТаблицаКодовАгрегатаСостояниеПросмотра" id="14">
+										<AdditionSource>
+											<Item>ТаблицаКодовАгрегата</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаКодовАгрегатаСостояниеПросмотраКонтекстноеМеню" id="15"/>
+										<ExtendedTooltip name="ТаблицаКодовАгрегатаСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТаблицаКодовАгрегатаУправлениеПоиском" id="17">
+										<AdditionSource>
+											<Item>ТаблицаКодовАгрегата</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаКодовАгрегатаУправлениеПоискомКонтекстноеМеню" id="18"/>
+										<ExtendedTooltip name="ТаблицаКодовАгрегатаУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="BeforeAddRow">ТаблицаКодовАгрегатаПередНачаломДобавления</Event>
+										<Event name="BeforeDeleteRow">ТаблицаКодовАгрегатаПередУдалением</Event>
+										<Event name="OnActivateRow">ТаблицаКодовАгрегатаПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ТаблицаКодовАгрегатаНомерСтроки" id="137">
+											<DataPath>ТаблицаКодовАгрегата.НомерСтроки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ключ строки</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаКодовАгрегатаНомерСтрокиКонтекстноеМеню" id="138"/>
+											<ExtendedTooltip name="ТаблицаКодовАгрегатаНомерСтрокиРасширеннаяПодсказка" id="139"/>
+										</InputField>
+										<InputField name="ТаблицаКодовАгрегатаКодИдентификации" id="26">
+											<DataPath>ТаблицаКодовАгрегата.КодИдентификации</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаКодовАгрегатаКодИдентификацииКонтекстноеМеню" id="27"/>
+											<ExtendedTooltip name="ТаблицаКодовАгрегатаКодИдентификацииРасширеннаяПодсказка" id="28"/>
+										</InputField>
+										<ColumnGroup name="ТаблицаКодовАгрегатаГруппаКМ" id="89">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Таблица кодов агрегата группа КМ</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ТаблицаКодовАгрегатаГруппаКМРасширеннаяПодсказка" id="90"/>
+											<ChildItems>
+												<InputField name="ТаблицаКодовАгрегатаGTIN" id="38">
+													<DataPath>ТаблицаКодовАгрегата.GTIN</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаКодовАгрегатаGTINКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="ТаблицаКодовАгрегатаGTINРасширеннаяПодсказка" id="40"/>
+												</InputField>
+												<InputField name="ТаблицаКодовАгрегатаСтатусКода" id="29">
+													<DataPath>ТаблицаКодовАгрегата.СтатусКода</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаКодовАгрегатаСтатусКодаКонтекстноеМеню" id="30"/>
+													<ExtendedTooltip name="ТаблицаКодовАгрегатаСтатусКодаРасширеннаяПодсказка" id="31"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ТаблицаКодовАгрегатаГруппаНоменклатура" id="87">
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Таблица кодов агрегата группа номенклатура</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ТаблицаКодовАгрегатаГруппаНоменклатураРасширеннаяПодсказка" id="88"/>
+											<ChildItems>
+												<InputField name="ТаблицаКодовАгрегатаНоменклатура" id="32">
+													<DataPath>ТаблицаКодовАгрегата.Номенклатура</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаКодовАгрегатаНоменклатураКонтекстноеМеню" id="33"/>
+													<ExtendedTooltip name="ТаблицаКодовАгрегатаНоменклатураРасширеннаяПодсказка" id="34"/>
+												</InputField>
+												<InputField name="ТаблицаКодовАгрегатаХарактеристика" id="35">
+													<DataPath>ТаблицаКодовАгрегата.Характеристика</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаКодовАгрегатаХарактеристикаКонтекстноеМеню" id="36"/>
+													<ExtendedTooltip name="ТаблицаКодовАгрегатаХарактеристикаРасширеннаяПодсказка" id="37"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ТаблицыПраво" id="5">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вложенные коды</v8:content>
+								</v8:item>
+							</Title>
+							<Width>50</Width>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ТаблицыПравоРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<Table name="ТаблицаВложенности" id="44">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<RowSelectionMode>Row</RowSelectionMode>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>ТаблицаВложенности</DataPath>
+									<RowPictureDataPath>ТаблицаВложенности.ИндексКартинкиТипУпаковки</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.МаркируемаяПродукцияИконкиИСМПТК</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</RowsPicture>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТаблицаВложенностиКонтекстноеМеню" id="45"/>
+									<AutoCommandBar name="ТаблицаВложенностиКоманднаяПанель" id="46">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ПоискПоШтрихкодуВыполнитьВложенность" id="114">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПоискПоШтрихкодуВыполнитьВложенность</CommandName>
+												<ExtendedTooltip name="ПоискПоШтрихкодуВыполнитьВложенностьРасширеннаяПодсказка" id="115"/>
+											</Button>
+											<Button name="ТаблицаВложенностиОбновитьСтатусы" id="157">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОбновитьСтатусыВложенный</CommandName>
+												<ExtendedTooltip name="ТаблицаВложенностиОбновитьСтатусыРасширеннаяПодсказка" id="158"/>
+											</Button>
+											<Popup name="КомандыЗагрузкиТЧВложенные" id="171">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Импорт</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="КомандыЗагрузкиТЧВложенныеРасширеннаяПодсказка" id="172"/>
+												<ChildItems>
+													<Button name="КодыВложенныеЗагрузитьИзФайла" id="173">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Command.КодыВложенныеЗагрузитьИзФайла</CommandName>
+														<ExtendedTooltip name="КодыВложенныеЗагрузитьИзФайлаРасширеннаяПодсказка" id="174"/>
+													</Button>
+													<Button name="КодыВложенныеЗагрузитьДанныеИзТСД" id="175">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.КодыВложенныеЗагрузитьИзТСД</CommandName>
+														<ExtendedTooltip name="КодыВложенныеЗагрузитьДанныеИзТСДРасширеннаяПодсказка" id="176"/>
+													</Button>
+													<Button name="КодыВложенныеЗагрузитьИзПриложения" id="177">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Command.КодыВложенныеЗагрузитьИзПриложения</CommandName>
+														<BackColor>#CCFFCC</BackColor>
+														<ExtendedTooltip name="КодыВложенныеЗагрузитьИзПриложенияРасширеннаяПодсказка" id="178"/>
+													</Button>
+												</ChildItems>
+											</Popup>
+											<Popup name="ПодменюВводДокумента" id="159">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Ввод на основании проверки</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ПодменюВводДокументаРасширеннаяПодсказка" id="160"/>
+												<ChildItems>
+													<Button name="ТаблицаВложенностиВвестиУведомлениеОВыводеПоВсем" id="155">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Command.ВвестиУведомлениеОВыводеПоВсем</CommandName>
+														<ExtendedTooltip name="ТаблицаВложенностиВвестиУведомлениеОВыводеПоВсемРасширеннаяПодсказка" id="156"/>
+													</Button>
+												</ChildItems>
+											</Popup>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ТаблицаВложенностиРасширеннаяПодсказка" id="47"/>
+									<SearchStringAddition name="ТаблицаВложенностиСтрокаПоиска" id="48">
+										<AdditionSource>
+											<Item>ТаблицаВложенности</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаВложенностиСтрокаПоискаКонтекстноеМеню" id="49"/>
+										<ExtendedTooltip name="ТаблицаВложенностиСтрокаПоискаРасширеннаяПодсказка" id="50"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТаблицаВложенностиСостояниеПросмотра" id="51">
+										<AdditionSource>
+											<Item>ТаблицаВложенности</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаВложенностиСостояниеПросмотраКонтекстноеМеню" id="52"/>
+										<ExtendedTooltip name="ТаблицаВложенностиСостояниеПросмотраРасширеннаяПодсказка" id="53"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТаблицаВложенностиУправлениеПоиском" id="54">
+										<AdditionSource>
+											<Item>ТаблицаВложенности</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаВложенностиУправлениеПоискомКонтекстноеМеню" id="55"/>
+										<ExtendedTooltip name="ТаблицаВложенностиУправлениеПоискомРасширеннаяПодсказка" id="56"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ТаблицаВложенностиНомерСтроки" id="134">
+											<DataPath>ТаблицаВложенности.НомерСтрокиАгрегата</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаВложенностиНомерСтрокиКонтекстноеМеню" id="135"/>
+											<ExtendedTooltip name="ТаблицаВложенностиНомерСтрокиРасширеннаяПодсказка" id="136"/>
+										</InputField>
+										<InputField name="ТаблицаВложенностиПодтвержден" id="81">
+											<DataPath>ТаблицаВложенности.Подтвержден</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>В наличии</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаВложенностиПодтвержденКонтекстноеМеню" id="82"/>
+											<ExtendedTooltip name="ТаблицаВложенностиПодтвержденРасширеннаяПодсказка" id="83"/>
+										</InputField>
+										<InputField name="ТаблицаВложенностиКодИдентификации" id="63">
+											<DataPath>ТаблицаВложенности.КодИдентификации</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаВложенностиКодИдентификацииКонтекстноеМеню" id="64"/>
+											<ExtendedTooltip name="ТаблицаВложенностиКодИдентификацииРасширеннаяПодсказка" id="65"/>
+										</InputField>
+										<ColumnGroup name="ТаблицаВложенностиГруппаКМ" id="91">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Таблица вложенности группа КМ</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ТаблицаВложенностиГруппаКМРасширеннаяПодсказка" id="92"/>
+											<ChildItems>
+												<InputField name="ТаблицаВложенностиGTIN" id="72">
+													<DataPath>ТаблицаВложенности.GTIN</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаВложенностиGTINКонтекстноеМеню" id="73"/>
+													<ExtendedTooltip name="ТаблицаВложенностиGTINРасширеннаяПодсказка" id="74"/>
+												</InputField>
+												<InputField name="ТаблицаВложенностиСтатусКода" id="84">
+													<DataPath>ТаблицаВложенности.СтатусКода</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаВложенностиСтатусКодаКонтекстноеМеню" id="85"/>
+													<ExtendedTooltip name="ТаблицаВложенностиСтатусКодаРасширеннаяПодсказка" id="86"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ТаблицаВложенностиГруппаНоменклатура" id="93">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Таблица вложенности группа номенклатура</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ТаблицаВложенностиГруппаНоменклатураРасширеннаяПодсказка" id="94"/>
+											<ChildItems>
+												<InputField name="ТаблицаВложенностиНоменклатура" id="66">
+													<DataPath>ТаблицаВложенности.Номенклатура</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаВложенностиНоменклатураКонтекстноеМеню" id="67"/>
+													<ExtendedTooltip name="ТаблицаВложенностиНоменклатураРасширеннаяПодсказка" id="68"/>
+												</InputField>
+												<InputField name="ТаблицаВложенностиХарактеристика" id="69">
+													<DataPath>ТаблицаВложенности.Характеристика</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаВложенностиХарактеристикаКонтекстноеМеню" id="70"/>
+													<ExtendedTooltip name="ТаблицаВложенностиХарактеристикаРасширеннаяПодсказка" id="71"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПодсказки" id="140">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расшифровка условного оформления</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Collapsible</Behavior>
+					<Collapsed>true</Collapsed>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаПодсказкиРасширеннаяПодсказка" id="141"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияЛево" id="142">
+							<Width>40</Width>
+							<TextColor>#807A59</TextColor>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цветное выделение строк отражает текущий статус сверки остатков:
+&lt;bgcolor #dcdcdc&gt;Серое поле&lt;/&gt; - состав агрегата не получен;
+&lt;bgcolor #ffe1e1&gt;Красное поле&lt;/&gt; - все вложенные позиции агрегата отсутствуют;
+&lt;bgcolor #fdf6c3&gt;Желтое поле&lt;/&gt; - часть воженных позиций агрегата отсутствует, часть - в наличии;
+&lt;bgcolor #e1ffe1&gt;Зеленое поле&lt;/&gt; - все вложенные позиции агрегата в наличии.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияЛевоКонтекстноеМеню" id="143"/>
+							<ExtendedTooltip name="ДекорацияЛевоРасширеннаяПодсказка" id="144"/>
+						</LabelDecoration>
+						<LabelDecoration name="ДекорацияПраво" id="145">
+							<Width>40</Width>
+							<TextColor>#807A59</TextColor>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цветное выделение строк отражает статус наличия кода:
+&lt;bgcolor #ffe1e1&gt;Красное поле&lt;/&gt; - товар отсутствует;
+&lt;bgcolor #e1ffe1&gt;Зеленое поле&lt;/&gt; - товар в наличии.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПравоКонтекстноеМеню" id="146"/>
+							<ExtendedTooltip name="ДекорацияПравоРасширеннаяПодсказка" id="147"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПротоколОпераций" id="153">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Протокол</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ПротоколОперацийРасширеннаяПодсказка" id="154"/>
+			<ChildItems>
+				<Table name="ТаблицаИнформация" id="116">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<RowSelectionMode>Row</RowSelectionMode>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>ТаблицаИнформация</DataPath>
+					<RowPictureDataPath>ТаблицаИнформация.Важность</RowPictureDataPath>
+					<RowsPicture>
+						<xr:Ref>CommonPicture.ВажностьСообщенийИСМПТК</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</RowsPicture>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТаблицаИнформацияКонтекстноеМеню" id="117"/>
+					<AutoCommandBar name="ТаблицаИнформацияКоманднаяПанель" id="118">
+						<HorizontalAlign>Right</HorizontalAlign>
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ОчиститьПротокол" id="132">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Command.ОчиститьПротокол</CommandName>
+								<ExtendedTooltip name="ОчиститьПротоколРасширеннаяПодсказка" id="133"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТаблицаИнформацияРасширеннаяПодсказка" id="119"/>
+					<SearchStringAddition name="ТаблицаИнформацияСтрокаПоиска" id="120">
+						<AdditionSource>
+							<Item>ТаблицаИнформация</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаИнформацияСтрокаПоискаКонтекстноеМеню" id="121"/>
+						<ExtendedTooltip name="ТаблицаИнформацияСтрокаПоискаРасширеннаяПодсказка" id="122"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТаблицаИнформацияСостояниеПросмотра" id="123">
+						<AdditionSource>
+							<Item>ТаблицаИнформация</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаИнформацияСостояниеПросмотраКонтекстноеМеню" id="124"/>
+						<ExtendedTooltip name="ТаблицаИнформацияСостояниеПросмотраРасширеннаяПодсказка" id="125"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТаблицаИнформацияУправлениеПоиском" id="126">
+						<AdditionSource>
+							<Item>ТаблицаИнформация</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаИнформацияУправлениеПоискомКонтекстноеМеню" id="127"/>
+						<ExtendedTooltip name="ТаблицаИнформацияУправлениеПоискомРасширеннаяПодсказка" id="128"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ТаблицаИнформацияВремяСобытия" id="150">
+							<DataPath>ТаблицаИнформация.ВремяСобытия</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаИнформацияВремяСобытияКонтекстноеМеню" id="151"/>
+							<ExtendedTooltip name="ТаблицаИнформацияВремяСобытияРасширеннаяПодсказка" id="152"/>
+						</InputField>
+						<InputField name="ТаблицаИнформацияСообщение" id="129">
+							<DataPath>ТаблицаИнформация.Сообщение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoCellHeight>true</AutoCellHeight>
+							<ContextMenu name="ТаблицаИнформацияСообщениеКонтекстноеМеню" id="130"/>
+							<ExtendedTooltip name="ТаблицаИнформацияСообщениеРасширеннаяПодсказка" id="131"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаКодовАгрегата" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код агрегата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КлючСтроки" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КодМаркировки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код маркировки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодИдентификации" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код идентификации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтатусКода" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус кода</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтатусыКодовМаркировкиИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.НоменклатураИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Характеристика" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ХарактеристикаНоменклатурыИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="GTIN" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>GTIN (упаковки)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>14</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="EAN" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>EAN</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>256</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СоставПодтвержден" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состав подтвержден</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидПродукции" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид продукции</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыПродукцииИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерСтроки" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияИСМПТК</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаВложенности" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состав агрегации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КлючСтроки" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ строки агрегата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КодМаркировки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код маркировки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодИдентификации" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код идентификации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.НоменклатураИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Характеристика" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ХарактеристикаНоменклатурыИСМПТК</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="GTIN" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>GTIN (товара)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>14</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидПродукции" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид продукции</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыПродукцииИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="EAN" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>EAN</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>256</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Подтвержден" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подтвержден</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СтатусКода" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус кода</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтатусыКодовМаркировкиИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинкиТипУпаковки" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки Штрихкод</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидУпаковки" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид упаковки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыУпаковокИСМПТК</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерСтрокиАгрегата" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ строки агрегата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="НеУстанавливатьОтборПоСтроке" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не устанавливать отбор по коду агрегата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьПодключаемоеОборудование" id="6">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуютсяСканерыШтрихкода" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагрузкаДанныхТСД" id="8">
+			<Type/>
+		</Attribute>
+		<Attribute name="ПоддерживаемыеТипыПодключаемогоОборудования" id="9">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаИнформация" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица информация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Сообщение" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Событие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Важность" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Важность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВремяСобытия" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Time</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТокенАвторизацииВрем" id="10">
+			<Type/>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаКодовАгрегатаКодИдентификации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаКодовАгрегата.СоставПодтвержден</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#DCDCDC</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаКодовАгрегатаКодИдентификации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаКодовАгрегата.СоставПодтвержден</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFE1E1</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаКодовАгрегатаКодИдентификации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаКодовАгрегата.СоставПодтвержден</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FDF6C3</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаКодовАгрегатаКодИдентификации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаКодовАгрегата.СоставПодтвержден</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">3</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#E1FFE1</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаВложенностиКодИдентификации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаВложенности.Подтвержден</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#E1FFE1</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаВложенностиКодИдентификации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаВложенности.Подтвержден</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFE1E1</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОчисткаФормы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить данные формы</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОчисткаФормы</Action>
+		</Command>
+		<Command name="ПоискПоШтрихкодуВыполнитьАгрегаты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск по штрихкоду</v8:content>
+				</v8:item>
+			</Title>
+			<Shortcut>F7</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.QrCodeИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоискПоШтрихкодуВыполнитьАгрегаты</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоискПоШтрихкодуВыполнитьВложенность" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск по штрихкоду</v8:content>
+				</v8:item>
+			</Title>
+			<Shortcut>F7</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.QrCodeИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоискПоШтрихкодуВыполнитьВложенность</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьПротокол" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить протокол</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizardCreateTempTableDropQuery</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОчиститьПротокол</Action>
+		</Command>
+		<Command name="ВвестиУведомлениеОВыводеПоВсем" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомление о выводе из оборота</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьПоШаблонуИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВвестиУведомлениеОВыводеПоВсем</Action>
+		</Command>
+		<Command name="ОбновитьСтатусыВложенный" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить статусы</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСтатусыВложенный</Action>
+		</Command>
+		<Command name="ОбновитьСтатусыАгрегаты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить статусы</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСтатусыАгрегаты</Action>
+		</Command>
+		<Command name="КодыАгрегатаЗагрузитьИзФайла" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из CSV</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Next</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КодыАгрегатаЗагрузитьИзФайла</Action>
+		</Command>
+		<Command name="КодыАгрегатаЗагрузитьИзТСД" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из ТСД</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗагрузитьИзТСДИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КодыАгрегатаЗагрузитьИзТСД</Action>
+		</Command>
+		<Command name="КодыАгрегатаЗагрузитьИзПриложения" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из мобильного приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗагрузитьИзМобильногоПриложенияИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КодыАгрегатаЗагрузитьИзПриложения</Action>
+		</Command>
+		<Command name="КодыВложенныеЗагрузитьИзФайла" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из CSV</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Next</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КодыВложенныеЗагрузитьИзФайла</Action>
+		</Command>
+		<Command name="КодыВложенныеЗагрузитьИзТСД" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коды вложенные загрузить из ТСД</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗагрузитьИзТСДИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КодыВложенныеЗагрузитьИзТСД</Action>
+		</Command>
+		<Command name="КодыВложенныеЗагрузитьИзПриложения" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из мобильного приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗагрузитьИзМобильногоПриложенияИСМПТК</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КодыВложенныеЗагрузитьИзПриложения</Action>
+		</Command>
+	</Commands>
+</Form>

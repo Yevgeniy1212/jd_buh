@@ -1,0 +1,1474 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ГруппаВажныеКоманды" id="49">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Важные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГруппаВажныеКомандыРасширеннаяПодсказка" id="50"/>
+				<ChildItems>
+					<Button name="ФормаПровести" id="53">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.StandardCommand.Post</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаПровестиРасширеннаяПодсказка" id="54"/>
+					</Button>
+					<Button name="ФормаОтменаПроведения" id="55">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.StandardCommand.UndoPosting</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаОтменаПроведенияРасширеннаяПодсказка" id="56"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаПоказатьДвиженияДокумента" id="57">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.ПоказатьДвиженияДокумента</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаПоказатьДвиженияДокументаРасширеннаяПодсказка" id="58"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<ButtonGroup name="ГруппаГлобальныеКоманды" id="51">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГруппаГлобальныеКомандыРасширеннаяПодсказка" id="52"/>
+				<ChildItems>
+					<Button name="ФормаОбщаяКомандаСтруктураПодчиненности" id="59">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.СвязанныеДокументы</CommandName>
+						<DataPath>Items.Список.CurrentData.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаСтруктураПодчиненностиРасширеннаяПодсказка" id="60"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="10"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="12">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="РучнаяКорректировка" id="37">
+					<DataPath>Список.РучнаяКорректировка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>2</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="РучнаяКорректировкаКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="РучнаяКорректировкаРасширеннаяПодсказка" id="39"/>
+				</PictureField>
+				<LabelField name="Дата" id="22">
+					<DataPath>Список.Date</DataPath>
+					<Width>13</Width>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Номер" id="25">
+					<DataPath>Список.Number</DataPath>
+					<Width>16</Width>
+					<ContextMenu name="НомерКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="Тип" id="28">
+					<DataPath>Список.Type</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид документа</v8:content>
+						</v8:item>
+					</Title>
+					<Width>16</Width>
+					<ContextMenu name="ТипКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ТипРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="Организация" id="31">
+					<DataPath>Список.Организация</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="34">
+					<DataPath>Список.Контрагент</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="СтруктурноеПодразделение" id="46">
+					<DataPath>Список.СтруктурноеПодразделение</DataPath>
+					<Width>26</Width>
+					<ContextMenu name="СтруктурноеПодразделениеКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СтруктурноеПодразделениеРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="Автор" id="40">
+					<DataPath>Список.Автор</DataPath>
+					<ContextMenu name="АвторКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="43">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="246">
+					<DataPath>Список.Ref</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="247"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="248"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<Pages name="ГруппаСтраницыДвижений" id="64">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы движений</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыДвиженийРасширеннаяПодсказка" id="65"/>
+			<ChildItems>
+				<Page name="СтраницаДвиженийБУ" id="66">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бухгалтерский учет</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаДвиженийБУРасширеннаяПодсказка" id="67"/>
+					<ChildItems>
+						<Table name="ТабличноеПолеДвиженияБУ" id="70">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ТабличноеПолеДвиженияБУ</DataPath>
+							<RowPictureDataPath>ТабличноеПолеДвиженияБУ.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ТабличноеПолеДвиженияБУКонтекстноеМеню" id="71"/>
+							<AutoCommandBar name="ТабличноеПолеДвиженияБУКоманднаяПанель" id="72"/>
+							<ExtendedTooltip name="ТабличноеПолеДвиженияБУРасширеннаяПодсказка" id="73"/>
+							<SearchStringAddition name="ТабличноеПолеДвиженияБУСтрокаПоиска" id="74">
+								<AdditionSource>
+									<Item>ТабличноеПолеДвиженияБУ</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабличноеПолеДвиженияБУСтрокаПоискаКонтекстноеМеню" id="77"/>
+								<ExtendedTooltip name="ТабличноеПолеДвиженияБУСтрокаПоискаРасширеннаяПодсказка" id="78"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТабличноеПолеДвиженияБУСостояниеПросмотра" id="79">
+								<AdditionSource>
+									<Item>ТабличноеПолеДвиженияБУ</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабличноеПолеДвиженияБУСостояниеПросмотраКонтекстноеМеню" id="82"/>
+								<ExtendedTooltip name="ТабличноеПолеДвиженияБУСостояниеПросмотраРасширеннаяПодсказка" id="83"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТабличноеПолеДвиженияБУУправлениеПоиском" id="84">
+								<AdditionSource>
+									<Item>ТабличноеПолеДвиженияБУ</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабличноеПолеДвиженияБУУправлениеПоискомКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="ТабличноеПолеДвиженияБУУправлениеПоискомРасширеннаяПодсказка" id="88"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ТабличноеПолеДвиженияБУНомерСтроки" id="132">
+									<DataPath>ТабличноеПолеДвиженияБУ.НомерСтроки</DataPath>
+									<ContextMenu name="ТабличноеПолеДвиженияБУНомерСтрокиКонтекстноеМеню" id="133"/>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУНомерСтрокиРасширеннаяПодсказка" id="134"/>
+								</LabelField>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаСчетДт" id="108">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа счет дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаСчетДтРасширеннаяПодсказка" id="109"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУСчетДт" id="135">
+											<DataPath>ТабличноеПолеДвиженияБУ.СчетДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСчетДтКонтекстноеМеню" id="136"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСчетДтРасширеннаяПодсказка" id="137"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСтруктурноеПодразделениеДт" id="138">
+											<DataPath>ТабличноеПолеДвиженияБУ.СтруктурноеПодразделениеДт</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделение Дт</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСтруктурноеПодразделениеДтКонтекстноеМеню" id="139"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСтруктурноеПодразделениеДтРасширеннаяПодсказка" id="140"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаСубконтоДт" id="110">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа субконто дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаСубконтоДтРасширеннаяПодсказка" id="111"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУСубконтоДт1" id="141">
+											<DataPath>ТабличноеПолеДвиженияБУ.СубконтоДт1</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСубконтоДт1КонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСубконтоДт1РасширеннаяПодсказка" id="143"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСубконтоДт2" id="144">
+											<DataPath>ТабличноеПолеДвиженияБУ.СубконтоДт2</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСубконтоДт2КонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСубконтоДт2РасширеннаяПодсказка" id="146"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСубконтоДт3" id="147">
+											<DataPath>ТабличноеПолеДвиженияБУ.СубконтоДт3</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСубконтоДт3КонтекстноеМеню" id="148"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСубконтоДт3РасширеннаяПодсказка" id="149"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаРеквизитыДт" id="112">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа реквизиты дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаРеквизитыДтРасширеннаяПодсказка" id="113"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУКоличествоДт" id="156">
+											<DataPath>ТабличноеПолеДвиженияБУ.КоличествоДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУКоличествоДтКонтекстноеМеню" id="157"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУКоличествоДтРасширеннаяПодсказка" id="158"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУВалютаДт" id="150">
+											<DataPath>ТабличноеПолеДвиженияБУ.ВалютаДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУВалютаДтКонтекстноеМеню" id="151"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУВалютаДтРасширеннаяПодсказка" id="152"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУВалютнаяСуммаДт" id="153">
+											<DataPath>ТабличноеПолеДвиженияБУ.ВалютнаяСуммаДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУВалютнаяСуммаДтКонтекстноеМеню" id="154"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУВалютнаяСуммаДтРасширеннаяПодсказка" id="155"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаСчетКт" id="114">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа счет дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаСчетКтРасширеннаяПодсказка" id="115"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУСчетКт" id="159">
+											<DataPath>ТабличноеПолеДвиженияБУ.СчетКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСчетКтКонтекстноеМеню" id="160"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСчетКтРасширеннаяПодсказка" id="161"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСтруктурноеПодразделениеКт" id="162">
+											<DataPath>ТабличноеПолеДвиженияБУ.СтруктурноеПодразделениеКт</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделение Кт</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСтруктурноеПодразделениеКтКонтекстноеМеню" id="163"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСтруктурноеПодразделениеКтРасширеннаяПодсказка" id="164"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаСубконтоКт" id="116">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа субконто дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаСубконтоКтРасширеннаяПодсказка" id="117"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУСубконтоКт1" id="165">
+											<DataPath>ТабличноеПолеДвиженияБУ.СубконтоКт1</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСубконтоКт1КонтекстноеМеню" id="166"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСубконтоКт1РасширеннаяПодсказка" id="167"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСубконтоКт2" id="168">
+											<DataPath>ТабличноеПолеДвиженияБУ.СубконтоКт2</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСубконтоКт2КонтекстноеМеню" id="169"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСубконтоКт2РасширеннаяПодсказка" id="170"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСубконтоКт3" id="171">
+											<DataPath>ТабличноеПолеДвиженияБУ.СубконтоКт3</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСубконтоКт3КонтекстноеМеню" id="172"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСубконтоКт3РасширеннаяПодсказка" id="173"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаРеквизитыКт" id="118">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа реквизиты дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаРеквизитыКтРасширеннаяПодсказка" id="119"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУКоличествоКт" id="180">
+											<DataPath>ТабличноеПолеДвиженияБУ.КоличествоКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУКоличествоКтКонтекстноеМеню" id="181"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУКоличествоКтРасширеннаяПодсказка" id="182"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУВалютаКт" id="174">
+											<DataPath>ТабличноеПолеДвиженияБУ.ВалютаКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУВалютаКтКонтекстноеМеню" id="175"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУВалютаКтРасширеннаяПодсказка" id="176"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУВалютнаяСуммаКт" id="177">
+											<DataPath>ТабличноеПолеДвиженияБУ.ВалютнаяСуммаКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУВалютнаяСуммаКтКонтекстноеМеню" id="178"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУВалютнаяСуммаКтРасширеннаяПодсказка" id="179"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияБУГруппаРеквизиты" id="120">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения БУГруппа реквизиты</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияБУГруппаРеквизитыРасширеннаяПодсказка" id="121"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияБУСумма" id="183">
+											<DataPath>ТабличноеПолеДвиженияБУ.Сумма</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСуммаКонтекстноеМеню" id="184"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСуммаРасширеннаяПодсказка" id="185"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУСодержание" id="186">
+											<DataPath>ТабличноеПолеДвиженияБУ.Содержание</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУСодержаниеКонтекстноеМеню" id="187"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУСодержаниеРасширеннаяПодсказка" id="188"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияБУНомерЖурнала" id="189">
+											<DataPath>ТабличноеПолеДвиженияБУ.НомерЖурнала</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияБУНомерЖурналаКонтекстноеМеню" id="190"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияБУНомерЖурналаРасширеннаяПодсказка" id="191"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДвиженийНУ" id="68">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговый учет</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаДвиженийНУРасширеннаяПодсказка" id="69"/>
+					<ChildItems>
+						<Table name="ТабличноеПолеДвиженияНУ" id="89">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ТабличноеПолеДвиженияНУ</DataPath>
+							<RowPictureDataPath>ТабличноеПолеДвиженияНУ.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ТабличноеПолеДвиженияНУКонтекстноеМеню" id="90"/>
+							<AutoCommandBar name="ТабличноеПолеДвиженияНУКоманднаяПанель" id="91"/>
+							<ExtendedTooltip name="ТабличноеПолеДвиженияНУРасширеннаяПодсказка" id="92"/>
+							<SearchStringAddition name="ТабличноеПолеДвиженияНУСтрокаПоиска" id="93">
+								<AdditionSource>
+									<Item>ТабличноеПолеДвиженияНУ</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабличноеПолеДвиженияНУСтрокаПоискаКонтекстноеМеню" id="96"/>
+								<ExtendedTooltip name="ТабличноеПолеДвиженияНУСтрокаПоискаРасширеннаяПодсказка" id="97"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТабличноеПолеДвиженияНУСостояниеПросмотра" id="98">
+								<AdditionSource>
+									<Item>ТабличноеПолеДвиженияНУ</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабличноеПолеДвиженияНУСостояниеПросмотраКонтекстноеМеню" id="101"/>
+								<ExtendedTooltip name="ТабличноеПолеДвиженияНУСостояниеПросмотраРасширеннаяПодсказка" id="102"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТабличноеПолеДвиженияНУУправлениеПоиском" id="103">
+								<AdditionSource>
+									<Item>ТабличноеПолеДвиженияНУ</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабличноеПолеДвиженияНУУправлениеПоискомКонтекстноеМеню" id="106"/>
+								<ExtendedTooltip name="ТабличноеПолеДвиженияНУУправлениеПоискомРасширеннаяПодсказка" id="107"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ТабличноеПолеДвиженияНУНомерСтроки" id="204">
+									<DataPath>ТабличноеПолеДвиженияНУ.НомерСтроки</DataPath>
+									<ContextMenu name="ТабличноеПолеДвиженияНУНомерСтрокиКонтекстноеМеню" id="205"/>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУНомерСтрокиРасширеннаяПодсказка" id="206"/>
+								</LabelField>
+								<ColumnGroup name="ТабличноеПолеДвиженияНУГруппаРеквизитыДт" id="122">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения НУГруппа реквизиты дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУГруппаРеквизитыДтРасширеннаяПодсказка" id="123"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияНУСчетДт" id="192">
+											<DataPath>ТабличноеПолеДвиженияНУ.СчетДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСчетДтКонтекстноеМеню" id="193"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСчетДтРасширеннаяПодсказка" id="194"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУКоличествоДт" id="198">
+											<DataPath>ТабличноеПолеДвиженияНУ.КоличествоДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУКоличествоДтКонтекстноеМеню" id="199"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУКоличествоДтРасширеннаяПодсказка" id="200"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУВидУчетаДт" id="195">
+											<DataPath>ТабличноеПолеДвиженияНУ.ВидУчетаДт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУВидУчетаДтКонтекстноеМеню" id="196"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУВидУчетаДтРасширеннаяПодсказка" id="197"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<LabelField name="ТабличноеПолеДвиженияНУСтруктурноеПодразделениеДт" id="201">
+									<DataPath>ТабличноеПолеДвиженияНУ.СтруктурноеПодразделениеДт</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подразделение Дт</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТабличноеПолеДвиженияНУСтруктурноеПодразделениеДтКонтекстноеМеню" id="202"/>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУСтруктурноеПодразделениеДтРасширеннаяПодсказка" id="203"/>
+								</LabelField>
+								<ColumnGroup name="ТабличноеПолеДвиженияНУГруппаСубконтоДт" id="124">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения НУГруппа субконто дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУГруппаСубконтоДтРасширеннаяПодсказка" id="125"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияНУСубконтоДт1" id="207">
+											<DataPath>ТабличноеПолеДвиженияНУ.СубконтоДт1</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСубконтоДт1КонтекстноеМеню" id="208"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСубконтоДт1РасширеннаяПодсказка" id="209"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУСубконтоДт2" id="210">
+											<DataPath>ТабличноеПолеДвиженияНУ.СубконтоДт2</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСубконтоДт2КонтекстноеМеню" id="211"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСубконтоДт2РасширеннаяПодсказка" id="212"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУСубконтоДт3" id="213">
+											<DataPath>ТабличноеПолеДвиженияНУ.СубконтоДт3</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСубконтоДт3КонтекстноеМеню" id="214"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСубконтоДт3РасширеннаяПодсказка" id="215"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияНУГруппаРеквизитыКт" id="126">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения НУГруппа реквизиты дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУГруппаРеквизитыКтРасширеннаяПодсказка" id="127"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияНУСчетКт" id="216">
+											<DataPath>ТабличноеПолеДвиженияНУ.СчетКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСчетКтКонтекстноеМеню" id="217"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСчетКтРасширеннаяПодсказка" id="218"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУКоличествоКт" id="222">
+											<DataPath>ТабличноеПолеДвиженияНУ.КоличествоКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУКоличествоКтКонтекстноеМеню" id="223"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУКоличествоКтРасширеннаяПодсказка" id="224"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУВидУчетаКт" id="219">
+											<DataPath>ТабличноеПолеДвиженияНУ.ВидУчетаКт</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУВидУчетаКтКонтекстноеМеню" id="220"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУВидУчетаКтРасширеннаяПодсказка" id="221"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<LabelField name="ТабличноеПолеДвиженияНУСтруктурноеПодразделениеКт" id="225">
+									<DataPath>ТабличноеПолеДвиженияНУ.СтруктурноеПодразделениеКт</DataPath>
+									<ContextMenu name="ТабличноеПолеДвиженияНУСтруктурноеПодразделениеКтКонтекстноеМеню" id="226"/>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУСтруктурноеПодразделениеКтРасширеннаяПодсказка" id="227"/>
+								</LabelField>
+								<ColumnGroup name="ТабличноеПолеДвиженияНУГруппаСубконтоКт" id="128">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения НУГруппа субконто дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУГруппаСубконтоКтРасширеннаяПодсказка" id="129"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияНУСубконтоКт1" id="228">
+											<DataPath>ТабличноеПолеДвиженияНУ.СубконтоКт1</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСубконтоКт1КонтекстноеМеню" id="229"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСубконтоКт1РасширеннаяПодсказка" id="230"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУСубконтоКт2" id="231">
+											<DataPath>ТабличноеПолеДвиженияНУ.СубконтоКт2</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСубконтоКт2КонтекстноеМеню" id="232"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСубконтоКт2РасширеннаяПодсказка" id="233"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУСубконтоКт3" id="234">
+											<DataPath>ТабличноеПолеДвиженияНУ.СубконтоКт3</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСубконтоКт3КонтекстноеМеню" id="235"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСубконтоКт3РасширеннаяПодсказка" id="236"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТабличноеПолеДвиженияНУГруппаРеквизиты" id="130">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Табличное поле движения НУГруппа реквизиты</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ТабличноеПолеДвиженияНУГруппаРеквизитыРасширеннаяПодсказка" id="131"/>
+									<ChildItems>
+										<LabelField name="ТабличноеПолеДвиженияНУСумма" id="243">
+											<DataPath>ТабличноеПолеДвиженияНУ.Сумма</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСуммаКонтекстноеМеню" id="244"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСуммаРасширеннаяПодсказка" id="245"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУСодержание" id="237">
+											<DataPath>ТабличноеПолеДвиженияНУ.Содержание</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУСодержаниеКонтекстноеМеню" id="238"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУСодержаниеРасширеннаяПодсказка" id="239"/>
+										</LabelField>
+										<LabelField name="ТабличноеПолеДвиженияНУНомерЖурнала" id="240">
+											<DataPath>ТабличноеПолеДвиженияНУ.НомерЖурнала</DataPath>
+											<ContextMenu name="ТабличноеПолеДвиженияНУНомерЖурналаКонтекстноеМеню" id="241"/>
+											<ExtendedTooltip name="ТабличноеПолеДвиженияНУНомерЖурналаРасширеннаяПодсказка" id="242"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>DocumentJournal.ЖурналОпераций</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТабличноеПолеДвиженияБУ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения документа (БУ)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	РегистрБухгалтерииТиповойДвиженияССубконто.Период,
+	РегистрБухгалтерииТиповойДвиженияССубконто.Регистратор КАК Регистратор,
+	РегистрБухгалтерииТиповойДвиженияССубконто.НомерСтроки,
+	РегистрБухгалтерииТиповойДвиженияССубконто.Активность,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СчетДт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СубконтоДт1,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидСубконтоДт1,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СубконтоДт2,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидСубконтоДт2,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СубконтоДт3,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидСубконтоДт3,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СчетКт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СубконтоКт1,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидСубконтоКт1,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СубконтоКт2,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидСубконтоКт2,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СубконтоКт3,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидСубконтоКт3,
+	РегистрБухгалтерииТиповойДвиженияССубконто.Организация,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВалютаДт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВалютаКт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СтруктурноеПодразделениеДт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.СтруктурноеПодразделениеКт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.Сумма,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВалютнаяСуммаДт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВалютнаяСуммаКт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.КоличествоДт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.КоличествоКт,
+	РегистрБухгалтерииТиповойДвиженияССубконто.Содержание,
+	РегистрБухгалтерииТиповойДвиженияССубконто.НомерЖурнала,
+	РегистрБухгалтерииТиповойДвиженияССубконто.ВидРегламентнойОперации,
+	РегистрБухгалтерииТиповойДвиженияССубконто.МоментВремени
+{ВЫБРАТЬ
+	Регистратор.*}
+ИЗ
+	РегистрБухгалтерии.Типовой.ДвиженияССубконто КАК РегистрБухгалтерииТиповойДвиженияССубконто
+ГДЕ
+	РегистрБухгалтерииТиповойДвиженияССубконто.Регистратор = &amp;Регистратор</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютаКор</dcssch:dataPath>
+					<dcssch:field>ВалютаКор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоКт3</dcssch:dataPath>
+					<dcssch:field>СубконтоКт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Период</dcssch:dataPath>
+					<dcssch:field>Период</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Регистратор</dcssch:dataPath>
+					<dcssch:field>Регистратор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Содержание</dcssch:dataPath>
+					<dcssch:field>Содержание</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоДт</dcssch:dataPath>
+					<dcssch:field>КоличествоДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Регистратор1</dcssch:dataPath>
+					<dcssch:field>Регистратор1</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистратор1</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютнаяСуммаКт</dcssch:dataPath>
+					<dcssch:field>ВалютнаяСуммаКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеДт</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОбластьДанныхОсновныеДанные</dcssch:dataPath>
+					<dcssch:field>ОбластьДанныхОсновныеДанные</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоДт2</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоДт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерСтроки</dcssch:dataPath>
+					<dcssch:field>НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоДт1</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоДт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Сумма</dcssch:dataPath>
+					<dcssch:field>Сумма</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Активность</dcssch:dataPath>
+					<dcssch:field>Активность</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетДт</dcssch:dataPath>
+					<dcssch:field>СчетДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт1</dcssch:dataPath>
+					<dcssch:field>СубконтоДт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт2</dcssch:dataPath>
+					<dcssch:field>СубконтоДт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт3</dcssch:dataPath>
+					<dcssch:field>СубконтоДт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютаКт</dcssch:dataPath>
+					<dcssch:field>ВалютаКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоДт3</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоДт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетКт</dcssch:dataPath>
+					<dcssch:field>СчетКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоКт1</dcssch:dataPath>
+					<dcssch:field>СубконтоКт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютаДт</dcssch:dataPath>
+					<dcssch:field>ВалютаДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоКт1</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоКт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоКт2</dcssch:dataPath>
+					<dcssch:field>СубконтоКт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Субконто1</dcssch:dataPath>
+					<dcssch:field>Субконто1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоКт2</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоКт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Валюта</dcssch:dataPath>
+					<dcssch:field>Валюта</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Субконто2</dcssch:dataPath>
+					<dcssch:field>Субконто2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидРегламентнойОперации</dcssch:dataPath>
+					<dcssch:field>ВидРегламентнойОперации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоКт3</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоКт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеКт</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютнаяСуммаДт</dcssch:dataPath>
+					<dcssch:field>ВалютнаяСуммаДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоКт</dcssch:dataPath>
+					<dcssch:field>КоличествоКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерЖурнала</dcssch:dataPath>
+					<dcssch:field>НомерЖурнала</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделение</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Счет</dcssch:dataPath>
+					<dcssch:field>Счет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Субконто3</dcssch:dataPath>
+					<dcssch:field>Субконто3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСчет</dcssch:dataPath>
+					<dcssch:field>КорСчет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСубконто1</dcssch:dataPath>
+					<dcssch:field>КорСубконто1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСубконто2</dcssch:dataPath>
+					<dcssch:field>КорСубконто2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСубконто3</dcssch:dataPath>
+					<dcssch:field>КорСубконто3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеКор</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеКор</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>НачалоПериода</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начало периода</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>КонецПериода</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конец периода</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>Первые</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первые</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>0</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:decimal">0</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>Регистратор</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистратор</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:DocumentRef.ОтражениеЗарплатыВБухучете</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОперацияБух</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВводНачальныхОстатков</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияПрочихОперацийПоПриобретеннымТоварамВЦеляхНДС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗакрытиеМесяца</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОплатаОтПокупателяПлатежнойКартой</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПриходныйКассовыйОрдер</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежныйОрдерСписаниеДенежныхСредств</v8:Type>
+						<v8:Type>cfg:DocumentRef.РеализацияТоваровУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.ТребованиеНакладная</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтражениеЗарплатыВРеглУчете</v8:Type>
+						<v8:Type>cfg:DocumentRef.РеструктуризацияОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВозвратТоваровПоставщику</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежноеПоручениеВходящее</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтчетПроизводстваЗаСмену</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОприходованиеТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВводНачальныхОстатковОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаявлениеОВвозеТоваровИУплатеКосвенныхНалогов</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеДопРасходов</v8:Type>
+						<v8:Type>cfg:DocumentRef.АктОбОказанииПроизводственныхУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.ДвижениеНЗП</v8:Type>
+						<v8:Type>cfg:DocumentRef.РасходныйКассовыйОрдер</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗакрытиеДтКтЗадолженности</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПереоценкаВнеоборотныхАктивов</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеНМА</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияПрочихОперацийПоРеализованнымТоварамВЦеляхНДС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтчетОРозничныхПродажах</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПеремещениеОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.КорректировкаДолга</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежныйОрдерПоступлениеДенежныхСредств</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВозвратТоваровОтПокупателя</v8:Type>
+						<v8:Type>cfg:DocumentRef.ГТДИмпорт</v8:Type>
+						<v8:Type>cfg:DocumentRef.Сторнирование</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЧекККМ</v8:Type>
+						<v8:Type>cfg:DocumentRef.АвизоПрочее</v8:Type>
+						<v8:Type>cfg:DocumentRef.РасчетНалоговПриПоступленииАктивовУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеТоваровУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеНМА</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежноеПоручениеИсходящее</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПеремещениеТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.АвансовыйОтчет</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПередачаНМА</v8:Type>
+						<v8:Type>cfg:DocumentRef.РеализацияУслугПоПереработке</v8:Type>
+						<v8:Type>cfg:DocumentRef.МодернизацияОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПринятиеКУчетуОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.КомплектацияНоменклатуры</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВводНачальныхОстатковПоЗарплате</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПередачаОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.КорректировкаСтоимостиСписанияТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияПрочихВыплат</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтражениеНалоговойОтчетностиВРеглУчете</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.ДепонированиеЗаработнойПлаты</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеИзПереработки</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияНДСЗаНерезидента</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПередачаТоваров</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<MainTable>AccountingRegister.Типовой.RecordsWithExtDimensions</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТабличноеПолеДвиженияНУ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения документа (НУ)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Период,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Регистратор КАК Регистратор,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.НомерСтроки,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Активность,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СчетДт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СубконтоДт1,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидСубконтоДт1,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СубконтоДт2,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидСубконтоДт2,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СубконтоДт3,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидСубконтоДт3,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СчетКт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СубконтоКт1,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидСубконтоКт1,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СубконтоКт2,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидСубконтоКт2,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СубконтоКт3,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидСубконтоКт3,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Организация,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидУчетаДт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидУчетаКт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СтруктурноеПодразделениеДт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.СтруктурноеПодразделениеКт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Сумма,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.КоличествоДт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.КоличествоКт,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.НомерЖурнала,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Содержание,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.ВидРегламентнойОперации,
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.МоментВремени
+{ВЫБРАТЬ
+	Регистратор.*}
+ИЗ
+	РегистрБухгалтерии.Налоговый.ДвиженияССубконто КАК РегистрБухгалтерииНалоговыйДвиженияССубконто
+ГДЕ
+	РегистрБухгалтерииНалоговыйДвиженияССубконто.Регистратор = &amp;Регистратор</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоКт3</dcssch:dataPath>
+					<dcssch:field>СубконтоКт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Период</dcssch:dataPath>
+					<dcssch:field>Период</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Регистратор</dcssch:dataPath>
+					<dcssch:field>Регистратор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Содержание</dcssch:dataPath>
+					<dcssch:field>Содержание</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоДт</dcssch:dataPath>
+					<dcssch:field>КоличествоДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Регистратор1</dcssch:dataPath>
+					<dcssch:field>Регистратор1</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистратор1</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеДт</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОбластьДанныхОсновныеДанные</dcssch:dataPath>
+					<dcssch:field>ОбластьДанныхОсновныеДанные</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоДт2</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоДт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерСтроки</dcssch:dataPath>
+					<dcssch:field>НомерСтроки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоДт1</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоДт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Сумма</dcssch:dataPath>
+					<dcssch:field>Сумма</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Активность</dcssch:dataPath>
+					<dcssch:field>Активность</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетДт</dcssch:dataPath>
+					<dcssch:field>СчетДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт1</dcssch:dataPath>
+					<dcssch:field>СубконтоДт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт2</dcssch:dataPath>
+					<dcssch:field>СубконтоДт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоДт3</dcssch:dataPath>
+					<dcssch:field>СубконтоДт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоДт3</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоДт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетКт</dcssch:dataPath>
+					<dcssch:field>СчетКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоКт1</dcssch:dataPath>
+					<dcssch:field>СубконтоКт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоКт1</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоКт1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СубконтоКт2</dcssch:dataPath>
+					<dcssch:field>СубконтоКт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Субконто1</dcssch:dataPath>
+					<dcssch:field>Субконто1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоКт2</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоКт2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Субконто2</dcssch:dataPath>
+					<dcssch:field>Субконто2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидРегламентнойОперации</dcssch:dataPath>
+					<dcssch:field>ВидРегламентнойОперации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСубконтоКт3</dcssch:dataPath>
+					<dcssch:field>ВидСубконтоКт3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчетаДт</dcssch:dataPath>
+					<dcssch:field>ВидУчетаДт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчетаКт</dcssch:dataPath>
+					<dcssch:field>ВидУчетаКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеКт</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоКт</dcssch:dataPath>
+					<dcssch:field>КоличествоКт</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерЖурнала</dcssch:dataPath>
+					<dcssch:field>НомерЖурнала</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделение</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Счет</dcssch:dataPath>
+					<dcssch:field>Счет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Субконто3</dcssch:dataPath>
+					<dcssch:field>Субконто3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСчет</dcssch:dataPath>
+					<dcssch:field>КорСчет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСубконто1</dcssch:dataPath>
+					<dcssch:field>КорСубконто1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСубконто2</dcssch:dataPath>
+					<dcssch:field>КорСубконто2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КорСубконто3</dcssch:dataPath>
+					<dcssch:field>КорСубконто3</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчета</dcssch:dataPath>
+					<dcssch:field>ВидУчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчетаКор</dcssch:dataPath>
+					<dcssch:field>ВидУчетаКор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделениеКор</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделениеКор</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>НачалоПериода</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начало периода</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>КонецПериода</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конец периода</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>Первые</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первые</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>0</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:decimal">0</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>Регистратор</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистратор</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:DocumentRef.ОтражениеЗарплатыВБухучете</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОперацияБух</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВводНачальныхОстатков</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияПрочихОперацийПоПриобретеннымТоварамВЦеляхНДС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗакрытиеМесяца</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОплатаОтПокупателяПлатежнойКартой</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПриходныйКассовыйОрдер</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежныйОрдерСписаниеДенежныхСредств</v8:Type>
+						<v8:Type>cfg:DocumentRef.РеализацияТоваровУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.ТребованиеНакладная</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтражениеЗарплатыВРеглУчете</v8:Type>
+						<v8:Type>cfg:DocumentRef.РеструктуризацияОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВозвратТоваровПоставщику</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежноеПоручениеВходящее</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтчетПроизводстваЗаСмену</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОприходованиеТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВводНачальныхОстатковОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаявлениеОВвозеТоваровИУплатеКосвенныхНалогов</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеДопРасходов</v8:Type>
+						<v8:Type>cfg:DocumentRef.АктОбОказанииПроизводственныхУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.ДвижениеНЗП</v8:Type>
+						<v8:Type>cfg:DocumentRef.РасходныйКассовыйОрдер</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗакрытиеДтКтЗадолженности</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПереоценкаВнеоборотныхАктивов</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеНМА</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияПрочихОперацийПоРеализованнымТоварамВЦеляхНДС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтчетОРозничныхПродажах</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПеремещениеОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.КорректировкаДолга</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежныйОрдерПоступлениеДенежныхСредств</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВозвратТоваровОтПокупателя</v8:Type>
+						<v8:Type>cfg:DocumentRef.ГТДИмпорт</v8:Type>
+						<v8:Type>cfg:DocumentRef.Сторнирование</v8:Type>
+						<v8:Type>cfg:DocumentRef.АвизоПрочее</v8:Type>
+						<v8:Type>cfg:DocumentRef.РасчетНалоговПриПоступленииАктивовУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеТоваровУслуг</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеНМА</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПлатежноеПоручениеИсходящее</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПеремещениеТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.АвансовыйОтчет</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПередачаНМА</v8:Type>
+						<v8:Type>cfg:DocumentRef.РеализацияУслугПоПереработке</v8:Type>
+						<v8:Type>cfg:DocumentRef.МодернизацияОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПринятиеКУчетуОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.КомплектацияНоменклатуры</v8:Type>
+						<v8:Type>cfg:DocumentRef.ВводНачальныхОстатковПоЗарплате</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПередачаОС</v8:Type>
+						<v8:Type>cfg:DocumentRef.КорректировкаСтоимостиСписанияТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияПрочихВыплат</v8:Type>
+						<v8:Type>cfg:DocumentRef.ОтражениеНалоговойОтчетностиВРеглУчете</v8:Type>
+						<v8:Type>cfg:DocumentRef.СписаниеТоваров</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПоступлениеИзПереработки</v8:Type>
+						<v8:Type>cfg:DocumentRef.РегистрацияНДСЗаНерезидента</v8:Type>
+						<v8:Type>cfg:DocumentRef.ПередачаТоваров</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<MainTable>AccountingRegister.Налоговый.RecordsWithExtDimensions</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

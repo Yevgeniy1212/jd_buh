@@ -1,0 +1,1502 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КнопкаОтображатьРеквизитыПолучателя" id="172">
+				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
+				<CommandName>Form.Command.ОтображатьРеквизитыПолучателя</CommandName>
+				<ExtendedTooltip name="КнопкаОтображатьРеквизитыПолучателяРасширеннаяПодсказка" id="173"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛевая" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (левая колонка)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛеваяРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНомерДата" id="5">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер/дата</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<InputField name="Номер" id="7">
+									<DataPath>Объект.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<MaxWidth>10</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="НомерКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="9"/>
+								</InputField>
+								<InputField name="Дата" id="10">
+									<DataPath>Объект.Date</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>от</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>14</Width>
+									<MaxWidth>14</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12"/>
+									<Events>
+										<Event name="OnChange">ДатаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Организация" id="51">
+							<DataPath>Объект.Организация</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>28</MaxWidth>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="52"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="53"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаОтправитель" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отправитель</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаОтправительРасширеннаяПодсказка" id="45"/>
+							<ChildItems>
+								<InputField name="СтруктурноеПодразделениеОрганизацияОтправитель" id="169">
+									<DataPath>СтруктурноеПодразделениеОрганизацияОтправитель</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>28</MaxWidth>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChooseType>false</ChooseType>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+											<xr:ValueChange>DontChange</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ChoiceParameters>
+										<app:item name="ВыбиратьСтруктурныеЕдиницы">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="СтруктурноеПодразделениеОрганизацияОтправительКонтекстноеМеню" id="170"/>
+									<ExtendedTooltip name="СтруктурноеПодразделениеОрганизацияОтправительРасширеннаяПодсказка" id="171"/>
+									<Events>
+										<Event name="OnChange">СтруктурноеПодразделениеОрганизацияОтправительПриИзменении</Event>
+										<Event name="StartChoice">СтруктурноеПодразделениеОрганизацияОтправительНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПравая" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (правая колонка)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПраваяРасширеннаяПодсказка" id="23"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияУчитыватьКПН" id="187">
+							<Visible>false</Visible>
+							<Enabled>false</Enabled>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДекорацияУчитыватьКПНКонтекстноеМеню" id="188"/>
+							<ExtendedTooltip name="ДекорацияУчитыватьКПНРасширеннаяПодсказка" id="189"/>
+						</LabelDecoration>
+						<CheckBoxField name="УчитыватьКПН" id="24">
+							<DataPath>Объект.УчитыватьКПН</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УчитыватьКПНКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="УчитыватьКПНРасширеннаяПодсказка" id="26"/>
+							<Events>
+								<Event name="OnChange">УчитыватьКПНПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияОрганизация" id="54">
+							<Height>2</Height>
+							<SkipOnInput>true</SkipOnInput>
+							<ContextMenu name="ДекорацияОрганизацияКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="ДекорацияОрганизацияРасширеннаяПодсказка" id="56"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаПолучатель" id="46">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Получатель</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаПолучательРасширеннаяПодсказка" id="47"/>
+							<ChildItems>
+								<InputField name="СтруктурноеПодразделениеОрганизацияПолучатель" id="166">
+									<DataPath>СтруктурноеПодразделениеОрганизацияПолучатель</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>36</MaxWidth>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChooseType>false</ChooseType>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+											<xr:ValueChange>DontChange</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ChoiceParameters>
+										<app:item name="ВыбиратьСтруктурныеЕдиницы">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="СтруктурноеПодразделениеОрганизацияПолучательКонтекстноеМеню" id="167"/>
+									<ExtendedTooltip name="СтруктурноеПодразделениеОрганизацияПолучательРасширеннаяПодсказка" id="168"/>
+									<Events>
+										<Event name="OnChange">СтруктурноеПодразделениеОрганизацияПолучательПриИзменении</Event>
+										<Event name="StartChoice">СтруктурноеПодразделениеОрганизацияПолучательНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<Page name="ГруппаДанныеБух" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные бух. учета</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДанныеБухРасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<Table name="ДанныеБух" id="61">
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ДанныеБух</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеБухКонтекстноеМеню" id="62"/>
+							<AutoCommandBar name="ДанныеБухКоманднаяПанель" id="63">
+								<ChildItems>
+									<Popup name="Заполнить" id="174">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="175"/>
+										<ChildItems>
+											<Button name="ЗаполнитьПоОстаткам" id="176">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьПоОстаткамСчетовБУ</CommandName>
+												<ExtendedTooltip name="ЗаполнитьПоОстаткамРасширеннаяПодсказка" id="177"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ДанныеБухИзменитьДанныеБух" id="190">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ИзменитьДанныеБух</CommandName>
+										<ExtendedTooltip name="ДанныеБухИзменитьДанныеБухРасширеннаяПодсказка" id="191"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДанныеБухРасширеннаяПодсказка" id="64"/>
+							<SearchStringAddition name="ДанныеБухСтрокаПоиска" id="178">
+								<AdditionSource>
+									<Item>ДанныеБух</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеБухСтрокаПоискаКонтекстноеМеню" id="179"/>
+								<ExtendedTooltip name="ДанныеБухСтрокаПоискаРасширеннаяПодсказка" id="180"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеБухСостояниеПросмотра" id="181">
+								<AdditionSource>
+									<Item>ДанныеБух</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеБухСостояниеПросмотраКонтекстноеМеню" id="182"/>
+								<ExtendedTooltip name="ДанныеБухСостояниеПросмотраРасширеннаяПодсказка" id="183"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеБухУправлениеПоиском" id="184">
+								<AdditionSource>
+									<Item>ДанныеБух</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеБухУправлениеПоискомКонтекстноеМеню" id="185"/>
+								<ExtendedTooltip name="ДанныеБухУправлениеПоискомРасширеннаяПодсказка" id="186"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">ДанныеБухПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ДанныеБухНомерСтроки" id="65">
+									<DataPath>Объект.ДанныеБух.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеБухНомерСтрокиКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="ДанныеБухНомерСтрокиРасширеннаяПодсказка" id="67"/>
+								</LabelField>
+								<InputField name="ДанныеБухСчетОтправительБУ" id="68">
+									<DataPath>Объект.ДанныеБух.СчетОтправительБУ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>13</MaxWidth>
+									<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+									<ContextMenu name="ДанныеБухСчетОтправительБУКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ДанныеБухСчетОтправительБУРасширеннаяПодсказка" id="70"/>
+									<Events>
+										<Event name="OnChange">ДанныеБухСчетОтправительБУПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="ГруппаСубконтоСчетаОтправительБУ" id="150">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто счета отправителя (БУ)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСубконтоСчетаОтправительБУРасширеннаяПодсказка" id="151"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСубконтоОтправительБУ1" id="71">
+											<DataPath>Объект.ДанныеБух.СубконтоОтправительБУ1</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоОтправительБУ1КонтекстноеМеню" id="72"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоОтправительБУ1РасширеннаяПодсказка" id="73"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоОтправительБУ1ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоОтправительБУ1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоОтправительБУ2" id="74">
+											<DataPath>Объект.ДанныеБух.СубконтоОтправительБУ2</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоОтправительБУ2КонтекстноеМеню" id="75"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоОтправительБУ2РасширеннаяПодсказка" id="76"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоОтправительБУ2ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоОтправительБУ2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоОтправительБУ3" id="77">
+											<DataPath>Объект.ДанныеБух.СубконтоОтправительБУ3</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоОтправительБУ3КонтекстноеМеню" id="78"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоОтправительБУ3РасширеннаяПодсказка" id="79"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоОтправительБУ3ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоОтправительБУ3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ДанныеБухСчетПолучательБУ" id="104">
+									<DataPath>Объект.ДанныеБух.СчетПолучательБУ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>13</MaxWidth>
+									<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+									<ContextMenu name="ДанныеБухСчетПолучательБУКонтекстноеМеню" id="105"/>
+									<ExtendedTooltip name="ДанныеБухСчетПолучательБУРасширеннаяПодсказка" id="106"/>
+									<Events>
+										<Event name="OnChange">ДанныеБухСчетПолучательБУПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="ГруппаСубконтоСчетаПолучательБУ" id="154">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто счета получателя (БУ)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСубконтоСчетаПолучательБУРасширеннаяПодсказка" id="155"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСубконтоПолучательБУ1" id="107">
+											<DataPath>Объект.ДанныеБух.СубконтоПолучательБУ1</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоПолучательБУ1КонтекстноеМеню" id="108"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоПолучательБУ1РасширеннаяПодсказка" id="109"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоПолучательБУ1ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоПолучательБУ1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоПолучательБУ2" id="110">
+											<DataPath>Объект.ДанныеБух.СубконтоПолучательБУ2</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоПолучательБУ2КонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоПолучательБУ2РасширеннаяПодсказка" id="112"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоПолучательБУ2ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоПолучательБУ2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоПолучательБУ3" id="113">
+											<DataPath>Объект.ДанныеБух.СубконтоПолучательБУ3</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоПолучательБУ3КонтекстноеМеню" id="114"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоПолучательБУ3РасширеннаяПодсказка" id="115"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоПолучательБУ3ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоПолучательБУ3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСуммаКоличество" id="158">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма, количество</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСуммаКоличествоРасширеннаяПодсказка" id="159"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСумма" id="101">
+											<DataPath>Объект.ДанныеБух.Сумма</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>10</MaxWidth>
+											<ContextMenu name="ДанныеБухСуммаКонтекстноеМеню" id="102"/>
+											<ExtendedTooltip name="ДанныеБухСуммаРасширеннаяПодсказка" id="103"/>
+										</InputField>
+										<InputField name="ДанныеБухКоличество" id="92">
+											<DataPath>Объект.ДанныеБух.Количество</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>8</MaxWidth>
+											<ContextMenu name="ДанныеБухКоличествоКонтекстноеМеню" id="93"/>
+											<ExtendedTooltip name="ДанныеБухКоличествоРасширеннаяПодсказка" id="94"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаВалютаВалютнаяСумма" id="160">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Валюта, валютная сумма</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаВалютаВалютнаяСуммаРасширеннаяПодсказка" id="161"/>
+									<ChildItems>
+										<InputField name="ДанныеБухВалюта" id="95">
+											<DataPath>Объект.ДанныеБух.Валюта</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>10</MaxWidth>
+											<ContextMenu name="ДанныеБухВалютаКонтекстноеМеню" id="96"/>
+											<ExtendedTooltip name="ДанныеБухВалютаРасширеннаяПодсказка" id="97"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухВалютаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухВалютнаяСумма" id="98">
+											<DataPath>Объект.ДанныеБух.ВалютнаяСумма</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>10</MaxWidth>
+											<ContextMenu name="ДанныеБухВалютнаяСуммаКонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="ДанныеБухВалютнаяСуммаРасширеннаяПодсказка" id="100"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухВалютнаяСуммаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСчетОтправительНУ" id="162">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет и вид учета отправителя (НУ)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСчетОтправительНУРасширеннаяПодсказка" id="163"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСчетОтправительНУ" id="80">
+											<DataPath>Объект.ДанныеБух.СчетОтправительНУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>21</Width>
+											<MaxWidth>13</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСчетОтправительНУКонтекстноеМеню" id="81"/>
+											<ExtendedTooltip name="ДанныеБухСчетОтправительНУРасширеннаяПодсказка" id="82"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСчетОтправительНУПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухВидУчетаНУОтправитель" id="131">
+											<DataPath>Объект.ДанныеБух.ВидУчетаНУОтправитель</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухВидУчетаНУОтправительКонтекстноеМеню" id="132"/>
+											<ExtendedTooltip name="ДанныеБухВидУчетаНУОтправительРасширеннаяПодсказка" id="133"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухВидУчетаНУОтправительПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСубконтоСчетаОтправительНУ" id="152">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто счета отправителя (НУ)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСубконтоСчетаОтправительНУРасширеннаяПодсказка" id="153"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСубконтоОтправительНУ1" id="83">
+											<DataPath>Объект.ДанныеБух.СубконтоОтправительНУ1</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоОтправительНУ1КонтекстноеМеню" id="84"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоОтправительНУ1РасширеннаяПодсказка" id="85"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоОтправительНУ1ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоОтправительНУ1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоОтправительНУ2" id="86">
+											<DataPath>Объект.ДанныеБух.СубконтоОтправительНУ2</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоОтправительНУ2КонтекстноеМеню" id="87"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоОтправительНУ2РасширеннаяПодсказка" id="88"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоОтправительНУ2ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоОтправительНУ2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоОтправительНУ3" id="89">
+											<DataPath>Объект.ДанныеБух.СубконтоОтправительНУ3</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоОтправительНУ3КонтекстноеМеню" id="90"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоОтправительНУ3РасширеннаяПодсказка" id="91"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоОтправительНУ3ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоОтправительНУ3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСчетПолучательНУ" id="164">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет и вид учета получателя (НУ)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСчетПолучательНУРасширеннаяПодсказка" id="165"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСчетПолучательНУ" id="116">
+											<DataPath>Объект.ДанныеБух.СчетПолучательНУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>21</Width>
+											<MaxWidth>13</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСчетПолучательНУКонтекстноеМеню" id="117"/>
+											<ExtendedTooltip name="ДанныеБухСчетПолучательНУРасширеннаяПодсказка" id="118"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСчетПолучательНУПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухВидУчетаНУПолучатель" id="134">
+											<DataPath>Объект.ДанныеБух.ВидУчетаНУПолучатель</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухВидУчетаНУПолучательКонтекстноеМеню" id="135"/>
+											<ExtendedTooltip name="ДанныеБухВидУчетаНУПолучательРасширеннаяПодсказка" id="136"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСубконтоСчетаПолучательНУ" id="156">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто счета получателя (НУ)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСубконтоСчетаПолучательНУРасширеннаяПодсказка" id="157"/>
+									<ChildItems>
+										<InputField name="ДанныеБухСубконтоПолучательНУ1" id="119">
+											<DataPath>Объект.ДанныеБух.СубконтоПолучательНУ1</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоПолучательНУ1КонтекстноеМеню" id="120"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоПолучательНУ1РасширеннаяПодсказка" id="121"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоПолучательНУ1ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоПолучательНУ1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоПолучательНУ2" id="122">
+											<DataPath>Объект.ДанныеБух.СубконтоПолучательНУ2</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоПолучательНУ2КонтекстноеМеню" id="123"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоПолучательНУ2РасширеннаяПодсказка" id="124"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоПолучательНУ2ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоПолучательНУ2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДанныеБухСубконтоПолучательНУ3" id="125">
+											<DataPath>Объект.ДанныеБух.СубконтоПолучательНУ3</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>27</Width>
+											<MaxWidth>16</MaxWidth>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="ДанныеБухСубконтоПолучательНУ3КонтекстноеМеню" id="126"/>
+											<ExtendedTooltip name="ДанныеБухСубконтоПолучательНУ3РасширеннаяПодсказка" id="127"/>
+											<Events>
+												<Event name="OnChange">ДанныеБухСубконтоПолучательНУ3ПриИзменении</Event>
+												<Event name="StartChoice">ДанныеБухСубконтоПолучательНУ3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ДанныеБухСодержание" id="128">
+									<DataPath>Объект.ДанныеБух.Содержание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>16</MaxWidth>
+									<ContextMenu name="ДанныеБухСодержаниеКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="ДанныеБухСодержаниеРасширеннаяПодсказка" id="130"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительно" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="138"/>
+					<ChildItems>
+						<InputField name="Ответственный" id="139">
+							<DataPath>Объект.Ответственный</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>36</MaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="140"/>
+							<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="141"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаКомментарийАвтор" id="192">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий автор</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомментарийАвторРасширеннаяПодсказка" id="193"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="147">
+					<DataPath>Объект.Комментарий</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>1</Height>
+					<MultiLine>true</MultiLine>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="148"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="149"/>
+					<Events>
+						<Event name="StartChoice">КомментарийНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="НадписьАвтор" id="194">
+					<DataPath>НадписьАвтор</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<ContextMenu name="НадписьАвторКонтекстноеМеню" id="195"/>
+					<ExtendedTooltip name="НадписьАвторРасширеннаяПодсказка" id="196"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.АвизоПрочее</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.ДанныеБух">
+					<Column name="СубконтоОтправительБУ1Доступность" id="1">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоОтправительБУ2Доступность" id="2">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоОтправительБУ3Доступность" id="3">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоОтправительНУ1Доступность" id="4">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоОтправительНУ2Доступность" id="5">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоОтправительНУ3Доступность" id="6">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоПолучательБУ1Доступность" id="7">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоПолучательБУ2Доступность" id="8">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоПолучательБУ3Доступность" id="9">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоПолучательНУ1Доступность" id="10">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоПолучательНУ2Доступность" id="11">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоПолучательНУ3Доступность" id="12">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СчетОтправительБУКоличественный" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет отправитель БУ количественный</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СчетПолучательБУКоличественный" id="14">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет получатель БУ количественный</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СчетОтправительБУВалютный" id="15">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет отправитель БУ валютный</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СчетПолучательБУВалютный" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет получатель БУ валютный</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИсходнаяОрганизация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исходная организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтруктурноеПодразделениеОрганизацияОтправитель" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СтруктурноеПодразделениеОрганизацияПолучатель" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПоддержкаРаботыСоСтруктурнымиПодразделениями" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поддержка работы со структурными подразделениями</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОрганизацияПлательщикНалогаНаПрибыль" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация плательщик налога на прибыль</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяДатаДокумента" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая дата документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтражатьДокументыВНалоговомУчете" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отражать документы в налоговом учете</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокДоступныхСчетов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список доступных счетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НадписьАвтор" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись автор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСчетОтправительНУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухВидУчетаНУОтправитель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительНУ1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительНУ2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительНУ3</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСчетПолучательНУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухВидУчетаНУПолучатель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.УчитыватьКПН</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСчетПолучательБУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательБУ1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательБУ2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательБУ3</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСчетПолучательНУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ3</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухВидУчетаНУПолучатель</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ОтображатьРеквизитыПолучателя</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительБУ1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоОтправительБУ1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительБУ2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоОтправительБУ2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительБУ3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоОтправительБУ3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительНУ1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоОтправительНУ1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительНУ2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоОтправительНУ2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоОтправительНУ3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоОтправительНУ3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательБУ1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоПолучательБУ1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательБУ2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоПолучательБУ2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательБУ3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоПолучательБУ3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоПолучательНУ1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоПолучательНУ2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухСубконтоПолучательНУ3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СубконтоПолучательНУ3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухКоличество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СчетОтправительБУКоличественный</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СчетПолучательБУКоличественный</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухВалюта</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеБухВалютнаяСумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СчетОтправительБУВалютный</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеБух.СчетПолучательБУВалютный</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОтображатьРеквизитыПолучателя" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать реквизиты получателя</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтображатьРеквизитыПолучателя</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьПоОстаткамСчетовБУ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по остаткам счетов (БУ)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьПоОстаткамСчетовБУ</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИзменитьДанныеБух" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ИзменитьДанныеБух</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>3:5da1a58f-4d46-4586-9f71-63a8a18dbbf5</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccountingRegister.Типовой.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccountingRegister.Налоговый.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:cacebd45-e45a-4309-8c22-8179d3d3c89d</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:c4cdf1e0-3ba4-44ed-a69b-e548eedca4dd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.УдалитьОбъектыДоступаДокументов.StandardCommand.OpenByValue.ДокументСсылка</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:01892af7-0683-425c-917e-f2b4412ee507</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:58c9e918-9e14-4dbf-825e-bd811a766b89</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:e3c0ddad-cab7-4082-8723-0e9ab0623268</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:20d655a7-788c-48bc-83ae-25003106bedb</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:26e12d60-32b4-42d2-b47a-2d14581d45e0</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+		<CommandBar>
+			<Item>
+				<Command>0:2baf6d7a-12ed-4f22-ad96-92bb31b747ff</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.Печать</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ЗаполнениеОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ОтчетыОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

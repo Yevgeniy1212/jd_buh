@@ -1,0 +1,2451 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницыПомощника" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы помощника</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыПомощникаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ГруппаСтраницаПриветствиеДата" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница приветствия</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаСтраницаПриветствиеДатаРасширеннаяПодсказка" id="142"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьВасПриветствует" id="143">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вас приветствует помощник перехода:
+- на новый механизм учета товаров по источникам происхождений
+- на учет товаров виртуального склада!</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьВасПриветствуетКонтекстноеМеню" id="144"/>
+							<ExtendedTooltip name="НадписьВасПриветствуетРасширеннаяПодсказка" id="145"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаДат" id="479">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Даты</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДатРасширеннаяПодсказка" id="480"/>
+							<ChildItems>
+								<InputField name="ДатаПереходаНаУчетТоваровВС" id="146">
+									<DataPath>ДатаПереходаНаУчетТоваровВС</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="ДатаПереходаНаУчетТоваровВСКонтекстноеМеню" id="147"/>
+									<ExtendedTooltip name="ДатаПереходаНаУчетТоваровВСРасширеннаяПодсказка" id="148"/>
+									<Events>
+										<Event name="OnChange">ДатаПереходаНаУчетТоваровВСПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ДатаПереходаНаУчетПоИдентификаторамТоваровВС" id="481">
+									<DataPath>ДатаПереходаНаУчетПоИдентификаторамТоваровВС</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="ДатаПереходаНаУчетПоИдентификаторамТоваровВСКонтекстноеМеню" id="482"/>
+									<ExtendedTooltip name="ДатаПереходаНаУчетПоИдентификаторамТоваровВСРасширеннаяПодсказка" id="483"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="НадписьПомощник" id="149">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Помощник поможет выполнить переход на новый механизм учета товаров по источникам происхождений, а так же на учет товаров виртуального склада:
+1. Выполнить настройки подключения к системе ИС ВС.
+2. Выполнить сопоставление складов информационной базы со складами системы ИС ВС.
+3. Выполнить начальное заполнение регистра накопления "Товары на виртуальных складах".
+</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПомощникКонтекстноеМеню" id="150"/>
+							<ExtendedTooltip name="НадписьПомощникРасширеннаяПодсказка" id="151"/>
+						</LabelDecoration>
+						<PictureDecoration name="КартинкаНачало" id="152">
+							<Height>14</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка начало</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<Picture>
+								<xr:Abs>Picture.png</xr:Abs>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="КартинкаНачалоКонтекстноеМеню" id="153"/>
+							<ExtendedTooltip name="КартинкаНачалоРасширеннаяПодсказка" id="154"/>
+						</PictureDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаНастройкаПодключенияКВСИЭСФ" id="155">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка подключения к ВС</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаНастройкаПодключенияКВСИЭСФРасширеннаяПодсказка" id="156"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьНастройкиПодключения" id="438">
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки подключения</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьНастройкиПодключенияКонтекстноеМеню" id="439"/>
+							<ExtendedTooltip name="НадписьНастройкиПодключенияРасширеннаяПодсказка" id="440"/>
+						</LabelDecoration>
+						<LabelDecoration name="Отступ5" id="444">
+							<ContextMenu name="Отступ5КонтекстноеМеню" id="445"/>
+							<ExtendedTooltip name="Отступ5РасширеннаяПодсказка" id="446"/>
+						</LabelDecoration>
+						<Pages name="ГруппаПодключение" id="447">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подключение</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="ГруппаПодключениеРасширеннаяПодсказка" id="448"/>
+							<ChildItems>
+								<Page name="ГруппаПодключениеКЭСФ" id="449">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подключение к ИС ЭСФ</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаПодключениеКЭСФРасширеннаяПодсказка" id="450"/>
+									<ChildItems>
+										<LabelDecoration name="Отступ3" id="453">
+											<Font ref="sys:DefaultGUIFont" height="5" kind="WindowsFont"/>
+											<ContextMenu name="Отступ3КонтекстноеМеню" id="454"/>
+											<ExtendedTooltip name="Отступ3РасширеннаяПодсказка" id="455"/>
+										</LabelDecoration>
+										<LabelDecoration name="НастроитьПараметрыПодключенияКСерверуИСЭСФ" id="327">
+											<HorizontalStretch>true</HorizontalStretch>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настроить параметры подключения к серверу ИС ЭСФ</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="НастроитьПараметрыПодключенияКСерверуИСЭСФКонтекстноеМеню" id="328"/>
+											<ExtendedTooltip name="НастроитьПараметрыПодключенияКСерверуИСЭСФРасширеннаяПодсказка" id="329"/>
+											<Events>
+												<Event name="Click">НастроитьПараметрыПодключенияКСерверуИСЭСФНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="НадписьОписаниеОбменаЧерезAPIПроксиЭСФ" id="330">
+											<Font ref="sys:DefaultGUIFont" kind="WindowsFont"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настройки прокси-сервера
+</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="НадписьОписаниеОбменаЧерезAPIПроксиЭСФКонтекстноеМеню" id="331"/>
+											<ExtendedTooltip name="НадписьОписаниеОбменаЧерезAPIПроксиЭСФРасширеннаяПодсказка" id="332"/>
+											<Events>
+												<Event name="Click">НадписьОписаниеОбменаЧерезAPIПроксиЭСФНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<Pages name="ГруппаДоступ" id="336">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доступ</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>TabsOnTop</PagesRepresentation>
+											<ExtendedTooltip name="ГруппаДоступРасширеннаяПодсказка" id="337"/>
+											<ChildItems>
+												<Page name="СтраницаДоступВопрос" id="338">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вопрос</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаДоступВопросРасширеннаяПодсказка" id="339"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаДоступВопрос" id="340">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка доступ вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ВопросЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаДоступВопросКонтекстноеМеню" id="341"/>
+															<ExtendedTooltip name="КартинкаДоступВопросРасширеннаяПодсказка" id="342"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаДоступВопрос" id="343">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Доступ вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаДоступВопросРасширеннаяПодсказка" id="344"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьДосуп" id="345">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Доступ к ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДосупКонтекстноеМеню" id="346"/>
+																	<ExtendedTooltip name="НадписьДосупРасширеннаяПодсказка" id="347"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьДоступПроверить" id="348">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Нажмите на кнопку "Проверить доступ к серверу ИС ЭСФ".</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступПроверитьКонтекстноеМеню" id="349"/>
+																	<ExtendedTooltip name="НадписьДоступПроверитьРасширеннаяПодсказка" id="350"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаДоступУспешно" id="351">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Успешно</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаДоступУспешноРасширеннаяПодсказка" id="352"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаДоступУспешно" id="353">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка доступ успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.УспешноЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаДоступУспешноКонтекстноеМеню" id="354"/>
+															<ExtendedTooltip name="КартинкаДоступУспешноРасширеннаяПодсказка" id="355"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаДоступУспешно" id="356">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Доступ успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаДоступУспешноРасширеннаяПодсказка" id="357"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьДоступ1" id="358">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Доступ к ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступ1КонтекстноеМеню" id="359"/>
+																	<ExtendedTooltip name="НадписьДоступ1РасширеннаяПодсказка" id="360"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьДоступДоступна" id="361">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Сервер ИС ЭСФ доступен.</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступДоступнаКонтекстноеМеню" id="362"/>
+																	<ExtendedTooltip name="НадписьДоступДоступнаРасширеннаяПодсказка" id="363"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаДоступОшибка" id="364">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ошибка</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаДоступОшибкаРасширеннаяПодсказка" id="365"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаДоступОшибка" id="366">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка доступ ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ОшибкаЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаДоступОшибкаКонтекстноеМеню" id="367"/>
+															<ExtendedTooltip name="КартинкаДоступОшибкаРасширеннаяПодсказка" id="368"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаДоступОшибка" id="369">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Доступ ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаДоступОшибкаРасширеннаяПодсказка" id="370"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьДоступ2" id="371">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Доступ к ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступ2КонтекстноеМеню" id="372"/>
+																	<ExtendedTooltip name="НадписьДоступ2РасширеннаяПодсказка" id="373"/>
+																</LabelDecoration>
+																<UsualGroup name="ГруппаДоступОписаниеОшибки" id="374">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Описание ошибки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Group>Horizontal</Group>
+																	<Behavior>Usual</Behavior>
+																	<Representation>None</Representation>
+																	<ShowTitle>false</ShowTitle>
+																	<ExtendedTooltip name="ГруппаДоступОписаниеОшибкиРасширеннаяПодсказка" id="375"/>
+																	<ChildItems>
+																		<LabelDecoration name="НадписьДоступОшибка" id="376">
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Не удалось получить доступ к серверу ИС ЭСФ.</v8:content>
+																				</v8:item>
+																			</Title>
+																			<ContextMenu name="НадписьДоступОшибкаКонтекстноеМеню" id="377"/>
+																			<ExtendedTooltip name="НадписьДоступОшибкаРасширеннаяПодсказка" id="378"/>
+																		</LabelDecoration>
+																		<LabelDecoration name="НадписьДоступПодробнее" id="379">
+																			<Width>8</Width>
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Подробнее</v8:content>
+																				</v8:item>
+																			</Title>
+																			<Hyperlink>true</Hyperlink>
+																			<ContextMenu name="НадписьДоступПодробнееКонтекстноеМеню" id="380"/>
+																			<ExtendedTooltip name="НадписьДоступПодробнееРасширеннаяПодсказка" id="381"/>
+																			<Events>
+																				<Event name="Click">НадписьДоступПодробнееНажатие</Event>
+																			</Events>
+																		</LabelDecoration>
+																	</ChildItems>
+																</UsualGroup>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
+										<LabelDecoration name="Отступ1" id="382">
+											<ContextMenu name="Отступ1КонтекстноеМеню" id="383"/>
+											<ExtendedTooltip name="Отступ1РасширеннаяПодсказка" id="384"/>
+										</LabelDecoration>
+										<Pages name="ГруппаВерсия" id="385">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Версия</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>TabsOnTop</PagesRepresentation>
+											<ExtendedTooltip name="ГруппаВерсияРасширеннаяПодсказка" id="386"/>
+											<ChildItems>
+												<Page name="СтраницаВерсияВопрос" id="387">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вопрос</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаВерсияВопросРасширеннаяПодсказка" id="388"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаВерсияВопрос" id="389">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка соединение вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ВопросЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаВерсияВопросКонтекстноеМеню" id="390"/>
+															<ExtendedTooltip name="КартинкаВерсияВопросРасширеннаяПодсказка" id="391"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаВерсияВопрос" id="392">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Соединение</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаВерсияВопросРасширеннаяПодсказка" id="393"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьВерсия" id="394">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Версия ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияКонтекстноеМеню" id="395"/>
+																	<ExtendedTooltip name="НадписьВерсияРасширеннаяПодсказка" id="396"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьВерсияПроверить" id="397">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Нажмите на кнопку "Проверить доступ к серверу ИС ЭСФ".</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияПроверитьКонтекстноеМеню" id="398"/>
+																	<ExtendedTooltip name="НадписьВерсияПроверитьРасширеннаяПодсказка" id="399"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаВерсияУспешно" id="400">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Успешно</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаВерсияУспешноРасширеннаяПодсказка" id="401"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаВерсияУспешно" id="402">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка версия успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.УспешноЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаВерсияУспешноКонтекстноеМеню" id="403"/>
+															<ExtendedTooltip name="КартинкаВерсияУспешноРасширеннаяПодсказка" id="404"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаВерсияУспешно" id="405">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Версия успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаВерсияУспешноРасширеннаяПодсказка" id="406"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьВерсия1" id="407">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Версия ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсия1КонтекстноеМеню" id="408"/>
+																	<ExtendedTooltip name="НадписьВерсия1РасширеннаяПодсказка" id="409"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьВерсияПоддерживает" id="410">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Программа поддерживает текущую версию ИС ЭСФ (%ВерсияИСЭСФ%).</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияПоддерживаетКонтекстноеМеню" id="411"/>
+																	<ExtendedTooltip name="НадписьВерсияПоддерживаетРасширеннаяПодсказка" id="412"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаВерсияОшибка" id="413">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ошибка</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаВерсияОшибкаРасширеннаяПодсказка" id="414"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаВерсияОшибка" id="415">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка версия ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ОшибкаЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаВерсияОшибкаКонтекстноеМеню" id="416"/>
+															<ExtendedTooltip name="КартинкаВерсияОшибкаРасширеннаяПодсказка" id="417"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаВерсияОшибка" id="418">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Версия ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаВерсияОшибкаРасширеннаяПодсказка" id="419"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьВерсия2" id="420">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Версия ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсия2КонтекстноеМеню" id="421"/>
+																	<ExtendedTooltip name="НадписьВерсия2РасширеннаяПодсказка" id="422"/>
+																</LabelDecoration>
+																<UsualGroup name="ГруппаВерсияОписаниеОшибки" id="423">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Описание ошибки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Group>Horizontal</Group>
+																	<Behavior>Usual</Behavior>
+																	<Representation>None</Representation>
+																	<ShowTitle>false</ShowTitle>
+																	<ExtendedTooltip name="ГруппаВерсияОписаниеОшибкиРасширеннаяПодсказка" id="424"/>
+																	<ChildItems>
+																		<LabelDecoration name="НадписьВерсияОшибка" id="425">
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Программа не поддерживает текущую версию ИС ЭСФ (%ВерсияИСЭСФ%).</v8:content>
+																				</v8:item>
+																			</Title>
+																			<ContextMenu name="НадписьВерсияОшибкаКонтекстноеМеню" id="426"/>
+																			<ExtendedTooltip name="НадписьВерсияОшибкаРасширеннаяПодсказка" id="427"/>
+																		</LabelDecoration>
+																		<LabelDecoration name="НадписьВерсияПодробнее" id="428">
+																			<Width>8</Width>
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Подробнее</v8:content>
+																				</v8:item>
+																			</Title>
+																			<Hyperlink>true</Hyperlink>
+																			<ContextMenu name="НадписьВерсияПодробнееКонтекстноеМеню" id="429"/>
+																			<ExtendedTooltip name="НадписьВерсияПодробнееРасширеннаяПодсказка" id="430"/>
+																			<Events>
+																				<Event name="Click">НадписьВерсияПодробнееНажатие</Event>
+																			</Events>
+																		</LabelDecoration>
+																	</ChildItems>
+																</UsualGroup>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
+										<LabelDecoration name="Отступ2" id="431">
+											<ContextMenu name="Отступ2КонтекстноеМеню" id="432"/>
+											<ExtendedTooltip name="Отступ2РасширеннаяПодсказка" id="433"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаКнопкиДоступа" id="434">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Кнопки доступа</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКнопкиДоступаРасширеннаяПодсказка" id="435"/>
+											<ChildItems>
+												<Button name="ПроверитьДоступИВерсию" id="436">
+													<Type>UsualButton</Type>
+													<Width>26</Width>
+													<CommandName>Form.Command.ПроверитьДоступИВерсию</CommandName>
+													<Font ref="sys:DefaultGUIFont" kind="WindowsFont"/>
+													<ExtendedTooltip name="ПроверитьДоступИВерсиюРасширеннаяПодсказка" id="437"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+								<Page name="ГруппаПодключениеКВС" id="451">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подключение к модулю "ВС" ИС ЭСФ</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаПодключениеКВСРасширеннаяПодсказка" id="452"/>
+									<ChildItems>
+										<LabelDecoration name="Отступ8" id="456">
+											<Font ref="sys:DefaultGUIFont" height="5" kind="WindowsFont"/>
+											<ContextMenu name="Отступ8КонтекстноеМеню" id="457"/>
+											<ExtendedTooltip name="Отступ8РасширеннаяПодсказка" id="458"/>
+										</LabelDecoration>
+										<LabelDecoration name="НастроитьПараметрыПодключенияКСерверуИСВС" id="160">
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настроить параметры подключения к модулю "ВС" ИС ЭСФ</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="НастроитьПараметрыПодключенияКСерверуИСВСКонтекстноеМеню" id="161"/>
+											<ExtendedTooltip name="НастроитьПараметрыПодключенияКСерверуИСВСРасширеннаяПодсказка" id="162"/>
+											<Events>
+												<Event name="Click">НастроитьПараметрыПодключенияКСерверуИСВСНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="НадписьОписаниеОбменаЧерезAPIПроксиВС" id="163">
+											<Font ref="sys:DefaultGUIFont" kind="WindowsFont"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настройки прокси-сервера
+</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="НадписьОписаниеОбменаЧерезAPIПроксиВСКонтекстноеМеню" id="164"/>
+											<ExtendedTooltip name="НадписьОписаниеОбменаЧерезAPIПроксиВСРасширеннаяПодсказка" id="165"/>
+											<Events>
+												<Event name="Click">НадписьОписаниеОбменаЧерезAPIВСПроксиНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<Pages name="ГруппаДоступВС" id="166">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доступ</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>TabsOnTop</PagesRepresentation>
+											<ExtendedTooltip name="ГруппаДоступВСРасширеннаяПодсказка" id="167"/>
+											<ChildItems>
+												<Page name="СтраницаДоступВопросВС" id="168">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вопрос</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаДоступВопросВСРасширеннаяПодсказка" id="169"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаДоступВопросВС" id="170">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка доступ вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ВопросЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаДоступВопросВСКонтекстноеМеню" id="171"/>
+															<ExtendedTooltip name="КартинкаДоступВопросВСРасширеннаяПодсказка" id="172"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаДоступВопросВС" id="173">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Доступ вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаДоступВопросВСРасширеннаяПодсказка" id="174"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьДосупВС" id="175">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Доступ к модулю "ВС" ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДосупВСКонтекстноеМеню" id="176"/>
+																	<ExtendedTooltip name="НадписьДосупВСРасширеннаяПодсказка" id="177"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьДоступПроверитьВС" id="178">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Нажмите на кнопку "Проверить доступ к серверу ВС</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступПроверитьВСКонтекстноеМеню" id="179"/>
+																	<ExtendedTooltip name="НадписьДоступПроверитьВСРасширеннаяПодсказка" id="180"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаДоступУспешноВС" id="181">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Успешно</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаДоступУспешноВСРасширеннаяПодсказка" id="182"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаДоступУспешноВС" id="183">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка доступ успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.УспешноЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаДоступУспешноВСКонтекстноеМеню" id="184"/>
+															<ExtendedTooltip name="КартинкаДоступУспешноВСРасширеннаяПодсказка" id="185"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаДоступУспешноВС" id="186">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Доступ успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаДоступУспешноВСРасширеннаяПодсказка" id="187"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьДоступВС" id="188">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Доступ к модулю "ВС" ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступВСКонтекстноеМеню" id="189"/>
+																	<ExtendedTooltip name="НадписьДоступВСРасширеннаяПодсказка" id="190"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьДоступДоступнаВС" id="191">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Сервер ИС ВС доступен.</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступДоступнаВСКонтекстноеМеню" id="192"/>
+																	<ExtendedTooltip name="НадписьДоступДоступнаВСРасширеннаяПодсказка" id="193"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаДоступОшибкаВС" id="194">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ошибка</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаДоступОшибкаВСРасширеннаяПодсказка" id="195"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаДоступОшибкаВС" id="196">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка доступ ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ОшибкаЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаДоступОшибкаВСКонтекстноеМеню" id="197"/>
+															<ExtendedTooltip name="КартинкаДоступОшибкаВСРасширеннаяПодсказка" id="198"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаДоступОшибкаВС" id="199">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Доступ ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаДоступОшибкаВСРасширеннаяПодсказка" id="200"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьДоступ4" id="201">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Доступ к модулю "ВС" ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьДоступ4КонтекстноеМеню" id="202"/>
+																	<ExtendedTooltip name="НадписьДоступ4РасширеннаяПодсказка" id="203"/>
+																</LabelDecoration>
+																<UsualGroup name="ГруппаДоступОписаниеОшибки1" id="204">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Описание ошибки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Group>Horizontal</Group>
+																	<Behavior>Usual</Behavior>
+																	<Representation>None</Representation>
+																	<ShowTitle>false</ShowTitle>
+																	<ExtendedTooltip name="ГруппаДоступОписаниеОшибки1РасширеннаяПодсказка" id="205"/>
+																	<ChildItems>
+																		<LabelDecoration name="НадписьДоступОшибка1" id="206">
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Не удалось получить доступ к серверу ИС ВС</v8:content>
+																				</v8:item>
+																			</Title>
+																			<ContextMenu name="НадписьДоступОшибка1КонтекстноеМеню" id="207"/>
+																			<ExtendedTooltip name="НадписьДоступОшибка1РасширеннаяПодсказка" id="208"/>
+																		</LabelDecoration>
+																		<LabelDecoration name="НадписьДоступПодробнее1" id="209">
+																			<Width>8</Width>
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Подробнее</v8:content>
+																				</v8:item>
+																			</Title>
+																			<Hyperlink>true</Hyperlink>
+																			<ContextMenu name="НадписьДоступПодробнее1КонтекстноеМеню" id="210"/>
+																			<ExtendedTooltip name="НадписьДоступПодробнее1РасширеннаяПодсказка" id="211"/>
+																			<Events>
+																				<Event name="Click">НадписьДоступПодробнееНажатие</Event>
+																			</Events>
+																		</LabelDecoration>
+																	</ChildItems>
+																</UsualGroup>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
+										<LabelDecoration name="Отступ6" id="212">
+											<ContextMenu name="Отступ6КонтекстноеМеню" id="213"/>
+											<ExtendedTooltip name="Отступ6РасширеннаяПодсказка" id="214"/>
+										</LabelDecoration>
+										<Pages name="ГруппаВерсияВС" id="215">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Версия ВС</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>TabsOnTop</PagesRepresentation>
+											<ExtendedTooltip name="ГруппаВерсияВСРасширеннаяПодсказка" id="216"/>
+											<ChildItems>
+												<Page name="СтраницаВерсияВопросВС" id="217">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вопрос</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаВерсияВопросВСРасширеннаяПодсказка" id="218"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаВерсияВопросВС" id="219">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка соединение вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ВопросЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаВерсияВопросВСКонтекстноеМеню" id="220"/>
+															<ExtendedTooltip name="КартинкаВерсияВопросВСРасширеннаяПодсказка" id="221"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаВерсияВопросВС" id="222">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Соединение вопрос</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаВерсияВопросВСРасширеннаяПодсказка" id="223"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьВерсияВС" id="224">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Версия модуля "ВС" ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияВСКонтекстноеМеню" id="225"/>
+																	<ExtendedTooltip name="НадписьВерсияВСРасширеннаяПодсказка" id="226"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьВерсияПроверитьВС" id="227">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Нажмите на кнопку "Проверить доступ к серверу ВС".</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияПроверитьВСКонтекстноеМеню" id="228"/>
+																	<ExtendedTooltip name="НадписьВерсияПроверитьВСРасширеннаяПодсказка" id="229"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаВерсияУспешноВС" id="230">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Успешно</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаВерсияУспешноВСРасширеннаяПодсказка" id="231"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаВерсияУспешноВС" id="232">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка версия успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.УспешноЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаВерсияУспешноВСКонтекстноеМеню" id="233"/>
+															<ExtendedTooltip name="КартинкаВерсияУспешноВСРасширеннаяПодсказка" id="234"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаВерсияУспешноВС" id="235">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Версия успешно</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаВерсияУспешноВСРасширеннаяПодсказка" id="236"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьВерсияВС1" id="237">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Версия модуля "ВС" ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияВС1КонтекстноеМеню" id="238"/>
+																	<ExtendedTooltip name="НадписьВерсияВС1РасширеннаяПодсказка" id="239"/>
+																</LabelDecoration>
+																<LabelDecoration name="НадписьВерсияПоддерживаетВС" id="240">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Программа поддерживает текущую версию ИС ВС (%ВерсияИСВС%).</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияПоддерживаетВСКонтекстноеМеню" id="241"/>
+																	<ExtendedTooltip name="НадписьВерсияПоддерживаетВСРасширеннаяПодсказка" id="242"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаВерсияОшибкаВС" id="243">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ошибка</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="СтраницаВерсияОшибкаВСРасширеннаяПодсказка" id="244"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаВерсияОшибкаВС" id="245">
+															<Width>4</Width>
+															<Height>2</Height>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка версия ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ОшибкаЭСФ32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<FileDragMode>AsFile</FileDragMode>
+															<ContextMenu name="КартинкаВерсияОшибкаВСКонтекстноеМеню" id="246"/>
+															<ExtendedTooltip name="КартинкаВерсияОшибкаВСРасширеннаяПодсказка" id="247"/>
+														</PictureDecoration>
+														<UsualGroup name="ГруппаВерсияОшибкаВС" id="248">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Версия ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаВерсияОшибкаВСРасширеннаяПодсказка" id="249"/>
+															<ChildItems>
+																<LabelDecoration name="НадписьВерсияВС2" id="250">
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Версия модуля "ВС" ИС ЭСФ</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НадписьВерсияВС2КонтекстноеМеню" id="251"/>
+																	<ExtendedTooltip name="НадписьВерсияВС2РасширеннаяПодсказка" id="252"/>
+																</LabelDecoration>
+																<UsualGroup name="ГруппаВерсияОписаниеОшибкиВС" id="253">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Описание ошибки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Group>Horizontal</Group>
+																	<Behavior>Usual</Behavior>
+																	<Representation>None</Representation>
+																	<ShowTitle>false</ShowTitle>
+																	<ExtendedTooltip name="ГруппаВерсияОписаниеОшибкиВСРасширеннаяПодсказка" id="254"/>
+																	<ChildItems>
+																		<LabelDecoration name="НадписьВерсияОшибкаВС" id="255">
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Программа не поддерживает текущую версию ИС ВС (%ВерсияИСВС%).</v8:content>
+																				</v8:item>
+																			</Title>
+																			<ContextMenu name="НадписьВерсияОшибкаВСКонтекстноеМеню" id="256"/>
+																			<ExtendedTooltip name="НадписьВерсияОшибкаВСРасширеннаяПодсказка" id="257"/>
+																		</LabelDecoration>
+																		<LabelDecoration name="НадписьВерсияПодробнееВС" id="258">
+																			<Width>8</Width>
+																			<Title formatted="false">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Подробнее</v8:content>
+																				</v8:item>
+																			</Title>
+																			<Hyperlink>true</Hyperlink>
+																			<ContextMenu name="НадписьВерсияПодробнееВСКонтекстноеМеню" id="259"/>
+																			<ExtendedTooltip name="НадписьВерсияПодробнееВСРасширеннаяПодсказка" id="260"/>
+																			<Events>
+																				<Event name="Click">НадписьВерсияПодробнееНажатие</Event>
+																			</Events>
+																		</LabelDecoration>
+																	</ChildItems>
+																</UsualGroup>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
+										<LabelDecoration name="Отступ7" id="261">
+											<ContextMenu name="Отступ7КонтекстноеМеню" id="262"/>
+											<ExtendedTooltip name="Отступ7РасширеннаяПодсказка" id="263"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаКнопкиДоступаВС" id="264">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Кнопки доступа</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКнопкиДоступаВСРасширеннаяПодсказка" id="265"/>
+											<ChildItems>
+												<Button name="ПроверитьДоступИВерсиюВС" id="266">
+													<Type>UsualButton</Type>
+													<Width>26</Width>
+													<CommandName>Form.Command.ПроверитьДоступИВерсиюВС</CommandName>
+													<Font ref="sys:DefaultGUIFont" kind="WindowsFont"/>
+													<ExtendedTooltip name="ПроверитьДоступИВерсиюВСРасширеннаяПодсказка" id="267"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаНастройкиЗаполненияЭДВС" id="268">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки заполнения ЭДВС</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаНастройкиЗаполненияЭДВСРасширеннаяПодсказка" id="269"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьНастройкиЗаполненияЭДВС" id="270">
+							<Height>2</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<SkipOnInput>false</SkipOnInput>
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки заполнения электронного документа виртуального склада (ЭДВС)</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Top</VerticalAlign>
+							<ContextMenu name="НадписьНастройкиЗаполненияЭДВСКонтекстноеМеню" id="271"/>
+							<ExtendedTooltip name="НадписьНастройкиЗаполненияЭДВСРасширеннаяПодсказка" id="272"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаЦена" id="273">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способ заполнения цены</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаЦенаРасширеннаяПодсказка" id="274"/>
+							<ChildItems>
+								<InputField name="СпособЗаполненияЦены" id="275">
+									<DataPath>СпособЗаполненияЦены</DataPath>
+									<Width>16</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="СпособЗаполненияЦеныКонтекстноеМеню" id="276"/>
+									<ExtendedTooltip name="СпособЗаполненияЦеныРасширеннаяПодсказка" id="277"/>
+									<Events>
+										<Event name="OnChange">СпособЗаполненияЦеныПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТипЦены" id="278">
+									<DataPath>ТипЦены</DataPath>
+									<Width>16</Width>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="ТипЦеныКонтекстноеМеню" id="279"/>
+									<ExtendedTooltip name="ТипЦеныРасширеннаяПодсказка" id="280"/>
+								</InputField>
+								<InputField name="ЗначениеЦены" id="281">
+									<DataPath>ЗначениеЦены</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>10</MaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ЗначениеЦеныКонтекстноеМеню" id="282"/>
+									<ExtendedTooltip name="ЗначениеЦеныРасширеннаяПодсказка" id="283"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="НадписьОписаниеЗаполненияЦеныЭДВС" id="284">
+							<HorizontalStretch>true</HorizontalStretch>
+							<TextColor>web:SteelBlue</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка влияет на заполнение цены товаров в ЭДВС:
+- при вводе начальных остатков в момент перехода
+- при вводе ЭДВС на основании учетных документов, по которым производится выбытие товара (кроме реализации)
+Цена заполняется в документах ЭДВС с типом "Остатки", "Внутреннее перемещение", "Списание", "Детализация".
+
+При необходимости способ заполнения цены в дальнейшем можно изменить в окне настроек электронных счетов-фактур.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьОписаниеЗаполненияЦеныЭДВСКонтекстноеМеню" id="285"/>
+							<ExtendedTooltip name="НадписьОписаниеЗаполненияЦеныЭДВСРасширеннаяПодсказка" id="286"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаЗагрузкаСправочникаГСВС" id="459">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка справочника ГСВС</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаЗагрузкаСправочникаГСВСРасширеннаяПодсказка" id="460"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьЗагрузкаСправочникаГСВС" id="461">
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузка справочника ГСВС</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьЗагрузкаСправочникаГСВСКонтекстноеМеню" id="462"/>
+							<ExtendedTooltip name="НадписьЗагрузкаСправочникаГСВСРасширеннаяПодсказка" id="463"/>
+						</LabelDecoration>
+						<LabelDecoration name="Отступ9" id="464">
+							<Font ref="style:NormalTextFont" height="3" kind="StyleItem"/>
+							<ContextMenu name="Отступ9КонтекстноеМеню" id="465"/>
+							<ExtendedTooltip name="Отступ9РасширеннаяПодсказка" id="466"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаЗагрузитьОткрытьСправочникГСВС" id="475">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузить открыть справочник ГСВС</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗагрузитьОткрытьСправочникГСВСРасширеннаяПодсказка" id="476"/>
+							<ChildItems>
+								<Button name="СправочникНоменклатураГСВСЗагрузитьСправочник" id="467">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Catalog.НоменклатураГСВС.Command.ЗагрузитьСправочник</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.CreateInitialImage</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="СправочникНоменклатураГСВСЗагрузитьСправочникРасширеннаяПодсказка" id="468"/>
+								</Button>
+								<LabelDecoration name="НадписьНоменклатураГСВС" id="472">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Открыть справочник ГСВС</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="НадписьНоменклатураГСВСКонтекстноеМеню" id="473"/>
+									<ExtendedTooltip name="НадписьНоменклатураГСВСРасширеннаяПодсказка" id="474"/>
+									<Events>
+										<Event name="Click">НадписьНоменклатураГСВСНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаПомощникСопоставленияВС" id="287">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Помощник сопоставления ВС</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаПомощникСопоставленияВСРасширеннаяПодсказка" id="288"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьНастройкаВиртуальныхСкладов" id="297">
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка виртуальных складов</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьНастройкаВиртуальныхСкладовКонтекстноеМеню" id="298"/>
+							<ExtendedTooltip name="НадписьНастройкаВиртуальныхСкладовРасширеннаяПодсказка" id="299"/>
+						</LabelDecoration>
+						<LabelDecoration name="НадписьПолучениеСкладовОписание" id="292">
+							<Font ref="sys:DefaultGUIFont" height="9" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Необходимо создать в информационной базе виртуальные склады, ранее введенные в модуль "Виртуальный склад" через веб-интерфейс системы:</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПолучениеСкладовОписаниеКонтекстноеМеню" id="293"/>
+							<ExtendedTooltip name="НадписьПолучениеСкладовОписаниеРасширеннаяПодсказка" id="294"/>
+						</LabelDecoration>
+						<UsualGroup name="Группа1" id="309">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Получение складов</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="310"/>
+							<ChildItems>
+								<LabelDecoration name="НадписьПолучениеСкладов1" id="300">
+									<Font ref="sys:DefaultGUIFont" height="9" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- вручную, если прямой обмен по API не используется</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НадписьПолучениеСкладов1КонтекстноеМеню" id="301"/>
+									<ExtendedTooltip name="НадписьПолучениеСкладов1РасширеннаяПодсказка" id="302"/>
+								</LabelDecoration>
+								<LabelDecoration name="ВиртуальныеСклады" id="306">
+									<Font ref="sys:DefaultGUIFont" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>(Виртуальные склады)</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ВиртуальныеСкладыКонтекстноеМеню" id="307"/>
+									<ExtendedTooltip name="ВиртуальныеСкладыРасширеннаяПодсказка" id="308"/>
+									<Events>
+										<Event name="Click">ВиртуальныеСкладыНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="НадписьПолучениеСкладов2" id="303">
+							<Font ref="sys:DefaultGUIFont" height="9" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>- получить с сервера ИС ВС при помощи прямого обмена
+
+Установить соответствие между складами и виртуальными складами организаций. </v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПолучениеСкладов2КонтекстноеМеню" id="304"/>
+							<ExtendedTooltip name="НадписьПолучениеСкладов2РасширеннаяПодсказка" id="305"/>
+						</LabelDecoration>
+						<LabelDecoration name="ПомощникСопоставленияСкладовВС" id="289">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Помощник получения(API) и настройки виртуальных складов</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ПомощникСопоставленияСкладовВСКонтекстноеМеню" id="290"/>
+							<ExtendedTooltip name="ПомощникСопоставленияСкладовВСРасширеннаяПодсказка" id="291"/>
+							<Events>
+								<Event name="Click">ПомощникСопоставленияСкладовВСНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаПараметров" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаПараметровРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьВводНачальныхОстатуов" id="311">
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ввод начальных остатков</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьВводНачальныхОстатуовКонтекстноеМеню" id="312"/>
+							<ExtendedTooltip name="НадписьВводНачальныхОстатуовРасширеннаяПодсказка" id="313"/>
+						</LabelDecoration>
+						<LabelDecoration name="НадписьВводНачальныхОстатковОписание" id="314">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font ref="sys:DefaultGUIFont" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для перехода на учет по товарам в разрезе источников происхождения, а так же по товарам виртуального склада необходимо выполнить начальное заполнение регистра накопления "Товары на виртуальных складах".
+Для начального заполнения регистра необходимо создать документ "ЭДВС", который будет заполнен по остаткам ТМЗ либо по регистру "Товары организаций (БУ)" либо по бухгалтерскому учету на дату перехода.
+При необходимости в созданном документе ЭДВС можно скорректировать данные по товарам, включая аналитику источников происхождений. При проведении документа источники происхождения будут созданы автоматически по данным, указанным в документе.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьВводНачальныхОстатковОписаниеКонтекстноеМеню" id="315"/>
+							<ExtendedTooltip name="НадписьВводНачальныхОстатковОписаниеРасширеннаяПодсказка" id="316"/>
+						</LabelDecoration>
+						<CheckBoxField name="ПроводитьСозданныеДокументы" id="42">
+							<DataPath>ПроводитьСозданныеДокументы</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПроводитьСозданныеДокументыКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="ПроводитьСозданныеДокументыРасширеннаяПодсказка" id="44"/>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаВариантЗаполнения" id="97">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способ заполнения</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаВариантЗаполненияРасширеннаяПодсказка" id="98"/>
+							<ChildItems>
+								<RadioButtonField name="СпособЗаполнения" id="99">
+									<DataPath>СпособЗаполнения</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>По товарам организации (БУ)</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">ТоварамОрганизацииБУ</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>По данным бухгалтерского учета</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">ПоДаннымБУ</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СпособЗаполненияКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="СпособЗаполненияРасширеннаяПодсказка" id="101"/>
+								</RadioButtonField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="НадписьУкажитеОрганизации" id="317">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font ref="style:NormalTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Укажите организации, по которым необходимо ввести остатки:</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьУкажитеОрганизацииКонтекстноеМеню" id="318"/>
+							<ExtendedTooltip name="НадписьУкажитеОрганизацииРасширеннаяПодсказка" id="319"/>
+						</LabelDecoration>
+						<Table name="ОрганизацииДляПерехода" id="45">
+							<Representation>Tree</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<MaxHeight>11</MaxHeight>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ОрганизацииДляПерехода</DataPath>
+							<RowPictureDataPath>ОрганизацииДляПерехода.Состояние</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.СостояниеДокумента</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</RowsPicture>
+							<ContextMenu name="ОрганизацииДляПереходаКонтекстноеМеню" id="46"/>
+							<AutoCommandBar name="ОрганизацииДляПереходаКоманднаяПанель" id="47">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ОрганизацииДляПереходаУстановитьФлаги" id="69">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьФлаги</CommandName>
+										<ExtendedTooltip name="ОрганизацииДляПереходаУстановитьФлагиРасширеннаяПодсказка" id="70"/>
+									</Button>
+									<Button name="ОрганизацииДляПереходаСнятьФлаги" id="67">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СнятьФлаги</CommandName>
+										<ExtendedTooltip name="ОрганизацииДляПереходаСнятьФлагиРасширеннаяПодсказка" id="68"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОрганизацииДляПереходаРасширеннаяПодсказка" id="48"/>
+							<SearchStringAddition name="ОрганизацииДляПереходаСтрокаПоиска" id="49">
+								<AdditionSource>
+									<Item>ОрганизацииДляПерехода</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОрганизацииДляПереходаСтрокаПоискаКонтекстноеМеню" id="50"/>
+								<ExtendedTooltip name="ОрганизацииДляПереходаСтрокаПоискаРасширеннаяПодсказка" id="51"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОрганизацииДляПереходаСостояниеПросмотра" id="52">
+								<AdditionSource>
+									<Item>ОрганизацииДляПерехода</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОрганизацииДляПереходаСостояниеПросмотраКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="ОрганизацииДляПереходаСостояниеПросмотраРасширеннаяПодсказка" id="54"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОрганизацииДляПереходаУправлениеПоиском" id="55">
+								<AdditionSource>
+									<Item>ОрганизацииДляПерехода</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОрганизацииДляПереходаУправлениеПоискомКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="ОрганизацииДляПереходаУправлениеПоискомРасширеннаяПодсказка" id="57"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ОрганизацииДляПереходаПометка" id="58">
+									<DataPath>ОрганизацииДляПерехода.Пометка</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОрганизацииДляПереходаПометкаКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ОрганизацииДляПереходаПометкаРасширеннаяПодсказка" id="60"/>
+									<Events>
+										<Event name="OnChange">ОрганизацииДляПереходаПометкаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ОрганизацииДляПереходаОрганизация" id="64">
+									<DataPath>ОрганизацииДляПерехода.Организация</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОрганизацииДляПереходаОрганизацияКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ОрганизацииДляПереходаОрганизацияРасширеннаяПодсказка" id="66"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаВводОстатков" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ввод остатков</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаВводОстатковРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаДеревоДокументов" id="71">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дерево документов</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДеревоДокументовРасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<Table name="ДеревоДокументов" id="73">
+									<Representation>Tree</Representation>
+									<ReadOnly>true</ReadOnly>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ДеревоДокументов</DataPath>
+									<RowPictureDataPath>ДеревоДокументов.СостояниеДокумента</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.СостояниеДокумента</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</RowsPicture>
+									<ContextMenu name="ДеревоДокументовКонтекстноеМеню" id="74"/>
+									<AutoCommandBar name="ДеревоДокументовКоманднаяПанель" id="75">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ДеревоДокументовОбновитьДанныеФормы" id="477">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОбновитьДанныеФормы</CommandName>
+												<ExtendedTooltip name="ДеревоДокументовОбновитьДанныеФормыРасширеннаяПодсказка" id="478"/>
+											</Button>
+											<Button name="ДеревоДокументовОформитьДокументы" id="89">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОформитьДокументы</CommandName>
+												<ExtendedTooltip name="ДеревоДокументовОформитьДокументыРасширеннаяПодсказка" id="90"/>
+											</Button>
+											<Button name="ДеревоДокументовПерезаполнить" id="91">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Перезаполнить</CommandName>
+												<ExtendedTooltip name="ДеревоДокументовПерезаполнитьРасширеннаяПодсказка" id="92"/>
+											</Button>
+											<Button name="ДеревоДокументовПровести" id="95">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Провести</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ДеревоДокументовПровестиРасширеннаяПодсказка" id="96"/>
+											</Button>
+											<Button name="ДеревоДокументовОтменитьПроведение" id="93">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтменитьПроведение</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ДеревоДокументовОтменитьПроведениеРасширеннаяПодсказка" id="94"/>
+											</Button>
+											<Button name="ДеревоДокументовСверкаДанных" id="113">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СверкаДанных</CommandName>
+												<ExtendedTooltip name="ДеревоДокументовСверкаДанныхРасширеннаяПодсказка" id="114"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ДеревоДокументовРасширеннаяПодсказка" id="76"/>
+									<SearchStringAddition name="ДеревоДокументовСтрокаПоиска" id="77">
+										<AdditionSource>
+											<Item>ДеревоДокументов</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоДокументовСтрокаПоискаКонтекстноеМеню" id="78"/>
+										<ExtendedTooltip name="ДеревоДокументовСтрокаПоискаРасширеннаяПодсказка" id="79"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДеревоДокументовСостояниеПросмотра" id="80">
+										<AdditionSource>
+											<Item>ДеревоДокументов</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоДокументовСостояниеПросмотраКонтекстноеМеню" id="81"/>
+										<ExtendedTooltip name="ДеревоДокументовСостояниеПросмотраРасширеннаяПодсказка" id="82"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДеревоДокументовУправлениеПоиском" id="83">
+										<AdditionSource>
+											<Item>ДеревоДокументов</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоДокументовУправлениеПоискомКонтекстноеМеню" id="84"/>
+										<ExtendedTooltip name="ДеревоДокументовУправлениеПоискомРасширеннаяПодсказка" id="85"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ДеревоДокументовВыбор</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ДеревоДокументовЭлементДерева" id="86">
+											<DataPath>ДеревоДокументов.ЭлементДерева</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CellHyperlink>true</CellHyperlink>
+											<ContextMenu name="ДеревоДокументовЭлементДереваКонтекстноеМеню" id="87"/>
+											<ExtendedTooltip name="ДеревоДокументовЭлементДереваРасширеннаяПодсказка" id="88"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаКомандПерехода" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандПереходаРасширеннаяПодсказка" id="12"/>
+			<ChildItems>
+				<Button name="Назад" id="17">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Назад</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;&lt;Назад</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="НазадРасширеннаяПодсказка" id="18"/>
+				</Button>
+				<Button name="Далее" id="13">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<Height>1</Height>
+					<CommandName>Form.Command.Далее</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Далее&gt;&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДалееРасширеннаяПодсказка" id="14"/>
+				</Button>
+				<Button name="Закрыть" id="15">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Close</CommandName>
+					<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="16"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПомощникПереходаНаУчетТоваровВС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДатаПереходаНаУчетТоваровВС" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата перехода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОрганизацииДляПерехода" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организации для перехода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пометка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пометка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Состояние" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Организация" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.СтруктурнаяЕдиницаЭСФ</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Уровень" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уровень</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СозданныеДокументы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Созданные документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ЭлементДерева" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Элемент дерева</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СостояниеДокумента" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПроводитьСозданныеДокументы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводить созданные документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПроводитьСозданныеДокументы</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПредставлениеСпискаОрганизаций" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление списка организаций</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДеревоДокументов" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ЭлементДерева" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Элемент дерева</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СостояниеДокумента" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СписокВыбранныхОрганизаций" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список выбранных организаций</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СпособЗаполнения" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ заполнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>СпособЗаполнения</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СпособЗаполненияЦены" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ заполнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СпособЗаполненияЦеныЭДВС</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипЦены" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип цены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ТипЦеныВС</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗначениеЦены" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение цены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьОбменЭСФЧерезAPI" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать обмен ЭСФЧерез API</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаВерсии" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка версии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаСоединения" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка соединения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаПереходаНаУчетПоИдентификаторамТоваровВС" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата перехода на учет по идентификаторам товаров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокВыбранныхСтруктурныхПодразделений" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список выбранных структурных подразделений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ОрганизацииДляПереходаОрганизация</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ОрганизацииДляПерехода.Уровень</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Назад" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Назад</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Далее" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Далее</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Закрыть" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Готово</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьФлаги" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флаги</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлаги</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьФлаги" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флаги</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлаги</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОформитьДокументы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оформить документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оформить отсутсвующие документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОформитьДокументы</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Перезаполнить" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезаполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезаполнить ЭДВС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Перезаполнить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Провести" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Post</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Провести</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтменитьПроведение" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить проведение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить проведение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UndoPosting</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтменитьПроведение</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СверкаДанных" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнить остатки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сверка данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СверкаДанных</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьДоступИВерсиюВС" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить доступ к модулю "ВС" ИС ЭСФ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить доступ и версию ВС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьДоступИВерсиюВС</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьОбменВС</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьДоступИВерсию" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить доступ к серверу ИС ЭСФ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить доступ к серверу ИС ЭСФ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьДоступИВерсию</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьДанныеФормы" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить данные формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьДанныеФормы</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗагрузитьКурсы" id="142">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<DefaultItem>true</DefaultItem>
+				<CommandName>Form.Command.ЗагрузитьКурсы</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьКурсыРасширеннаяПодсказка" id="226"/>
+			</Button>
+			<Button name="ФормаЗагрузитьКурсыИзИнтернета" id="161">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьКурсыИзИнтернета</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗагрузитьКурсыИзИнтернетаРасширеннаяПодсказка" id="227"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Валюты" id="164">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Валюты</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ВалютыКонтекстноеМеню" id="165"/>
+			<AutoCommandBar name="ВалютыКоманднаяПанель" id="166">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ВалютыУстановитьФлажки" id="183">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВалютыУстановитьФлажки</CommandName>
+						<ExtendedTooltip name="ВалютыУстановитьФлажкиРасширеннаяПодсказка" id="228"/>
+					</Button>
+					<Button name="ВалютыСнятьФлажки" id="182">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВалютыСнятьФлажки</CommandName>
+						<ExtendedTooltip name="ВалютыСнятьФлажкиРасширеннаяПодсказка" id="229"/>
+					</Button>
+					<ButtonGroup name="ВалютыГруппа1" id="196">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа №1</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ВалютыГруппа1РасширеннаяПодсказка" id="230"/>
+						<ChildItems>
+							<Button name="ВалютыКнопка6" id="197">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.Find</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ВалютыКнопка6РасширеннаяПодсказка" id="231"/>
+							</Button>
+							<Button name="ВалютыКнопка7" id="198">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.CancelSearch</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ВалютыКнопка7РасширеннаяПодсказка" id="232"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ВалютыГруппа2" id="190">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа №2</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ВалютыГруппа2РасширеннаяПодсказка" id="233"/>
+						<ChildItems>
+							<Button name="ВалютыКнопка1" id="188">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.MoveUp</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ВалютыКнопка1РасширеннаяПодсказка" id="234"/>
+							</Button>
+							<Button name="ВалютыКнопка2" id="189">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.MoveDown</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ВалютыКнопка2РасширеннаяПодсказка" id="235"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ВалютыГруппа3" id="191">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа №3</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ВалютыГруппа3РасширеннаяПодсказка" id="236"/>
+						<ChildItems>
+							<Button name="ВалютыКнопка3" id="192">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.SortListAsc</CommandName>
+								<ExtendedTooltip name="ВалютыКнопка3РасширеннаяПодсказка" id="237"/>
+							</Button>
+							<Button name="ВалютыКнопка4" id="193">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.SortListDesc</CommandName>
+								<ExtendedTooltip name="ВалютыКнопка4РасширеннаяПодсказка" id="238"/>
+							</Button>
+							<Button name="ВалютыКнопка5" id="194">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Валюты.StandardCommand.OutputList</CommandName>
+								<ExtendedTooltip name="ВалютыКнопка5РасширеннаяПодсказка" id="239"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="ВалютыОбновитьДатыКурсов" id="222">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОбновитьДатыКурсов</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ВалютыОбновитьДатыКурсовРасширеннаяПодсказка" id="240"/>
+					</Button>
+					<Button name="ВалютыПодобрать" id="223">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Подобрать</CommandName>
+						<ExtendedTooltip name="ВалютыПодобратьРасширеннаяПодсказка" id="241"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ВалютыРасширеннаяПодсказка" id="242"/>
+			<SearchStringAddition name="ВалютыСтрокаПоиска" id="243">
+				<AdditionSource>
+					<Item>Валюты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ВалютыСтрокаПоискаКонтекстноеМеню" id="244"/>
+				<ExtendedTooltip name="ВалютыСтрокаПоискаРасширеннаяПодсказка" id="245"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ВалютыСостояниеПросмотра" id="246">
+				<AdditionSource>
+					<Item>Валюты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ВалютыСостояниеПросмотраКонтекстноеМеню" id="247"/>
+				<ExtendedTooltip name="ВалютыСостояниеПросмотраРасширеннаяПодсказка" id="248"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ВалютыУправлениеПоиском" id="249">
+				<AdditionSource>
+					<Item>Валюты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ВалютыУправлениеПоискомКонтекстноеМеню" id="250"/>
+				<ExtendedTooltip name="ВалютыУправлениеПоискомРасширеннаяПодсказка" id="251"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ВалютыВыбор</Event>
+				<Event name="BeforeAddRow">ВалютыПередНачаломДобавления</Event>
+				<Event name="BeforeDeleteRow">ВалютыПередУдалением</Event>
+				<Event name="ChoiceProcessing">ВалютыОбработкаВыбора</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="ВалютыЗагружать" id="169">
+					<DataPath>Валюты.Загружать</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загружать курс для валюты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВалютыЗагружатьКонтекстноеМеню" id="170"/>
+					<ExtendedTooltip name="ВалютыЗагружатьРасширеннаяПодсказка" id="252"/>
+				</CheckBoxField>
+				<InputField name="ВалютыВалюта" id="167">
+					<DataPath>Валюты.Валюта</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВалютыВалютаКонтекстноеМеню" id="168"/>
+					<ExtendedTooltip name="ВалютыВалютаРасширеннаяПодсказка" id="253"/>
+				</InputField>
+				<InputField name="ВалютыДатаКурса" id="171">
+					<DataPath>Валюты.ДатаКурса</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВалютыДатаКурсаКонтекстноеМеню" id="172"/>
+					<ExtendedTooltip name="ВалютыДатаКурсаРасширеннаяПодсказка" id="254"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="Файлы" id="173">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<AutoAddIncomplete>false</AutoAddIncomplete>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Файлы</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ФайлыКонтекстноеМеню" id="174">
+				<ChildItems>
+					<Button name="ФайлыКнопка13" id="225">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Файлы.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="ФайлыКнопка13РасширеннаяПодсказка" id="255"/>
+					</Button>
+					<Button name="ФайлыКнопка12" id="224">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.Файлы.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="ФайлыКнопка12РасширеннаяПодсказка" id="256"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="ФайлыКоманднаяПанель" id="175">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ФайлыУстановитьФлажки" id="185">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ФайлыУстановитьФлажки</CommandName>
+						<ExtendedTooltip name="ФайлыУстановитьФлажкиРасширеннаяПодсказка" id="257"/>
+					</Button>
+					<Button name="ФайлыСнятьФлажки" id="184">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ФайлыСнятьФлажки</CommandName>
+						<ExtendedTooltip name="ФайлыСнятьФлажкиРасширеннаяПодсказка" id="258"/>
+					</Button>
+					<ButtonGroup name="ФайлыГруппа1" id="186">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа №1</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФайлыГруппа1РасширеннаяПодсказка" id="259"/>
+						<ChildItems>
+							<Button name="ФайлыКнопка1" id="208">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ФайлыКнопка1РасширеннаяПодсказка" id="260"/>
+							</Button>
+							<Button name="ФайлыКнопка11" id="221">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.Change</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФайлыКнопка11РасширеннаяПодсказка" id="261"/>
+							</Button>
+							<Button name="ФайлыКнопка2" id="209">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.Файлы.StandardCommand.Delete</CommandName>
+								<ExtendedTooltip name="ФайлыКнопка2РасширеннаяПодсказка" id="262"/>
+							</Button>
+							<Button name="ФайлыКнопка10" id="220">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.EndEdit</CommandName>
+								<ExtendedTooltip name="ФайлыКнопка10РасширеннаяПодсказка" id="263"/>
+							</Button>
+							<Button name="ФайлыКнопка8" id="218">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.Find</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФайлыКнопка8РасширеннаяПодсказка" id="264"/>
+							</Button>
+							<Button name="ФайлыКнопка9" id="219">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.CancelSearch</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФайлыКнопка9РасширеннаяПодсказка" id="265"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ФайлыГруппа2" id="214">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа №2</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФайлыГруппа2РасширеннаяПодсказка" id="266"/>
+						<ChildItems>
+							<Button name="ФайлыКнопка6" id="215">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.MoveUp</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФайлыКнопка6РасширеннаяПодсказка" id="267"/>
+							</Button>
+							<Button name="ФайлыКнопка7" id="216">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.MoveDown</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФайлыКнопка7РасширеннаяПодсказка" id="268"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ФайлыГруппа3" id="210">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа №3</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФайлыГруппа3РасширеннаяПодсказка" id="269"/>
+						<ChildItems>
+							<Button name="ФайлыКнопка5" id="213">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.SortListAsc</CommandName>
+								<ExtendedTooltip name="ФайлыКнопка5РасширеннаяПодсказка" id="270"/>
+							</Button>
+							<Button name="ФайлыКнопка4" id="212">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.SortListDesc</CommandName>
+								<ExtendedTooltip name="ФайлыКнопка4РасширеннаяПодсказка" id="271"/>
+							</Button>
+							<Button name="ФайлыКнопка3" id="211">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Файлы.StandardCommand.OutputList</CommandName>
+								<ExtendedTooltip name="ФайлыКнопка3РасширеннаяПодсказка" id="272"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ФайлыРасширеннаяПодсказка" id="273"/>
+			<SearchStringAddition name="ФайлыСтрокаПоиска" id="274">
+				<AdditionSource>
+					<Item>Файлы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ФайлыСтрокаПоискаКонтекстноеМеню" id="275"/>
+				<ExtendedTooltip name="ФайлыСтрокаПоискаРасширеннаяПодсказка" id="276"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ФайлыСостояниеПросмотра" id="277">
+				<AdditionSource>
+					<Item>Файлы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ФайлыСостояниеПросмотраКонтекстноеМеню" id="278"/>
+				<ExtendedTooltip name="ФайлыСостояниеПросмотраРасширеннаяПодсказка" id="279"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ФайлыУправлениеПоиском" id="280">
+				<AdditionSource>
+					<Item>Файлы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ФайлыУправлениеПоискомКонтекстноеМеню" id="281"/>
+				<ExtendedTooltip name="ФайлыУправлениеПоискомРасширеннаяПодсказка" id="282"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">ФайлыПередНачаломДобавления</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="ФайлыЗагружать" id="178">
+					<DataPath>Файлы.Загружать</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загружать курс из файла</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФайлыЗагружатьКонтекстноеМеню" id="179"/>
+					<ExtendedTooltip name="ФайлыЗагружатьРасширеннаяПодсказка" id="283"/>
+				</CheckBoxField>
+				<InputField name="ФайлыФайл" id="176">
+					<DataPath>Файлы.ИмяФайла</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>22</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ФайлыФайлКонтекстноеМеню" id="177"/>
+					<ExtendedTooltip name="ФайлыФайлРасширеннаяПодсказка" id="284"/>
+					<Events>
+						<Event name="StartChoice">ФайлыФайлНачалоВыбора</Event>
+						<Event name="Clearing">ФайлыФайлОчистка</Event>
+					</Events>
+				</InputField>
+				<InputField name="ФайлыДатаКурса" id="180">
+					<DataPath>Файлы.ДатаКурса</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>16</Width>
+					<Height>1</Height>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ФайлыДатаКурсаКонтекстноеМеню" id="181"/>
+					<ExtendedTooltip name="ФайлыДатаКурсаРасширеннаяПодсказка" id="285"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Валюты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюты, для которых необходимо загрузить курсы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Валюта" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Загружать" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загружать</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаКурса" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата последнего курса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Файлы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлы, из которых необходимо загрузить курсы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяФайла" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Загружать" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загружать</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаКурса" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата курса в файле</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Корректный" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Корректный</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АдресФайла" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес файла</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ФайлыЗагружать</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ФайлыФайл</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ФайлыДатаКурса</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Файлы.Корректный</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:FireBrick</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьКурсы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить курсы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить курсы валют</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьКурсы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ФайлыУстановитьФлажки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ФайлыУстановитьФлажки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ФайлыСнятьФлажки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ФайлыСнятьФлажки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗагрузитьКурсыИзИнтернета" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить курсы из Интернета...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить курсы из Интернета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьКурсыИзИнтернета</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьДатыКурсов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить даты курсов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьДатыКурсов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВалютыСнятьФлажки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВалютыСнятьФлажки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВалютыУстановитьФлажки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВалютыУстановитьФлажки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Подобрать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать валюты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F8</Shortcut>
+			<Action>Подобрать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

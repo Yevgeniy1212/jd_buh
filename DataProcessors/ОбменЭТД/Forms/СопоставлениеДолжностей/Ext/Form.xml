@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Сохранить" id="20">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Сохранить</CommandName>
+				<ExtendedTooltip name="СохранитьРасширеннаяПодсказка" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтборы" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="38"/>
+			<ChildItems>
+				<InputField name="ПериодАктуальности" id="34">
+					<DataPath>ПериодАктуальности</DataPath>
+					<ContextMenu name="ПериодАктуальностиКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ПериодАктуальностиРасширеннаяПодсказка" id="36"/>
+					<Events>
+						<Event name="OnChange">ПериодАктуальностиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Организация" id="28">
+					<DataPath>Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="30"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СопоставлениеДолжностейЭТД" id="1">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СопоставлениеДолжностейЭТД</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Delete</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СопоставлениеДолжностейЭТДКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СопоставлениеДолжностейЭТДКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="СопоставлениеДолжностейЭТДРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СопоставлениеДолжностейЭТДСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СопоставлениеДолжностейЭТД</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СопоставлениеДолжностейЭТДСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СопоставлениеДолжностейЭТДСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СопоставлениеДолжностейЭТДСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СопоставлениеДолжностейЭТД</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СопоставлениеДолжностейЭТДСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СопоставлениеДолжностейЭТДСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СопоставлениеДолжностейЭТДУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СопоставлениеДолжностейЭТД</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СопоставлениеДолжностейЭТДУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СопоставлениеДолжностейЭТДУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СопоставлениеДолжностейЭТДВыбор</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="СопоставлениеДолжностейЭТДПериод" id="31">
+					<DataPath>СопоставлениеДолжностейЭТД.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СопоставлениеДолжностейЭТДПериодКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="СопоставлениеДолжностейЭТДПериодРасширеннаяПодсказка" id="33"/>
+					<Events>
+						<Event name="OnChange">СопоставлениеДолжностейЭТДПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СопоставлениеДолжностейЭТДДолжностьОрганизации" id="14">
+					<DataPath>СопоставлениеДолжностейЭТД.ДолжностьОрганизации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СопоставлениеДолжностейЭТДДолжностьОрганизацииКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СопоставлениеДолжностейЭТДДолжностьОрганизацииРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="OnChange">СопоставлениеДолжностейЭТДДолжностьОрганизацииПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СопоставлениеДолжностейЭТДДолжностьПоШтатномуРасписанию" id="39">
+					<DataPath>СопоставлениеДолжностейЭТД.ДолжностьПоШтатномуРасписанию</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+						<xr:Link>
+							<xr:Name>Отбор.ДатаПримененияОтбора</xr:Name>
+							<xr:DataPath xsi:type="xs:string">ПериодАктуальности</xr:DataPath>
+							<xr:ValueChange>DontChange</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="СопоставлениеДолжностейЭТДДолжностьПоШтатномуРасписаниюКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="СопоставлениеДолжностейЭТДДолжностьПоШтатномуРасписаниюРасширеннаяПодсказка" id="41"/>
+					<Events>
+						<Event name="OnChange">СопоставлениеДолжностейЭТДДолжностьПоШтатномуРасписаниюПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СопоставлениеДолжностейЭТДКодДолжностиЭТД" id="17">
+					<DataPath>СопоставлениеДолжностейЭТД.КодДолжностиЭТД</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceButton>true</ChoiceButton>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="СопоставлениеДолжностейЭТДКодДолжностиЭТДКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СопоставлениеДолжностейЭТДКодДолжностиЭТДРасширеннаяПодсказка" id="19"/>
+					<Events>
+						<Event name="OnChange">СопоставлениеДолжностейЭТДКодДолжностиЭТДПриИзменении</Event>
+						<Event name="StartChoice">СопоставлениеДолжностейЭТДКодДолжностиЭТДНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="СопоставлениеДолжностейЭТДНаименованиеЭТД" id="22">
+					<DataPath>СопоставлениеДолжностейЭТД.НаименованиеЭТД</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СопоставлениеДолжностейЭТДНаименованиеЭТДКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="СопоставлениеДолжностейЭТДНаименованиеЭТДРасширеннаяПодсказка" id="24"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СопоставлениеДолжностейЭТД" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сопоставление должностей ЭТД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="ДолжностьОрганизации" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Штатная должность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДолжностьЭТД</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="КодДолжностиЭТД" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код должности (ЭТД)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Период" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеЭТД" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование (ЭТД)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Организация" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ОрганизацияЭТД</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СтрокаИзменена" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка изменена</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДолжностьПоШтатномуРасписанию" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Штатная должность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ДолжностьПоШтатномуРасписаниюЭТД</v8:TypeSet>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Организация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ОрганизацияЭТД</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодАктуальности" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На дату</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СопоставлениеДолжностейЭТДПериод</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СопоставлениеДолжностейЭТДДолжностьПоШтатномуРасписанию</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СопоставлениеДолжностейЭТДКодДолжностиЭТД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СопоставлениеДолжностейЭТДНаименованиеЭТД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СопоставлениеДолжностейЭТДДолжностьОрганизации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СопоставлениеДолжностейЭТД.СтрокаИзменена</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Сохранить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сохранить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

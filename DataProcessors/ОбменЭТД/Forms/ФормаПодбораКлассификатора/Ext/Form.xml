@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Width>65</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Выбрать" id="23">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Выбрать</CommandName>
+				<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="25"/>
+			</Button>
+			<Button name="Отмена" id="24">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ОтменаExtendedTooltip" id="26"/>
+			</Button>
+			<Button name="ФормаНайти" id="57">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.ДеревоКлассификатора.StandardCommand.Find</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаНайтиРасширеннаяПодсказка" id="58"/>
+			</Button>
+			<Button name="ФормаОтменитьПоиск" id="59">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.ДеревоКлассификатора.StandardCommand.CancelSearch</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаОтменитьПоискРасширеннаяПодсказка" id="60"/>
+			</Button>
+			<Button name="Дерево" id="65">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.ДеревоКлассификатора.StandardCommand.Tree</CommandName>
+				<ExtendedTooltip name="ДеревоРасширеннаяПодсказка" id="66"/>
+			</Button>
+			<Button name="ФормаСписок" id="61">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.ДеревоКлассификатора.StandardCommand.List</CommandName>
+				<ExtendedTooltip name="ФормаСписокРасширеннаяПодсказка" id="62"/>
+			</Button>
+			<Button name="ИерархическийСписок" id="63">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.ДеревоКлассификатора.StandardCommand.HierarchicalList</CommandName>
+				<ExtendedTooltip name="ИерархическийСписокРасширеннаяПодсказка" id="64"/>
+			</Button>
+			<SearchStringAddition name="СтрокаПоиска" id="67">
+				<AdditionSource>
+					<Item>ДеревоКлассификатора</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка поиска</v8:content>
+					</v8:item>
+				</Title>
+				<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="68"/>
+				<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="69"/>
+			</SearchStringAddition>
+			<SearchControlAddition name="УправлениеПоиском" id="70">
+				<AdditionSource>
+					<Item>ДеревоКлассификатора</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Управление поиском</v8:content>
+					</v8:item>
+				</Title>
+				<ContextMenu name="УправлениеПоискомКонтекстноеМеню" id="71"/>
+				<ExtendedTooltip name="УправлениеПоискомРасширеннаяПодсказка" id="72"/>
+			</SearchControlAddition>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ДеревоКлассификатора" id="1">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<ChoiceMode>true</ChoiceMode>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<SearchOnInput>Use</SearchOnInput>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоКлассификатора</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево классификатора</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДеревоКлассификатораКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДеревоКлассификатораКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="ДеревоКлассификатораExtendedTooltip" id="27"/>
+			<SearchStringAddition name="ДеревоКлассификатораСтрокаПоиска" id="39">
+				<AdditionSource>
+					<Item>ДеревоКлассификатора</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поиск</v8:content>
+					</v8:item>
+				</Title>
+				<Width>10</Width>
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<ContextMenu name="ДеревоКлассификатораСтрокаПоискаКонтекстноеМеню" id="40"/>
+				<ExtendedTooltip name="ДеревоКлассификатораСтрокаПоискаРасширеннаяПодсказка" id="41"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоКлассификатораСостояниеПросмотра" id="42">
+				<AdditionSource>
+					<Item>ДеревоКлассификатора</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоКлассификатораСостояниеПросмотраКонтекстноеМеню" id="43"/>
+				<ExtendedTooltip name="ДеревоКлассификатораСостояниеПросмотраРасширеннаяПодсказка" id="44"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоКлассификатораУправлениеПоиском" id="45">
+				<AdditionSource>
+					<Item>ДеревоКлассификатора</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоКлассификатораУправлениеПоискомКонтекстноеМеню" id="46"/>
+				<ExtendedTooltip name="ДеревоКлассификатораУправлениеПоискомРасширеннаяПодсказка" id="47"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ДеревоКлассификатораВыбор</Event>
+			</Events>
+			<ChildItems>
+				<ColumnGroup name="ГруппаКолонок" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колонок</v8:content>
+						</v8:item>
+					</Title>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ГруппаКолонокExtendedTooltip" id="28"/>
+					<ChildItems>
+						<CheckBoxField name="ДеревоКлассификатораВыбран" id="18">
+							<DataPath>ДеревоКлассификатора.Выбран</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ThreeState>true</ThreeState>
+							<ContextMenu name="ДеревоКлассификатораВыбранКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="ДеревоКлассификатораВыбранExtendedTooltip" id="29"/>
+							<Events>
+								<Event name="OnChange">ДеревоКлассификатораВыбранПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ДеревоКлассификатораКод" id="54">
+							<DataPath>ДеревоКлассификатора.Код</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоКлассификатораКодКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="ДеревоКлассификатораКодРасширеннаяПодсказка" id="56"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="НаименованиеНаРусском" id="48">
+					<DataPath>ДеревоКлассификатора.НаименованиеНаРусском</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеНаРусскомКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="НаименованиеНаРусскомРасширеннаяПодсказка" id="50"/>
+				</InputField>
+				<InputField name="НаименованиеНаКазахском" id="51">
+					<DataPath>ДеревоКлассификатора.НаименованиеНаКазахском</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеНаКазахскомКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="НаименованиеНаКазахскомРасширеннаяПодсказка" id="53"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДеревоКлассификатора" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево классификатора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выбран" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбран</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеНаРусском" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование (рус.)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеНаКазахском" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование (каз.)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Код" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СоответствиеЕдиниц" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соответствие единиц</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ВыборГруппы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор группы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидКлассификатора" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид классификатора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображениеКлассификатора" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображение классификатора</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Выбрать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Выбрать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

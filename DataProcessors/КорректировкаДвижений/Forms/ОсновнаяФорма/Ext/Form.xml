@@ -1,0 +1,1974 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КнопкаЗаписатьИЗакрыть" id="3">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="КнопкаЗаписатьИЗакрытьExtendedTooltip" id="324"/>
+			</Button>
+			<Button name="КнопкаОткрытьНастройку" id="5">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ОткрытьНастройку</CommandName>
+				<ExtendedTooltip name="КнопкаОткрытьНастройкуExtendedTooltip" id="325"/>
+			</Button>
+			<Button name="СформироватьОтчетПоДвижениям" id="93">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>0</CommandName>
+				<ExtendedTooltip name="СформироватьОтчетПоДвижениямExtendedTooltip" id="326"/>
+			</Button>
+			<Button name="ОтчетОДвиженияхДокументаПоРегистрам" id="323">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтчетОДвиженияхДокументаПоРегистрам</CommandName>
+				<ExtendedTooltip name="ОтчетОДвиженияхДокументаПоРегистрамExtendedTooltip" id="327"/>
+			</Button>
+			<Popup name="СоздатьНаОсновании" id="418">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаполнитьПоШаблону</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="СоздатьНаОснованииРасширеннаяПодсказка" id="419"/>
+				<ChildItems>
+					<Button name="ФормаВвестиНовуюКорректировку" id="420">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВвестиНовуюКорректировку</CommandName>
+						<ExtendedTooltip name="ФормаВвестиНовуюКорректировкуРасширеннаяПодсказка" id="421"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnReopen">ПриПовторномОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДокументРучнаяКорректировка" id="433">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ/Ручная корректировка</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДокументРучнаяКорректировкаРасширеннаяПодсказка" id="434"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПредставлениеДокумент" id="438">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление данных документа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа представление документ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПредставлениеДокументРасширеннаяПодсказка" id="439"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияДвиженияДокумента" id="435">
+							<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Движения документа:</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияДвиженияДокументаКонтекстноеМеню" id="436"/>
+							<ExtendedTooltip name="ДекорацияДвиженияДокументаРасширеннаяПодсказка" id="437"/>
+						</LabelDecoration>
+						<LabelField name="ПредставлениеДокумента" id="430">
+							<DataPath>ПредставлениеДокумента</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ПредставлениеДокументаКонтекстноеМеню" id="431"/>
+							<ExtendedTooltip name="ПредставлениеДокументаРасширеннаяПодсказка" id="432"/>
+							<Events>
+								<Event name="Click">ПредставлениеДокументаНажатие</Event>
+							</Events>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<CheckBoxField name="РучнаяКорректировка" id="1">
+					<DataPath>Объект.РучнаяКорректировка</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="РучнаяКорректировкаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="РучнаяКорректировкаExtendedTooltip" id="328"/>
+					<Events>
+						<Event name="OnChange">РучнаяКорректировкаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаДвиженияРегистров" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения регистров</v8:content>
+				</v8:item>
+			</Title>
+			<Height>15</Height>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаДвиженияРегистровExtendedTooltip" id="329"/>
+			<ChildItems>
+				<Page name="ГруппаТиповой" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бухгалтерский учет</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.ЖурналПроводок</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="ГруппаТиповойExtendedTooltip" id="330"/>
+					<ChildItems>
+						<Table name="Типовой" id="9">
+							<SkipOnInput>false</SkipOnInput>
+							<DefaultItem>true</DefaultItem>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Типовой</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТиповойКонтекстноеМеню" id="10"/>
+							<AutoCommandBar name="ТиповойКоманднаяПанель" id="11">
+								<ChildItems>
+									<Button name="ТиповойОбновить" id="172">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновитьТиповой</CommandName>
+										<ExtendedTooltip name="ТиповойОбновитьExtendedTooltip" id="331"/>
+									</Button>
+									<ButtonGroup name="ГруппаТиповойНайтиВСписке" id="179">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Найти в списке</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Найти в списке</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ГруппаТиповойНайтиВСпискеExtendedTooltip" id="332"/>
+										<ChildItems>
+											<Button name="ТиповойНайтиВСписке" id="180">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ТиповойНайтиВСписке</CommandName>
+												<ExtendedTooltip name="ТиповойНайтиВСпискеExtendedTooltip" id="333"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТиповойExtendedTooltip" id="334"/>
+							<SearchStringAddition name="ТиповойСтрокаПоиска" id="400">
+								<AdditionSource>
+									<Item>Типовой</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТиповойСтрокаПоискаКонтекстноеМеню" id="401"/>
+								<ExtendedTooltip name="ТиповойСтрокаПоискаРасширеннаяПодсказка" id="402"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТиповойСостояниеПросмотра" id="403">
+								<AdditionSource>
+									<Item>Типовой</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТиповойСостояниеПросмотраКонтекстноеМеню" id="404"/>
+								<ExtendedTooltip name="ТиповойСостояниеПросмотраРасширеннаяПодсказка" id="405"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТиповойУправлениеПоиском" id="406">
+								<AdditionSource>
+									<Item>Типовой</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТиповойУправлениеПоискомКонтекстноеМеню" id="407"/>
+								<ExtendedTooltip name="ТиповойУправлениеПоискомРасширеннаяПодсказка" id="408"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТиповойВыбор</Event>
+								<Event name="OnStartEdit">ТаблицаРегистраПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ТиповойНомерСтроки" id="181">
+									<DataPath>Типовой.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТиповойНомерСтрокиКонтекстноеМеню" id="182"/>
+									<ExtendedTooltip name="ТиповойНомерСтрокиExtendedTooltip" id="335"/>
+								</LabelField>
+								<InputField name="ТиповойПериод" id="183">
+									<DataPath>Типовой.Period</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТиповойПериодКонтекстноеМеню" id="184"/>
+									<ExtendedTooltip name="ТиповойПериодExtendedTooltip" id="336"/>
+								</InputField>
+								<InputField name="ТиповойОрганизация" id="185">
+									<DataPath>Типовой.Организация</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ТиповойОрганизацияКонтекстноеМеню" id="186"/>
+									<ExtendedTooltip name="ТиповойОрганизацияExtendedTooltip" id="337"/>
+								</InputField>
+								<ColumnGroup name="ГруппаСчетДт" id="84">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет Дт</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет Дт</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаСчетДтExtendedTooltip" id="338"/>
+									<ChildItems>
+										<InputField name="ТиповойСчетДт" id="187">
+											<DataPath>Типовой.AccountDr</DataPath>
+											<TitleFont ref="style:TextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceParameters>
+												<app:item name="Отбор.ЗапретитьИспользоватьВПроводках">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">false</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСчетДтКонтекстноеМеню" id="188"/>
+											<ExtendedTooltip name="ТиповойСчетДтExtendedTooltip" id="339"/>
+											<Events>
+												<Event name="OnChange">ТиповойСчетДтПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойСтруктурноеПодразделениеДт" id="197">
+											<DataPath>Типовой.СтруктурноеПодразделениеDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСтруктурноеПодразделениеДтКонтекстноеМеню" id="198"/>
+											<ExtendedTooltip name="ТиповойСтруктурноеПодразделениеДтExtendedTooltip" id="340"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСубконтоДт" id="85">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто Дт</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто Дт</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаСубконтоДтExtendedTooltip" id="341"/>
+									<ChildItems>
+										<InputField name="ТиповойСубконтоДт1" id="189">
+											<DataPath>Типовой.ExtDimensionDr1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Субконто Дт</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСубконтоДт1КонтекстноеМеню" id="190"/>
+											<ExtendedTooltip name="ТиповойСубконтоДт1ExtendedTooltip" id="342"/>
+											<Events>
+												<Event name="OnChange">ТиповойСубконтоДт1ПриИзменении</Event>
+												<Event name="StartChoice">ТиповойСубконтоДт1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойСубконтоДт2" id="191">
+											<DataPath>Типовой.ExtDimensionDr2</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСубконтоДт2КонтекстноеМеню" id="192"/>
+											<ExtendedTooltip name="ТиповойСубконтоДт2ExtendedTooltip" id="343"/>
+											<Events>
+												<Event name="OnChange">ТиповойСубконтоДт2ПриИзменении</Event>
+												<Event name="StartChoice">ТиповойСубконтоДт2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойСубконтоДт3" id="193">
+											<DataPath>Типовой.ExtDimensionDr3</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСубконтоДт3КонтекстноеМеню" id="194"/>
+											<ExtendedTooltip name="ТиповойСубконтоДт3ExtendedTooltip" id="344"/>
+											<Events>
+												<Event name="OnChange">ТиповойСубконтоДт3ПриИзменении</Event>
+												<Event name="StartChoice">ТиповойСубконтоДт3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаКоличествоВалютаДт" id="86">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество и валюта Дт</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество и валюта Дт</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаКоличествоВалютаДтExtendedTooltip" id="345"/>
+									<ChildItems>
+										<InputField name="ТиповойКоличествоДт" id="201">
+											<DataPath>Типовой.КоличествоDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойКоличествоДтКонтекстноеМеню" id="202"/>
+											<ExtendedTooltip name="ТиповойКоличествоДтExtendedTooltip" id="346"/>
+										</InputField>
+										<InputField name="ТиповойВалютаДт" id="195">
+											<DataPath>Типовой.ВалютаDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойВалютаДтКонтекстноеМеню" id="196"/>
+											<ExtendedTooltip name="ТиповойВалютаДтExtendedTooltip" id="347"/>
+											<Events>
+												<Event name="OnChange">ТиповойВалютаДтПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойВалютнаяСуммаДт" id="199">
+											<DataPath>Типовой.ВалютнаяСуммаDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойВалютнаяСуммаДтКонтекстноеМеню" id="200"/>
+											<ExtendedTooltip name="ТиповойВалютнаяСуммаДтExtendedTooltip" id="348"/>
+											<Events>
+												<Event name="OnChange">ТиповойВалютнаяСуммаДтПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСчетКт" id="87">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет Кт</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет Кт</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаСчетКтExtendedTooltip" id="349"/>
+									<ChildItems>
+										<InputField name="ТиповойСчетКт" id="203">
+											<DataPath>Типовой.AccountCr</DataPath>
+											<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceParameters>
+												<app:item name="Отбор.ЗапретитьИспользоватьВПроводках">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">false</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСчетКтКонтекстноеМеню" id="204"/>
+											<ExtendedTooltip name="ТиповойСчетКтExtendedTooltip" id="350"/>
+											<Events>
+												<Event name="OnChange">ТиповойСчетКтПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойСтруктурноеПодразделениеКт" id="213">
+											<DataPath>Типовой.СтруктурноеПодразделениеCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСтруктурноеПодразделениеКтКонтекстноеМеню" id="214"/>
+											<ExtendedTooltip name="ТиповойСтруктурноеПодразделениеКтExtendedTooltip" id="351"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСубконтоКт" id="88">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто Кт</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто Кт</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаСубконтоКтExtendedTooltip" id="352"/>
+									<ChildItems>
+										<InputField name="ТиповойСубконтоКт1" id="205">
+											<DataPath>Типовой.ExtDimensionCr1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Субконто Кт</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСубконтоКт1КонтекстноеМеню" id="206"/>
+											<ExtendedTooltip name="ТиповойСубконтоКт1ExtendedTooltip" id="353"/>
+											<Events>
+												<Event name="OnChange">ТиповойСубконтоКт1ПриИзменении</Event>
+												<Event name="StartChoice">ТиповойСубконтоКт1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойСубконтоКт2" id="207">
+											<DataPath>Типовой.ExtDimensionCr2</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСубконтоКт2КонтекстноеМеню" id="208"/>
+											<ExtendedTooltip name="ТиповойСубконтоКт2ExtendedTooltip" id="354"/>
+											<Events>
+												<Event name="OnChange">ТиповойСубконтоКт2ПриИзменении</Event>
+												<Event name="StartChoice">ТиповойСубконтоКт2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойСубконтоКт3" id="209">
+											<DataPath>Типовой.ExtDimensionCr3</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ТиповойСубконтоКт3КонтекстноеМеню" id="210"/>
+											<ExtendedTooltip name="ТиповойСубконтоКт3ExtendedTooltip" id="355"/>
+											<Events>
+												<Event name="OnChange">ТиповойСубконтоКт3ПриИзменении</Event>
+												<Event name="StartChoice">ТиповойСубконтоКт3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаКоличествоВалютаКт" id="89">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество и валюта Кт</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество и валюта Кт</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаКоличествоВалютаКтExtendedTooltip" id="356"/>
+									<ChildItems>
+										<InputField name="ТиповойКоличествоКт" id="217">
+											<DataPath>Типовой.КоличествоCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойКоличествоКтКонтекстноеМеню" id="218"/>
+											<ExtendedTooltip name="ТиповойКоличествоКтExtendedTooltip" id="357"/>
+										</InputField>
+										<InputField name="ТиповойВалютаКт" id="211">
+											<DataPath>Типовой.ВалютаCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойВалютаКтКонтекстноеМеню" id="212"/>
+											<ExtendedTooltip name="ТиповойВалютаКтExtendedTooltip" id="358"/>
+											<Events>
+												<Event name="OnChange">ТиповойВалютаКтПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТиповойВалютнаяСуммаКт" id="215">
+											<DataPath>Типовой.ВалютнаяСуммаCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойВалютнаяСуммаКтКонтекстноеМеню" id="216"/>
+											<ExtendedTooltip name="ТиповойВалютнаяСуммаКтExtendedTooltip" id="359"/>
+											<Events>
+												<Event name="OnChange">ТиповойВалютнаяСуммаКтПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСуммаСодержание" id="90">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма и содержание</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма и содержание</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>1</Width>
+									<ExtendedTooltip name="ГруппаСуммаСодержаниеExtendedTooltip" id="360"/>
+									<ChildItems>
+										<InputField name="ТиповойСумма" id="219">
+											<DataPath>Типовой.Сумма</DataPath>
+											<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<EditMode>EnterOnInput</EditMode>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<ContextMenu name="ТиповойСуммаКонтекстноеМеню" id="220"/>
+											<ExtendedTooltip name="ТиповойСуммаExtendedTooltip" id="361"/>
+										</InputField>
+										<InputField name="ТиповойСодержание" id="221">
+											<DataPath>Типовой.Содержание</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойСодержаниеКонтекстноеМеню" id="222"/>
+											<ExtendedTooltip name="ТиповойСодержаниеExtendedTooltip" id="362"/>
+										</InputField>
+										<InputField name="ТиповойНомерЖурнала" id="223">
+											<DataPath>Типовой.НомерЖурнала</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТиповойНомерЖурналаКонтекстноеМеню" id="224"/>
+											<ExtendedTooltip name="ТиповойНомерЖурналаExtendedTooltip" id="363"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ТиповойВидРегламентнойОперации" id="394">
+									<DataPath>Типовой.ВидРегламентнойОперации</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТиповойВидРегламентнойОперацииКонтекстноеМеню" id="395"/>
+									<ExtendedTooltip name="ТиповойВидРегламентнойОперацииРасширеннаяПодсказка" id="396"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаНалоговый" id="225">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговый учет</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа налоговый</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>CommonPicture.ЖурналПроводокНУ</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:TransparentPixel x="1" y="13"/>
+					</Picture>
+					<ExtendedTooltip name="ГруппаНалоговыйExtendedTooltip" id="364"/>
+					<ChildItems>
+						<Table name="Налоговый" id="226">
+							<SkipOnInput>false</SkipOnInput>
+							<DefaultItem>true</DefaultItem>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Налоговый</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НалоговыйКонтекстноеМеню" id="227"/>
+							<AutoCommandBar name="НалоговыйКоманднаяПанель" id="228">
+								<ChildItems>
+									<Button name="НалоговыйОбновить" id="280">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновитьНалоговый</CommandName>
+										<ExtendedTooltip name="НалоговыйОбновитьExtendedTooltip" id="365"/>
+									</Button>
+									<ButtonGroup name="ГруппаНалоговыйНайтиВСписке" id="281">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Найти в списке</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ГруппаНалоговыйНайтиВСпискеExtendedTooltip" id="366"/>
+										<ChildItems>
+											<Button name="НалоговыйНайтиВСписке" id="282">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.НалоговыйНайтиВСписке</CommandName>
+												<ExtendedTooltip name="НалоговыйНайтиВСпискеExtendedTooltip" id="367"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="НалоговыйExtendedTooltip" id="368"/>
+							<SearchStringAddition name="НалоговыйСтрокаПоиска" id="409">
+								<AdditionSource>
+									<Item>Налоговый</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НалоговыйСтрокаПоискаКонтекстноеМеню" id="410"/>
+								<ExtendedTooltip name="НалоговыйСтрокаПоискаРасширеннаяПодсказка" id="411"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НалоговыйСостояниеПросмотра" id="412">
+								<AdditionSource>
+									<Item>Налоговый</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НалоговыйСостояниеПросмотраКонтекстноеМеню" id="413"/>
+								<ExtendedTooltip name="НалоговыйСостояниеПросмотраРасширеннаяПодсказка" id="414"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НалоговыйУправлениеПоиском" id="415">
+								<AdditionSource>
+									<Item>Налоговый</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НалоговыйУправлениеПоискомКонтекстноеМеню" id="416"/>
+								<ExtendedTooltip name="НалоговыйУправлениеПоискомРасширеннаяПодсказка" id="417"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">НалоговыйВыбор</Event>
+								<Event name="OnStartEdit">ТаблицаРегистраПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="НалоговыйНомерСтроки" id="283">
+									<DataPath>Налоговый.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НалоговыйНомерСтрокиКонтекстноеМеню" id="284"/>
+									<ExtendedTooltip name="НалоговыйНомерСтрокиExtendedTooltip" id="369"/>
+								</LabelField>
+								<InputField name="НалоговыйПериод" id="285">
+									<DataPath>Налоговый.Period</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НалоговыйПериодКонтекстноеМеню" id="286"/>
+									<ExtendedTooltip name="НалоговыйПериодExtendedTooltip" id="370"/>
+								</InputField>
+								<InputField name="НалоговыйОрганизация" id="287">
+									<DataPath>Налоговый.Организация</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НалоговыйОрганизацияКонтекстноеМеню" id="288"/>
+									<ExtendedTooltip name="НалоговыйОрганизацияExtendedTooltip" id="371"/>
+								</InputField>
+								<ColumnGroup name="ГруппаСчетДтНалоговый" id="235">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет Дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСчетДтНалоговыйExtendedTooltip" id="372"/>
+									<ChildItems>
+										<InputField name="НалоговыйСчетДт" id="289">
+											<DataPath>Налоговый.AccountDr</DataPath>
+											<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceParameters>
+												<app:item name="Отбор.ЗапретитьИспользоватьВПроводках">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">false</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<ContextMenu name="НалоговыйСчетДтКонтекстноеМеню" id="290"/>
+											<ExtendedTooltip name="НалоговыйСчетДтExtendedTooltip" id="373"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСчетДтПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="НалоговыйКоличествоДт" id="301">
+											<DataPath>Налоговый.КоличествоDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НалоговыйКоличествоДтКонтекстноеМеню" id="302"/>
+											<ExtendedTooltip name="НалоговыйКоличествоДтExtendedTooltip" id="374"/>
+										</InputField>
+										<InputField name="НалоговыйВидУчетаДт" id="297">
+											<DataPath>Налоговый.ВидУчетаDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НалоговыйВидУчетаДтКонтекстноеМеню" id="298"/>
+											<ExtendedTooltip name="НалоговыйВидУчетаДтExtendedTooltip" id="375"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="НалоговыйСтруктурноеПодразделениеДт" id="299">
+									<DataPath>Налоговый.СтруктурноеПодразделениеDr</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НалоговыйСтруктурноеПодразделениеДтКонтекстноеМеню" id="300"/>
+									<ExtendedTooltip name="НалоговыйСтруктурноеПодразделениеДтExtendedTooltip" id="376"/>
+								</InputField>
+								<ColumnGroup name="ГруппаСубконтоДтНалоговый" id="240">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто Дт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСубконтоДтНалоговыйExtendedTooltip" id="377"/>
+									<ChildItems>
+										<InputField name="НалоговыйСубконтоДт1" id="291">
+											<DataPath>Налоговый.ExtDimensionDr1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Субконто Дт</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="НалоговыйСубконтоДт1КонтекстноеМеню" id="292"/>
+											<ExtendedTooltip name="НалоговыйСубконтоДт1ExtendedTooltip" id="378"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСубконтоДт1ПриИзменении</Event>
+												<Event name="StartChoice">НалоговыйСубконтоДт1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="НалоговыйСубконтоДт2" id="293">
+											<DataPath>Налоговый.ExtDimensionDr2</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="НалоговыйСубконтоДт2КонтекстноеМеню" id="294"/>
+											<ExtendedTooltip name="НалоговыйСубконтоДт2ExtendedTooltip" id="379"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСубконтоДт2ПриИзменении</Event>
+												<Event name="StartChoice">НалоговыйСубконтоДт2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="НалоговыйСубконтоДт3" id="295">
+											<DataPath>Налоговый.ExtDimensionDr3</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="НалоговыйСубконтоДт3КонтекстноеМеню" id="296"/>
+											<ExtendedTooltip name="НалоговыйСубконтоДт3ExtendedTooltip" id="380"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСубконтоДт3ПриИзменении</Event>
+												<Event name="StartChoice">НалоговыйСубконтоДт3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСчетКтНалоговый" id="254">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет Кт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСчетКтНалоговыйExtendedTooltip" id="381"/>
+									<ChildItems>
+										<InputField name="НалоговыйСчетКт" id="303">
+											<DataPath>Налоговый.AccountCr</DataPath>
+											<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceParameters>
+												<app:item name="Отбор.ЗапретитьИспользоватьВПроводках">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">false</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<ContextMenu name="НалоговыйСчетКтКонтекстноеМеню" id="304"/>
+											<ExtendedTooltip name="НалоговыйСчетКтExtendedTooltip" id="382"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСчетКтПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="НалоговыйКоличествоКт" id="315">
+											<DataPath>Налоговый.КоличествоCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НалоговыйКоличествоКтКонтекстноеМеню" id="316"/>
+											<ExtendedTooltip name="НалоговыйКоличествоКтExtendedTooltip" id="383"/>
+										</InputField>
+										<InputField name="НалоговыйВидУчетаКт" id="311">
+											<DataPath>Налоговый.ВидУчетаCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НалоговыйВидУчетаКтКонтекстноеМеню" id="312"/>
+											<ExtendedTooltip name="НалоговыйВидУчетаКтExtendedTooltip" id="384"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="НалоговыйСтруктурноеПодразделениеКт" id="313">
+									<DataPath>Налоговый.СтруктурноеПодразделениеCr</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НалоговыйСтруктурноеПодразделениеКтКонтекстноеМеню" id="314"/>
+									<ExtendedTooltip name="НалоговыйСтруктурноеПодразделениеКтExtendedTooltip" id="385"/>
+								</InputField>
+								<ColumnGroup name="ГруппаСубконтоКтНалоговый" id="259">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субконто Кт</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСубконтоКтНалоговыйExtendedTooltip" id="386"/>
+									<ChildItems>
+										<InputField name="НалоговыйСубконтоКт1" id="305">
+											<DataPath>Налоговый.ExtDimensionCr1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Субконто Кт</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="НалоговыйСубконтоКт1КонтекстноеМеню" id="306"/>
+											<ExtendedTooltip name="НалоговыйСубконтоКт1ExtendedTooltip" id="387"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСубконтоКт1ПриИзменении</Event>
+												<Event name="StartChoice">НалоговыйСубконтоКт1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="НалоговыйСубконтоКт2" id="307">
+											<DataPath>Налоговый.ExtDimensionCr2</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="НалоговыйСубконтоКт2КонтекстноеМеню" id="308"/>
+											<ExtendedTooltip name="НалоговыйСубконтоКт2ExtendedTooltip" id="388"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСубконтоКт2ПриИзменении</Event>
+												<Event name="StartChoice">НалоговыйСубконтоКт2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="НалоговыйСубконтоКт3" id="309">
+											<DataPath>Налоговый.ExtDimensionCr3</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+											<ContextMenu name="НалоговыйСубконтоКт3КонтекстноеМеню" id="310"/>
+											<ExtendedTooltip name="НалоговыйСубконтоКт3ExtendedTooltip" id="389"/>
+											<Events>
+												<Event name="OnChange">НалоговыйСубконтоКт3ПриИзменении</Event>
+												<Event name="StartChoice">НалоговыйСубконтоКт3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ГруппаСуммаСодержаниеНалоговый" id="273">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма и содержание</v8:content>
+										</v8:item>
+									</Title>
+									<Width>1</Width>
+									<ExtendedTooltip name="ГруппаСуммаСодержаниеНалоговыйExtendedTooltip" id="390"/>
+									<ChildItems>
+										<InputField name="НалоговыйСумма" id="317">
+											<DataPath>Налоговый.Сумма</DataPath>
+											<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<EditMode>EnterOnInput</EditMode>
+											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<ContextMenu name="НалоговыйСуммаКонтекстноеМеню" id="318"/>
+											<ExtendedTooltip name="НалоговыйСуммаExtendedTooltip" id="391"/>
+										</InputField>
+										<InputField name="НалоговыйСодержание" id="321">
+											<DataPath>Налоговый.Содержание</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НалоговыйСодержаниеКонтекстноеМеню" id="322"/>
+											<ExtendedTooltip name="НалоговыйСодержаниеExtendedTooltip" id="393"/>
+										</InputField>
+										<InputField name="НалоговыйНомерЖурнала" id="319">
+											<DataPath>Налоговый.НомерЖурнала</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="НалоговыйНомерЖурналаКонтекстноеМеню" id="320"/>
+											<ExtendedTooltip name="НалоговыйНомерЖурналаExtendedTooltip" id="392"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="НалоговыйВидРегламентнойОперации" id="397">
+									<DataPath>Налоговый.ВидРегламентнойОперации</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НалоговыйВидРегламентнойОперацииКонтекстноеМеню" id="398"/>
+									<ExtendedTooltip name="НалоговыйВидРегламентнойОперацииРасширеннаяПодсказка" id="399"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаКорректировкиДокументамиРеглУчета" id="425">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Корректировки документа</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКорректировкиДокументамиРеглУчетаРасширеннаяПодсказка" id="426"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияТекстКорректировки" id="427">
+					<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы корректировки:</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияТекстКорректировкиКонтекстноеМеню" id="428"/>
+					<ExtendedTooltip name="ДекорацияТекстКорректировкиРасширеннаяПодсказка" id="429"/>
+				</LabelDecoration>
+				<LabelField name="ТекстКорректировки" id="422">
+					<DataPath>ТекстКорректировки</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ТекстКорректировкиКонтекстноеМеню" id="423"/>
+					<ExtendedTooltip name="ТекстКорректировкиРасширеннаяПодсказка" id="424"/>
+					<Events>
+						<Event name="Click">ТекстКорректировкиНажатие</Event>
+					</Events>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.КорректировкаДвижений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Типовой" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типовой</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:AccountingRegisterRecordSet.Типовой</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Типовой">
+					<Column name="СубконтоДт1Доступность" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт1 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоДт2Доступность" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт2 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоДт3Доступность" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт3 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт1Доступность" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт1 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт2Доступность" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт2 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт3Доступность" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт3 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДокументСсылка" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СтруктураШапки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура шапки документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Налоговый" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налоговый</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:AccountingRegisterRecordSet.Налоговый</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Налоговый">
+					<Column name="СубконтоДт1Доступность" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт1 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоДт2Доступность" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт2 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоДт3Доступность" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт3 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт1Доступность" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт1 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт2Доступность" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт2 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт3Доступность" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт3 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="РедактированиеДвиженийДокумента" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактирование движений документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстКорректировки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст корректировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокКорректировок" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список корректировок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеДокумента" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПравоЧтение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Право чтение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойКоличествоДт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.КоличествоДт</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойКоличествоКт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.КоличествоКт</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойВалютнаяСуммаДт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.ВалютнаяСуммаДт</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойВалютнаяСуммаКт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.ВалютнаяСуммаКт</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.Сумма</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйКоличествоДт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.КоличествоДт</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйКоличествоКт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.КоличествоКт</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСумма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.Сумма</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСубконтоДт1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоДт1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоДт1</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="xs:string">Обозначить пустое СубконтоДт1</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСубконтоДт2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоДт2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоДт2</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="xs:string">Обозначить пустое СубконтоДт2</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСубконтоДт3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоДт3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоДт3</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="xs:string">Обозначить пустое СубконтоДт3</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСубконтоКт1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоКт1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоКт1</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="xs:string">Обозначить пустое СубконтоКт1</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСубконтоКт2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоКт2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоКт2</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="xs:string">Обозначить пустое СубконтоКт2</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТиповойСубконтоКт3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоКт3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Типовой.СубконтоКт3</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="xs:string">Обозначить пустое СубконтоКт3</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСубконтоДт1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоДт1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоДт1</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обозначить пустое СубконтоДт1(НУ)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСубконтоДт2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоДт2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоДт2</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обозначить пустое СубконтоДт2(НУ)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСубконтоДт3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоДт3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоДт3</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обозначить пустое СубконтоДт3(НУ)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСубконтоКт1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоКт1Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоКт1</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обозначить пустое СубконтоКт1(НУ)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСубконтоКт2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоКт2Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоКт2</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обозначить пустое СубконтоКт2(НУ)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НалоговыйСубконтоКт3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоКт3Доступность</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Налоговый.СубконтоКт3</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:НеЗаполненноеСубконто</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;...&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обозначить пустое СубконтоКт3(НУ)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РучнаяКорректировка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РедактированиеДвиженийДокумента</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РучнаяКорректировка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РедактированиеДвиженийДокумента</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать движения и закрыть форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьНастройку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть настройку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьНастройку</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьТиповой" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить текущий список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьТиповой</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ТиповойНайтиВСписке" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти в списке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти в списке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FindInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РегистрНайтиВСписке</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьНалоговый" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить текущий список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьНалоговый</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НалоговыйНайтиВСписке" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти в списке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти в списке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FindInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РегистрНайтиВСписке</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетОДвиженияхДокументаПоРегистрам" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет о движениях документа по регистрам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет о движениях документа по регистрам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПечатьДвижений</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВвестиНовуюКорректировку" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операция (Корректировка документа)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести новый связанный документ Операция (корректировка документа)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВвестиНовуюКорректировку</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

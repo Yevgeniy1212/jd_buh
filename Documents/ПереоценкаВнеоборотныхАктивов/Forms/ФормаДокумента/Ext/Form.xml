@@ -1,0 +1,1703 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="118">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="119"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛевая" id="120">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (левая колонка)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛеваяРасширеннаяПодсказка" id="121"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНомерДата" id="122">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер/дата</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="123"/>
+							<ChildItems>
+								<InputField name="Номер" id="124">
+									<DataPath>Объект.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="НомерКонтекстноеМеню" id="125"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="126"/>
+								</InputField>
+								<InputField name="Дата" id="127">
+									<DataPath>Объект.Date</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>от</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>14</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="128"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="129"/>
+									<Events>
+										<Event name="OnChange">ДатаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="СтруктурноеПодразделениеОрганизация" id="130">
+							<DataPath>СтруктурноеПодразделениеОрганизация</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>28</MaxWidth>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChooseType>false</ChooseType>
+							<ChoiceParameters>
+								<app:item name="ВыбиратьСтруктурныеЕдиницы">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ContextMenu name="СтруктурноеПодразделениеОрганизацияКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="СтруктурноеПодразделениеОрганизацияРасширеннаяПодсказка" id="132"/>
+							<Events>
+								<Event name="OnChange">СтруктурноеПодразделениеОрганизацияПриИзменении</Event>
+								<Event name="StartChoice">СтруктурноеПодразделениеОрганизацияНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="МетодПереоценки" id="16">
+							<DataPath>Объект.МетодПереоценки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>28</MaxWidth>
+							<ContextMenu name="МетодПереоценкиКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="МетодПереоценкиРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПравая" id="139">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (правая колонка)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПраваяРасширеннаяПодсказка" id="140"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаУчетКПН" id="266">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учет КПН</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаУчетКПНРасширеннаяПодсказка" id="267"/>
+							<ChildItems>
+								<CheckBoxField name="УчитыватьКПН" id="141">
+									<DataPath>Объект.УчитыватьКПН</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УчитыватьКПНКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="УчитыватьКПНРасширеннаяПодсказка" id="143"/>
+									<Events>
+										<Event name="OnChange">УчитыватьКПНПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ВидУчетаНУ" id="144">
+									<DataPath>Объект.ВидУчетаНУ</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>27</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид учета НУ</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="ВидУчетаНУКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="ВидУчетаНУРасширеннаяПодсказка" id="146"/>
+									<Events>
+										<Event name="StartChoice">ВидУчетаНУНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="110">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="111"/>
+			<ChildItems>
+				<Page name="ГруппаОС" id="112">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ОС</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>Объект.ОС.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаОСРасширеннаяПодсказка" id="113"/>
+					<ChildItems>
+						<Table name="ОС" id="82">
+							<Representation>List</Representation>
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ОС</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ОСКонтекстноеМеню" id="83"/>
+							<AutoCommandBar name="ОСКоманднаяПанель" id="84">
+								<ChildItems>
+									<Popup name="ОСГруппаЗаполнить" id="237">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ОСГруппаЗаполнитьРасширеннаяПодсказка" id="238"/>
+										<ChildItems>
+											<Button name="ОСКомандаЗаполнитьДляСписка" id="239">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьДляСписка</CommandName>
+												<ExtendedTooltip name="ОСКомандаЗаполнитьДляСпискаРасширеннаяПодсказка" id="240"/>
+											</Button>
+											<Button name="ОСКомандаЗаполнитьПоНаименованию" id="241">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьПоНаименованию</CommandName>
+												<ExtendedTooltip name="ОСКомандаЗаполнитьПоНаименованиюРасширеннаяПодсказка" id="242"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ОСКомандаПодбор" id="243">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Подбор</CommandName>
+										<ExtendedTooltip name="ОСКомандаПодборРасширеннаяПодсказка" id="244"/>
+									</Button>
+									<Button name="ОСИзменитьОС" id="256">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ИзменитьОС</CommandName>
+										<ExtendedTooltip name="ОСИзменитьОСРасширеннаяПодсказка" id="257"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОСРасширеннаяПодсказка" id="85"/>
+							<SearchStringAddition name="ОССтрокаПоиска" id="247">
+								<AdditionSource>
+									<Item>ОС</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОССтрокаПоискаКонтекстноеМеню" id="248"/>
+								<ExtendedTooltip name="ОССтрокаПоискаРасширеннаяПодсказка" id="249"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОССостояниеПросмотра" id="250">
+								<AdditionSource>
+									<Item>ОС</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОССостояниеПросмотраКонтекстноеМеню" id="251"/>
+								<ExtendedTooltip name="ОССостояниеПросмотраРасширеннаяПодсказка" id="252"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОСУправлениеПоиском" id="253">
+								<AdditionSource>
+									<Item>ОС</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОСУправлениеПоискомКонтекстноеМеню" id="254"/>
+								<ExtendedTooltip name="ОСУправлениеПоискомРасширеннаяПодсказка" id="255"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ОСНомерСтроки" id="86">
+									<DataPath>Объект.ОС.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОСНомерСтрокиКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="ОСНомерСтрокиРасширеннаяПодсказка" id="88"/>
+								</LabelField>
+								<ColumnGroup name="ОСГруппаОСИнвентарныйНомер" id="162">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ОС/Инвентарный номер</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОСГруппаОСИнвентарныйНомерРасширеннаяПодсказка" id="163"/>
+									<ChildItems>
+										<InputField name="ОСОсновноеСредство" id="89">
+											<DataPath>Объект.ОС.ОсновноеСредство</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ОСОсновноеСредствоКонтекстноеМеню" id="90"/>
+											<ExtendedTooltip name="ОСОсновноеСредствоРасширеннаяПодсказка" id="91"/>
+											<Events>
+												<Event name="OnChange">ОСОсновноеСредствоПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОСИнвентарныйНомер" id="159">
+											<DataPath>Объект.ОС.ИнвентарныйНомер</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ОСИнвентарныйНомерКонтекстноеМеню" id="160"/>
+											<ExtendedTooltip name="ОСИнвентарныйНомерРасширеннаяПодсказка" id="161"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ОСГруппаСтоимость" id="164">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стоимость</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОСГруппаСтоимостьРасширеннаяПодсказка" id="165"/>
+									<ChildItems>
+										<InputField name="ОССтоимостьБУ" id="92">
+											<DataPath>Объект.ОС.СтоимостьБУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="ОССтоимостьБУКонтекстноеМеню" id="93"/>
+											<ExtendedTooltip name="ОССтоимостьБУРасширеннаяПодсказка" id="94"/>
+											<Events>
+												<Event name="OnChange">ОССтоимостьБУПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОСОстаточнаяСтоимостьБУ" id="166">
+											<DataPath>Объект.ОС.ОстаточнаяСтоимостьБУ</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="ОСОстаточнаяСтоимостьБУКонтекстноеМеню" id="167"/>
+											<ExtendedTooltip name="ОСОстаточнаяСтоимостьБУРасширеннаяПодсказка" id="168"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ОСГруппаАмортизация" id="169">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Амортизация</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОСГруппаАмортизацияРасширеннаяПодсказка" id="170"/>
+									<ChildItems>
+										<InputField name="ОСАмортизацияБУ" id="95">
+											<DataPath>Объект.ОС.АмортизацияБУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="ОСАмортизацияБУКонтекстноеМеню" id="96"/>
+											<ExtendedTooltip name="ОСАмортизацияБУРасширеннаяПодсказка" id="97"/>
+											<Events>
+												<Event name="OnChange">ОСАмортизацияБУПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОСАмортизацияЗаМесяцБУ" id="98">
+											<DataPath>Объект.ОС.АмортизацияЗаМесяцБУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="ОСАмортизацияЗаМесяцБУКонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="ОСАмортизацияЗаМесяцБУРасширеннаяПодсказка" id="100"/>
+											<Events>
+												<Event name="OnChange">ОСАмортизацияЗаМесяцБУПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ОССписываемаяСуммаРезерваЗаМесяцБУ" id="107">
+									<DataPath>Объект.ОС.СписываемаяСуммаРезерваЗаМесяцБУ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ОССписываемаяСуммаРезерваЗаМесяцБУКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ОССписываемаяСуммаРезерваЗаМесяцБУРасширеннаяПодсказка" id="109"/>
+								</InputField>
+								<ColumnGroup name="ОСГруппаПереоцененнаяСтоимостьЛиквидационнаяСтоимость" id="171">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Переоцененная стоимость/Ликвидационная стоимость</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОСГруппаПереоцененнаяСтоимостьЛиквидационнаяСтоимостьРасширеннаяПодсказка" id="172"/>
+									<ChildItems>
+										<InputField name="ОСПереоцененнаяСтоимостьБУ" id="101">
+											<DataPath>Объект.ОС.ПереоцененнаяСтоимостьБУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="ОСПереоцененнаяСтоимостьБУКонтекстноеМеню" id="102"/>
+											<ExtendedTooltip name="ОСПереоцененнаяСтоимостьБУРасширеннаяПодсказка" id="103"/>
+										</InputField>
+										<InputField name="ОСЛиквидационнаяСтоимостьБУ" id="104">
+											<DataPath>Объект.ОС.ЛиквидационнаяСтоимостьБУ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="ОСЛиквидационнаяСтоимостьБУКонтекстноеМеню" id="105"/>
+											<ExtendedTooltip name="ОСЛиквидационнаяСтоимостьБУРасширеннаяПодсказка" id="106"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаСчетаДоходовРасходов" id="114">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета доходов/расходов</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="ГруппаСчетаДоходовРасходовРасширеннаяПодсказка" id="115"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтражениеБУ" id="147">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отражение в бухгалтерском учете</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаОтражениеБУРасширеннаяПодсказка" id="148"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаДоходыБУ" id="151">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доходы (БУ)</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ChildItemsWidth>LeftNarrow</ChildItemsWidth>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДоходыБУРасширеннаяПодсказка" id="152"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаСчетДоходовБУ" id="280">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля счета доходов (БУ)</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСчетДоходовБУРасширеннаяПодсказка" id="281"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияСчетДоходовБУ" id="277">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Счет доходов (БУ):</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияСчетДоходовБУКонтекстноеМеню" id="278"/>
+													<ExtendedTooltip name="ДекорацияСчетДоходовБУРасширеннаяПодсказка" id="279"/>
+												</LabelDecoration>
+												<InputField name="СчетДоходовБУ" id="64">
+													<DataPath>Объект.СчетДоходовБУ</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СчетДоходовБУКонтекстноеМеню" id="65"/>
+													<ExtendedTooltip name="СчетДоходовБУРасширеннаяПодсказка" id="66"/>
+													<Events>
+														<Event name="OnChange">СчетДоходовБУПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоДоходовБУ1" id="282">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто доходов (БУ) 1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоДоходовБУ1РасширеннаяПодсказка" id="283"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоДоходовБУ1" id="192">
+													<DataPath>ЗаголовокСубконтоДоходовБУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоДоходовБУ1КонтекстноеМеню" id="193"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоДоходовБУ1РасширеннаяПодсказка" id="194"/>
+												</LabelField>
+												<InputField name="СубконтоДоходовБУ1" id="28">
+													<DataPath>Объект.СубконтоДоходовБУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СубконтоДоходовБУ1КонтекстноеМеню" id="29"/>
+													<ExtendedTooltip name="СубконтоДоходовБУ1РасширеннаяПодсказка" id="30"/>
+													<Events>
+														<Event name="OnChange">СубконтоДоходовБУ1ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоДоходовБУ1НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоДоходовБУ2" id="284">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто доходов (БУ) 2</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоДоходовБУ2РасширеннаяПодсказка" id="285"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоДоходовБУ2" id="195">
+													<DataPath>ЗаголовокСубконтоДоходовБУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоДоходовБУ2КонтекстноеМеню" id="196"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоДоходовБУ2РасширеннаяПодсказка" id="197"/>
+												</LabelField>
+												<InputField name="СубконтоДоходовБУ2" id="31">
+													<DataPath>Объект.СубконтоДоходовБУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СубконтоДоходовБУ2КонтекстноеМеню" id="32"/>
+													<ExtendedTooltip name="СубконтоДоходовБУ2РасширеннаяПодсказка" id="33"/>
+													<Events>
+														<Event name="OnChange">СубконтоДоходовБУ2ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоДоходовБУ2НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоДоходовБУ3" id="286">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто доходов (БУ) 3</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоДоходовБУ3РасширеннаяПодсказка" id="287"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоДоходовБУ3" id="198">
+													<DataPath>ЗаголовокСубконтоДоходовБУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоДоходовБУ3КонтекстноеМеню" id="199"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоДоходовБУ3РасширеннаяПодсказка" id="200"/>
+												</LabelField>
+												<InputField name="СубконтоДоходовБУ3" id="34">
+													<DataPath>Объект.СубконтоДоходовБУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СубконтоДоходовБУ3КонтекстноеМеню" id="35"/>
+													<ExtendedTooltip name="СубконтоДоходовБУ3РасширеннаяПодсказка" id="36"/>
+													<Events>
+														<Event name="OnChange">СубконтоДоходовБУ3ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоДоходовБУ3НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаРасходыБУ" id="153">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Расходы (БУ)</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ChildItemsWidth>LeftNarrow</ChildItemsWidth>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРасходыБУРасширеннаяПодсказка" id="154"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаСчетРасходовБУ" id="296">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля счета расходов (БУ)</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСчетРасходовБУРасширеннаяПодсказка" id="297"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияСчетРасходовБУ" id="274">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Счет расходов (БУ):</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияСчетРасходовБУКонтекстноеМеню" id="275"/>
+													<ExtendedTooltip name="ДекорацияСчетРасходовБУРасширеннаяПодсказка" id="276"/>
+												</LabelDecoration>
+												<InputField name="СчетРасходовБУ" id="70">
+													<DataPath>Объект.СчетРасходовБУ</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СчетРасходовБУКонтекстноеМеню" id="71"/>
+													<ExtendedTooltip name="СчетРасходовБУРасширеннаяПодсказка" id="72"/>
+													<Events>
+														<Event name="OnChange">СчетРасходовБУПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоРасходовБУ1" id="298">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто расходов (БУ) 1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоРасходовБУ1РасширеннаяПодсказка" id="299"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоРасходовБУ1" id="204">
+													<DataPath>ЗаголовокСубконтоРасходовБУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоРасходовБУ1КонтекстноеМеню" id="205"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоРасходовБУ1РасширеннаяПодсказка" id="206"/>
+												</LabelField>
+												<InputField name="СубконтоРасходовБУ1" id="46">
+													<DataPath>Объект.СубконтоРасходовБУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СубконтоРасходовБУ1КонтекстноеМеню" id="47"/>
+													<ExtendedTooltip name="СубконтоРасходовБУ1РасширеннаяПодсказка" id="48"/>
+													<Events>
+														<Event name="OnChange">СубконтоРасходовБУ1ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоРасходовБУ1НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоРасходовБУ2" id="300">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто расходов (БУ) 2</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоРасходовБУ2РасширеннаяПодсказка" id="301"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоРасходовБУ2" id="207">
+													<DataPath>ЗаголовокСубконтоРасходовБУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоРасходовБУ2КонтекстноеМеню" id="208"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоРасходовБУ2РасширеннаяПодсказка" id="209"/>
+												</LabelField>
+												<InputField name="СубконтоРасходовБУ2" id="49">
+													<DataPath>Объект.СубконтоРасходовБУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СубконтоРасходовБУ2КонтекстноеМеню" id="50"/>
+													<ExtendedTooltip name="СубконтоРасходовБУ2РасширеннаяПодсказка" id="51"/>
+													<Events>
+														<Event name="OnChange">СубконтоРасходовБУ2ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоРасходовБУ2НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоРасходовБУ3" id="302">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто расходов (БУ) 3</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоРасходовБУ3РасширеннаяПодсказка" id="303"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоРасходовБУ3" id="210">
+													<DataPath>ЗаголовокСубконтоРасходовБУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоРасходовБУ3КонтекстноеМеню" id="211"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоРасходовБУ3РасширеннаяПодсказка" id="212"/>
+												</LabelField>
+												<InputField name="СубконтоРасходовБУ3" id="52">
+													<DataPath>Объект.СубконтоРасходовБУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоБУ</BackColor>
+													<ContextMenu name="СубконтоРасходовБУ3КонтекстноеМеню" id="53"/>
+													<ExtendedTooltip name="СубконтоРасходовБУ3РасширеннаяПодсказка" id="54"/>
+													<Events>
+														<Event name="OnChange">СубконтоРасходовБУ3ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоРасходовБУ3НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтражениеНУ" id="149">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отражение в налоговом учете</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ГруппаОтражениеНУРасширеннаяПодсказка" id="150"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаДоходыНУ" id="155">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доходы (НУ)</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ChildItemsWidth>LeftNarrow</ChildItemsWidth>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДоходыНУРасширеннаяПодсказка" id="156"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаСчетДоходовНУ" id="294">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля счета доходов (НУ)</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСчетДоходовНУРасширеннаяПодсказка" id="295"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияСчетДоходовНУ" id="271">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Счет доходов (НУ):</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияСчетДоходовНУКонтекстноеМеню" id="272"/>
+													<ExtendedTooltip name="ДекорацияСчетДоходовНУРасширеннаяПодсказка" id="273"/>
+												</LabelDecoration>
+												<InputField name="СчетДоходовНУ" id="67">
+													<DataPath>Объект.СчетДоходовНУ</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СчетДоходовНУКонтекстноеМеню" id="68"/>
+													<ExtendedTooltip name="СчетДоходовНУРасширеннаяПодсказка" id="69"/>
+													<Events>
+														<Event name="OnChange">СчетДоходовНУПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоДоходовНУ1" id="288">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто доходов (НУ) 1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоДоходовНУ1РасширеннаяПодсказка" id="289"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоДоходовНУ1" id="216">
+													<DataPath>ЗаголовокСубконтоДоходовНУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоДоходовНУ1КонтекстноеМеню" id="217"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоДоходовНУ1РасширеннаяПодсказка" id="218"/>
+												</LabelField>
+												<InputField name="СубконтоДоходовНУ1" id="37">
+													<DataPath>Объект.СубконтоДоходовНУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СубконтоДоходовНУ1КонтекстноеМеню" id="38"/>
+													<ExtendedTooltip name="СубконтоДоходовНУ1РасширеннаяПодсказка" id="39"/>
+													<Events>
+														<Event name="OnChange">СубконтоДоходовНУ1ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоДоходовНУ1НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоДоходовНУ2" id="290">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто доходов (НУ) 2</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоДоходовНУ2РасширеннаяПодсказка" id="291"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоДоходовНУ2" id="219">
+													<DataPath>ЗаголовокСубконтоДоходовНУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоДоходовНУ2КонтекстноеМеню" id="220"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоДоходовНУ2РасширеннаяПодсказка" id="221"/>
+												</LabelField>
+												<InputField name="СубконтоДоходовНУ2" id="40">
+													<DataPath>Объект.СубконтоДоходовНУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СубконтоДоходовНУ2КонтекстноеМеню" id="41"/>
+													<ExtendedTooltip name="СубконтоДоходовНУ2РасширеннаяПодсказка" id="42"/>
+													<Events>
+														<Event name="OnChange">СубконтоДоходовНУ2ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоДоходовНУ2НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоДоходовНУ3" id="292">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто доходов (НУ) 3</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоДоходовНУ3РасширеннаяПодсказка" id="293"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоДоходовНУ3" id="222">
+													<DataPath>ЗаголовокСубконтоДоходовНУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоДоходовНУ3КонтекстноеМеню" id="223"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоДоходовНУ3РасширеннаяПодсказка" id="224"/>
+												</LabelField>
+												<InputField name="СубконтоДоходовНУ3" id="43">
+													<DataPath>Объект.СубконтоДоходовНУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СубконтоДоходовНУ3КонтекстноеМеню" id="44"/>
+													<ExtendedTooltip name="СубконтоДоходовНУ3РасширеннаяПодсказка" id="45"/>
+													<Events>
+														<Event name="OnChange">СубконтоДоходовНУ3ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоДоходовНУ3НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаРасходыНУ" id="157">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Расходы (НУ)</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ChildItemsWidth>LeftNarrow</ChildItemsWidth>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРасходыНУРасширеннаяПодсказка" id="158"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаСчетРасходовНУ" id="304">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля счета расходов (НУ)</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСчетРасходовНУРасширеннаяПодсказка" id="305"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияСчетРасходовНУ" id="268">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Счет расходов (НУ):</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияСчетРасходовНУКонтекстноеМеню" id="269"/>
+													<ExtendedTooltip name="ДекорацияСчетРасходовНУРасширеннаяПодсказка" id="270"/>
+												</LabelDecoration>
+												<InputField name="СчетРасходовНУ" id="73">
+													<DataPath>Объект.СчетРасходовНУ</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СчетРасходовНУКонтекстноеМеню" id="74"/>
+													<ExtendedTooltip name="СчетРасходовНУРасширеннаяПодсказка" id="75"/>
+													<Events>
+														<Event name="OnChange">СчетРасходовНУПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоРасходовНУ1" id="306">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто расходов (НУ) 1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоРасходовНУ1РасширеннаяПодсказка" id="307"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоРасходовНУ1" id="228">
+													<DataPath>ЗаголовокСубконтоРасходовНУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоРасходовНУ1КонтекстноеМеню" id="229"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоРасходовНУ1РасширеннаяПодсказка" id="230"/>
+												</LabelField>
+												<InputField name="СубконтоРасходовНУ1" id="55">
+													<DataPath>Объект.СубконтоРасходовНУ1</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СубконтоРасходовНУ1КонтекстноеМеню" id="56"/>
+													<ExtendedTooltip name="СубконтоРасходовНУ1РасширеннаяПодсказка" id="57"/>
+													<Events>
+														<Event name="OnChange">СубконтоРасходовНУ1ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоРасходовНУ1НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоРасходовНУ2" id="308">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто расходов (НУ) 2</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоРасходовНУ2РасширеннаяПодсказка" id="309"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоРасходовНУ2" id="231">
+													<DataPath>ЗаголовокСубконтоРасходовНУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоРасходовНУ2КонтекстноеМеню" id="232"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоРасходовНУ2РасширеннаяПодсказка" id="233"/>
+												</LabelField>
+												<InputField name="СубконтоРасходовНУ2" id="58">
+													<DataPath>Объект.СубконтоРасходовНУ2</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СубконтоРасходовНУ2КонтекстноеМеню" id="59"/>
+													<ExtendedTooltip name="СубконтоРасходовНУ2РасширеннаяПодсказка" id="60"/>
+													<Events>
+														<Event name="OnChange">СубконтоРасходовНУ2ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоРасходовНУ2НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСубконтоРасходовНУ3" id="310">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поля субконто расходов (НУ) 3</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСубконтоРасходовНУ3РасширеннаяПодсказка" id="311"/>
+											<ChildItems>
+												<LabelField name="ЗаголовокСубконтоРасходовНУ3" id="234">
+													<DataPath>ЗаголовокСубконтоРасходовНУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>20</MaxWidth>
+													<ContextMenu name="ЗаголовокСубконтоРасходовНУ3КонтекстноеМеню" id="235"/>
+													<ExtendedTooltip name="ЗаголовокСубконтоРасходовНУ3РасширеннаяПодсказка" id="236"/>
+												</LabelField>
+												<InputField name="СубконтоРасходовНУ3" id="61">
+													<DataPath>Объект.СубконтоРасходовНУ3</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ClearButton>true</ClearButton>
+													<OpenButton>true</OpenButton>
+													<BackColor>style:ЦветКолонкиДляСчетовИСубконтоНУ</BackColor>
+													<ContextMenu name="СубконтоРасходовНУ3КонтекстноеМеню" id="62"/>
+													<ExtendedTooltip name="СубконтоРасходовНУ3РасширеннаяПодсказка" id="63"/>
+													<Events>
+														<Event name="OnChange">СубконтоРасходовНУ3ПриИзменении</Event>
+														<Event name="StartChoice">СубконтоРасходовНУ3НачалоВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительно" id="116">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="117"/>
+					<ChildItems>
+						<InputField name="Ответственный" id="22">
+							<DataPath>Объект.Ответственный</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>36</MaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="24"/>
+						</InputField>
+						<InputField name="СобытиеОС" id="25">
+							<DataPath>Объект.СобытиеОС</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>36</MaxWidth>
+							<ClearButton>true</ClearButton>
+							<ChoiceParameters>
+								<app:item name="Отбор.ВидСобытияОС">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыСобытийОС.EnumValue.Переоценка</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ContextMenu name="СобытиеОСКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="СобытиеОСРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаКомментарийАвтор" id="258">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий, автор</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>DontUse</ThroughAlign>
+			<ExtendedTooltip name="ГруппаКомментарийАвторРасширеннаяПодсказка" id="259"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="260">
+					<DataPath>Объект.Комментарий</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="261"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="262"/>
+					<Events>
+						<Event name="StartChoice">КомментарийНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="НадписьАвтор" id="263">
+					<DataPath>НадписьАвтор</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<ContextMenu name="НадписьАвторКонтекстноеМеню" id="264"/>
+					<ExtendedTooltip name="НадписьАвторРасширеннаяПодсказка" id="265"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПереоценкаВнеоборотныхАктивов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.ОС">
+					<Column name="ИнвентарныйНомер" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Инв. №</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ОстаточнаяСтоимостьБУ" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Остаточная стоимость (БУ)</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>15</v8:Digits>
+								<v8:FractionDigits>2</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтруктурноеПодразделениеОрганизация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПоддержкаРаботыСоСтруктурнымиПодразделениями" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поддержка работы со структурными подразделениями</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоДоходовБУ1" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто доходов БУ 1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоДоходовБУ2" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто доходов БУ 2</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоДоходовБУ3" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто доходов БУ 3</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоРасходовБУ1" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто расходов БУ 1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоРасходовБУ2" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто расходов БУ 2</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоРасходовБУ3" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто расходов БУ 3</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоДоходовНУ1" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто доходов НУ 1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоДоходовНУ2" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто доходов НУ 2</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоДоходовНУ3" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто доходов НУ 3</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоРасходовНУ1" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто расходов НУ 1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоРасходовНУ2" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто расходов НУ 2</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаголовокСубконтоРасходовНУ3" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок субконто расходов НУ 3</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксПериодПервоначальныхСведенийОС" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс. период первоначальных сведений ОС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрименятьПараметрыАмортизацииВТекМесяце" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применять параметры амортизации в тек. месяце</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяДатаДокумента" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая дата документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьВДокументахСчетаУчета" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать в документах счета учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НадписьАвтор" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись автор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ОСАмортизацияЗаМесяцБУ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ОССписываемаяСуммаРезерваЗаМесяцБУ</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ПрименятьПараметрыАмортизацииВТекМесяце</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьДляСписка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для списка ОС</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьДляСписка</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьПоНаименованию" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По наименованию</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьПоНаименованию</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Подбор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Подбор</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИзменитьОС" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ИзменитьОС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>AccountingRegister.Типовой.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccountingRegister.Налоговый.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:5da1a58f-4d46-4586-9f71-63a8a18dbbf5</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:cacebd45-e45a-4309-8c22-8179d3d3c89d</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:c4cdf1e0-3ba4-44ed-a69b-e548eedca4dd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:01892af7-0683-425c-917e-f2b4412ee507</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>3:58c9e918-9e14-4dbf-825e-bd811a766b89</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:26e12d60-32b4-42d2-b47a-2d14581d45e0</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.ПараметрыАмортизацииОСБухгалтерскийУчет.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.ПереоценкаВнеоборотныхАктивов.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.СобытияОСОрганизаций.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:e3c0ddad-cab7-4082-8723-0e9ab0623268</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>4:20d655a7-788c-48bc-83ae-25003106bedb</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+		<CommandBar>
+			<Item>
+				<Command>0:2baf6d7a-12ed-4f22-ad96-92bb31b747ff</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.Печать</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ЗаполнениеОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ОтчетыОбъекта</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

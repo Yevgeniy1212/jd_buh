@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ЛеваяКолонка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ЛеваяКолонкаРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="Номер" id="5">
+							<DataPath>Объект.Number</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НомерКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="7"/>
+						</InputField>
+						<InputField name="Дата" id="8">
+							<DataPath>Объект.Date</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="10"/>
+							<Events>
+								<Event name="OnChange">ДатаПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ПраваяКолонка" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПраваяКолонкаРасширеннаяПодсказка" id="15"/>
+					<ChildItems>
+						<InputField name="Организация" id="16">
+							<DataPath>Объект.Организация</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<Page name="ГруппаНЗП" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>НЗП</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаНЗПРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<Table name="НЗП" id="29">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.НЗП</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НЗПКонтекстноеМеню" id="30"/>
+							<AutoCommandBar name="НЗПКоманднаяПанель" id="31">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="НЗПВключитьВсе" id="89">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВключитьВсе</CommandName>
+										<ExtendedTooltip name="НЗПВключитьВсеРасширеннаяПодсказка" id="90"/>
+									</Button>
+									<Button name="НЗПВыключитьВсе" id="91">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыключитьВсе</CommandName>
+										<ExtendedTooltip name="НЗПВыключитьВсеРасширеннаяПодсказка" id="92"/>
+									</Button>
+									<Button name="УбытокЗаполнитьНЗП" id="97">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗаполнитьНЗП</CommandName>
+										<ExtendedTooltip name="УбытокЗаполнитьНЗПРасширеннаяПодсказка" id="98"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="НЗПРасширеннаяПодсказка" id="32"/>
+							<SearchStringAddition name="НЗПСтрокаПоиска" id="33">
+								<AdditionSource>
+									<Item>НЗП</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НЗПСтрокаПоискаКонтекстноеМеню" id="34"/>
+								<ExtendedTooltip name="НЗПСтрокаПоискаРасширеннаяПодсказка" id="35"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НЗПСостояниеПросмотра" id="36">
+								<AdditionSource>
+									<Item>НЗП</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НЗПСостояниеПросмотраКонтекстноеМеню" id="37"/>
+								<ExtendedTooltip name="НЗПСостояниеПросмотраРасширеннаяПодсказка" id="38"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НЗПУправлениеПоиском" id="39">
+								<AdditionSource>
+									<Item>НЗП</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НЗПУправлениеПоискомКонтекстноеМеню" id="40"/>
+								<ExtendedTooltip name="НЗПУправлениеПоискомРасширеннаяПодсказка" id="41"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">НЗППередНачаломДобавления</Event>
+								<Event name="BeforeDeleteRow">НЗППередУдалением</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="НЗПНомерСтроки" id="42">
+									<DataPath>Объект.НЗП.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НЗПНомерСтрокиКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="НЗПНомерСтрокиРасширеннаяПодсказка" id="44"/>
+								</LabelField>
+								<InputField name="НЗПНоменклатурнаяГруппа" id="45">
+									<DataPath>Объект.НЗП.НоменклатурнаяГруппа</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НЗПНоменклатурнаяГруппаКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="НЗПНоменклатурнаяГруппаРасширеннаяПодсказка" id="47"/>
+								</InputField>
+								<InputField name="НЗПДоходы" id="48">
+									<DataPath>Объект.НЗП.Доходы</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НЗПДоходыКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="НЗПДоходыРасширеннаяПодсказка" id="50"/>
+								</InputField>
+								<InputField name="НЗПРасходы" id="51">
+									<DataPath>Объект.НЗП.Расходы</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НЗПРасходыКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="НЗПРасходыРасширеннаяПодсказка" id="53"/>
+								</InputField>
+								<CheckBoxField name="НЗПОтноситьНаНЗП" id="54">
+									<DataPath>Объект.НЗП.ОтноситьНаНЗП</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НЗПОтноситьНаНЗПКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="НЗПОтноситьНаНЗПРасширеннаяПодсказка" id="56"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаУбыток" id="57">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Убыток</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаУбытокРасширеннаяПодсказка" id="58"/>
+					<ChildItems>
+						<Table name="Убыток" id="59">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Убыток</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="УбытокКонтекстноеМеню" id="60"/>
+							<AutoCommandBar name="УбытокКоманднаяПанель" id="61">
+								<ChildItems>
+									<Button name="УбытокВключитьВсе1" id="93">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВключитьВсе1</CommandName>
+										<ExtendedTooltip name="УбытокВключитьВсе1РасширеннаяПодсказка" id="94"/>
+									</Button>
+									<Button name="УбытокВыключитьВсе1" id="95">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыключитьВсе1</CommandName>
+										<ExtendedTooltip name="УбытокВыключитьВсе1РасширеннаяПодсказка" id="96"/>
+									</Button>
+									<Button name="УбытокЗаполнитьУбыток" id="99">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗаполнитьУбыток</CommandName>
+										<ExtendedTooltip name="УбытокЗаполнитьУбытокРасширеннаяПодсказка" id="100"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="УбытокРасширеннаяПодсказка" id="62"/>
+							<SearchStringAddition name="УбытокСтрокаПоиска" id="63">
+								<AdditionSource>
+									<Item>Убыток</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УбытокСтрокаПоискаКонтекстноеМеню" id="64"/>
+								<ExtendedTooltip name="УбытокСтрокаПоискаРасширеннаяПодсказка" id="65"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УбытокСостояниеПросмотра" id="66">
+								<AdditionSource>
+									<Item>Убыток</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УбытокСостояниеПросмотраКонтекстноеМеню" id="67"/>
+								<ExtendedTooltip name="УбытокСостояниеПросмотраРасширеннаяПодсказка" id="68"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УбытокУправлениеПоиском" id="69">
+								<AdditionSource>
+									<Item>Убыток</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УбытокУправлениеПоискомКонтекстноеМеню" id="70"/>
+								<ExtendedTooltip name="УбытокУправлениеПоискомРасширеннаяПодсказка" id="71"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="УбытокНомерСтроки" id="72">
+									<DataPath>Объект.Убыток.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="УбытокНомерСтрокиКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="УбытокНомерСтрокиРасширеннаяПодсказка" id="74"/>
+								</LabelField>
+								<InputField name="УбытокПодразделение" id="75">
+									<DataPath>Объект.Убыток.Подразделение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="УбытокПодразделениеКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="УбытокПодразделениеРасширеннаяПодсказка" id="77"/>
+								</InputField>
+								<InputField name="УбытокСумма" id="78">
+									<DataPath>Объект.Убыток.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="УбытокСуммаКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="УбытокСуммаРасширеннаяПодсказка" id="80"/>
+								</InputField>
+								<CheckBoxField name="УбытокОтноситьНаУбыток" id="81">
+									<DataPath>Объект.Убыток.ОтноситьНаУбыток</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УбытокОтноситьНаУбытокКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="УбытокОтноситьНаУбытокРасширеннаяПодсказка" id="83"/>
+								</CheckBoxField>
+								<InputField name="УбытокСтатьиЗатрат" id="84">
+									<DataPath>Объект.Убыток.СтатьиЗатрат</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="УбытокСтатьиЗатратКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="УбытокСтатьиЗатратРасширеннаяПодсказка" id="86"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="Подвал" id="87">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПодвалРасширеннаяПодсказка" id="88"/>
+			<ChildItems>
+				<InputField name="Ответственный" id="19">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="Комментарий" id="11">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="13"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.сэтЗакрытиеПроизводства</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВключитьВсе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВключитьВсе</Action>
+		</Command>
+		<Command name="ВыключитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыключитьВсе</Action>
+		</Command>
+		<Command name="ВключитьВсе1" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВключитьВсе1</Action>
+		</Command>
+		<Command name="ВыключитьВсе1" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыключитьВсе1</Action>
+		</Command>
+		<Command name="ЗаполнитьНЗП" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить НЗП</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьНЗП</Action>
+		</Command>
+		<Command name="ЗаполнитьУбыток" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить убыток</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить убыток</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьУбыток</Action>
+		</Command>
+	</Commands>
+</Form>

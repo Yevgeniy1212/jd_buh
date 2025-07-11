@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Загрузка электронных сопроводительных накладных из XML файлов</v8:content>
+		</v8:item>
+	</Title>
+	<Width>150</Width>
+	<Height>25</Height>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ЗагрузитьИзФайлов" id="1">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗагрузитьИзФайлов</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.OpenFile</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗагрузитьИзФайловРасширеннаяПодсказка" id="147"/>
+			</Button>
+			<Button name="СоздатьОбновитьДокументыСНТ" id="55">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.СоздатьОбновитьДокументыСНТ</CommandName>
+				<ExtendedTooltip name="СоздатьОбновитьДокументыСНТРасширеннаяПодсказка" id="148"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="СтруктурнаяЕдиница" id="77">
+			<DataPath>СтруктурнаяЕдиница</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="СтруктурнаяЕдиницаКонтекстноеМеню" id="78"/>
+			<ExtendedTooltip name="СтруктурнаяЕдиницаРасширеннаяПодсказка" id="149"/>
+			<Events>
+				<Event name="OnChange">СтруктурнаяЕдиницаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаЗагружаемыеСНТ" id="70">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружаемые электронные сопроводительные накладные на товары</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа загружаемые СНТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаЗагружаемыеСНТРасширеннаяПодсказка" id="150"/>
+			<ChildItems>
+				<Table name="ЗагружаемыеСНТ" id="2">
+					<Representation>List</Representation>
+					<SelectionMode>SingleRow</SelectionMode>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ЗагружаемыеСНТ</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ЗагружаемыеСНТКонтекстноеМеню" id="3"/>
+					<AutoCommandBar name="ЗагружаемыеСНТКоманднаяПанель" id="4">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ЗагружаемыеСНТУстановитьФлажки" id="142">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьФлажки</CommandName>
+								<ExtendedTooltip name="ЗагружаемыеСНТУстановитьФлажкиРасширеннаяПодсказка" id="151"/>
+							</Button>
+							<Button name="ЗагружаемыеСНТСнятьФлажки" id="143">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьФлажки</CommandName>
+								<ExtendedTooltip name="ЗагружаемыеСНТСнятьФлажкиРасширеннаяПодсказка" id="152"/>
+							</Button>
+							<Button name="ДокументыОткрытьВходящий" id="69">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПредварительныйПросмотр</CommandName>
+								<ExtendedTooltip name="ДокументыОткрытьВходящийРасширеннаяПодсказка" id="153"/>
+							</Button>
+							<Button name="ЗагружаемыеСНТОткрытьСозданныйЭСФ" id="144">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОткрытьСозданныйСНТ</CommandName>
+								<ExtendedTooltip name="ЗагружаемыеСНТОткрытьСозданныйЭСФРасширеннаяПодсказка" id="154"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ЗагружаемыеСНТРасширеннаяПодсказка" id="155"/>
+					<SearchStringAddition name="ЗагружаемыеСНТСтрокаПоиска" id="156">
+						<AdditionSource>
+							<Item>ЗагружаемыеСНТ</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЗагружаемыеСНТСтрокаПоискаКонтекстноеМеню" id="157"/>
+						<ExtendedTooltip name="ЗагружаемыеСНТСтрокаПоискаРасширеннаяПодсказка" id="158"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ЗагружаемыеСНТСостояниеПросмотра" id="159">
+						<AdditionSource>
+							<Item>ЗагружаемыеСНТ</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЗагружаемыеСНТСостояниеПросмотраКонтекстноеМеню" id="160"/>
+						<ExtendedTooltip name="ЗагружаемыеСНТСостояниеПросмотраРасширеннаяПодсказка" id="161"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ЗагружаемыеСНТУправлениеПоиском" id="162">
+						<AdditionSource>
+							<Item>ЗагружаемыеСНТ</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ЗагружаемыеСНТУправлениеПоискомКонтекстноеМеню" id="163"/>
+						<ExtendedTooltip name="ЗагружаемыеСНТУправлениеПоискомРасширеннаяПодсказка" id="164"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ЗагружаемыеСНТВыбор</Event>
+						<Event name="BeforeAddRow">ЗагружаемыеСНТПередНачаломДобавления</Event>
+					</Events>
+					<ChildItems>
+						<CheckBoxField name="ИмпортируемыеДокументыПометка" id="124">
+							<DataPath>ЗагружаемыеСНТ.Пометка</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИмпортируемыеДокументыПометкаКонтекстноеМеню" id="125"/>
+							<ExtendedTooltip name="ИмпортируемыеДокументыПометкаРасширеннаяПодсказка" id="165"/>
+						</CheckBoxField>
+						<ColumnGroup name="ГруппаРеквизитыЗагружаемыеСНТ" id="66">
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загружаемые СНТ</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ExtendedTooltip name="ГруппаРеквизитыЗагружаемыеСНТРасширеннаяПодсказка" id="166"/>
+							<ChildItems>
+								<InputField name="ЗагружаемыеСНТНаправление" id="126">
+									<DataPath>ЗагружаемыеСНТ.Направление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТНаправлениеКонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТНаправлениеРасширеннаяПодсказка" id="167"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТВид" id="136">
+									<DataPath>ЗагружаемыеСНТ.Тип</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТВидКонтекстноеМеню" id="137"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТВидРасширеннаяПодсказка" id="168"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТСостояние" id="145">
+									<DataPath>ЗагружаемыеСНТ.Состояние</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТСостояниеКонтекстноеМеню" id="146"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТСостояниеРасширеннаяПодсказка" id="169"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТНомер" id="130">
+									<DataPath>ЗагружаемыеСНТ.Номер</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТНомерКонтекстноеМеню" id="131"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТНомерРасширеннаяПодсказка" id="170"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТДата" id="128">
+									<DataPath>ЗагружаемыеСНТ.Дата</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТДатаКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТДатаРасширеннаяПодсказка" id="171"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТОрганизация" id="132">
+									<DataPath>ЗагружаемыеСНТ.Организация</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТОрганизацияКонтекстноеМеню" id="133"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТОрганизацияРасширеннаяПодсказка" id="172"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТСтруктурноеПодразделение" id="134">
+									<DataPath>ЗагружаемыеСНТ.СтруктурноеПодразделение</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТСтруктурноеПодразделениеКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТСтруктурноеПодразделениеРасширеннаяПодсказка" id="173"/>
+								</InputField>
+								<InputField name="ЗагружаемыеСНТИдентификатор" id="138">
+									<DataPath>ЗагружаемыеСНТ.Идентификатор</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="ЗагружаемыеСНТИдентификаторКонтекстноеМеню" id="139"/>
+									<ExtendedTooltip name="ЗагружаемыеСНТИдентификаторРасширеннаяПодсказка" id="174"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<InputField name="ЗагружаемыеСНТСНТ" id="140">
+							<DataPath>ЗагружаемыеСНТ.СНТ</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>1</Width>
+							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ContextMenu name="ЗагружаемыеСНТСНТКонтекстноеМеню" id="141"/>
+							<ExtendedTooltip name="ЗагружаемыеСНТСНТРасширеннаяПодсказка" id="175"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ОбменСНТ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СтруктурнаяЕдиница" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.СтруктурнаяЕдиницаЭСФ</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагружаемыеСНТ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружаемые СНТ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пометка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пометка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Номер" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Дата" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Организация" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ОрганизацияЭСФ</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СтруктурноеПодразделение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Структурное подразделение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПодразделениеЭСФ</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Идентификатор" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Направление" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Направление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.НаправленияСНТ</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Тип" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ТипыСНТ</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СНТ" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сопроводительная накладная на товары</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СНТ</v8:Type>
+					</Type>
+				</Column>
+				<Column name="XML" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>XML (служебный)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Состояние" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СостоянияСНТ</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтараяСтруктурнаяЕдиница" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Старая структурная единица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.СтруктурнаяЕдиницаЭСФ</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИмпортируемыеДокументыНайденныйДокумент</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ЗагружаемыеЭСФ.ЭСФ</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Документ.ЭСФ.ПустаяСсылка</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DarkGray</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">&lt;Отсутствует&gt;</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьИзФайлов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗагрузитьИзФайлов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьОбновитьДокументыСНТ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать/обновить СНТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать новые или обновить существующие сопроводительные накладные на товары</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьОбновитьДокументыСНТ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПредварительныйПросмотр" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр загружаемого СНТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Alt+V</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldOpen</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПредварительныйПросмотр</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьФлажки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Alt+A</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьФлажки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Alt+Shift+A</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьСозданныйСНТ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть созданный СНТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть созданный СНТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Alt+O</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Document</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьСозданныйСНТ</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

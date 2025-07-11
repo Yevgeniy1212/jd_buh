@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ГруппаВажныеКоманды" id="82">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа важные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГруппаВажныеКомандыРасширеннаяПодсказка" id="83"/>
+				<ChildItems>
+					<Button name="ФормаПровести" id="86">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.Список.StandardCommand.Post</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаПровестиРасширеннаяПодсказка" id="87"/>
+					</Button>
+					<Button name="ФормаОтменаПроведения" id="88">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.Список.StandardCommand.UndoPosting</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаОтменаПроведенияРасширеннаяПодсказка" id="89"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаПоказатьДвиженияДокумента" id="90">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.ПоказатьДвиженияДокумента</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаПоказатьДвиженияДокументаРасширеннаяПодсказка" id="91"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<ButtonGroup name="ГруппаГлобальныеКоманды" id="84">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГруппаГлобальныеКомандыРасширеннаяПодсказка" id="85"/>
+				<ChildItems>
+					<Button name="ФормаОбщаяКомандаСтруктураПодчиненности" id="92">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.СвязанныеДокументы</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаСтруктураПодчиненностиРасширеннаяПодсказка" id="93"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="10"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="12">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="РучнаяКорректировка" id="55">
+					<DataPath>Список.РучнаяКорректировка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.РучнаяКорректировка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="РучнаяКорректировкаКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="РучнаяКорректировкаРасширеннаяПодсказка" id="57"/>
+				</PictureField>
+				<PictureField name="ПринятиеКУчетуНУ" id="73">
+					<DataPath>Список.ПринятиеКУчетуНУ</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СостояниеПринятиеКУчетуНУВДокументах</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ПринятиеКУчетуНУКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ПринятиеКУчетуНУРасширеннаяПодсказка" id="75"/>
+				</PictureField>
+				<CheckBoxField name="УчитыватьКПН" id="52">
+					<DataPath>Список.УчитыватьКПН</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КПН</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчитыватьКПНКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="УчитыватьКПНРасширеннаяПодсказка" id="54"/>
+				</CheckBoxField>
+				<LabelField name="ВидУчетаНУ" id="67">
+					<DataPath>Список.ВидУчетаНУ</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ВидУчетаНУКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="ВидУчетаНУРасширеннаяПодсказка" id="69"/>
+				</LabelField>
+				<CheckBoxField name="Оплачено" id="46">
+					<DataPath>Список.Оплачено</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Опл.</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОплаченоКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ОплаченоРасширеннаяПодсказка" id="48"/>
+				</CheckBoxField>
+				<LabelField name="Дата" id="22">
+					<DataPath>Список.Дата</DataPath>
+					<Width>13</Width>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Номер" id="25">
+					<DataPath>Список.Номер</DataPath>
+					<Width>16</Width>
+					<ContextMenu name="НомерКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="Тип" id="28">
+					<DataPath>Список.Тип</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид документа</v8:content>
+						</v8:item>
+					</Title>
+					<Width>16</Width>
+					<ContextMenu name="ТипКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ТипРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="ВидОперации" id="37">
+					<DataPath>Список.ВидОперации</DataPath>
+					<ContextMenu name="ВидОперацииКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ВидОперацииРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="СчетОрганизации" id="61">
+					<DataPath>Список.СчетОрганизации</DataPath>
+					<Width>18</Width>
+					<ContextMenu name="СчетОрганизацииКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="СчетОрганизацииРасширеннаяПодсказка" id="63"/>
+				</LabelField>
+				<LabelField name="СуммаДокумента" id="58">
+					<DataPath>Список.СуммаДокумента</DataPath>
+					<Width>12</Width>
+					<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="60"/>
+				</LabelField>
+				<LabelField name="СуммаКомиссии" id="64">
+					<DataPath>Список.СуммаКомиссии</DataPath>
+					<Width>13</Width>
+					<ContextMenu name="СуммаКомиссииКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="СуммаКомиссииРасширеннаяПодсказка" id="66"/>
+				</LabelField>
+				<LabelField name="Всего" id="76">
+					<DataPath>Список.Всего</DataPath>
+					<Width>12</Width>
+					<ContextMenu name="ВсегоКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ВсегоРасширеннаяПодсказка" id="78"/>
+				</LabelField>
+				<LabelField name="Валюта" id="34">
+					<DataPath>Список.Валюта</DataPath>
+					<ContextMenu name="ВалютаКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="43">
+					<DataPath>Список.Контрагент</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="Организация" id="49">
+					<DataPath>Список.Организация</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<LabelField name="СтруктурноеПодразделение" id="70">
+					<DataPath>Список.СтруктурноеПодразделение</DataPath>
+					<Width>26</Width>
+					<ContextMenu name="СтруктурноеПодразделениеКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="СтруктурноеПодразделениеРасширеннаяПодсказка" id="72"/>
+				</LabelField>
+				<LabelField name="Автор" id="31">
+					<DataPath>Список.Автор</DataPath>
+					<ContextMenu name="АвторКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="40">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="79">
+					<DataPath>Список.Ссылка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="81"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЖурналДокументовРасчетныеДокументыБанк.Ссылка,
+	ЖурналДокументовРасчетныеДокументыБанк.Дата,
+	ЖурналДокументовРасчетныеДокументыБанк.ПометкаУдаления,
+	ЖурналДокументовРасчетныеДокументыБанк.Номер,
+	ЖурналДокументовРасчетныеДокументыБанк.Проведен,
+	ЖурналДокументовРасчетныеДокументыБанк.Автор,
+	ЖурналДокументовРасчетныеДокументыБанк.Валюта,
+	ЖурналДокументовРасчетныеДокументыБанк.ВидОперации,
+	ЖурналДокументовРасчетныеДокументыБанк.Комментарий,
+	ЖурналДокументовРасчетныеДокументыБанк.Контрагент,
+	ЖурналДокументовРасчетныеДокументыБанк.Оплачено,
+	ЖурналДокументовРасчетныеДокументыБанк.Организация,
+	ЖурналДокументовРасчетныеДокументыБанк.УчитыватьКПН,
+	ЖурналДокументовРасчетныеДокументыБанк.РучнаяКорректировка,
+	ЖурналДокументовРасчетныеДокументыБанк.СуммаДокумента,
+	ЖурналДокументовРасчетныеДокументыБанк.СчетОрганизации,
+	ЖурналДокументовРасчетныеДокументыБанк.СуммаКомиссии,
+	ВЫРАЗИТЬ(ЕСТЬNULL(ЖурналДокументовРасчетныеДокументыБанк.СуммаКомиссии,0) + ЖурналДокументовРасчетныеДокументыБанк.СуммаДокумента КАК ЧИСЛО(15, 2)) КАК Всего,
+	ЖурналДокументовРасчетныеДокументыБанк.ВидУчетаНУ,
+	ЖурналДокументовРасчетныеДокументыБанк.СтруктурноеПодразделение,
+	ЖурналДокументовРасчетныеДокументыБанк.Тип,
+	ВЫБОР
+		КОГДА ЖурналДокументовРасчетныеДокументыБанк.УчитыватьКПН
+			ТОГДА ВЫБОР
+					КОГДА ЖурналДокументовРасчетныеДокументыБанк.ВидУчетаНУ = ЗНАЧЕНИЕ(Справочник.ВидыУчетаНУ.НУ)
+						ТОГДА 0
+					ИНАЧЕ 1
+				КОНЕЦ
+		ИНАЧЕ 2
+	КОНЕЦ КАК ПринятиеКУчетуНУ
+ИЗ
+	ЖурналДокументов.РасчетныеДокументыБанк КАК ЖурналДокументовРасчетныеДокументыБанк</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Валюта</dcssch:dataPath>
+					<dcssch:field>Валюта</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчитыватьКПН</dcssch:dataPath>
+					<dcssch:field>УчитыватьКПН</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидУчетаНУ</dcssch:dataPath>
+					<dcssch:field>ВидУчетаНУ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидОперации</dcssch:dataPath>
+					<dcssch:field>ВидОперации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Контрагент</dcssch:dataPath>
+					<dcssch:field>Контрагент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Оплачено</dcssch:dataPath>
+					<dcssch:field>Оплачено</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РучнаяКорректировка</dcssch:dataPath>
+					<dcssch:field>РучнаяКорректировка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СуммаДокумента</dcssch:dataPath>
+					<dcssch:field>СуммаДокумента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СчетОрганизации</dcssch:dataPath>
+					<dcssch:field>СчетОрганизации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Тип</dcssch:dataPath>
+					<dcssch:field>Тип</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СуммаКомиссии</dcssch:dataPath>
+					<dcssch:field>СуммаКомиссии</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Всего</dcssch:dataPath>
+					<dcssch:field>Всего</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всего</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтруктурноеПодразделение</dcssch:dataPath>
+					<dcssch:field>СтруктурноеПодразделение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПринятиеКУчетуНУ</dcssch:dataPath>
+					<dcssch:field>ПринятиеКУчетуНУ</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принятие к учету НУ</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<MainTable>DocumentJournal.РасчетныеДокументыБанк</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>
